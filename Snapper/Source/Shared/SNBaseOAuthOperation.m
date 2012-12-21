@@ -16,8 +16,6 @@
 @implementation SNBaseOAuthOperation {
 
 @private
-    void (^_finishBlock)(SNResponse* response);
-
     NSURLConnection* _connection;
     NSMutableData* _receivedData;
     BOOL _done;
@@ -32,19 +30,21 @@
             parameters:(NSDictionary*)parameters
                   body:(NSData*)body
               bodyType:(NSString*)bodyType
-               accountId:(NSString*)accountId
+             accountId:(NSString*)accountId
+         progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
            finishBlock:(void (^)(SNResponse* response))finishBlock {
 
     self = [super init];
     if(self) {
-        _endpoint = [endpoint copy];
-        _method = [method copy];
-        _headers = [headers copy];
-        _parameters = [parameters copy];
-        _body = [body copy];
-        _bodyType = [bodyType copy];
-        _accountId = accountId;
-        _finishBlock = [finishBlock copy];
+        self.endpoint = endpoint;
+        self.method = method;
+        self.headers = headers;
+        self.parameters = parameters;
+        self.body = body;
+        self.bodyType = bodyType;
+        self.accountId = accountId;
+        self.progressBlock = progressBlock;
+        self.finishBlock = finishBlock;
     }
 
     return self;
@@ -132,9 +132,9 @@
 }
 
 
-#pragma mark - Worker methods
+#pragma mark - Utility methods
 
-- (SNResponse*)createResponseFromJSON:(NSDictionary*)jsonData {
+- (SNResponse*)createResponseFromJSON:(NSDictionary*)jsonDict {
 
     SNResponse* response = [[SNResponse alloc] init];
 
@@ -142,33 +142,34 @@
     SNMetadata* meta = [[SNMetadata alloc] init];
 
     // Status code.
-    meta.code = [jsonData[@"meta"][@"code"] integerValue];
+    NSDictionary* metaDict = jsonDict[@"meta"];
+    meta.code = [metaDict[@"code"] integerValue];
 
     // Error information.
-    meta.errorId = jsonData[@"meta"][@"error_id"];
-    meta.errorSlug = jsonData[@"meta"][@"error_slug"];
-    meta.errorMessage = jsonData[@"meta"][@"error_message"];
+    meta.errorId = metaDict[@"error_id"];
+    meta.errorSlug = metaDict[@"error_slug"];
+    meta.errorMessage = metaDict[@"error_message"];
 
     // Pagination data.
-    meta.minId = [jsonData[@"meta"][@"min_id"] integerValue];
-    meta.maxId = [jsonData[@"meta"][@"max_id"] integerValue];
-    meta.more = [jsonData[@"meta"][@"more"] boolValue];
+    meta.minId = [metaDict[@"min_id"] integerValue];
+    meta.maxId = [metaDict[@"max_id"] integerValue];
+    meta.more = [metaDict[@"more"] boolValue];
 
     // Stream marker data.
-    NSDictionary* marker = jsonData[@"meta"][@"marker"];
-    if(marker) {
+    NSDictionary* markerDict = metaDict[@"marker"];
+    if(markerDict) {
         SNStreamMarker* streamMarker = [[SNStreamMarker alloc] init];
 
-        streamMarker.postId = [marker[@"id"] integerValue];
-        streamMarker.name = marker[@"name"];
-        streamMarker.percentage = [marker[@"percentage"] integerValue];
-        streamMarker.version = marker[@"version"];
+        streamMarker.postId = [markerDict[@"id"] integerValue];
+        streamMarker.name = markerDict[@"name"];
+        streamMarker.percentage = [markerDict[@"percentage"] integerValue];
+        streamMarker.version = markerDict[@"version"];
 
-        if(marker[@"updated_at"]) {
+        if(markerDict[@"updated_at"]) {
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
             dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
-            streamMarker.updatedAt = [dateFormatter dateFromString:marker[@"updated_at"]];
+            streamMarker.updatedAt = [dateFormatter dateFromString:markerDict[@"updated_at"]];
         }
 
         meta.streamMarker = streamMarker;
@@ -177,7 +178,20 @@
     response.metadata = meta;
 
     // Process data.
-    response.data = jsonData[@"data"];
+    response.data = jsonDict[@"data"];
+
+    return response;
+}
+
+- (SNResponse*)createResponseFromError:(NSError*)error {
+
+    SNResponse* response = [[SNResponse alloc] init];
+
+    SNMetadata* meta = [[SNMetadata alloc] init];
+    meta.errorId = [NSString stringWithFormat:@"%d", error.code];
+    meta.errorMessage = [error localizedDescription];
+
+    response.metadata = meta;
 
     return response;
 }
@@ -199,7 +213,10 @@ willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge*)challen
    didSendBodyData:(NSInteger)bytesWritten
  totalBytesWritten:(NSInteger)totalBytesWritten
 totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
-    // TODO
+
+    if(_progressBlock) {
+        _progressBlock(bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+    }
 }
 
 - (void)connection:(NSURLConnection*)connection
@@ -223,12 +240,7 @@ didReceiveResponse:(NSURLResponse*)response {
                                                              options:0
                                                                error:&jsonError];
     if(jsonData == nil) {
-        SNMetadata* meta = [[SNMetadata alloc] init];
-        meta.code = jsonError.code;
-        meta.errorMessage = [jsonError localizedDescription];
-
-        SNResponse* response = [[SNResponse alloc] init];
-        response.metadata = meta;
+        SNResponse* response = [self createResponseFromError:jsonError];
 
         _finishBlock(response);
         _done = YES;
@@ -244,13 +256,8 @@ didReceiveResponse:(NSURLResponse*)response {
 - (void)connection:(NSURLConnection*)connection
   didFailWithError:(NSError*)error {
 
-    SNMetadata* meta = [[SNMetadata alloc] init];
-    meta.code = error.code;
-    meta.errorMessage = [error localizedDescription];
-    
-    SNResponse* response = [[SNResponse alloc] init];
-    response.metadata = meta;
-    
+    SNResponse* response = [self createResponseFromError:error];
+
     _finishBlock(response);
     _done = YES;
 }

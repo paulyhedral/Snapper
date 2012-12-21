@@ -30,32 +30,32 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNAPIUtils, sharedAPIUtils);
 #pragma mark - User URL methods
 
 - (NSURL*)getUserEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:@"/stream/0/token"
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d", userId]
                   relativeToURL:_rootAPIURL];
 }
 
-- (NSURL*)updateUserEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:@"/stream/0/token"
+- (NSURL*)updateUserEndpointURL {
+    return [NSURL URLWithString:@"/users/me"
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getUserAvatarEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:@"/stream/0/token"
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/avatar", userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)updateUserAvatarEndpointURL {
-    return [NSURL URLWithString:@"/stream/0/token"
+    return [NSURL URLWithString:@"/users/me/avatar"
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getUserCoverImageEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:@"/stream/0/token"
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/cover", userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)updateUserCoverImageEndpointURL {
-    return [NSURL URLWithString:@"/stream/0/token"
+    return [NSURL URLWithString:@"/users/me/cover"
                   relativeToURL:_rootAPIURL];
 }
 

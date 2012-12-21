@@ -23,6 +23,8 @@
 @property (nonatomic, copy) NSData* body;
 @property (nonatomic, copy) NSString* bodyType;
 @property (nonatomic, copy) NSString* accountId;
+@property (nonatomic, copy) void (^progressBlock)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes);
+@property (nonatomic, copy) void (^finishBlock)(SNResponse* response);
 
 // -- Initializers --
 - (id)initWithEndpoint:(NSURL*)endpoint
@@ -31,7 +33,12 @@
             parameters:(NSDictionary*)parameters
                   body:(NSData*)body
               bodyType:(NSString*)bodyType
-               accountId:(NSString*)accountId
+             accountId:(NSString*)accountId
+         progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
            finishBlock:(void (^)(SNResponse* response))finishBlock;
+
+// -- Utility methods --
+- (SNResponse*)createResponseFromJSON:(NSDictionary*)jsonDict;
+- (SNResponse*)createResponseFromError:(NSError*)error;
 
 @end
