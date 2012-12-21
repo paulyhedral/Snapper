@@ -1,17 +1,17 @@
 //
-//  SNUserTests.m
+//  ModelTests.m
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/18/12.
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNUserTests.h"
+#import "ModelTests.h"
 
-#import "SNUser.h"
+#import <Snapper/Snapper.h>
 
 
-@implementation SNUserTests {
+@implementation ModelTests {
 
 @private
     NSDictionary* _userDict;
