@@ -8,6 +8,35 @@
 
 #import "SNGetUserFollowersOperation.h"
 
+#import "SNAPIUtils.h"
+
+
 @implementation SNGetUserFollowersOperation
+
+#pragma mark - Initialization
+
+- (id)initWithUserId:(NSUInteger)userId
+           accountId:(NSString*)accountId
+         finishBlock:(void (^)(SNResponse*))finishBlock {
+
+    self = [super init];
+    if(self) {
+        self.userId = userId;
+        self.accountId = accountId;
+        self.finishBlock = finishBlock;
+    }
+
+    return self;
+}
+
+
+#pragma mark - Workhorse
+
+- (void)main {
+
+    self.endpoint = [[SNAPIUtils sharedAPIUtils] getUserFollowersEndpointURL:_userId];
+
+    [super main];
+}
 
 @end

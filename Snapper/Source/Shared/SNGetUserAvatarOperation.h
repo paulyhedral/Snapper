@@ -8,6 +8,7 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNGetUserAvatarOperation : SNBaseOAuthOperation
 
 @end

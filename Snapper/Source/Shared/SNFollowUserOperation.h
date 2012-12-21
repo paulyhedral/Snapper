@@ -8,6 +8,15 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNFollowUserOperation : SNBaseOAuthOperation
+
+// -- Properties --
+@property (nonatomic, assign) NSUInteger userId;
+
+// -- Initialization --
+- (id)initWithUserId:(NSUInteger)userId
+           accountId:(NSString*)accountId
+         finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

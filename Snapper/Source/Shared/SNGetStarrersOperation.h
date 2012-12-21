@@ -8,6 +8,15 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNGetStarrersOperation : SNBaseOAuthOperation
+
+// -- Properties --
+@property (nonatomic, assign) NSUInteger postId;
+
+// -- Initialization --
+- (id)initWithPostId:(NSUInteger)postId
+           accountId:(NSString*)accountId
+         finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

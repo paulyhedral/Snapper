@@ -8,6 +8,7 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNGetUserCoverImageOperation : SNBaseOAuthOperation
 
 @end

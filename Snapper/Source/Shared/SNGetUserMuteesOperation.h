@@ -8,6 +8,13 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNGetUserMuteesOperation : SNBaseOAuthOperation
+
+// -- Properties --
+
+// -- Initialization --
+- (id)initWithAccountId:(NSString*)accountId
+         finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

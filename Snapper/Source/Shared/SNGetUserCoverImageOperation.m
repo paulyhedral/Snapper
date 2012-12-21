@@ -8,6 +8,7 @@
 
 #import "SNGetUserCoverImageOperation.h"
 
+
 @implementation SNGetUserCoverImageOperation
 
 @end

@@ -8,6 +8,33 @@
 
 #import "SNGetUserMuteesOperation.h"
 
+#import "SNAPIUtils.h"
+
+
 @implementation SNGetUserMuteesOperation
+
+#pragma mark - Initialization
+
+- (id)initWithAccountId:(NSString*)accountId
+         finishBlock:(void (^)(SNResponse*))finishBlock {
+
+    self = [super init];
+    if(self) {
+        self.accountId = accountId;
+        self.finishBlock = finishBlock;
+    }
+
+    return self;
+}
+
+
+#pragma mark - Workhorse
+
+- (void)main {
+
+    self.endpoint = [[SNAPIUtils sharedAPIUtils] getMutedUsersEndpointURL];
+
+    [super main];
+}
 
 @end

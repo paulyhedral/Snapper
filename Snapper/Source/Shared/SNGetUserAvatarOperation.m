@@ -8,6 +8,7 @@
 
 #import "SNGetUserAvatarOperation.h"
 
+
 @implementation SNGetUserAvatarOperation
 
 @end
