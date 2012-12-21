@@ -24,6 +24,16 @@
 
 #pragma mark - Initializers
 
+- (id)init {
+
+    self = [super init];
+    if(self) {
+        self.method = @"GET";
+    }
+
+    return self;
+}
+
 - (id)initWithEndpoint:(NSURL*)endpoint
                 method:(NSString*)method
                headers:(NSDictionary*)headers
@@ -55,10 +65,14 @@
 
 - (void)main {
 
+    // Sanity checks.
     NSAssert(_accountId, @"Account ID must be set before operation starts");
 
     SNAccount* account = [[SNAccountManager sharedAccountManager] accountForId:_accountId];
     NSAssert(account, @"No account found for ID: %@", _accountId);
+
+    NSAssert(_method, @"No method set for API operation!");
+    NSAssert(_endpoint, @"No endpoint set for API operation!");
 
     _receivedData = [NSMutableData new];
 
@@ -90,37 +104,37 @@
         _endpoint = [NSURL URLWithString:urlString];
     }
 
-    NSMutableURLRequest* signedRequest = [[NSMutableURLRequest alloc] initWithURL:_endpoint];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:_endpoint];
 
     // Provided headers
     [_headers enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
-        [signedRequest addValue:value
-             forHTTPHeaderField:key];
+        [request addValue:value
+       forHTTPHeaderField:key];
     }];
 
     // OAuth header
-    NSString* bearerTokenValue = [NSString stringWithFormat:@"%@ %@", account.tokenType, account.accessToken];
-    [signedRequest addValue:bearerTokenValue
-         forHTTPHeaderField:@"Authorization"];
+    NSString* tokenValue = [NSString stringWithFormat:@"%@ %@", account.tokenType, account.accessToken];
+    [request addValue:tokenValue
+   forHTTPHeaderField:@"Authorization"];
 
-    [signedRequest addValue:@"application/json"
-         forHTTPHeaderField:@"Accept"];
+    [request addValue:@"application/json"
+   forHTTPHeaderField:@"Accept"];
 
     // Set request body.
     NSString* localMethod = [_method uppercaseString];
-    [signedRequest setHTTPMethod:localMethod];
+    [request setHTTPMethod:localMethod];
     if([localMethod isEqualToString:@"POST"] ||
        [localMethod isEqualToString:@"PUT"] ||
        [localMethod isEqualToString:@"DELETE"]) {
-        signedRequest.HTTPBody = _body;
+        request.HTTPBody = _body;
 
         if(_bodyType) {
-            [signedRequest addValue:_bodyType
-                 forHTTPHeaderField:@"Content-Type"];
+            [request addValue:_bodyType
+           forHTTPHeaderField:@"Content-Type"];
         }
     }
 
-    _connection = [[NSURLConnection alloc] initWithRequest:signedRequest
+    _connection = [[NSURLConnection alloc] initWithRequest:request
                                                   delegate:self
                                           startImmediately:YES];
 
@@ -242,23 +256,29 @@ didReceiveResponse:(NSURLResponse*)response {
     if(jsonData == nil) {
         SNResponse* response = [self createResponseFromError:jsonError];
 
-        _finishBlock(response);
+        if(_finishBlock) {
+            _finishBlock(response);
+        }
         _done = YES;
         return;
     }
 
     SNResponse* response = [self createResponseFromJSON:jsonData];
-    _finishBlock(response);
+    if(_finishBlock) {
+        _finishBlock(response);
+    }
 
     _done = YES;
 }
 
 - (void)connection:(NSURLConnection*)connection
   didFailWithError:(NSError*)error {
-
+    
     SNResponse* response = [self createResponseFromError:error];
-
-    _finishBlock(response);
+    
+    if(_finishBlock) {
+        _finishBlock(response);
+    }
     _done = YES;
 }
 
