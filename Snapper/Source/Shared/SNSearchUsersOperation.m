@@ -40,17 +40,7 @@
                        @"q" : _queryString,
                        });
     self.endpoint = [[SNAPIUtils sharedAPIUtils] searchUsersEndpointURL];
-    self.serializationBlock = ^id(NSArray* responseData, NSError** error) {
-
-        NSMutableArray* users = [NSMutableArray new];
-
-        for(NSDictionary* userDict in responseData) {
-            SNUser* user = [SNUser modelWithExternalRepresentation:userDict];
-            [users addObject:user];
-        }
-
-        return users;
-    };
+    self.serializationArrayClass = [SNUser class];
 
     [super main];
 }

@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseGetPostStreamOperation.h"
 
-@interface SNGetGlobalStreamOperation : SNBaseOAuthOperation
+
+@interface SNGetGlobalStreamOperation : SNBaseGetPostStreamOperation
 
 @end

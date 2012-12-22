@@ -8,6 +8,8 @@
 
 #import "SNBaseOAuthOperation.h"
 
+#import <Mantle/Mantle.h>
+
 #import "NSString+URLEncoding.h"
 
 #import "SNAccountManager.h"
@@ -292,15 +294,36 @@ didReceiveResponse:(NSURLResponse*)response {
             }
         }
         else if(_serializationRootClass) {
-            id serializedObject = [(MTLModel)_serializationRootClass modelWithExternalRepresentation:responseData];
+            id serializedObject = [_serializationRootClass modelWithExternalRepresentation:response.data];
             if(serializedObject == nil) {
-                *error = [NSError errorWithDomain:SN_ERROR_DOMAIN
+                NSError* error = [NSError errorWithDomain:SN_ERROR_DOMAIN
                                              code:SNSerializationErrorCode
                                          userInfo:nil];
+                response = [self createResponseFromError:error];
             }
             else {
                 response.data = serializedObject;
             }
+        }
+        else if(_serializationArrayClass) {
+            NSMutableArray* arrayOfData = [NSMutableArray new];
+
+            for(NSDictionary* objectDict in response.data) {
+                id serializedObject = [_serializationArrayClass modelWithExternalRepresentation:response.data];
+                if(serializedObject == nil) {
+                    NSError* error = [NSError errorWithDomain:SN_ERROR_DOMAIN
+                                                 code:SNSerializationErrorCode
+                                             userInfo:nil];
+                    response = [self createResponseFromError:error];
+                    arrayOfData = nil;
+                    break;
+                }
+                else {
+                    [arrayOfData addObject:serializedObject];
+                }
+            }
+
+            response.data = arrayOfData;
         }
     }
 

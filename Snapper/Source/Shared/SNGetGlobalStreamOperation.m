@@ -8,6 +8,16 @@
 
 #import "SNGetGlobalStreamOperation.h"
 
+#import "SNAPIUtils.h"
+
+
 @implementation SNGetGlobalStreamOperation
+
+- (void)main {
+
+    self.endpoint = [[SNAPIUtils sharedAPIUtils] getGlobalStreamEndpointURL];
+    
+    [super main];
+}
 
 @end

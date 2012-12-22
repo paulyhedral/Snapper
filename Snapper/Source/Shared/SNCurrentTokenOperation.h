@@ -8,6 +8,7 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNCurrentTokenOperation : SNBaseOAuthOperation
 
 @end

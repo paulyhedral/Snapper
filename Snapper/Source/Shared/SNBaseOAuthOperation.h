@@ -27,6 +27,7 @@
 @property (nonatomic, copy) void (^finishBlock)(SNResponse* response);
 @property (nonatomic, copy) id (^serializationBlock)(id data, NSError** error);
 @property (nonatomic, assign) Class serializationRootClass;
+@property (nonatomic, assign) Class serializationArrayClass;
 
 // -- Initializers --
 - (id)initWithAccountId:(NSString*)accountId

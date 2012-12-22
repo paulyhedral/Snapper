@@ -8,6 +8,19 @@
 
 #import "SNCurrentTokenOperation.h"
 
+#import "SNToken.h"
+
+#import "SNAPIUtils.h"
+
+
 @implementation SNCurrentTokenOperation
+
+- (void)main {
+
+    self.endpoint = [[SNAPIUtils sharedAPIUtils] tokenEndpointURL];
+    self.serializationRootClass = [SNToken class];
+
+    [super main];
+}
 
 @end

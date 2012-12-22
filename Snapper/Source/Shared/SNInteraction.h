@@ -18,7 +18,7 @@ typedef enum : NSInteger {
 
 @interface SNInteraction : MTLModel
 
-@property (nonatomic, assign) NSInteger action;
+@property (nonatomic, assign) SNInteractionAction action;
 @property (nonatomic, retain) NSArray* objects;
 @property (nonatomic, retain) NSArray* users;
 

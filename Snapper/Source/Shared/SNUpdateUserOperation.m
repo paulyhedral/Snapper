@@ -91,7 +91,8 @@
     self.body = bodyData;
     self.bodyType = @"application/json";
     self.method = @"PUT";
-    
+    self.serializationRootClass = [SNUser class];
+
     [super main];
 }
 
