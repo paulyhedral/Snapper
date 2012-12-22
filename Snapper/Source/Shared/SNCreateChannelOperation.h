@@ -8,6 +8,22 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNCreateChannelOperation : SNBaseOAuthOperation
+
+// -- Properites --
+@property (nonatomic, copy) NSString* type;
+@property (nonatomic, retain) NSArray* readers;
+@property (nonatomic, retain) NSArray* writers;
+@property (nonatomic, retain) NSArray* annotations;
+
+// -- Initialization --
+- (id)initWithType:(NSString*)type
+           readers:(NSArray*)readers
+           writers:(NSArray*)writers
+       annotations:(NSArray*)annotations
+         accountId:(NSString*)accountId
+       finishBlock:(void (^)(SNResponse* response))finishBlock;
+
 
 @end

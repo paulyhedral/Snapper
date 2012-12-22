@@ -8,6 +8,8 @@
 
 #import "SNGetUserOperation.h"
 
+#import "SNUser.h"
+
 #import "SNAPIUtils.h"
 
 
@@ -35,6 +37,7 @@
 - (void)main {
 
     self.endpoint = [[SNAPIUtils sharedAPIUtils] getUserEndpointURL:_userId];
+    self.serializationRootClass = [SNUser class];
 
     [super main];
 }

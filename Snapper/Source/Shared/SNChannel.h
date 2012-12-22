@@ -11,8 +11,6 @@
 #import "SNUser.h"
 
 
-#define SN_CHANNEL_TYPE_PM (@"net.app.core.pm")
-
 @interface SNChannel : MTLModel
 
 @property (nonatomic, assign) BOOL hasUnread;

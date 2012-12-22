@@ -8,6 +8,22 @@
 
 #import "SNGetSubscribedChannelsOperation.h"
 
+#import "SNAPIUtils.h"
+
+
 @implementation SNGetSubscribedChannelsOperation
+
+- (id)initWithAccountId:(NSString*)accountId
+            finishBlock:(void (^)(SNResponse* response))finishBlock {
+
+    self = [super init];
+    if(self) {
+        self.endpoint = [[SNAPIUtils sharedAPIUtils] getSubscribedChannelsEndpointURL];
+        self.accountId = accountId;
+        self.finishBlock = finishBlock;
+    }
+
+    return self;
+}
 
 @end

@@ -8,7 +8,10 @@
 
 #import "SNGetPostOperation.h"
 
+#import "SNPost.h"
+
 #import "SNAPIUtils.h"
+#import "SNConstants.h"
 
 
 @implementation SNGetPostOperation
@@ -30,11 +33,12 @@
 }
 
 
-#pragma mark - Workhorse
+#pragma mark - Workhorses
 
 - (void)main {
 
     self.endpoint = [[SNAPIUtils sharedAPIUtils] getPostEndpointURL:_postId];
+    self.serializationRootClass = [SNPost class];
 
     [super main];
 }

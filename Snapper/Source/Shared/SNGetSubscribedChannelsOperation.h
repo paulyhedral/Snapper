@@ -8,6 +8,11 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNGetSubscribedChannelsOperation : SNBaseOAuthOperation
+
+// -- Initialization --
+- (id)initWithAccountId:(NSString*)accountId
+            finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

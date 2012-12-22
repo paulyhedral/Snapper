@@ -25,6 +25,8 @@
 @property (nonatomic, copy) NSString* accountId;
 @property (nonatomic, copy) void (^progressBlock)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes);
 @property (nonatomic, copy) void (^finishBlock)(SNResponse* response);
+@property (nonatomic, copy) id (^serializationBlock)(id data, NSError** error);
+@property (nonatomic, assign) Class serializationRootClass;
 
 // -- Initializers --
 - (id)initWithEndpoint:(NSURL*)endpoint

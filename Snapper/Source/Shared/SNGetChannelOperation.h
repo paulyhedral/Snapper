@@ -8,6 +8,15 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNGetChannelOperation : SNBaseOAuthOperation
+
+// -- Properties --
+@property (nonatomic, assign) NSUInteger channelId;
+
+// -- Initialization --
+- (id)initWithChannelId:(NSUInteger)channelId
+              accountId:(NSString*)accountId
+            finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

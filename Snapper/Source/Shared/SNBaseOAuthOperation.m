@@ -12,6 +12,8 @@
 
 #import "SNAccountManager.h"
 
+#import "SNConstants.h"
+
 
 @implementation SNBaseOAuthOperation {
 
@@ -264,10 +266,36 @@ didReceiveResponse:(NSURLResponse*)response {
     }
 
     SNResponse* response = [self createResponseFromJSON:jsonData];
+
+    if(response.data) {
+        if(_serializationBlock) {
+            NSError* serializationError = nil;
+            id serializedData = _serializationBlock(response.data, &serializationError);
+            if(serializedData == nil &&
+               serializationError) {
+                response = [self createResponseFromError:serializationError];
+            }
+            else {
+                response.data = serializedData;
+            }
+        }
+        else if(_serializationRootClass) {
+            id serializedObject = [(MTLModel)_serializationRootClass modelWithExternalRepresentation:responseData];
+            if(serializedObject == nil) {
+                *error = [NSError errorWithDomain:SN_ERROR_DOMAIN
+                                             code:SNSerializationErrorCode
+                                         userInfo:nil];
+            }
+            else {
+                response.data = serializedObject;
+            }
+        }
+    }
+
     if(_finishBlock) {
         _finishBlock(response);
     }
-
+    
     _done = YES;
 }
 
