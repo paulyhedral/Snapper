@@ -11,4 +11,11 @@
 
 @interface SNGetUserCoverImageOperation : SNBaseOAuthOperation
 
+// -- Properties --
+@property (nonatomic, assign) NSUInteger userId;
+
+// -- Initializers --
+- (id)initWithUserId:(NSInteger)userId
+         finishBlock:(void (^)(id image, NSError* error))finishBlock;
+
 @end

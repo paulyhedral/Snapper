@@ -8,6 +8,15 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNSearchUsersOperation : SNBaseOAuthOperation
+
+// -- Properties --
+@property (nonatomic, copy) NSString* queryString;
+
+// -- Initialization --
+- (id)initWithQueryString:(NSString*)queryString
+                accountId:(NSString*)accountId
+              finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

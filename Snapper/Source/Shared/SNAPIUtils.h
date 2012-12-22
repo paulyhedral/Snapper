@@ -21,7 +21,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNAPIUtils, sharedAPIUtils)
 
 // -- User URL methods --
 - (NSURL*)getUserEndpointURL:(NSInteger)userId;
-- (NSURL*)updateUserEndpointURL:(NSInteger)userId;
+- (NSURL*)updateUserEndpointURL;
 - (NSURL*)getUserAvatarEndpointURL:(NSInteger)userId;
 - (NSURL*)updateUserAvatarEndpointURL;
 - (NSURL*)getUserCoverImageEndpointURL:(NSInteger)userId;
@@ -30,7 +30,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNAPIUtils, sharedAPIUtils)
 - (NSURL*)unfollowUserEndpointURL:(NSInteger)userId;
 - (NSURL*)muteUserEndpointURL:(NSInteger)userId;
 - (NSURL*)unmuteUserEndpointURL:(NSInteger)userId;
-- (NSURL*)getUsersEndpointURL:(NSArray*)userIds;
+- (NSURL*)getUsersEndpointURL;
 - (NSURL*)searchUsersEndpointURL;
 - (NSURL*)getUserFolloweesEndpointURL:(NSInteger)userId;
 - (NSURL*)getUserFollowersEndpointURL:(NSInteger)userId;
@@ -48,7 +48,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNAPIUtils, sharedAPIUtils)
 - (NSURL*)unrepostEndpointURL:(NSInteger)postId;
 - (NSURL*)starPostEndpointURL:(NSInteger)postId;
 - (NSURL*)unstarPostEndpointURL:(NSInteger)postId;
-- (NSURL*)getPostsEndpointURL:(NSArray*)postIds;
+- (NSURL*)getPostsEndpointURL;
 - (NSURL*)getUserPostsEndpointURL:(NSInteger)userId;
 - (NSURL*)getStarredPostsEndpointURL:(NSInteger)userId;
 - (NSURL*)getMentionsEndpointURL:(NSInteger)userId;

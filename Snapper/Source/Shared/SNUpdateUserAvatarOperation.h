@@ -8,6 +8,15 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNUpdateUserAvatarOperation : SNBaseOAuthOperation
+
+// -- Properties --
+@property (nonatomic, retain) id image;
+
+// -- Initializers --
+- (id)initWithImage:(id)image
+          accountId:(NSString*)accountId
+        finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

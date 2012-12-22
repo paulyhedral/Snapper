@@ -8,6 +8,8 @@
 
 #import "SNFollowUserOperation.h"
 
+#import "SNUser.h"
+
 #import "SNAPIUtils.h"
 
 
@@ -36,7 +38,8 @@
 
     self.endpoint = [[SNAPIUtils sharedAPIUtils] followUserEndpointURL:_userId];
     self.method = @"POST";
-    
+    self.serializationRootClass = [SNUser class];
+
     [super main];
 }
 

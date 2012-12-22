@@ -8,6 +8,8 @@
 
 #import "SNGetRepostersOperation.h"
 
+#import "SNUser.h"
+
 #import "SNAPIUtils.h"
 
 
@@ -35,6 +37,17 @@
 - (void)main {
 
     self.endpoint = [[SNAPIUtils sharedAPIUtils] getRepostersEndpointURL:_postId];
+    self.serializationBlock = ^id(NSArray* responseData, NSError** error) {
+
+        NSMutableArray* users = [NSMutableArray new];
+
+        for(NSDictionary* userDict in responseData) {
+            SNUser* user = [SNUser modelWithExternalRepresentation:userDict];
+            [users addObject:user];
+        }
+
+        return users;
+    };
 
     [super main];
 }

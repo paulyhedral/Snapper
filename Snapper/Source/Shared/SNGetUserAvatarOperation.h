@@ -6,9 +6,16 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseImageFetchOperation.h"
 
 
-@interface SNGetUserAvatarOperation : SNBaseOAuthOperation
+@interface SNGetUserAvatarOperation : SNBaseImageFetchOperation
+
+// -- Properties --
+@property (nonatomic, assign) NSUInteger userId;
+
+// -- Initializers --
+- (id)initWithUserId:(NSInteger)userId
+         finishBlock:(void (^)(id image, NSError* error))finishBlock;
 
 @end

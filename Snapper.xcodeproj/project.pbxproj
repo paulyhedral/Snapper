@@ -201,7 +201,7 @@
 		3CDF129B1683C2E30058CBE0 /* SNAPIUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDF12991683C2E30058CBE0 /* SNAPIUtils.h */; };
 		3CDF129C1683C2E30058CBE0 /* SNAPIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF129A1683C2E30058CBE0 /* SNAPIUtils.m */; };
 		3CDF129D1683C2E30058CBE0 /* SNAPIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF129A1683C2E30058CBE0 /* SNAPIUtils.m */; };
-		3CDF12A01683C8CE0058CBE0 /* SNUpdateUserOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDF129E1683C8CE0058CBE0 /* SNUpdateUserOperation.h */; };
+		3CDF12A01683C8CE0058CBE0 /* SNUpdateUserOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDF129E1683C8CE0058CBE0 /* SNUpdateUserOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CDF12A11683C8CE0058CBE0 /* SNUpdateUserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF129F1683C8CE0058CBE0 /* SNUpdateUserOperation.m */; };
 		3CDF12A21683C8CE0058CBE0 /* SNUpdateUserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF129F1683C8CE0058CBE0 /* SNUpdateUserOperation.m */; };
 		3CDF12A51683C8E10058CBE0 /* SNGetUserAvatarOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDF12A31683C8E10058CBE0 /* SNGetUserAvatarOperation.h */; };
@@ -243,6 +243,9 @@
 		3CDF12E11683C9DF0058CBE0 /* SNGetStarrersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDF12DF1683C9DD0058CBE0 /* SNGetStarrersOperation.h */; };
 		3CDF12E21683C9DF0058CBE0 /* SNGetStarrersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12E01683C9DE0058CBE0 /* SNGetStarrersOperation.m */; };
 		3CDF12E31683C9DF0058CBE0 /* SNGetStarrersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12E01683C9DE0058CBE0 /* SNGetStarrersOperation.m */; };
+		5B1A40DB168645500030BB30 /* SNBaseImageFetchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B1A40D91686454E0030BB30 /* SNBaseImageFetchOperation.h */; };
+		5B1A40DC168645500030BB30 /* SNBaseImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A40DA1686454F0030BB30 /* SNBaseImageFetchOperation.m */; };
+		5B1A40DD168645500030BB30 /* SNBaseImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A40DA1686454F0030BB30 /* SNBaseImageFetchOperation.m */; };
 		5BD0241516861E5100E24D5A /* SNConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD0241416861E5100E24D5A /* SNConstants.h */; };
 		5BE0A52916816ED7005AA40C /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A52816816ED7005AA40C /* ModelTests.m */; };
 		5BE0A52B168170CA005AA40C /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0A52A168170CA005AA40C /* user.json */; };
@@ -499,6 +502,8 @@
 		3CDF12DB1683C9CE0058CBE0 /* SNGetRepostersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNGetRepostersOperation.m; sourceTree = "<group>"; };
 		3CDF12DF1683C9DD0058CBE0 /* SNGetStarrersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNGetStarrersOperation.h; sourceTree = "<group>"; };
 		3CDF12E01683C9DE0058CBE0 /* SNGetStarrersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNGetStarrersOperation.m; sourceTree = "<group>"; };
+		5B1A40D91686454E0030BB30 /* SNBaseImageFetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNBaseImageFetchOperation.h; sourceTree = "<group>"; };
+		5B1A40DA1686454F0030BB30 /* SNBaseImageFetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNBaseImageFetchOperation.m; sourceTree = "<group>"; };
 		5BD0241416861E5100E24D5A /* SNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNConstants.h; sourceTree = "<group>"; };
 		5BE0A52716816ED7005AA40C /* ModelTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTests.h; sourceTree = "<group>"; };
 		5BE0A52816816ED7005AA40C /* ModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTests.m; sourceTree = "<group>"; };
@@ -750,6 +755,8 @@
 				3CDF11E91683B6C80058CBE0 /* Streams */,
 				3CDF11ED1683B6EB0058CBE0 /* Tokens */,
 				3CDF11E51683B6A80058CBE0 /* Users */,
+				5B1A40D91686454E0030BB30 /* SNBaseImageFetchOperation.h */,
+				5B1A40DA1686454F0030BB30 /* SNBaseImageFetchOperation.m */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -1085,6 +1092,7 @@
 				3CDF12DC1683C9CF0058CBE0 /* SNGetRepostersOperation.h in Headers */,
 				3CDF12E11683C9DF0058CBE0 /* SNGetStarrersOperation.h in Headers */,
 				5BD0241516861E5100E24D5A /* SNConstants.h in Headers */,
+				5B1A40DB168645500030BB30 /* SNBaseImageFetchOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1369,6 +1377,7 @@
 				3CDF12D81683C9B10058CBE0 /* SNGetUserMuteesOperation.m in Sources */,
 				3CDF12DD1683C9CF0058CBE0 /* SNGetRepostersOperation.m in Sources */,
 				3CDF12E21683C9DF0058CBE0 /* SNGetStarrersOperation.m in Sources */,
+				5B1A40DC168645500030BB30 /* SNBaseImageFetchOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1462,6 +1471,7 @@
 				3CDF12D91683C9B10058CBE0 /* SNGetUserMuteesOperation.m in Sources */,
 				3CDF12DE1683C9CF0058CBE0 /* SNGetRepostersOperation.m in Sources */,
 				3CDF12E31683C9DF0058CBE0 /* SNGetStarrersOperation.m in Sources */,
+				5B1A40DD168645500030BB30 /* SNBaseImageFetchOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

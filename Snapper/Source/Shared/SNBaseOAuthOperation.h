@@ -29,6 +29,8 @@
 @property (nonatomic, assign) Class serializationRootClass;
 
 // -- Initializers --
+- (id)initWithAccountId:(NSString*)accountId
+           finishBlock:(void (^)(SNResponse* response))finishBlock;
 - (id)initWithEndpoint:(NSURL*)endpoint
                 method:(NSString*)method
                headers:(NSDictionary*)headers

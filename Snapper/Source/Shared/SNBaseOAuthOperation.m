@@ -36,6 +36,18 @@
     return self;
 }
 
+- (id)initWithAccountId:(NSString*)accountId
+            finishBlock:(void (^)(SNResponse*))finishBlock {
+
+    self = [self init];
+    if(self) {
+        self.accountId = accountId;
+        self.finishBlock = finishBlock;
+    }
+
+    return self;
+}
+
 - (id)initWithEndpoint:(NSURL*)endpoint
                 method:(NSString*)method
                headers:(NSDictionary*)headers

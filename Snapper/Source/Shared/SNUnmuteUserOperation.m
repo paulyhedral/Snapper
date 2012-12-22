@@ -8,6 +8,8 @@
 
 #import "SNUnmuteUserOperation.h"
 
+#import "SNUser.h"
+
 #import "SNAPIUtils.h"
 
 
@@ -36,6 +38,7 @@
 
     self.endpoint = [[SNAPIUtils sharedAPIUtils] unmuteUserEndpointURL:_userId];
     self.method = @"DELETE";
+    self.serializationRootClass = [SNUser class];
 
     [super main];
 }

@@ -8,6 +8,8 @@
 
 #import "SNMuteUserOperation.h"
 
+#import "SNUser.h"
+
 #import "SNAPIUtils.h"
 
 
@@ -36,6 +38,7 @@
 
     self.endpoint = [[SNAPIUtils sharedAPIUtils] muteUserEndpointURL:_userId];
     self.method = @"POST";
+    self.serializationRootClass = [SNUser class];
 
     [super main];
 }
