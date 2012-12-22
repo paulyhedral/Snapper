@@ -17,7 +17,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3C6B5EBD1680E9B0006C63C1"
-               BuildableName = "SnapperTests.octest"
+               BuildableName = "Snapper-iOSTests.octest"
                BlueprintName = "Snapper-iOSTests"
                ReferencedContainer = "container:Snapper.xcodeproj">
             </BuildableReference>
