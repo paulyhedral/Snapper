@@ -34,7 +34,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNAPIUtils sharedAPIUtils] deleteFiltersEndpointURL];
+    self.endpoint = [[SNAPIUtils sharedAPIUtils] getFiltersEndpointURL];
     self.serializationArrayClass = [SNFilter class];
 
     [super main];
