@@ -262,6 +262,24 @@
 		5BE0A55E16818A76005AA40C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE0A55D16818A76005AA40C /* UIKit.framework */; };
 		5BE0A5621682D450005AA40C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE0A55F16818ACA005AA40C /* CoreGraphics.framework */; };
 		5BE0A5631682D607005AA40C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE0A55F16818ACA005AA40C /* CoreGraphics.framework */; };
+		5BF6C68B1686AEF400FED6D9 /* SNCreateFilterOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6C6891686AEF400FED6D9 /* SNCreateFilterOperation.h */; };
+		5BF6C68C1686AEF400FED6D9 /* SNCreateFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C68A1686AEF400FED6D9 /* SNCreateFilterOperation.m */; };
+		5BF6C68D1686AEF400FED6D9 /* SNCreateFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C68A1686AEF400FED6D9 /* SNCreateFilterOperation.m */; };
+		5BF6C6921686AF7F00FED6D9 /* SNGetFilterOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6C6901686AF7F00FED6D9 /* SNGetFilterOperation.h */; };
+		5BF6C6931686AF7F00FED6D9 /* SNGetFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6911686AF7F00FED6D9 /* SNGetFilterOperation.m */; };
+		5BF6C6941686AF7F00FED6D9 /* SNGetFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6911686AF7F00FED6D9 /* SNGetFilterOperation.m */; };
+		5BF6C6971686AF8E00FED6D9 /* SNUpdateFilterOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6C6951686AF8E00FED6D9 /* SNUpdateFilterOperation.h */; };
+		5BF6C6981686AF8E00FED6D9 /* SNUpdateFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6961686AF8E00FED6D9 /* SNUpdateFilterOperation.m */; };
+		5BF6C6991686AF8E00FED6D9 /* SNUpdateFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6961686AF8E00FED6D9 /* SNUpdateFilterOperation.m */; };
+		5BF6C69C1686AFC600FED6D9 /* SNDeleteFilterOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6C69A1686AFC600FED6D9 /* SNDeleteFilterOperation.h */; };
+		5BF6C69D1686AFC600FED6D9 /* SNDeleteFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C69B1686AFC600FED6D9 /* SNDeleteFilterOperation.m */; };
+		5BF6C69E1686AFC600FED6D9 /* SNDeleteFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C69B1686AFC600FED6D9 /* SNDeleteFilterOperation.m */; };
+		5BF6C6A11686AFDC00FED6D9 /* SNGetUserFiltersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6C69F1686AFDC00FED6D9 /* SNGetUserFiltersOperation.h */; };
+		5BF6C6A21686AFDC00FED6D9 /* SNGetUserFiltersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6A01686AFDC00FED6D9 /* SNGetUserFiltersOperation.m */; };
+		5BF6C6A31686AFDC00FED6D9 /* SNGetUserFiltersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6A01686AFDC00FED6D9 /* SNGetUserFiltersOperation.m */; };
+		5BF6C6A61686AFEC00FED6D9 /* SNDeleteUserFiltersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6C6A41686AFEB00FED6D9 /* SNDeleteUserFiltersOperation.h */; };
+		5BF6C6A71686AFEC00FED6D9 /* SNDeleteUserFiltersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6A51686AFEB00FED6D9 /* SNDeleteUserFiltersOperation.m */; };
+		5BF6C6A81686AFEC00FED6D9 /* SNDeleteUserFiltersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6A51686AFEB00FED6D9 /* SNDeleteUserFiltersOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -519,6 +537,18 @@
 		5BE0A55216818048005AA40C /* NSString+URLEscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEscape.m"; sourceTree = "<group>"; };
 		5BE0A55D16818A76005AA40C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5BE0A55F16818ACA005AA40C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5BF6C6891686AEF400FED6D9 /* SNCreateFilterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNCreateFilterOperation.h; sourceTree = "<group>"; };
+		5BF6C68A1686AEF400FED6D9 /* SNCreateFilterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNCreateFilterOperation.m; sourceTree = "<group>"; };
+		5BF6C6901686AF7F00FED6D9 /* SNGetFilterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNGetFilterOperation.h; sourceTree = "<group>"; };
+		5BF6C6911686AF7F00FED6D9 /* SNGetFilterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNGetFilterOperation.m; sourceTree = "<group>"; };
+		5BF6C6951686AF8E00FED6D9 /* SNUpdateFilterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNUpdateFilterOperation.h; sourceTree = "<group>"; };
+		5BF6C6961686AF8E00FED6D9 /* SNUpdateFilterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNUpdateFilterOperation.m; sourceTree = "<group>"; };
+		5BF6C69A1686AFC600FED6D9 /* SNDeleteFilterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNDeleteFilterOperation.h; sourceTree = "<group>"; };
+		5BF6C69B1686AFC600FED6D9 /* SNDeleteFilterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNDeleteFilterOperation.m; sourceTree = "<group>"; };
+		5BF6C69F1686AFDC00FED6D9 /* SNGetUserFiltersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNGetUserFiltersOperation.h; sourceTree = "<group>"; };
+		5BF6C6A01686AFDC00FED6D9 /* SNGetUserFiltersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNGetUserFiltersOperation.m; sourceTree = "<group>"; };
+		5BF6C6A41686AFEB00FED6D9 /* SNDeleteUserFiltersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNDeleteUserFiltersOperation.h; sourceTree = "<group>"; };
+		5BF6C6A51686AFEB00FED6D9 /* SNDeleteUserFiltersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNDeleteUserFiltersOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -963,6 +993,18 @@
 		3CDF11EA1683B6CE0058CBE0 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				5BF6C6891686AEF400FED6D9 /* SNCreateFilterOperation.h */,
+				5BF6C68A1686AEF400FED6D9 /* SNCreateFilterOperation.m */,
+				5BF6C6901686AF7F00FED6D9 /* SNGetFilterOperation.h */,
+				5BF6C6911686AF7F00FED6D9 /* SNGetFilterOperation.m */,
+				5BF6C6951686AF8E00FED6D9 /* SNUpdateFilterOperation.h */,
+				5BF6C6961686AF8E00FED6D9 /* SNUpdateFilterOperation.m */,
+				5BF6C69A1686AFC600FED6D9 /* SNDeleteFilterOperation.h */,
+				5BF6C69B1686AFC600FED6D9 /* SNDeleteFilterOperation.m */,
+				5BF6C69F1686AFDC00FED6D9 /* SNGetUserFiltersOperation.h */,
+				5BF6C6A01686AFDC00FED6D9 /* SNGetUserFiltersOperation.m */,
+				5BF6C6A41686AFEB00FED6D9 /* SNDeleteUserFiltersOperation.h */,
+				5BF6C6A51686AFEB00FED6D9 /* SNDeleteUserFiltersOperation.m */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -1101,6 +1143,12 @@
 				5BD0241516861E5100E24D5A /* SNConstants.h in Headers */,
 				5B1A40DB168645500030BB30 /* SNBaseImageFetchOperation.h in Headers */,
 				5B1A40E21686664E0030BB30 /* SNBaseGetPostStreamOperation.h in Headers */,
+				5BF6C68B1686AEF400FED6D9 /* SNCreateFilterOperation.h in Headers */,
+				5BF6C6921686AF7F00FED6D9 /* SNGetFilterOperation.h in Headers */,
+				5BF6C6971686AF8E00FED6D9 /* SNUpdateFilterOperation.h in Headers */,
+				5BF6C69C1686AFC600FED6D9 /* SNDeleteFilterOperation.h in Headers */,
+				5BF6C6A11686AFDC00FED6D9 /* SNGetUserFiltersOperation.h in Headers */,
+				5BF6C6A61686AFEC00FED6D9 /* SNDeleteUserFiltersOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1387,6 +1435,12 @@
 				3CDF12E21683C9DF0058CBE0 /* SNGetStarrersOperation.m in Sources */,
 				5B1A40DC168645500030BB30 /* SNBaseImageFetchOperation.m in Sources */,
 				5B1A40E31686664E0030BB30 /* SNBaseGetPostStreamOperation.m in Sources */,
+				5BF6C68C1686AEF400FED6D9 /* SNCreateFilterOperation.m in Sources */,
+				5BF6C6931686AF7F00FED6D9 /* SNGetFilterOperation.m in Sources */,
+				5BF6C6981686AF8E00FED6D9 /* SNUpdateFilterOperation.m in Sources */,
+				5BF6C69D1686AFC600FED6D9 /* SNDeleteFilterOperation.m in Sources */,
+				5BF6C6A21686AFDC00FED6D9 /* SNGetUserFiltersOperation.m in Sources */,
+				5BF6C6A71686AFEC00FED6D9 /* SNDeleteUserFiltersOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1482,6 +1536,12 @@
 				3CDF12E31683C9DF0058CBE0 /* SNGetStarrersOperation.m in Sources */,
 				5B1A40DD168645500030BB30 /* SNBaseImageFetchOperation.m in Sources */,
 				5B1A40E41686664E0030BB30 /* SNBaseGetPostStreamOperation.m in Sources */,
+				5BF6C68D1686AEF400FED6D9 /* SNCreateFilterOperation.m in Sources */,
+				5BF6C6941686AF7F00FED6D9 /* SNGetFilterOperation.m in Sources */,
+				5BF6C6991686AF8E00FED6D9 /* SNUpdateFilterOperation.m in Sources */,
+				5BF6C69E1686AFC600FED6D9 /* SNDeleteFilterOperation.m in Sources */,
+				5BF6C6A31686AFDC00FED6D9 /* SNGetUserFiltersOperation.m in Sources */,
+				5BF6C6A81686AFEC00FED6D9 /* SNDeleteUserFiltersOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
