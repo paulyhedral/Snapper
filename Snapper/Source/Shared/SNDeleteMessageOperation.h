@@ -8,6 +8,17 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNDeleteMessageOperation : SNBaseOAuthOperation
+
+// -- Properties --
+@property (nonatomic, assign) NSUInteger messageId;
+@property (nonatomic, assign) NSUInteger channelId;
+
+// -- Initializers --
+- (id)initWithMessageId:(NSUInteger)messageId
+              channelId:(NSUInteger)channelId
+              accountId:(NSString*)accountId
+            finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

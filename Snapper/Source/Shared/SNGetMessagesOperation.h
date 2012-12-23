@@ -8,6 +8,15 @@
 
 #import "SNBaseOAuthOperation.h"
 
+
 @interface SNGetMessagesOperation : SNBaseOAuthOperation
+
+// -- Properties --
+@property (nonatomic, retain) NSArray* messageIds;
+
+// -- Initializers --
+- (id)initWithMessageIds:(NSArray*)messageIds
+               accountId:(NSString*)accountId
+             finishBlock:(void (^)(SNResponse* response))finishBlock;
 
 @end

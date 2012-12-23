@@ -21,7 +21,6 @@
 
     self = [super init];
     if(self) {
-        self.endpoint = [[SNAPIUtils sharedAPIUtils] getUsersEndpointURL];
         self.userIds = userIds;
         self.accountId = accountId;
     }
@@ -31,10 +30,13 @@
 
 - (void)main {
 
+    self.endpoint = [[SNAPIUtils sharedAPIUtils] getUsersEndpointURL];
+
     NSString* userIdsString = [_userIds componentsJoinedByString:@","];
     self.parameters = (@{
-                       @"user_ids" : userIdsString,
+                       @"ids" : userIdsString,
                        });
+
     self.serializationArrayClass = [SNUser class];
 
     [super main];

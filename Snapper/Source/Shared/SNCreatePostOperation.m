@@ -12,6 +12,7 @@
 #import "SNResponse.h"
 #import "SNAnnotation.h"
 #import "SNEntity.h"
+#import "SNPost.h"
 
 #import "SNAPIUtils.h"
 
@@ -31,7 +32,6 @@
 
     self = [super init];
     if(self) {
-        self.endpoint = [[SNAPIUtils sharedAPIUtils] createPostEndpointURL];        
         self.text = text;
         self.replyTo = replyTo;
         self.machineOnly = machineOnly;
@@ -49,6 +49,10 @@
 #pragma mark - The workhorse
 
 - (void)main {
+
+    self.endpoint = [[SNAPIUtils sharedAPIUtils] createPostEndpointURL];
+    self.method = @"POST";
+    self.serializationRootClass = [SNPost class];
 
     NSMutableDictionary* postDict = [NSMutableDictionary new];
     if([_text length]) {
