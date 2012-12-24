@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
-#import "SNAccount.h"
-#import "SNResponse.h"
+#import <Snapper/SNAccount.h>
+#import <Snapper/SNResponse.h>
+#import <Snapper/SNAPIUtils.h>
 
 
 @interface SNBaseUserOperation : NSOperation

@@ -1,0 +1,6 @@
+{
+    "field": "/data/entities/hashtags/*/name",
+    "object_type": "post",
+    "operator": "matches",
+    "value": "rollout"
+}

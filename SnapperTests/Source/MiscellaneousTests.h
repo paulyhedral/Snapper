@@ -8,6 +8,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
+
 @interface MiscellaneousTests : SenTestCase
 
 @end

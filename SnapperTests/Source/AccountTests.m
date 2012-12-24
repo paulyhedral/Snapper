@@ -40,10 +40,50 @@
 
 - (void)testAccountRemoval {
 
+    SNAccountManager* accountManager = [SNAccountManager sharedAccountManager];
+
+    NSString* accountId = nil;
+    {
+        SNAccount* newAccount = [accountManager createAccountWithName:@"Bogus Account"
+                                                             username:@"bogus"
+                                                               userId:42
+                                                          accessToken:@"54321"
+                                                            tokenType:@"Bearer"];
+
+        STAssertNotNil(newAccount, @"New account should not be nil");
+        STAssertNotNil(newAccount.accountId, @"New account's accountId should not be nil");
+        accountId = newAccount.accountId;
+    }
+
+    [accountManager removeAccountForId:accountId];
+
+    SNAccount* account = [[SNAccountManager sharedAccountManager] accountForId:accountId];
+    STAssertNil(account, @"Account should be nil for account ID '%@'", accountId);
 }
 
 - (void)testAccountAccess {
 
+    SNAccountManager* accountManager = [SNAccountManager sharedAccountManager];
+
+    NSString* accountId = nil;
+    {
+        SNAccount* newAccount = [accountManager createAccountWithName:@"Bogus Account"
+                                                             username:@"bogus"
+                                                               userId:42
+                                                          accessToken:@"54321"
+                                                            tokenType:@"Bearer"];
+
+        STAssertNotNil(newAccount, @"New account should not be nil");
+        STAssertNotNil(newAccount.accountId, @"New account's accountId should not be nil");
+        accountId = newAccount.accountId;
+    }
+
+    SNAccount* account = [[SNAccountManager sharedAccountManager] accountForId:accountId];
+    STAssertNotNil(account, @"Account should not be nil for account ID '%@'", accountId);
+
+    STAssertTrue(account.username isEqualToString:@"bogus", @"Account's username should be 'bogus'");
+    STAssertTrue(account.userId == 42, @"Account's user ID should be 42");
+    STAssertTrue(account.accessToken isEqualToString:@"54321", @"Account's access token should be '54321'");
 }
 
 @end

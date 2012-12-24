@@ -1,0 +1,10 @@
+{
+    "type": "com.pilgrimagesoftware.yawp.client",
+    "value": {
+        "build_date": "Wed Oct 31 20:19:09 PDT 2012",
+        "build_number": "110",
+        "locale": "en_US",
+        "name": "com.pilgrimagesoftware.yawp",
+        "version": "1.1"
+    }
+}
