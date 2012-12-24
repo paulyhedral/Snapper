@@ -24,5 +24,6 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNAccountManager, sharedAccountMan
                           tokenType:(NSString*)tokenType;
 - (void)removeAccountForId:(NSString*)accountId;
 - (SNAccount*)accountForId:(NSString*)accountId;
+- (NSArray*)allAccounts;
 
 @end

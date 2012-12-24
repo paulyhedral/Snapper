@@ -359,6 +359,29 @@
 		5B30DC26168817040089730B /* stream.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC16168817040089730B /* stream.json */; };
 		5B30DC27168817040089730B /* token.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC17168817040089730B /* token.json */; };
 		5B30DC29168819E00089730B /* interaction-follow.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC28168819E00089730B /* interaction-follow.json */; };
+		5B30DC2A1688F4DE0089730B /* acl.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC08168817040089730B /* acl.json */; };
+		5B30DC2B1688F4DE0089730B /* annotation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC09168817040089730B /* annotation.json */; };
+		5B30DC2C1688F4DE0089730B /* channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC0A168817040089730B /* channel.json */; };
+		5B30DC2D1688F4DE0089730B /* description.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC0B168817040089730B /* description.json */; };
+		5B30DC2E1688F4DE0089730B /* filter-clause.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC0C168817040089730B /* filter-clause.json */; };
+		5B30DC2F1688F4DE0089730B /* filter.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC0D168817040089730B /* filter.json */; };
+		5B30DC301688F4DE0089730B /* hashtag.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC0E168817040089730B /* hashtag.json */; };
+		5B30DC311688F4DE0089730B /* image.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC0F168817040089730B /* image.json */; };
+		5B30DC321688F4DE0089730B /* interaction-follow.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC28168819E00089730B /* interaction-follow.json */; };
+		5B30DC331688F4DE0089730B /* interaction-repost.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC10168817040089730B /* interaction-repost.json */; };
+		5B30DC341688F4DE0089730B /* link.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC11168817040089730B /* link.json */; };
+		5B30DC351688F4DE0089730B /* mention.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC12168817040089730B /* mention.json */; };
+		5B30DC361688F4DE0089730B /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC13168817040089730B /* message.json */; };
+		5B30DC371688F4DE0089730B /* post.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC14168817040089730B /* post.json */; };
+		5B30DC381688F4DE0089730B /* stream-marker.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC15168817040089730B /* stream-marker.json */; };
+		5B30DC391688F4DE0089730B /* stream.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC16168817040089730B /* stream.json */; };
+		5B30DC3A1688F4DE0089730B /* token.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B30DC17168817040089730B /* token.json */; };
+		5B30DC3B1688F4DE0089730B /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0A52A168170CA005AA40C /* user.json */; };
+		5B30DC3C1688F4F30089730B /* AccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE91680EE2C006C63C1 /* AccountTests.m */; };
+		5B30DC3D1688F4F30089730B /* MiscellaneousTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF11D016837FC00058CBE0 /* MiscellaneousTests.m */; };
+		5B30DC3E1688F4F30089730B /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A52816816ED7005AA40C /* ModelTests.m */; };
+		5B30DC3F1688F5040089730B /* SnapperTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE61680EE2C006C63C1 /* SnapperTests-Info.plist */; };
+		5B30DC401688F5910089730B /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EF71680EE3C006C63C1 /* Mantle.framework */; };
 		5B6B48D11687CB2B0032C586 /* SNCreateStreamOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48CF1687CB2B0032C586 /* SNCreateStreamOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6B48D21687CB2B0032C586 /* SNCreateStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48D01687CB2B0032C586 /* SNCreateStreamOperation.m */; };
 		5B6B48D31687CB2B0032C586 /* SNCreateStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48D01687CB2B0032C586 /* SNCreateStreamOperation.m */; };
@@ -838,6 +861,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B30DC401688F5910089730B /* Mantle.framework in Frameworks */,
 				3C6B5F051680EE8A006C63C1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1634,6 +1658,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B30DC2A1688F4DE0089730B /* acl.json in Resources */,
+				5B30DC2B1688F4DE0089730B /* annotation.json in Resources */,
+				5B30DC2C1688F4DE0089730B /* channel.json in Resources */,
+				5B30DC2D1688F4DE0089730B /* description.json in Resources */,
+				5B30DC2E1688F4DE0089730B /* filter-clause.json in Resources */,
+				5B30DC2F1688F4DE0089730B /* filter.json in Resources */,
+				5B30DC301688F4DE0089730B /* hashtag.json in Resources */,
+				5B30DC311688F4DE0089730B /* image.json in Resources */,
+				5B30DC321688F4DE0089730B /* interaction-follow.json in Resources */,
+				5B30DC331688F4DE0089730B /* interaction-repost.json in Resources */,
+				5B30DC341688F4DE0089730B /* link.json in Resources */,
+				5B30DC351688F4DE0089730B /* mention.json in Resources */,
+				5B30DC361688F4DE0089730B /* message.json in Resources */,
+				5B30DC371688F4DE0089730B /* post.json in Resources */,
+				5B30DC381688F4DE0089730B /* stream-marker.json in Resources */,
+				5B30DC391688F4DE0089730B /* stream.json in Resources */,
+				5B30DC3A1688F4DE0089730B /* token.json in Resources */,
+				5B30DC3B1688F4DE0089730B /* user.json in Resources */,
+				5B30DC3F1688F5040089730B /* SnapperTests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1879,6 +1922,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B30DC3C1688F4F30089730B /* AccountTests.m in Sources */,
+				5B30DC3D1688F4F30089730B /* MiscellaneousTests.m in Sources */,
+				5B30DC3E1688F4F30089730B /* ModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2098,10 +2144,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Snapper-OSX/Snapper-OSX-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "Snapper-OSXTests/Snapper-OSXTests-Info.plist";
+				INFOPLIST_FILE = "SnapperTests/Resources/SnapperTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -2117,10 +2163,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Snapper-OSX/Snapper-OSX-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "Snapper-OSXTests/Snapper-OSXTests-Info.plist";
+				INFOPLIST_FILE = "SnapperTests/Resources/SnapperTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

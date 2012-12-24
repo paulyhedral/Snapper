@@ -18,6 +18,21 @@
 
 CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNAccountManager, sharedAccountManager);
 
+#pragma mark - Initialization
+
+- (id)init {
+
+    self = [super init];
+    if(self) {
+        _accounts = [NSMutableDictionary new];
+    }
+
+    return self;
+}
+
+
+#pragma mark - Public methods
+
 - (SNAccount*)createAccountWithName:(NSString*)name
                            username:(NSString*)username
                              userId:(NSInteger)userId
@@ -33,6 +48,8 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNAccountManager, sharedAccount
                                              accessToken:accessToken
                                                tokenType:tokenType];
 
+    _accounts[account.accountId] = account;
+
     return account;
 }
 
@@ -42,6 +59,10 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNAccountManager, sharedAccount
 
 - (SNAccount*)accountForId:(NSString*)accountId {
     return _accounts[accountId];
+}
+
+- (NSArray*)allAccounts {
+    return [_accounts allValues];
 }
 
 @end

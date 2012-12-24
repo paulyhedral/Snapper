@@ -218,7 +218,7 @@
     SNResponse* response = [[SNResponse alloc] init];
 
     SNMetadata* meta = [[SNMetadata alloc] init];
-    meta.errorId = [NSString stringWithFormat:@"%d", error.code];
+    meta.errorId = [NSString stringWithFormat:@"%ld", (long)error.code];
     meta.errorMessage = [error localizedDescription];
 
     response.metadata = meta;
