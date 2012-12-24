@@ -6,12 +6,13 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
+#import "SNBaseImageFetchOperation.h"
+
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 #import <UIKit/UIKit.h>
 #else
 #import <Cocoa/Cocoa.h>
 #endif
-#import "SNBaseImageFetchOperation.h"
 
 
 @implementation SNBaseImageFetchOperation {
