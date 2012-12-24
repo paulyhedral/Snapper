@@ -11,4 +11,6 @@
 
 @interface SNGetPersonalStreamOperation : SNBaseGetPostStreamOperation
 
+@property (nonatomic, assign) BOOL unified;
+
 @end

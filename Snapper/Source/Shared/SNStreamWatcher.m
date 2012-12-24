@@ -8,6 +8,11 @@
 
 #import "SNStreamWatcher.h"
 
+
 @implementation SNStreamWatcher
+
+- (void)main {
+
+}
 
 @end

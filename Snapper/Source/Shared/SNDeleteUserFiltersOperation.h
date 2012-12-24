@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseUserOperation.h"
 
 
-@interface SNDeleteUserFiltersOperation : SNBaseOAuthOperation
+@interface SNDeleteUserFiltersOperation : SNBaseUserOperation
 
 // -- Initialization --
 - (id)initWithAccountId:(NSString*)accountId

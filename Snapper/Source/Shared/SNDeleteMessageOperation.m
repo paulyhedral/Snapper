@@ -37,8 +37,8 @@
 
 - (void)main {
 
-    self.endpoint = [[SNAPIUtils sharedAPIUtils] getDeleteMessageEndpointURL:_channelId
-                                                                   messageId:_messageId];
+    self.endpoint = [[SNAPIUtils sharedAPIUtils] deleteMessageEndpointURL:_channelId
+                                                                messageId:_messageId];
     self.method = @"DELETE";
     self.serializationRootClass = [SNMessage class];
 

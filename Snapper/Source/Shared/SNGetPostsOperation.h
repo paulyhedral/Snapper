@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseUserOperation.h"
 
-@interface SNGetPostsOperation : SNBaseOAuthOperation
+@interface SNGetPostsOperation : SNBaseUserOperation
 
 @end

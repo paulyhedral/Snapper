@@ -17,8 +17,8 @@
 @implementation SNCreateChannelOperation
 
 - (id)initWithType:(NSString*)type
-           readers:(NSArray*)readers
-           writers:(NSArray*)writers
+           readers:(SNACL*)readers
+           writers:(SNACL*)writers
        annotations:(NSArray*)annotations
          accountId:(NSString*)accountId
        finishBlock:(void (^)(SNResponse*))finishBlock {
@@ -43,10 +43,10 @@
     body[@"type"] = _type;
 
     // TODO: readers
-    body[@"readers"] = readersDict;
+    body[@"readers"] = [_readers externalRepresentation];
 
     // TODO: writers
-    body[@"writers"] = writersDict;
+    body[@"writers"] = [_writers externalRepresentation];
 
     NSMutableArray* serializedAnnotations = [NSMutableArray new];
     for(SNAnnotation* annotation in _annotations) {

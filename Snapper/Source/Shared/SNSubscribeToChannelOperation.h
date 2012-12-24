@@ -1,15 +1,15 @@
 //
-//  SNSubscribeOperation.h
+//  SNSubscribeToChannelOperation.h
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/20/12.
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseUserOperation.h"
 
 
-@interface SNSubscribeOperation : SNBaseOAuthOperation
+@interface SNSubscribeToChannelOperation : SNBaseUserOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger channelId;
@@ -18,6 +18,5 @@
 - (id)initWithChannelId:(NSUInteger)channelId
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNResponse* response))finishBlock;
-
 
 @end

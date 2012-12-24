@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseImageFetchOperation.h"
 
 
-@interface SNGetUserCoverImageOperation : SNBaseOAuthOperation
+@interface SNGetUserCoverImageOperation : SNBaseImageFetchOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger userId;

@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseUserOperation.h"
 
-@interface SNUpdateUserCoverImageOperation : SNBaseOAuthOperation
+@interface SNUpdateUserCoverImageOperation : SNBaseUserOperation
 
 @end

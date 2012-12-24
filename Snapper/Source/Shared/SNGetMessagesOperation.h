@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseUserOperation.h"
 
 
-@interface SNGetMessagesOperation : SNBaseOAuthOperation
+@interface SNGetMessagesOperation : SNBaseUserOperation
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* messageIds;

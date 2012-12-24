@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 #import <UIKit/UIKit.h>
 #else
 #import <Cocoa/Cocoa.h>
@@ -89,7 +89,7 @@ didReceiveResponse:(NSURLResponse*)response {
 
 - (void)connectionDidFinishLoading:(NSURLConnection*)connection {
 
-#if defined(TARGET_OS_IPHONE) || defined(TARGET_IPHONE_SIMULATOR)
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
     UIImage* image = [[UIImage alloc] initWithData:_receivedData];
     if(_finishBlock) {
         _finishBlock(image, nil);

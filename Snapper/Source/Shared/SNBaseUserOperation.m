@@ -1,12 +1,12 @@
 //
-//  SNBaseOAuthOperation.m
+//  SNBaseUserOperation.m
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/18/12.
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseUserOperation.h"
 
 #import <Mantle/Mantle.h>
 
@@ -17,7 +17,7 @@
 #import "SNConstants.h"
 
 
-@implementation SNBaseOAuthOperation {
+@implementation SNBaseUserOperation {
 
 @private
     NSURLConnection* _connection;

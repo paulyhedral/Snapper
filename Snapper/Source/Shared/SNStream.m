@@ -23,14 +23,14 @@
         return [NSNumber numberWithInteger:[strId integerValue]];
     }
                                                          reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%d", [intNum integerValue]];
+                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
                                                          }];
 }
 
 + (NSValueTransformer *)streamTypeTransformer {
     NSDictionary *streamTypes = @{
-    @"long_poll": @(SNStreamTypeLongPoll),
-    };
+                                  @"long_poll": @(SNStreamTypeLongPoll),
+                                  };
 
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
         return streamTypes[str];

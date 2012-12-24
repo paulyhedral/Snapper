@@ -41,7 +41,7 @@
         return [NSNumber numberWithInteger:[strId integerValue]];
     }
                                                          reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%d", [intNum integerValue]];
+                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
                                                          }];
 }
 
@@ -50,7 +50,7 @@
         return [NSNumber numberWithInteger:[strId integerValue]];
     }
                                                          reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%d", [intNum integerValue]];
+                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
                                                          }];
 }
 
@@ -59,7 +59,7 @@
         return [NSNumber numberWithInteger:[strId integerValue]];
     }
                                                          reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%d", [intNum integerValue]];
+                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
                                                          }];
 }
 

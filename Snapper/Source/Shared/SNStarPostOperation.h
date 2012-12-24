@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseUserOperation.h"
 
 
-@interface SNStarPostOperation : SNBaseOAuthOperation
+@interface SNStarPostOperation : SNBaseUserOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger postId;

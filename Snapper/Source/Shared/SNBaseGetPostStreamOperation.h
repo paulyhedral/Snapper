@@ -6,13 +6,12 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNBaseOAuthOperation.h"
+#import "SNBaseUserOperation.h"
 
 
-@interface SNBaseGetPostStreamOperation : SNBaseOAuthOperation
+@interface SNBaseGetPostStreamOperation : SNBaseUserOperation
 
 // -- Properties --
-@property (nonatomic, assign) BOOL unified;
 @property (nonatomic, assign) NSUInteger beforeId;
 @property (nonatomic, assign) NSUInteger sinceId;
 @property (nonatomic, assign) NSUInteger count;

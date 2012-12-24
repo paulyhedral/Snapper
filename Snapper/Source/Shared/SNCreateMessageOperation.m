@@ -38,7 +38,6 @@
         self.annotations = annotations;
         self.entities = entities;
         self.accountId = accountId;
-        self.progressBlock = progressBlock;
         self.finishBlock = finishBlock;
     }
 
@@ -62,7 +61,7 @@
     }
     if(_machineOnly) {
         if([_text length]) {
-            NSLog(@"Cannot set 'machine_only' on a post with body text!");
+            NSLog(@"Cannot set 'machine_only' on a message with body text!");
         }
         else {
             postDict[@"machine_only"] = @YES;
@@ -90,7 +89,7 @@
                                                        options:0
                                                          error:&error];
     if(postBody == nil) {
-        NSLog(@"Unable to instantiate 'create post operation': %@", [error localizedDescription]);
+        NSLog(@"Unable to instantiate 'create message operation': %@", [error localizedDescription]);
         SNResponse* response = [self createResponseFromError:error];
         self.finishBlock(response);
         return;

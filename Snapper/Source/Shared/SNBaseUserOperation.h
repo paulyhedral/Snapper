@@ -1,5 +1,5 @@
 //
-//  SNBaseOAuthOperation.h
+//  SNBaseUserOperation.h
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/18/12.
@@ -12,7 +12,7 @@
 #import "SNResponse.h"
 
 
-@interface SNBaseOAuthOperation : NSOperation
+@interface SNBaseUserOperation : NSOperation
 <NSURLConnectionDelegate>
 
 // -- Properties --
