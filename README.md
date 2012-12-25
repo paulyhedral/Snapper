@@ -18,7 +18,7 @@ Requirements
 
 Snapper requires ARC, and should compile and test in Xcode 4.5 or higher.
 
-Snapper makes use of the GitHub framework [Mantle](http://github.com/github/Mantle) for its model objects.
+Snapper makes use of the GitHub framework [Mantle](http://github.com/github/Mantle) for its model objects. You will need to perform `git submodule update --init --recursive` to pull down Mantle and its dependencies.
 
 Use of Snapper assumes familiarity with the [App.net API](https://developers.app.net).
 
