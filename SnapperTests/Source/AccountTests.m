@@ -27,7 +27,7 @@
 
 - (void)testAccountCreation {
 
-    SNAccount* account = [[SNAccountManager sharedAccountManager] createAccountWithName:@"Test Account"
+    SNPAccount* account = [[SNPAccountManager sharedAccountManager] createAccountWithName:@"Test Account"
                                                                                username:@"test"
                                                                                  userId:999
                                                                             accessToken:@"12345"
@@ -40,11 +40,11 @@
 
 - (void)testAccountRemoval {
 
-    SNAccountManager* accountManager = [SNAccountManager sharedAccountManager];
+    SNPAccountManager* accountManager = [SNPAccountManager sharedAccountManager];
 
     NSString* accountId = nil;
     {
-        SNAccount* newAccount = [accountManager createAccountWithName:@"Deleted Account"
+        SNPAccount* newAccount = [accountManager createAccountWithName:@"Deleted Account"
                                                              username:@"deleteme"
                                                                userId:86
                                                           accessToken:@"998877"
@@ -57,17 +57,17 @@
 
     [accountManager removeAccountForId:accountId];
 
-    SNAccount* account = [[SNAccountManager sharedAccountManager] accountForId:accountId];
+    SNPAccount* account = [[SNPAccountManager sharedAccountManager] accountForId:accountId];
     STAssertNil(account, @"Account should be nil for account ID '%@'", accountId);
 }
 
 - (void)testAccountAccess {
 
-    SNAccountManager* accountManager = [SNAccountManager sharedAccountManager];
+    SNPAccountManager* accountManager = [SNPAccountManager sharedAccountManager];
 
     NSString* accountId = nil;
     {
-        SNAccount* newAccount = [accountManager createAccountWithName:@"Bogus Account"
+        SNPAccount* newAccount = [accountManager createAccountWithName:@"Bogus Account"
                                                              username:@"bogus"
                                                                userId:42
                                                           accessToken:@"54321"
@@ -78,7 +78,7 @@
         accountId = newAccount.accountId;
     }
 
-    SNAccount* account = [[SNAccountManager sharedAccountManager] accountForId:accountId];
+    SNPAccount* account = [[SNPAccountManager sharedAccountManager] accountForId:accountId];
     STAssertNotNil(account, @"Account should not be nil for account ID '%@'", accountId);
 
     STAssertTrue([account.username isEqualToString:@"bogus"], @"Account's username should be 'bogus'");
@@ -88,7 +88,7 @@
 
 - (void)testAllAccounts {
 
-    SNAccountManager* accountManager = [SNAccountManager sharedAccountManager];
+    SNPAccountManager* accountManager = [SNPAccountManager sharedAccountManager];
     [accountManager createAccountWithName:@"Extra Account"
                                                           username:@"extra"
                                                             userId:123

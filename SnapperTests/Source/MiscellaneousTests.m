@@ -8,14 +8,14 @@
 
 #import "MiscellaneousTests.h"
 
-#import "SNAPIUtils.h"
+#import "SNPAPIUtils.h"
 
 
 @implementation MiscellaneousTests
 
 - (void)testEndpointConstruction {
 
-    SNAPIUtils* apiUtils = [SNAPIUtils sharedAPIUtils];
+    SNPAPIUtils* apiUtils = [SNPAPIUtils sharedAPIUtils];
 
     NSString* rootURL = @"http://test-api";
     apiUtils.rootAPIURL = [NSURL URLWithString:rootURL];
