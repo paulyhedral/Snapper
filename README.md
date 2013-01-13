@@ -40,11 +40,11 @@ Almost all API calls require an access token of some sort. It is beyond the scop
 
 The first order of business when using Snapper is to store one or more access tokens. This is done like so:
 
-	SNAccount* account = [[SNAccountManager sharedAccountManager] createAccountWithName:@"Test Account"
-                                                                               username:@"test"
-                                                                                 userId:999
-                                                                            accessToken:@"12345"
-                                                                              tokenType:@"Bearer"];
+	SNPAccount* account = [[SNPAccountManager sharedAccountManager] createAccountWithName:@"Test Account"
+                                                                                 username:@"test"
+                                                                                   userId:999
+                                                                              accessToken:@"12345"
+                                                                                tokenType:@"Bearer"];
 
 The returned `account` object includes a property, `accountId`, with a generated opaque ID for the account. You will use this ID for any operations which require the access token.
 
@@ -93,7 +93,7 @@ This is an abstract object that is inherited by the `Mention`, `Link`, and `Hash
 
 ### Operations
 
-All operations provide their responses by way of blocks. With a few exceptions, the signature for these blocks contain one parameter: `SNResponse`. 
+All operations provide their responses by way of blocks. With a few exceptions, the signature for these blocks contain one parameter: `SNPResponse`. 
 
 There are far too many operations defined in Snapper to list them here. Please browse the source code or headers to see which operations are available. Operations are named so that they correspond exactly or as close as possible to the resources documented in the [official App.net API documents](https://developers.app.net).
 
@@ -101,13 +101,13 @@ There are far too many operations defined in Snapper to list them here. Please b
 
 #### Responses and Metadata
 
-Responses are encapsulated in the `SNResponse` object. Inside the response object is a `data` property (an `id`, because results can be an object, a dictionary, or an array of objects, depending on the endpoint), and a `metadata` property. The `metadata` property is an `SNMetadata` object that contains some combination of error information, stream marker information, and/or pagination data.
+Responses are encapsulated in the `SNPResponse` object. Inside the response object is a `data` property (an `id`, because results can be an object, a dictionary, or an array of objects, depending on the endpoint), and a `metadata` property. The `metadata` property is an `SNPMetadata` object that contains some combination of error information, stream marker information, and/or pagination data.
 
-When processing responses from an operation, examine the `data` property first: if it's `nil`, there is likely an error, and the various error properties in the `SNMetadata` object will provide more details.
+When processing responses from an operation, examine the `data` property first: if it's `nil`, there is likely an error, and the various error properties in the `SNPMetadata` object will provide more details.
 
 #### API Utilities
 
-The `SNAPIUtils` class provides some methods for constructing URLs to the various App.net API endpoints. You will almost never have to use these directly. However, this class provides a property that allows you to change the "API root" (i.e., `https://alpha-api.app.net/stream/0`) if the occasion arises (e.g., if App.net releases a "development environment", or you create a stubbed API server for testing).
+The `SNPAPIUtils` class provides some methods for constructing URLs to the various App.net API endpoints. You will almost never have to use these directly. However, this class provides a property that allows you to change the "API root" (i.e., `https://alpha-api.app.net/stream/0`) if the occasion arises (e.g., if App.net releases a "development environment", or you create a stubbed API server for testing).
 
 Unit Testing
 ------------
