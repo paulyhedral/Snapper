@@ -19,6 +19,7 @@
 #import <Snapper/SNPChannel.h>
 #import <Snapper/SNPDescription.h>
 #import <Snapper/SNPEntity.h>
+#import <Snapper/SNPFile.h>
 #import <Snapper/SNPFilter.h>
 #import <Snapper/SNPFilterClause.h>
 #import <Snapper/SNPHashtag.h>
@@ -28,6 +29,7 @@
 #import <Snapper/SNPMention.h>
 #import <Snapper/SNPMessage.h>
 #import <Snapper/SNPPost.h>
+#import <Snapper/SNPSource.h>
 #import <Snapper/SNPStream.h>
 #import <Snapper/SNPStreamMarker.h>
 #import <Snapper/SNPToken.h>
@@ -36,11 +38,13 @@
 // -- Operations --
 #import <Snapper/SNPBaseApplicationOperation.h>
 #import <Snapper/SNPBaseClientOperation.h>
+#import <Snapper/SNPBaseFileOperation.h>
 #import <Snapper/SNPBaseGetPostStreamOperation.h>
 #import <Snapper/SNPBaseImageFetchOperation.h>
 #import <Snapper/SNPBaseImageUpdateOperation.h>
 #import <Snapper/SNPBaseUserOperation.h>
 #import <Snapper/SNPCreateChannelOperation.h>
+#import <Snapper/SNPCreateFileOperation.h>
 #import <Snapper/SNPCreateFilterOperation.h>
 #import <Snapper/SNPCreateMessageOperation.h>
 #import <Snapper/SNPCreatePostOperation.h>

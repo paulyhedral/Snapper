@@ -43,7 +43,7 @@
 
     SNPPost* post = [SNPPost modelWithExternalRepresentation:postDict];
     STAssertNotNil(post, @"Unable to create post from JSON");
-    
+
 
 }
 
@@ -53,7 +53,7 @@
 
     SNPACL* acl = [SNPACL modelWithExternalRepresentation:aclDict];
     STAssertNotNil(acl, @"Unable to create ACL from JSON");
-    
+
     STAssertTrue(acl.anyUser == NO, @"ACL 'anyUser' property should be NO");
     STAssertTrue(acl.immutable == YES, @"ACL 'immutable' property should be YES");
     STAssertTrue(acl.public_ == NO, @"ACL 'public_' property should be NO");
@@ -80,7 +80,7 @@
 
     SNPChannel* channel = [SNPChannel modelWithExternalRepresentation:channelDict];
     STAssertNotNil(channel, @"Unable to create channel from JSON");
-    
+
     STAssertTrue(channel.channelId == 1, @"Channel 'id' property should be 1");
     STAssertNotNil(channel.owner, @"Channel owner should not be nil");
     STAssertTrue(channel.owner.userId == 1199, @"Channel owner.userId property should be 1199");
@@ -98,7 +98,7 @@
 
     SNPDescription* description = [SNPDescription modelWithExternalRepresentation:descriptionDict];
     STAssertNotNil(description, @"Unable to create description from JSON");
-    
+
     STAssertTrue([description.links count] == 2, @"Description 'links' property should have 2 items");
     STAssertNotNil(description.hashtags, @"Description 'hashtags' property should not be nil");
     STAssertNotNil(description.mentions, @"Description 'mentions' property should not be nil");
@@ -112,7 +112,7 @@
 
     SNPFilter* filter = [SNPFilter modelWithExternalRepresentation:filterDict];
     STAssertNotNil(filter, @"Unable to create filter from JSON");
-    
+
     STAssertTrue([filter.clauses count] == 1, @"Filter 'clauses' property should have 1 item");
     STAssertTrue(filter.filterId == 1, @"Filter 'filterId' property should be 1");
     STAssertTrue(filter.matchPolicy == SNPFilterMatchPolicyIncludeAny, @"Filter 'matchPolicy' property should be set to 'include_any'");
@@ -125,7 +125,7 @@
 
     SNPFilterClause* filterClause = [SNPFilterClause modelWithExternalRepresentation:filterClauseDict];
     STAssertNotNil(filterClause, @"Unable to create filter clause from JSON");
-    
+
     STAssertNotNil(filterClause.field, @"Filter clause 'field' property should not be nil");
     STAssertTrue(filterClause.objectType == SNPFilterClauseObjectTypePost, @"Filter clause 'objectType' property should be set to 'post'");
     STAssertTrue(filterClause.op == SNPFilterClauseOperatorMatches, @"Filter clause 'op' property should be set to 'matches'");
@@ -138,7 +138,7 @@
 
     SNPHashtag* hashtag = [SNPHashtag modelWithExternalRepresentation:hashtagDict];
     STAssertNotNil(hashtag, @"Unable to create hashtag from JSON");
-    
+
     STAssertTrue([hashtag.name isEqualToString:@"coffee"], @"Hashtag 'name' property should be set to 'coffee'");
     STAssertTrue(hashtag.length == 7, @"Hashtag 'length' property should be 7");
     STAssertTrue(hashtag.position == 79, @"Hashtag 'position' property should be 79");
@@ -150,7 +150,7 @@
 
     SNPImage* image = [SNPImage modelWithExternalRepresentation:imageDict];
     STAssertNotNil(image, @"Unable to create image from JSON");
-    
+
     STAssertTrue(image.height == 976, @"Image 'height' property should be 976");
     STAssertNotNil(image.URL, @"Image 'URL' property should not be nil");
     STAssertTrue(image.width == 1422, @"Image 'width' property should be 1422");
@@ -162,7 +162,7 @@
 
     SNPInteraction* interaction = [SNPInteraction modelWithExternalRepresentation:interactionDict];
     STAssertNotNil(interaction, @"Unable to create post-based interaction from JSON");
-    
+
     STAssertTrue(interaction.action == SNPInteractionActionRepost, @"Repost interaction 'action' property should be 'repost'");
     STAssertTrue([interaction.objects count] == 1, @"Repost interaction 'objects' property should have 1 item");
     STAssertTrue([interaction.users count] == 1, @"Repost interaction 'users' property should have 1 item");
@@ -186,7 +186,7 @@
 
     SNPLink* link = [SNPLink modelWithExternalRepresentation:linkDict];
     STAssertNotNil(link, @"Unable to create link from JSON");
-    
+
     STAssertTrue(link.length == 7, @"Link 'length' property should be 7");
     STAssertTrue(link.position == 73, @"Link 'position' property should be 73");
     STAssertTrue([link.text isEqualToString:@"App.net"], @"Link 'text' property should be 'App.net'");
@@ -199,7 +199,7 @@
 
     SNPMention* mention = [SNPMention modelWithExternalRepresentation:mentionDict];
     STAssertNotNil(mention, @"Unable to create mention from JSON");
-    
+
     STAssertTrue(mention.userId == 5463, @"Mention 'userId' property should be 5463");
     STAssertTrue(mention.length == 13, @"Mention 'length' property should be 13");
     STAssertTrue([mention.name isEqualToString:@"sethclifford"], @"Mention 'name' property should be 'sethclifford'");
@@ -212,7 +212,7 @@
 
     SNPMessage* message = [SNPMessage modelWithExternalRepresentation:messageDict];
     STAssertNotNil(message, @"Unable to create message from JSON");
-    
+
     STAssertTrue(message.messageId == 103, @"Message 'messageId' property should be 103");
     STAssertTrue(message.channelId == 1, @"Message 'channelId' property should be 1");
     STAssertNotNil(message.user, @"Message 'user' property should not be nil");
@@ -225,7 +225,7 @@
 
     SNPStream* stream = [SNPStream modelWithExternalRepresentation:streamDict];
     STAssertNotNil(stream, @"Unable to create stream from JSON");
-    
+
     STAssertNotNil(stream.endpoint, @"Stream 'endpoint' property should not be nil");
     STAssertNotNil(stream.filter, @"Stream 'filter' property should not be nil");
     STAssertTrue(stream.streamId == 1, @"Stream 'streamId' property should be 1");
@@ -241,7 +241,7 @@
 
     SNPStreamMarker* streamMarker = [SNPStreamMarker modelWithExternalRepresentation:markerDict];
     STAssertNotNil(streamMarker, @"Unable to create marker from JSON");
-    
+
     STAssertTrue(streamMarker.postId == 1234, @"Stream marker 'postId' property should be 1234");
     STAssertTrue([streamMarker.name isEqualToString:@"global"], @"Stream marker 'name' should be 'global'");
     STAssertTrue(streamMarker.percentage == 0, @"Stream marker 'percentage' property should be 0");
@@ -263,6 +263,32 @@
     STAssertTrue(token.user.userId == 1, @"Token 'user.userId' should be 1");
 }
 
+- (void)testFileFromJSON {
+
+    NSDictionary* fileDict = [self loadJSONFromFile:@"file"];
+
+    SNPFile* file = [SNPFile modelWithExternalRepresentation:fileDict];
+    STAssertNotNil(file, @"Unable to create file from JSON");
+
+    STAssertTrue(file.complete == YES, @"File 'complete' property should be 'true'");
+    STAssertTrue([file.fileToken isEqualToString:@"auCj3h64JZrhQ9aJdmwre3KP-QL9UtWHYvt5tj_64rUJWemoIV2W8eTJv9NMaGpBFk-BbU_aWA26Q40w4jFhiPBpnIQ_lciLwfh6o8YIAQGEQziksUMxZo7gOHJ_-niw3l3MZCh7QRWzqNGpiVaUEptfKO0fETrZ8bJjDa61234a"], @"File 'fileToken' property should be set to 'auCj3h64JZrhQ9aJdmwre3KP-QL9UtWHYvt5tj_64rUJWemoIV2W8eTJv9NMaGpBFk-BbU_aWA26Q40w4jFhiPBpnIQ_lciLwfh6o8YIAQGEQziksUMxZo7gOHJ_-niw3l3MZCh7QRWzqNGpiVaUEptfKO0fETrZ8bJjDa61234a'");
+    STAssertTrue(file.fileId == 1, @"File 'fileId' property should be set to '1'");
+    STAssertTrue(file.kind == SNPFileKindImage, @"File 'kind' property should be set to 'image'");
+    STAssertNotNil(file.source, @"File 'source' property should not be nil");
+    STAssertNotNil(file.URL, @"File 'URL' property should not be nil");
+    STAssertNotNil(file.URLExpires, @"File 'URLExpires' property should not be nil");
+    STAssertNotNil(file.user, @"File 'user' property should not be nil");
+
+    STAssertTrue([[file.derivedFiles allKeys] count] == 2, @"File 'derivedFiles' property should contain 2 keys");
+    STAssertNotNil(file.derivedFiles[@"image_thumb_200s"], @"File 'derivedFiles' property key 'image_thumb_200s' should not be nil");
+    STAssertNotNil(file.derivedFiles[@"image_thumb_960r"], @"File 'derivedFiles' property key 'image_thumb_960r' should not be nil");
+
+    SNPDerivedFile* derivedFile = file.derivedFiles[@"image_thumb_200s"];
+
+    STAssertNotNil(derivedFile.URL, @"Derived file 'URL' property should not be nil");
+    STAssertNotNil(derivedFile.URLExpires, @"Derived file 'URLExpires' property should not be nil");
+}
+
 - (NSDictionary*)loadJSONFromFile:(NSString*)name {
 
     NSBundle* bundle = [NSBundle bundleForClass:[self class]];
@@ -272,10 +298,10 @@
     STAssertNotNil(data, @"No data loaded from file: %@", filePath);
     NSError* error = nil;
     NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data
-                                                options:0
-                                                  error:&error];
+                                                             options:0
+                                                               error:&error];
     STAssertNotNil(jsonDict, @"Unable to convert JSON data to dictionary: %@", error);
-
+    
     return jsonDict;
 }
 

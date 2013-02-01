@@ -8,6 +8,15 @@
 
 #import "SNPBaseUserOperation.h"
 
+
 @interface SNPGetPostsOperation : SNPBaseUserOperation
+
+// -- Properties --
+@property (nonatomic, retain) NSArray* postIds;
+
+// -- Initializers --
+- (id)initWithPostIds:(NSArray*)postIds
+            accountId:(NSString*)accountId
+          finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

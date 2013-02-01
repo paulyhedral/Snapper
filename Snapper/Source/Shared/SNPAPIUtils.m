@@ -363,7 +363,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 #pragma mark - Stream Marker URL methods
 
 - (NSURL*)updateStreamMarkerEndpointURL {
-    return [NSURL URLWithString:@"/stream/0/posts/marker"
+    return [NSURL URLWithString:@"/posts/marker"
                   relativeToURL:_rootAPIURL];
 }
 
@@ -371,7 +371,45 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 #pragma mark - Token URL methods
 
 - (NSURL*)tokenEndpointURL {
-    return [NSURL URLWithString:@"/stream/0/token"
+    return [NSURL URLWithString:@"/token"
+                  relativeToURL:_rootAPIURL];
+}
+
+
+#pragma mark - File URL methods
+
+- (NSURL*)createFileEndpointURL {
+    return [NSURL URLWithString:@"/files"
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)getFileEndpointURL:(NSInteger)fileId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%d", fileId]
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)getFilesEndpointURL {
+    return [NSURL URLWithString:@"/files"
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)deleteFileEndpointURL:(NSInteger)fileId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%d", fileId]
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)getMyFilesEndpointURL {
+    return [NSURL URLWithString:@"/users/me/files"
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)updateFileEndpointURL:(NSInteger)fileId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%d", fileId]
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)updateFileContentEndpointURL:(NSInteger)fileId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%d/content", fileId]
                   relativeToURL:_rootAPIURL];
 }
 

@@ -103,4 +103,13 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 // -- Token URL methods --
 - (NSURL*)tokenEndpointURL;
 
+// -- File URL methods --
+- (NSURL*)createFileEndpointURL;
+- (NSURL*)getFileEndpointURL:(NSInteger)fileId;
+- (NSURL*)getFilesEndpointURL;
+- (NSURL*)deleteFileEndpointURL:(NSInteger)fileId;
+- (NSURL*)getMyFilesEndpointURL;
+- (NSURL*)updateFileEndpointURL:(NSInteger)fileId;
+- (NSURL*)updateFileContentEndpointURL:(NSInteger)fileId;
+
 @end

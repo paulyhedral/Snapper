@@ -410,6 +410,42 @@
 		5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48F21687CEFC0032C586 /* SNPACL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6B48F51687CEFC0032C586 /* SNPACL.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48F31687CEFC0032C586 /* SNPACL.m */; };
 		5B6B48F61687CEFC0032C586 /* SNPACL.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48F31687CEFC0032C586 /* SNPACL.m */; };
+		5B8A333416B791B800BE5A8A /* SNPFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8A333216B791B800BE5A8A /* SNPFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B8A333516B791B800BE5A8A /* SNPFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A333316B791B800BE5A8A /* SNPFile.m */; };
+		5B8A333616B791B800BE5A8A /* SNPFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A333316B791B800BE5A8A /* SNPFile.m */; };
+		5B8A333B16B7980B00BE5A8A /* SNPSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8A333916B7980B00BE5A8A /* SNPSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B8A333C16B7980B00BE5A8A /* SNPSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A333A16B7980B00BE5A8A /* SNPSource.m */; };
+		5B8A333D16B7980B00BE5A8A /* SNPSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A333A16B7980B00BE5A8A /* SNPSource.m */; };
+		5B8A334116B7998300BE5A8A /* SNPCreateFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8A333F16B7998300BE5A8A /* SNPCreateFileOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B8A334216B7998300BE5A8A /* SNPCreateFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334016B7998300BE5A8A /* SNPCreateFileOperation.m */; };
+		5B8A334316B7998300BE5A8A /* SNPCreateFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334016B7998300BE5A8A /* SNPCreateFileOperation.m */; };
+		5B8A334616B7999C00BE5A8A /* SNPBaseFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B8A334716B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */; };
+		5B8A334816B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */; };
+		5BBBDCE416B8A3950026A041 /* file.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BBBDCE316B8A3950026A041 /* file.json */; };
+		5BBBDCE516B8A3950026A041 /* file.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BBBDCE316B8A3950026A041 /* file.json */; };
+		5BBBDCE816B8A8610026A041 /* SNPFile.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B8A333216B791B800BE5A8A /* SNPFile.h */; };
+		5BBBDCE916B8A8610026A041 /* SNPSource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B8A333916B7980B00BE5A8A /* SNPSource.h */; };
+		5BBBDCEA16B8A8610026A041 /* SNPBaseFileOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */; };
+		5BBBDCEB16B8A8610026A041 /* SNPCreateFileOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B8A333F16B7998300BE5A8A /* SNPCreateFileOperation.h */; };
+		5BBBDCEE16B8B1940026A041 /* SNPUpdateFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBDCEC16B8B1940026A041 /* SNPUpdateFileOperation.h */; };
+		5BBBDCEF16B8B1940026A041 /* SNPUpdateFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDCED16B8B1940026A041 /* SNPUpdateFileOperation.m */; };
+		5BBBDCF016B8B1940026A041 /* SNPUpdateFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDCED16B8B1940026A041 /* SNPUpdateFileOperation.m */; };
+		5BBBDCF316B8DC550026A041 /* SNPDeleteFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBDCF116B8DC550026A041 /* SNPDeleteFileOperation.h */; };
+		5BBBDCF416B8DC550026A041 /* SNPDeleteFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDCF216B8DC550026A041 /* SNPDeleteFileOperation.m */; };
+		5BBBDCF516B8DC550026A041 /* SNPDeleteFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDCF216B8DC550026A041 /* SNPDeleteFileOperation.m */; };
+		5BBBDCF816B8E3370026A041 /* SNPGetMyFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBDCF616B8E3370026A041 /* SNPGetMyFilesOperation.h */; };
+		5BBBDCF916B8E3370026A041 /* SNPGetMyFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDCF716B8E3370026A041 /* SNPGetMyFilesOperation.m */; };
+		5BBBDCFA16B8E3370026A041 /* SNPGetMyFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDCF716B8E3370026A041 /* SNPGetMyFilesOperation.m */; };
+		5BBBDCFD16B8E41C0026A041 /* SNPSetFileContentOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBDCFB16B8E41C0026A041 /* SNPSetFileContentOperation.h */; };
+		5BBBDCFE16B8E41C0026A041 /* SNPSetFileContentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDCFC16B8E41C0026A041 /* SNPSetFileContentOperation.m */; };
+		5BBBDCFF16B8E41C0026A041 /* SNPSetFileContentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDCFC16B8E41C0026A041 /* SNPSetFileContentOperation.m */; };
+		5BBBDD0216B8E63D0026A041 /* SNPGetFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBDD0016B8E63D0026A041 /* SNPGetFileOperation.h */; };
+		5BBBDD0316B8E63D0026A041 /* SNPGetFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDD0116B8E63D0026A041 /* SNPGetFileOperation.m */; };
+		5BBBDD0416B8E63D0026A041 /* SNPGetFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDD0116B8E63D0026A041 /* SNPGetFileOperation.m */; };
+		5BBBDD0716B8E66A0026A041 /* SNPGetFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBDD0516B8E66A0026A041 /* SNPGetFilesOperation.h */; };
+		5BBBDD0816B8E66A0026A041 /* SNPGetFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */; };
+		5BBBDD0916B8E66A0026A041 /* SNPGetFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */; };
 		5BD0241516861E5100E24D5A /* SNPConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD0241416861E5100E24D5A /* SNPConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BE0A52916816ED7005AA40C /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A52816816ED7005AA40C /* ModelTests.m */; };
 		5BE0A52B168170CA005AA40C /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BE0A52A168170CA005AA40C /* user.json */; };
@@ -509,6 +545,10 @@
 			dstPath = include/Snapper;
 			dstSubfolderSpec = 16;
 			files = (
+				5BBBDCE816B8A8610026A041 /* SNPFile.h in CopyFiles */,
+				5BBBDCE916B8A8610026A041 /* SNPSource.h in CopyFiles */,
+				5BBBDCEA16B8A8610026A041 /* SNPBaseFileOperation.h in CopyFiles */,
+				5BBBDCEB16B8A8610026A041 /* SNPCreateFileOperation.h in CopyFiles */,
 				5B09411A16A378B500D0D1D0 /* SNPBaseImageUpdateOperation.h in CopyFiles */,
 				5B30DBAA1688110B0089730B /* Snapper.h in CopyFiles */,
 				5B30DBAB1688110B0089730B /* CWLSynthesizeSingleton.h in CopyFiles */,
@@ -816,6 +856,27 @@
 		5B6B48EE1687CDF90032C586 /* SNPBaseClientOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseClientOperation.m; sourceTree = "<group>"; };
 		5B6B48F21687CEFC0032C586 /* SNPACL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPACL.h; sourceTree = "<group>"; };
 		5B6B48F31687CEFC0032C586 /* SNPACL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPACL.m; sourceTree = "<group>"; };
+		5B8A333216B791B800BE5A8A /* SNPFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPFile.h; sourceTree = "<group>"; };
+		5B8A333316B791B800BE5A8A /* SNPFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPFile.m; sourceTree = "<group>"; };
+		5B8A333916B7980B00BE5A8A /* SNPSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPSource.h; sourceTree = "<group>"; };
+		5B8A333A16B7980B00BE5A8A /* SNPSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPSource.m; sourceTree = "<group>"; };
+		5B8A333F16B7998300BE5A8A /* SNPCreateFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPCreateFileOperation.h; sourceTree = "<group>"; };
+		5B8A334016B7998300BE5A8A /* SNPCreateFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPCreateFileOperation.m; sourceTree = "<group>"; };
+		5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseFileOperation.h; sourceTree = "<group>"; };
+		5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseFileOperation.m; sourceTree = "<group>"; };
+		5BBBDCE316B8A3950026A041 /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = "<group>"; };
+		5BBBDCEC16B8B1940026A041 /* SNPUpdateFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPUpdateFileOperation.h; sourceTree = "<group>"; };
+		5BBBDCED16B8B1940026A041 /* SNPUpdateFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPUpdateFileOperation.m; sourceTree = "<group>"; };
+		5BBBDCF116B8DC550026A041 /* SNPDeleteFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPDeleteFileOperation.h; sourceTree = "<group>"; };
+		5BBBDCF216B8DC550026A041 /* SNPDeleteFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPDeleteFileOperation.m; sourceTree = "<group>"; };
+		5BBBDCF616B8E3370026A041 /* SNPGetMyFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetMyFilesOperation.h; sourceTree = "<group>"; };
+		5BBBDCF716B8E3370026A041 /* SNPGetMyFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetMyFilesOperation.m; sourceTree = "<group>"; };
+		5BBBDCFB16B8E41C0026A041 /* SNPSetFileContentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPSetFileContentOperation.h; sourceTree = "<group>"; };
+		5BBBDCFC16B8E41C0026A041 /* SNPSetFileContentOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPSetFileContentOperation.m; sourceTree = "<group>"; };
+		5BBBDD0016B8E63D0026A041 /* SNPGetFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetFileOperation.h; sourceTree = "<group>"; };
+		5BBBDD0116B8E63D0026A041 /* SNPGetFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetFileOperation.m; sourceTree = "<group>"; };
+		5BBBDD0516B8E66A0026A041 /* SNPGetFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetFilesOperation.h; sourceTree = "<group>"; };
+		5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetFilesOperation.m; sourceTree = "<group>"; };
 		5BD0241416861E5100E24D5A /* SNPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPConstants.h; sourceTree = "<group>"; };
 		5BE0A52716816ED7005AA40C /* ModelTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTests.h; sourceTree = "<group>"; };
 		5BE0A52816816ED7005AA40C /* ModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTests.m; sourceTree = "<group>"; };
@@ -1043,6 +1104,7 @@
 				5B30DC16168817040089730B /* stream.json */,
 				5B30DC17168817040089730B /* token.json */,
 				5BE0A52A168170CA005AA40C /* user.json */,
+				5BBBDCE316B8A3950026A041 /* file.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1086,15 +1148,18 @@
 			children = (
 				5B6B48E81687CD250032C586 /* SNPBaseApplicationOperation.h */,
 				5B6B48E91687CD260032C586 /* SNPBaseApplicationOperation.m */,
-				3C6B5F80168109C8006C63C1 /* SNPBaseUserOperation.h */,
-				3C6B5F81168109C8006C63C1 /* SNPBaseUserOperation.m */,
 				5B6B48ED1687CDF80032C586 /* SNPBaseClientOperation.h */,
 				5B6B48EE1687CDF90032C586 /* SNPBaseClientOperation.m */,
+				5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */,
+				5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */,
 				5B1A40D91686454E0030BB30 /* SNPBaseImageFetchOperation.h */,
 				5B1A40DA1686454F0030BB30 /* SNPBaseImageFetchOperation.m */,
 				5B2E458D16A36D88000CCDB6 /* SNPBaseImageUpdateOperation.h */,
 				5B2E458E16A36DCD000CCDB6 /* SNPBaseImageUpdateOperation.m */,
+				3C6B5F80168109C8006C63C1 /* SNPBaseUserOperation.h */,
+				3C6B5F81168109C8006C63C1 /* SNPBaseUserOperation.m */,
 				3CDF11E71683B6B70058CBE0 /* Channels */,
+				5B8A333E16B7992900BE5A8A /* Files */,
 				3CDF11EA1683B6CE0058CBE0 /* Filters */,
 				3CDF11EB1683B6D50058CBE0 /* Interactions */,
 				3CDF11E81683B6C00058CBE0 /* Messages */,
@@ -1120,6 +1185,8 @@
 				3C6B5F9316811887006C63C1 /* SNPDescription.m */,
 				3C6B5F491680FA63006C63C1 /* SNPEntity.h */,
 				3C6B5F4A1680FA63006C63C1 /* SNPEntity.m */,
+				5B8A333216B791B800BE5A8A /* SNPFile.h */,
+				5B8A333316B791B800BE5A8A /* SNPFile.m */,
 				3C6B5F621680FAE3006C63C1 /* SNPFilter.h */,
 				3C6B5F631680FAE4006C63C1 /* SNPFilter.m */,
 				3C6B5FA116813605006C63C1 /* SNPFilterClause.h */,
@@ -1138,6 +1205,8 @@
 				3C6B5F541680FA88006C63C1 /* SNPMessage.m */,
 				3C6B5F3F1680FA46006C63C1 /* SNPPost.h */,
 				3C6B5F401680FA46006C63C1 /* SNPPost.m */,
+				5B8A333916B7980B00BE5A8A /* SNPSource.h */,
+				5B8A333A16B7980B00BE5A8A /* SNPSource.m */,
 				3C6B5F9C1681356D006C63C1 /* SNPStream.h */,
 				3C6B5F9D1681356E006C63C1 /* SNPStream.m */,
 				3C6B5F5D1680FAD7006C63C1 /* SNPStreamMarker.h */,
@@ -1368,6 +1437,27 @@
 			name = Threads;
 			sourceTree = "<group>";
 		};
+		5B8A333E16B7992900BE5A8A /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B8A333F16B7998300BE5A8A /* SNPCreateFileOperation.h */,
+				5B8A334016B7998300BE5A8A /* SNPCreateFileOperation.m */,
+				5BBBDCEC16B8B1940026A041 /* SNPUpdateFileOperation.h */,
+				5BBBDCED16B8B1940026A041 /* SNPUpdateFileOperation.m */,
+				5BBBDCF116B8DC550026A041 /* SNPDeleteFileOperation.h */,
+				5BBBDCF216B8DC550026A041 /* SNPDeleteFileOperation.m */,
+				5BBBDCF616B8E3370026A041 /* SNPGetMyFilesOperation.h */,
+				5BBBDCF716B8E3370026A041 /* SNPGetMyFilesOperation.m */,
+				5BBBDCFB16B8E41C0026A041 /* SNPSetFileContentOperation.h */,
+				5BBBDCFC16B8E41C0026A041 /* SNPSetFileContentOperation.m */,
+				5BBBDD0016B8E63D0026A041 /* SNPGetFileOperation.h */,
+				5BBBDD0116B8E63D0026A041 /* SNPGetFileOperation.m */,
+				5BBBDD0516B8E66A0026A041 /* SNPGetFilesOperation.h */,
+				5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
 		5BE0A54E16817FE8005AA40C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1386,6 +1476,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8A333416B791B800BE5A8A /* SNPFile.h in Headers */,
+				5B8A333B16B7980B00BE5A8A /* SNPSource.h in Headers */,
+				5B8A334116B7998300BE5A8A /* SNPCreateFileOperation.h in Headers */,
+				5B8A334616B7999C00BE5A8A /* SNPBaseFileOperation.h in Headers */,
 				5B2E458F16A36E49000CCDB6 /* SNPBaseImageUpdateOperation.h in Headers */,
 				3C6B5F2F1680EEDE006C63C1 /* Snapper.h in Headers */,
 				3C6B5F3C1680F1A4006C63C1 /* SNPAccountManager.h in Headers */,
@@ -1481,6 +1575,12 @@
 				5B6B48EF1687CDF90032C586 /* SNPBaseClientOperation.h in Headers */,
 				5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */,
 				3CDF12A01683C8CE0058CBE0 /* SNPUpdateUserOperation.h in Headers */,
+				5BBBDCEE16B8B1940026A041 /* SNPUpdateFileOperation.h in Headers */,
+				5BBBDCF316B8DC550026A041 /* SNPDeleteFileOperation.h in Headers */,
+				5BBBDCF816B8E3370026A041 /* SNPGetMyFilesOperation.h in Headers */,
+				5BBBDCFD16B8E41C0026A041 /* SNPSetFileContentOperation.h in Headers */,
+				5BBBDD0216B8E63D0026A041 /* SNPGetFileOperation.h in Headers */,
+				5BBBDD0716B8E66A0026A041 /* SNPGetFilesOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1653,6 +1753,7 @@
 				5B30DC26168817040089730B /* stream.json in Resources */,
 				5B30DC27168817040089730B /* token.json in Resources */,
 				5B30DC29168819E00089730B /* interaction-follow.json in Resources */,
+				5BBBDCE416B8A3950026A041 /* file.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1687,6 +1788,7 @@
 				5B30DC3A1688F4DE0089730B /* token.json in Resources */,
 				5B30DC3B1688F4DE0089730B /* user.json in Resources */,
 				5B30DC3F1688F5040089730B /* SnapperTests-Info.plist in Resources */,
+				5BBBDCE516B8A3950026A041 /* file.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1818,6 +1920,16 @@
 				5B6B48F01687CDF90032C586 /* SNPBaseClientOperation.m in Sources */,
 				5B6B48F51687CEFC0032C586 /* SNPACL.m in Sources */,
 				5B2E459016A36E49000CCDB6 /* SNPBaseImageUpdateOperation.m in Sources */,
+				5B8A333516B791B800BE5A8A /* SNPFile.m in Sources */,
+				5B8A333C16B7980B00BE5A8A /* SNPSource.m in Sources */,
+				5B8A334216B7998300BE5A8A /* SNPCreateFileOperation.m in Sources */,
+				5B8A334716B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */,
+				5BBBDCEF16B8B1940026A041 /* SNPUpdateFileOperation.m in Sources */,
+				5BBBDCF416B8DC550026A041 /* SNPDeleteFileOperation.m in Sources */,
+				5BBBDCF916B8E3370026A041 /* SNPGetMyFilesOperation.m in Sources */,
+				5BBBDCFE16B8E41C0026A041 /* SNPSetFileContentOperation.m in Sources */,
+				5BBBDD0316B8E63D0026A041 /* SNPGetFileOperation.m in Sources */,
+				5BBBDD0816B8E66A0026A041 /* SNPGetFilesOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1927,6 +2039,16 @@
 				5B6B48F11687CDF90032C586 /* SNPBaseClientOperation.m in Sources */,
 				5B6B48F61687CEFC0032C586 /* SNPACL.m in Sources */,
 				5B2E459116A36E49000CCDB6 /* SNPBaseImageUpdateOperation.m in Sources */,
+				5B8A333616B791B800BE5A8A /* SNPFile.m in Sources */,
+				5B8A333D16B7980B00BE5A8A /* SNPSource.m in Sources */,
+				5B8A334316B7998300BE5A8A /* SNPCreateFileOperation.m in Sources */,
+				5B8A334816B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */,
+				5BBBDCF016B8B1940026A041 /* SNPUpdateFileOperation.m in Sources */,
+				5BBBDCF516B8DC550026A041 /* SNPDeleteFileOperation.m in Sources */,
+				5BBBDCFA16B8E3370026A041 /* SNPGetMyFilesOperation.m in Sources */,
+				5BBBDCFF16B8E41C0026A041 /* SNPSetFileContentOperation.m in Sources */,
+				5BBBDD0416B8E63D0026A041 /* SNPGetFileOperation.m in Sources */,
+				5BBBDD0916B8E66A0026A041 /* SNPGetFilesOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

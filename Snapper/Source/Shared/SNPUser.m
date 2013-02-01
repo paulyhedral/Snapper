@@ -12,9 +12,12 @@
 @implementation SNPUser
 
 + (NSDateFormatter*)dateFormatter {
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    static NSDateFormatter* dateFormatter = nil;
+    if(dateFormatter == nil) {
+    dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+    }
 
     return dateFormatter;
 }
