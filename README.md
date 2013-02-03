@@ -27,7 +27,7 @@ Caveats
 
 This library is incomplete. The basic API operations are done, and should be working as expected.
 
-Not all operations are implemented. For example, application token-based stream operations are not done. Some user profile update operations (like avatars and cover images) are not done. There are probably others. Keep an eye out!
+Not all operations are implemented. For example, application token-based stream operations are not done. There are probably others. Keep an eye out!
 
 Usage
 -----
