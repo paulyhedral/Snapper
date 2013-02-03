@@ -82,12 +82,12 @@
     STAssertNotNil(channel, @"Unable to create channel from JSON");
 
     STAssertTrue(channel.channelId == 1, @"Channel 'id' property should be 1");
-    STAssertNotNil(channel.owner, @"Channel owner should not be nil");
-    STAssertTrue(channel.owner.userId == 1199, @"Channel owner.userId property should be 1199");
-    STAssertTrue(channel.readersAnyUser == NO, @"Channel readers.anyUser property should be NO");
-    STAssertTrue(channel.recentMessageId == 231, @"Channel recentMessageId property should be 231");
+    STAssertNotNil(channel.owner, @"Channel 'owner' property should not be nil");
+    STAssertTrue(channel.owner.userId == 1199, @"Channel 'owner.userId' property should be 1199");
+    STAssertNotNil(channel.readers, @"Channel 'readers' property should not be nil");
+    STAssertTrue(channel.recentMessageId == 231, @"Channel 'recentMessageId' property should be 231");
     STAssertTrue([channel.type isEqualToString:SNP_CHANNEL_TYPE_PM], @"Channel 'type' property should be set to constant value '%@' (actually is '%@')", SNP_CHANNEL_TYPE_PM, channel.type);
-    STAssertTrue([channel.writersUserIds count] == 1, @"Channel 'writers.userIds' property should have 1 item");
+    STAssertNotNil(channel.writers, @"Channel 'writers' property should not be nil");
     STAssertTrue(channel.youCanEdit == NO, @"Channel 'youCanEdit' property should be NO");
     STAssertTrue(channel.youSubscribed == YES, @"Channel 'youSubscribed' property should be YES");
 }

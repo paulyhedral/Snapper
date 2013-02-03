@@ -8,19 +8,23 @@
 
 #import "SNPGetSubscribedChannelsOperation.h"
 
+#import "SNPChannel.h"
+
 #import "SNPAPIUtils.h"
 
 
 @implementation SNPGetSubscribedChannelsOperation
 
+#pragma mark - Initialization
+
 - (id)initWithAccountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.endpoint = [[SNPAPIUtils sharedAPIUtils] getSubscribedChannelsEndpointURL];
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
+        self.serializationArrayClass = [SNPChannel class];
     }
 
     return self;

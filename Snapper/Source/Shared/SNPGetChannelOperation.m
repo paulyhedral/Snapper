@@ -8,6 +8,8 @@
 
 #import "SNPGetChannelOperation.h"
 
+#import "SNPChannel.h"
+
 #import "SNPAPIUtils.h"
 
 
@@ -17,19 +19,15 @@
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.channelId = channelId;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelEndpointURL:_channelId];
+        self.serializationRootClass = [SNPChannel class];
     }
-}
 
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelEndpointURL:_channelId];
-
-    [super main];
+    return self;
 }
 
 @end

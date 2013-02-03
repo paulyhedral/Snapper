@@ -97,7 +97,7 @@
 #import <Snapper/SNPUnmuteUserOperation.h>
 #import <Snapper/SNPUnrepostOperation.h>
 #import <Snapper/SNPUnstarPostOperation.h>
-#import <Snapper/SNPUnsubscribeOperation.h>
+#import <Snapper/SNPUnsubscribeFromChannelOperation.h>
 #import <Snapper/SNPUpdateChannelOperation.h>
 #import <Snapper/SNPUpdateFilterOperation.h>
 #import <Snapper/SNPUpdateStreamMarkerOperation.h>

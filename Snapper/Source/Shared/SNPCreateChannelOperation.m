@@ -16,6 +16,8 @@
 
 @implementation SNPCreateChannelOperation
 
+#pragma mark - Initialization
+
 - (id)initWithType:(NSString*)type
            readers:(SNPACL*)readers
            writers:(SNPACL*)writers
@@ -23,7 +25,8 @@
          accountId:(NSString*)accountId
        finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.endpoint = [[SNPAPIUtils sharedAPIUtils] createChannelEndpointURL];
         self.type = type;
@@ -31,10 +34,13 @@
         self.writers = writers;
         self.annotations = annotations;
         self.bodyType = @"application/json";
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
     }
+
+    return self;
 }
+
+
+#pragma mark - Workhorse
 
 - (void)main {
 

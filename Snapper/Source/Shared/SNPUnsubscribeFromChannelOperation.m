@@ -1,21 +1,21 @@
 //
-//  SNPGetChannelMessagesOperation.m
+//  SNPUnsubscribeFromChannelOperation.m
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/20/12.
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPGetChannelMessagesOperation.h"
+#import "SNPUnsubscribeFromChannelOperation.h"
 
-#import "SNPMessage.h"
+#import "SNPChannel.h"
 
 #import "SNPAPIUtils.h"
 
 
-@implementation SNPGetChannelMessagesOperation
+@implementation SNPUnsubscribeFromChannelOperation
 
-#pragma mark - Initialization
+#pragma mark - Initializers
 
 - (id)initWithChannelId:(NSUInteger)channelId
               accountId:(NSString*)accountId
@@ -35,9 +35,10 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelMessagesEndpointURL:_channelId];
-    self.serializationArrayClass = [SNPMessage class];
-    
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] unsubscribeFromChannelEndpointURL:_channelId];
+    self.method = @"DELETE";
+    self.serializationRootClass = [SNPChannel class];
+
     [super main];
 }
 

@@ -12,12 +12,11 @@
 @interface SNPGetSubscribersOperation : SNPBaseUserOperation
 
 // -- Properties --
-@property (nonatomic, assign) NSUInteger channelId;
+@property (nonatomic, retain) NSArray* channelIds;
 
 // -- Initialization --
-- (id)initWithChannelId:(NSUInteger)channelId
-              accountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse* response))finishBlock;
-
+- (id)initWithChannelIds:(NSArray*)channelIds
+               accountId:(NSString*)accountId
+             finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

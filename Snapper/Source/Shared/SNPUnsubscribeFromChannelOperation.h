@@ -1,5 +1,5 @@
 //
-//  SNPGetChannelSubscribersOperation.h
+//  SNPUnsubscribeFromChannelOperation.h
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/20/12.
@@ -9,7 +9,7 @@
 #import "SNPBaseUserOperation.h"
 
 
-@interface SNPGetChannelSubscribersOperation : SNPBaseUserOperation
+@interface SNPUnsubscribeFromChannelOperation : SNPBaseUserOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger channelId;
@@ -18,5 +18,6 @@
 - (id)initWithChannelId:(NSUInteger)channelId
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock;
+
 
 @end

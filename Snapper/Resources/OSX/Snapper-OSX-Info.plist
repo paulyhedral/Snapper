@@ -17,13 +17,13 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.9.3</string>
+	<string>0.9.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2012 Pilgrimage Software. All rights reserved.</string>
+	<string>Copyright © 2013 Pilgrimage Software. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
 </dict>
