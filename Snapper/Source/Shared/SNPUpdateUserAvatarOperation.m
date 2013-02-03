@@ -8,40 +8,16 @@
 
 #import "SNPUpdateUserAvatarOperation.h"
 
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-#import <UIKit/UIKit.h>
-#else
-#import <Cocoa/Cocoa.h>
-#endif
-
 #import "SNPAPIUtils.h"
 
 
 @implementation SNPUpdateUserAvatarOperation
 
-#pragma mark - Initializers
-
-- (id)initWithImage:(id)image
-          accountId:(NSString*)accountId
-        finishBlock:(void (^)(SNPResponse*))finishBlock {
-
-    self = [super init];
-    if(self) {
-        self.image = image;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
-    }
-
-    return self;
-}
-
-
-#pragma mark - Workhorse
-
 - (void)main {
 
-    // TODO
-    
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserAvatarEndpointURL];
+
+    [super main];
 }
 
 @end

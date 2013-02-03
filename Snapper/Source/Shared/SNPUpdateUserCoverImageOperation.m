@@ -8,6 +8,16 @@
 
 #import "SNPUpdateUserCoverImageOperation.h"
 
+#import "SNPAPIUtils.h"
+
+
 @implementation SNPUpdateUserCoverImageOperation
+
+- (void)main {
+
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserCoverImageEndpointURL];
+
+    [super main];
+}
 
 @end

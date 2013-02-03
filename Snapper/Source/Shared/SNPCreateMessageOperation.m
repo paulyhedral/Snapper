@@ -29,7 +29,8 @@
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.channelId = channelId;
         self.text = text;
@@ -37,8 +38,6 @@
         self.machineOnly = machineOnly;
         self.annotations = annotations;
         self.entities = entities;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
     }
 
     return self;

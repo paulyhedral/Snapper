@@ -17,26 +17,9 @@
 #import "SNPConstants.h"
 
 
-@implementation SNPBaseUserOperation {
-
-@private
-    NSURLConnection* _connection;
-    NSMutableData* _receivedData;
-    BOOL _done;
-
-}
+@implementation SNPBaseUserOperation
 
 #pragma mark - Initializers
-
-- (id)init {
-
-    self = [super init];
-    if(self) {
-        self.method = @"GET";
-    }
-
-    return self;
-}
 
 - (id)initWithAccountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse*))finishBlock {
@@ -87,8 +70,8 @@
     SNPAccount* account = [[SNPAccountManager sharedAccountManager] accountForId:_accountId];
     NSAssert(account, @"No account found for ID: %@", _accountId);
 
-    NSAssert(_method, @"No method set for API operation!");
-    NSAssert(_endpoint, @"No endpoint set for API operation!");
+    NSAssert(self.method, @"No method set for API operation!");
+    NSAssert(self.endpoint, @"No endpoint set for API operation!");
 
     _receivedData = [NSMutableData new];
 
@@ -101,13 +84,13 @@
         SNPResponse* response = [[SNPResponse alloc] init];
         response.metadata = meta;
 
-        _finishBlock(response);
+        self.finishBlock(response);
         return;
     }
 
     // Query parameters
     NSMutableString* queryParams = [NSMutableString new];
-    [_parameters enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
+    [self.parameters enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
         if([queryParams length] > 0) {
             [queryParams appendString:@"&"];
         }
@@ -116,14 +99,14 @@
     }];
 
     if([queryParams length] > 0) {
-        NSString* urlString = [NSString stringWithFormat:@"%@?%@", [_endpoint absoluteString], queryParams];
-        _endpoint = [NSURL URLWithString:urlString];
+        NSString* urlString = [NSString stringWithFormat:@"%@?%@", [self.endpoint absoluteString], queryParams];
+        self.endpoint = [NSURL URLWithString:urlString];
     }
 
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:_endpoint];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:self.endpoint];
 
     // Provided headers
-    [_headers enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
+    [self.headers enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
         [request addValue:value
        forHTTPHeaderField:key];
     }];
@@ -137,15 +120,15 @@
    forHTTPHeaderField:@"Accept"];
 
     // Set request body.
-    NSString* localMethod = [_method uppercaseString];
+    NSString* localMethod = [self.method uppercaseString];
     [request setHTTPMethod:localMethod];
     if([localMethod isEqualToString:@"POST"] ||
        [localMethod isEqualToString:@"PUT"] ||
        [localMethod isEqualToString:@"DELETE"]) {
-        request.HTTPBody = _body;
+        request.HTTPBody = self.body;
 
-        if(_bodyType) {
-            [request addValue:_bodyType
+        if(self.bodyType) {
+            [request addValue:self.bodyType
            forHTTPHeaderField:@"Content-Type"];
         }
     }
@@ -159,190 +142,6 @@
         NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:5];
         [[NSRunLoop currentRunLoop] runUntilDate:futureDate];
     }
-}
-
-
-#pragma mark - Utility methods
-
-- (SNPResponse*)createResponseFromJSON:(NSDictionary*)jsonDict {
-
-    SNPResponse* response = [[SNPResponse alloc] init];
-
-    // Process metadata.
-    SNPMetadata* meta = [[SNPMetadata alloc] init];
-
-    // Status code.
-    NSDictionary* metaDict = jsonDict[@"meta"];
-    meta.code = [metaDict[@"code"] integerValue];
-
-    // Error information.
-    meta.errorId = metaDict[@"error_id"];
-    meta.errorSlug = metaDict[@"error_slug"];
-    meta.errorMessage = metaDict[@"error_message"];
-
-    // Pagination data.
-    meta.minId = [metaDict[@"min_id"] integerValue];
-    meta.maxId = [metaDict[@"max_id"] integerValue];
-    meta.more = [metaDict[@"more"] boolValue];
-
-    // Stream marker data.
-    NSDictionary* markerDict = metaDict[@"marker"];
-    if(markerDict) {
-        SNPStreamMarker* streamMarker = [[SNPStreamMarker alloc] init];
-
-        streamMarker.postId = [markerDict[@"id"] integerValue];
-        streamMarker.name = markerDict[@"name"];
-        streamMarker.percentage = [markerDict[@"percentage"] integerValue];
-        streamMarker.version = markerDict[@"version"];
-
-        if(markerDict[@"updated_at"]) {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-            dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
-            streamMarker.updatedAt = [dateFormatter dateFromString:markerDict[@"updated_at"]];
-        }
-
-        meta.streamMarker = streamMarker;
-    }
-
-    response.metadata = meta;
-
-    // Process data.
-    response.data = jsonDict[@"data"];
-
-    return response;
-}
-
-- (SNPResponse*)createResponseFromError:(NSError*)error {
-
-    SNPResponse* response = [[SNPResponse alloc] init];
-
-    SNPMetadata* meta = [[SNPMetadata alloc] init];
-    meta.errorId = [NSString stringWithFormat:@"%ld", (long)error.code];
-    meta.errorMessage = [error localizedDescription];
-
-    response.metadata = meta;
-
-    return response;
-}
-
-
-#pragma mark - Connection delegate methods
-
-- (void)connection:(NSURLConnection*)connection
-willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge {
-
-    NSString* authMethod = challenge.protectionSpace.authenticationMethod;
-
-    if([authMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
-        [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
-    }
-}
-
-- (void)connection:(NSURLConnection*)connection
-   didSendBodyData:(NSInteger)bytesWritten
- totalBytesWritten:(NSInteger)totalBytesWritten
-totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
-
-    if(_progressBlock) {
-        _progressBlock(bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
-    }
-}
-
-- (void)connection:(NSURLConnection*)connection
-didReceiveResponse:(NSURLResponse*)response {
-
-    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    NSInteger statusCode = httpResponse.statusCode;
-
-    // TODO
-}
-
-- (void)connection:(NSURLConnection*)connection
-    didReceiveData:(NSData*)data {
-    [_receivedData appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection*)connection {
-
-    NSError* jsonError = nil;
-    NSDictionary* jsonData = [NSJSONSerialization JSONObjectWithData:_receivedData
-                                                             options:0
-                                                               error:&jsonError];
-    if(jsonData == nil) {
-        SNPResponse* response = [self createResponseFromError:jsonError];
-
-        if(_finishBlock) {
-            _finishBlock(response);
-        }
-        _done = YES;
-        return;
-    }
-
-    SNPResponse* response = [self createResponseFromJSON:jsonData];
-
-    if(response.data) {
-        if(_serializationBlock) {
-            NSError* serializationError = nil;
-            id serializedData = _serializationBlock(response.data, &serializationError);
-            if(serializedData == nil &&
-               serializationError) {
-                response = [self createResponseFromError:serializationError];
-            }
-            else {
-                response.data = serializedData;
-            }
-        }
-        else if(_serializationRootClass) {
-            id serializedObject = [_serializationRootClass modelWithExternalRepresentation:response.data];
-            if(serializedObject == nil) {
-                NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                             code:SNPSerializationErrorCode
-                                         userInfo:nil];
-                response = [self createResponseFromError:error];
-            }
-            else {
-                response.data = serializedObject;
-            }
-        }
-        else if(_serializationArrayClass) {
-            NSMutableArray* arrayOfData = [NSMutableArray new];
-
-            for(NSDictionary* objectDict in response.data) {
-                id serializedObject = [_serializationArrayClass modelWithExternalRepresentation:response.data];
-                if(serializedObject == nil) {
-                    NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                                 code:SNPSerializationErrorCode
-                                             userInfo:nil];
-                    response = [self createResponseFromError:error];
-                    arrayOfData = nil;
-                    break;
-                }
-                else {
-                    [arrayOfData addObject:serializedObject];
-                }
-            }
-
-            response.data = arrayOfData;
-        }
-    }
-
-    if(_finishBlock) {
-        _finishBlock(response);
-    }
-    
-    _done = YES;
-}
-
-- (void)connection:(NSURLConnection*)connection
-  didFailWithError:(NSError*)error {
-    
-    SNPResponse* response = [self createResponseFromError:error];
-    
-    if(_finishBlock) {
-        _finishBlock(response);
-    }
-    _done = YES;
 }
 
 @end

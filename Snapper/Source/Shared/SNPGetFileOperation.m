@@ -18,6 +18,7 @@
 #pragma mark - Initializers
 
 - (id)initWithFileId:(NSInteger)fileId
+           fileToken:(NSString*)fileToken
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
@@ -25,23 +26,13 @@
                         finishBlock:finishBlock];
     if(self) {
         self.fileId = fileId;
+        self.fileToken = fileToken;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getFileEndpointURL:fileId];
+        self.method = @"GET";
+        self.serializationRootClass = [SNPFile class];
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorse
-
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getFileEndpointURL:_fileId];
-    self.method = @"GET";
-
-
-    self.serializationRootClass = [SNPFile class];
-    
-    [super main];
 }
 
 @end

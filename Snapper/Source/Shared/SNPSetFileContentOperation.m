@@ -22,12 +22,11 @@
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.fileId = fileId;
         self.data = data;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
     }
 
     return self;

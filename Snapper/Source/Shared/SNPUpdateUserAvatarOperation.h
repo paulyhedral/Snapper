@@ -6,17 +6,9 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseImageUpdateOperation.h"
 
 
-@interface SNPUpdateUserAvatarOperation : SNPBaseUserOperation
-
-// -- Properties --
-@property (nonatomic, retain) id image;
-
-// -- Initializers --
-- (id)initWithImage:(id)image
-          accountId:(NSString*)accountId
-        finishBlock:(void (^)(SNPResponse* response))finishBlock;
+@interface SNPUpdateUserAvatarOperation : SNPBaseImageUpdateOperation
 
 @end

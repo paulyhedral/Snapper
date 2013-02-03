@@ -19,25 +19,15 @@
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.postId = postId;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] starPostEndpointURL:postId];
+        self.method = @"POST";
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorse
-
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] starPostEndpointURL:_postId];
-    self.method = @"POST";
-
-    [super main];
 }
 
 @end

@@ -8,6 +8,14 @@
 
 #import "SNPBaseUserOperation.h"
 
+
 @interface SNPGetTaggedPostsOperation : SNPBaseUserOperation
+
+// -- Properties --
+@property (nonatomic, copy) NSString* hashtag;
+
+// -- Initializers --
+- (id)initWithHashtag:(NSString*)hashtag
+          finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

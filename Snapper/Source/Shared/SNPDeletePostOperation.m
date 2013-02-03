@@ -19,25 +19,15 @@
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.postId = postId;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] deletePostEndpointURL:postId];
+        self.method = @"DELETE";
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorse
-
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] deletePostEndpointURL:_postId];
-    self.method = @"DELETE";
-
-    [super main];
 }
 
 @end

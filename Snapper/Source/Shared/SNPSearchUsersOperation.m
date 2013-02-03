@@ -21,28 +21,18 @@
                 accountId:(NSString*)accountId
               finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.queryString = queryString;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
+        self.parameters = (@{
+                           @"q" : queryString,
+                           });
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] searchUsersEndpointURL];
+        self.serializationArrayClass = [SNPUser class];
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorse
-
-- (void)main {
-
-    self.parameters = (@{
-                       @"q" : _queryString,
-                       });
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] searchUsersEndpointURL];
-    self.serializationArrayClass = [SNPUser class];
-
-    [super main];
 }
 
 @end

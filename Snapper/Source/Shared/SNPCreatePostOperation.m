@@ -30,16 +30,15 @@
      progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
        finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.text = text;
         self.replyTo = replyTo;
         self.machineOnly = machineOnly;
         self.annotations = annotations;
         self.entities = entities;
-        self.accountId = accountId;
         self.progressBlock = progressBlock;
-        self.finishBlock = finishBlock;
     }
 
     return self;

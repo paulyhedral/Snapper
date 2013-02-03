@@ -21,13 +21,12 @@
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.postId = postId;
         self.name = name;
         self.percentage = percentage;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
     }
 
     return self;

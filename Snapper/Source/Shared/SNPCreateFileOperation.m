@@ -20,18 +20,17 @@
 - (id)initWithName:(NSString*)name
        contentType:(NSString*)contentType
               type:(NSString*)type
-data:(NSData*)data
+              data:(NSData*)data
          accountId:(NSString*)accountId
        finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.name = name;
         self.contentType = contentType;
         self.type = type;
         self.data = data;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
     }
 
     return self;
@@ -87,7 +86,7 @@ data:(NSData*)data
     self.bodyType = [NSString stringWithFormat:@"multipart/form-data; boundary=\"%@\"", boundaryString];
 
     self.serializationRootClass = [SNPFile class];
-
+    
     [super main];
 }
 

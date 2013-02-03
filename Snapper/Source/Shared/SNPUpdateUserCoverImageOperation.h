@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseImageUpdateOperation.h"
 
-@interface SNPUpdateUserCoverImageOperation : SNPBaseUserOperation
+
+@interface SNPUpdateUserCoverImageOperation : SNPBaseImageUpdateOperation
 
 @end

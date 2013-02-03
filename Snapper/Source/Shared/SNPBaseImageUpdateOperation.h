@@ -7,8 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SNPBaseUserOperation.h"
 
 
-@interface SNPBaseImageUpdateOperation : NSOperation
+@interface SNPBaseImageUpdateOperation : SNPBaseUserOperation
+
+// -- Properties --
+@property (nonatomic, retain) id image;
+
+// -- Initializers --
+- (id)initWithImage:(id)image
+          accountId:(NSString*)accountId
+        finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

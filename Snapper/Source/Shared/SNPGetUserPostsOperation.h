@@ -8,6 +8,15 @@
 
 #import "SNPBaseUserOperation.h"
 
+
 @interface SNPGetUserPostsOperation : SNPBaseUserOperation
+
+// -- Properties --
+@property (nonatomic, assign) NSUInteger userId;
+
+// -- Initialization --
+- (id)initWithUserId:(NSUInteger)userId
+           accountId:(NSString*)accountId
+         finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

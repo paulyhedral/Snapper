@@ -22,25 +22,15 @@
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.postId = postId;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getPostEndpointURL:postId];
+        self.serializationRootClass = [SNPPost class];
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorses
-
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getPostEndpointURL:_postId];
-    self.serializationRootClass = [SNPPost class];
-
-    [super main];
 }
 
 @end

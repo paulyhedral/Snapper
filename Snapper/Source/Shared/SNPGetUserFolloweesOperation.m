@@ -21,25 +21,15 @@
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.userId = userId;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getUserFolloweesEndpointURL:userId];
+        self.serializationArrayClass = [SNPUser class];
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorse
-
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getUserFolloweesEndpointURL:_userId];
-    self.serializationArrayClass = [SNPUser class];
-
-    [super main];
 }
 
 @end

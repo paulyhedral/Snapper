@@ -26,15 +26,13 @@
          accountId:(NSString*)accountId
        finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserEndpointURL];
         self.name = name;
         self.locale = locale;
         self.timezone = timezone;
         self.description = description;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
     }
 
     return self;
@@ -44,6 +42,8 @@
 #pragma mark - Workhorse
 
 - (void)main {
+
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserEndpointURL];
 
     NSMutableDictionary* userDict = [NSMutableDictionary new];
 

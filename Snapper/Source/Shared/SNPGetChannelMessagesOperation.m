@@ -25,20 +25,11 @@
                         finishBlock:finishBlock];
     if(self) {
         self.channelId = channelId;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelMessagesEndpointURL:channelId];
+        self.serializationArrayClass = [SNPMessage class];
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorse
-
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelMessagesEndpointURL:_channelId];
-    self.serializationArrayClass = [SNPMessage class];
-    
-    [super main];
 }
 
 @end

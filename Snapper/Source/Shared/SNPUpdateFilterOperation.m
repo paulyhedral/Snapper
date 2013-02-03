@@ -22,14 +22,13 @@
              accountId:(NSString*)accountId
            finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.filterId = filterId;
         self.name = name;
         self.matchPolicy = matchPolicy;
         self.clauses = clauses;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
     }
 
     return self;

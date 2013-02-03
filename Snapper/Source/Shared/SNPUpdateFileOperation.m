@@ -8,6 +8,8 @@
 
 #import "SNPUpdateFileOperation.h"
 
+#import "SNPAPIUtils.h"
+
 
 @implementation SNPUpdateFileOperation
 
@@ -19,13 +21,12 @@
          accountId:(NSString*)accountId
        finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.fileId = fileId;
         self.name = name;
         self.annotations = annotations;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
     }
 
     return self;

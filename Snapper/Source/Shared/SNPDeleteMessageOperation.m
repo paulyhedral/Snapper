@@ -27,22 +27,13 @@
     if(self) {
         self.messageId = messageId;
         self.channelId = channelId;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteMessageEndpointURL:channelId
+                                                                     messageId:messageId];
+        self.method = @"DELETE";
+        self.serializationRootClass = [SNPMessage class];
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorse
-
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteMessageEndpointURL:_channelId
-                                                                messageId:_messageId];
-    self.method = @"DELETE";
-    self.serializationRootClass = [SNPMessage class];
-
-    [super main];
 }
 
 @end

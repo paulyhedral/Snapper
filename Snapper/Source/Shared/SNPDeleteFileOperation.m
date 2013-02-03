@@ -21,26 +21,16 @@
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [super init];
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
     if(self) {
         self.fileId = fileId;
-        self.accountId = accountId;
-        self.finishBlock = finishBlock;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteFileEndpointURL:fileId];
+        self.method = @"DELETE";
+        self.serializationRootClass = [SNPFile class];
     }
 
     return self;
-}
-
-
-#pragma mark - Workhorse
-
-- (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteFileEndpointURL:_fileId];
-    self.method = @"DELETE";
-    self.serializationRootClass = [SNPFile class];
-    
-    [super main];
 }
 
 @end

@@ -7,8 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SNPResponse.h"
 
 
 @interface SNPBaseApplicationOperation : NSOperation
+
+// -- Properties --
+@property (nonatomic, copy) NSString* appToken;
+@property (nonatomic, copy) void (^finishBlock)(SNPResponse* response);
+
+// -- Initialization --
+- (id)initWithAppToken:(NSString*)appToken
+           finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

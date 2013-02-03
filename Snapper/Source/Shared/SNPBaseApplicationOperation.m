@@ -11,4 +11,16 @@
 
 @implementation SNPBaseApplicationOperation
 
+- (id)initWithAppToken:(NSString*)appToken
+           finishBlock:(void (^)(SNPResponse* response))finishBlock {
+
+    self = [super init];
+    if(self) {
+        self.appToken = appToken;
+        self.finishBlock = finishBlock;
+    }
+
+    return self;
+}
+
 @end
