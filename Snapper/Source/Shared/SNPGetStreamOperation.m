@@ -8,7 +8,26 @@
 
 #import "SNPGetStreamOperation.h"
 
+#import "SNPStream.h"
+
+#import "SNPAPIUtils.h"
+
 
 @implementation SNPGetStreamOperation
+
+- (id)initWithStreamId:(NSInteger)streamId
+              appToken:(NSString*)appToken
+           finishBlock:(void (^)(SNPResponse* response))finishBlock {
+
+    self = [super initWithAppToken:appToken
+                       finishBlock:finishBlock];
+    if(self) {
+        self.streamId = streamId;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getStreamEndpointURL:streamId];
+        self.serializationRootClass = [SNPStream class];
+    }
+
+    return self;
+}
 
 @end

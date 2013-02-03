@@ -11,4 +11,12 @@
 
 @interface SNPGetStreamOperation : SNPBaseApplicationOperation
 
+// -- Properties --
+@property (nonatomic, assign) NSInteger streamId;
+
+// -- Initializers --
+- (id)initWithStreamId:(NSInteger)streamId
+              appToken:(NSString*)appToken
+           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+
 @end

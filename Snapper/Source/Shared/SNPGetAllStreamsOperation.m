@@ -8,7 +8,19 @@
 
 #import "SNPGetAllStreamsOperation.h"
 
+#import "SNPStream.h"
+
+#import "SNPAPIUtils.h"
+
 
 @implementation SNPGetAllStreamsOperation
+
+- (void)main {
+
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getAllStreamsEndpointURL];
+    self.serializationArrayClass = [SNPStream class];
+
+    [super main];
+}
 
 @end

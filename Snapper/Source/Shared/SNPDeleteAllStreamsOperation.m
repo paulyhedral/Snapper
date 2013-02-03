@@ -8,7 +8,20 @@
 
 #import "SNPDeleteAllStreamsOperation.h"
 
+#import "SNPStream.h"
+
+#import "SNPAPIUtils.h"
+
 
 @implementation SNPDeleteAllStreamsOperation
+
+- (void)main {
+
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteAllStreamsEndpointURL];
+    self.method = @"DELETE";
+    self.serializationArrayClass = [SNPStream class];
+
+    [super main];
+}
 
 @end

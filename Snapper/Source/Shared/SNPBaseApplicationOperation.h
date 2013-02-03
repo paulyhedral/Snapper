@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SNPResponse.h"
+#import "SNPBaseClientOperation.h"
 
 
-@interface SNPBaseApplicationOperation : NSOperation
+@interface SNPBaseApplicationOperation : SNPBaseClientOperation
 
 // -- Properties --
 @property (nonatomic, copy) NSString* appToken;

@@ -1069,6 +1069,7 @@
 				3C6B5F391680F184006C63C1 /* Accounts */,
 				3C6B5F381680F0D6006C63C1 /* Model */,
 				3C6B5F371680F0CF006C63C1 /* Operations */,
+				5BB17E9F16BEEA8E00583020 /* Convenience Operations */,
 				3CDF12071683B7E30058CBE0 /* Threads */,
 				3C6B5F8516810A2E006C63C1 /* Miscellaneous */,
 				5BE0A54E16817FE8005AA40C /* Categories */,
@@ -1151,14 +1152,14 @@
 		3C6B5F371680F0CF006C63C1 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				5B1A40E01686664E0030BB30 /* SNPBaseGetPostStreamOperation.h */,
-				5B1A40E11686664E0030BB30 /* SNPBaseGetPostStreamOperation.m */,
 				5B6B48E81687CD250032C586 /* SNPBaseApplicationOperation.h */,
 				5B6B48E91687CD260032C586 /* SNPBaseApplicationOperation.m */,
 				5B6B48ED1687CDF80032C586 /* SNPBaseClientOperation.h */,
 				5B6B48EE1687CDF90032C586 /* SNPBaseClientOperation.m */,
 				5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */,
 				5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */,
+				5B1A40E01686664E0030BB30 /* SNPBaseGetPostStreamOperation.h */,
+				5B1A40E11686664E0030BB30 /* SNPBaseGetPostStreamOperation.m */,
 				5B1A40D91686454E0030BB30 /* SNPBaseImageFetchOperation.h */,
 				5B1A40DA1686454F0030BB30 /* SNPBaseImageFetchOperation.m */,
 				5B2E458D16A36D88000CCDB6 /* SNPBaseImageUpdateOperation.h */,
@@ -1463,6 +1464,13 @@
 				5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		5BB17E9F16BEEA8E00583020 /* Convenience Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Convenience Operations";
 			sourceTree = "<group>";
 		};
 		5BE0A54E16817FE8005AA40C /* Categories */ = {
