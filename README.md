@@ -59,6 +59,7 @@ The following model objects are defined. Note that some of these objects are onl
 * Channel
 * Description
 * Entity
+* File
 * Filter
 * Filter Clause
 * Hashtag
@@ -77,7 +78,7 @@ Some notes are in order for a few of these model objects.
 
 #### ACL
 
-This is the object contained inside a `Channel`'s `readers` or `writers` properties. *Note that this object is not currently used by `Channel` yet.*
+This is the object contained inside a `Channel`'s `readers` or `writers` properties.
 
 #### Annotation
 
@@ -119,7 +120,7 @@ License
 
 Snapper is available under the MIT license.
 
-Copyright &copy; 2012 Pilgrimage Software
+Copyright &copy; 2013 Pilgrimage Software
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
