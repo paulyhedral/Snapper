@@ -28,6 +28,8 @@
 #import <Snapper/SNPLink.h>
 #import <Snapper/SNPMention.h>
 #import <Snapper/SNPMessage.h>
+#import <Snapper/SNPPlace.h>
+#import <Snapper/SNPPlaceCategory.h>
 #import <Snapper/SNPPost.h>
 #import <Snapper/SNPSource.h>
 #import <Snapper/SNPStream.h>
@@ -67,6 +69,7 @@
 #import <Snapper/SNPGetMessageOperation.h>
 #import <Snapper/SNPGetMessagesOperation.h>
 #import <Snapper/SNPGetPersonalStreamOperation.h>
+#import <Snapper/SNPGetPlaceOperation.h>
 #import <Snapper/SNPGetPostOperation.h>
 #import <Snapper/SNPGetPostRepliesOperation.h>
 #import <Snapper/SNPGetPostsOperation.h>
@@ -90,6 +93,7 @@
 #import <Snapper/SNPListInteractionsOperation.h>
 #import <Snapper/SNPMuteUserOperation.h>
 #import <Snapper/SNPRepostOperation.h>
+#import <Snapper/SNPSearchPlacesOperation.h>
 #import <Snapper/SNPSearchUsersOperation.h>
 #import <Snapper/SNPStarPostOperation.h>
 #import <Snapper/SNPSubscribeToChannelOperation.h>

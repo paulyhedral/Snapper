@@ -6,7 +6,7 @@ App.net SDK in Objective-C
 Version
 -------
 
-0.9.6
+0.9.7
 
 Platforms
 ---------
@@ -68,6 +68,7 @@ The following model objects are defined. Note that some of these objects are onl
 * Link
 * Mention
 * Message
+* Place
 * Post
 * Stream
 * Stream Marker

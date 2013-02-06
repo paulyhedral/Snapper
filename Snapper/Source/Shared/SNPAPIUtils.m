@@ -40,7 +40,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getUserAvatarEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/avatar", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/avatar", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -50,7 +50,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getUserCoverImageEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/cover", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/cover", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -60,22 +60,22 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)followUserEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/follow", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/follow", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)unfollowUserEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/follow", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/follow", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)muteUserEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/mute", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/mute", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)unmuteUserEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/mute", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/mute", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -90,22 +90,22 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getUserFolloweesEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/following", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/following", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getUserFollowersEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/followers", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/followers", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getUserFolloweeIdsEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/following/ids", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/following/ids", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getUserFollowerIdsEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/followers/ids", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/followers/ids", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -115,12 +115,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getRepostersEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d/reposters", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld/reposters", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getStarrersEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d/stars", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld/stars", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -133,32 +133,32 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getPostEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)deletePostEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)repostEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d/repost", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld/repost", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)unrepostEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d/repost", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld/repost", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)starPostEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d/star", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld/star", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)unstarPostEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d/star", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld/star", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -168,17 +168,17 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getUserPostsEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/posts", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/posts", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getStarredPostsEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/stars", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/stars", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getMentionsEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d/mentions", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld/mentions", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -188,7 +188,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getRepliesEndpointURL:(NSInteger)postId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%d/replies", postId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld/replies", (long)postId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -221,7 +221,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getChannelEndpointURL:(NSInteger)channelId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d", channelId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld", (long)channelId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -231,27 +231,27 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)updateChannelEndpointURL:(NSInteger)channelId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d", channelId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld", (long)channelId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)subscribeToChannelEndpointURL:(NSInteger)channelId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d/subscribe", channelId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld/subscribe", (long)channelId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)unsubscribeFromChannelEndpointURL:(NSInteger)channelId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d/subscribe", channelId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld/subscribe", (long)channelId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getChannelSubscribersEndpointURL:(NSInteger)channelId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d/subscribers", channelId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld/subscribers", (long)channelId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getChannelSubscriberIdsEndpointURL:(NSInteger)channelId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d/subscribers/ids", channelId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld/subscribers/ids", (long)channelId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -264,18 +264,18 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 #pragma mark - Message URL methods
 
 - (NSURL*)getChannelMessagesEndpointURL:(NSInteger)channelId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d/messages", channelId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld/messages", (long)channelId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)createMessageEndpointURL:(NSInteger)channelId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d/messages", channelId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld/messages", (long)channelId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)getMessageEndpointURL:(NSInteger)channelId
                       messageId:(NSInteger)messageId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d/messages/%d", channelId, messageId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld/messages/%ld", (long)channelId, (long)messageId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -286,7 +286,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 
 - (NSURL*)deleteMessageEndpointURL:(NSInteger)channelId
                          messageId:(NSInteger)messageId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%d/messages/%d", channelId, messageId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/channels/%ld/messages/%ld", (long)channelId, (long)messageId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -299,12 +299,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getStreamEndpointURL:(NSInteger)streamId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/streams/%d", streamId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/streams/%ld", (long)streamId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)deleteStreamEndpointURL:(NSInteger)streamId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/streams/%d", streamId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/streams/%ld", (long)streamId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -327,17 +327,17 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getFilterEndpointURL:(NSInteger)filterId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/filters/%d", filterId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/filters/%ld", (long)filterId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)updateFilterEndpointURL:(NSInteger)filterId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/filters/%d", filterId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/filters/%ld", (long)filterId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)deleteFilterEndpointURL:(NSInteger)filterId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/filters/%d", filterId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/filters/%ld", (long)filterId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -384,7 +384,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)getFileEndpointURL:(NSInteger)fileId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%d", fileId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%ld", (long)fileId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -394,7 +394,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)deleteFileEndpointURL:(NSInteger)fileId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%d", fileId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%ld", (long)fileId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -404,12 +404,25 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 }
 
 - (NSURL*)updateFileEndpointURL:(NSInteger)fileId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%d", fileId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%ld", (long)fileId]
                   relativeToURL:_rootAPIURL];
 }
 
 - (NSURL*)updateFileContentEndpointURL:(NSInteger)fileId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%d/content", fileId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/files/%ld/content", (long)fileId]
+                  relativeToURL:_rootAPIURL];
+}
+
+
+#pragma mark - Place URL methods
+
+- (NSURL*)getPlaceEndpointURL:(NSString*)factualId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/places/%@", factualId]
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)searchPlaceEndpointURL {
+    return [NSURL URLWithString:@"/places/search"
                   relativeToURL:_rootAPIURL];
 }
 

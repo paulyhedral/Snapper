@@ -112,4 +112,8 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 - (NSURL*)updateFileEndpointURL:(NSInteger)fileId;
 - (NSURL*)updateFileContentEndpointURL:(NSInteger)fileId;
 
+// -- Place URL methods --
+- (NSURL*)getPlaceEndpointURL:(NSString*)factualId;
+- (NSURL*)searchPlaceEndpointURL;
+
 @end

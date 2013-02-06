@@ -1,0 +1,25 @@
+{
+    "factual_id": "19931850-dc2f-012e-561d-003048cad9da",
+    "name": "Caltrain",
+    "longitude": -122.395012,
+    "latitude": 37.776905,
+    "address": "700 4th St",
+    "address_extended": "Ste 4",
+    "locality": "San Francisco",
+    "region": "CA",
+    "postcode": "94107",
+    "country_code": "us",
+    "is_open": true,
+    "website": "http://www.caltrain.com",
+    "telephone": "(800) 660-4287",
+    "categories": [
+                   {
+                   "id":"429",
+                   "labels": [
+                              "Transportation",
+                              "Transport Hubs",
+                              "Rail Stations"
+                              ]
+                   }
+                   ]
+}

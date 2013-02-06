@@ -289,6 +289,26 @@
     STAssertNotNil(derivedFile.URLExpires, @"Derived file 'URLExpires' property should not be nil");
 }
 
+- (void)testPlaceFromJSON {
+
+    NSDictionary* placeDict = [self loadJSONFromFile:@"place"];
+
+    SNPPlace* place = [SNPPlace modelWithExternalRepresentation:placeDict];
+    STAssertNotNil(place, @"Unable to create place from JSON");
+
+    STAssertTrue([place.factualId isEqualToString:@"19931850-dc2f-012e-561d-003048cad9da"], @"Place 'factualId' property should be equal to '19931850-dc2f-012e-561d-003048cad9da'");
+    STAssertTrue(place.longitude == -122.395012f, @"Place 'longitude' property should be equal to '-122.395012', is actually %f", place.longitude);
+    STAssertTrue(place.latitude == 37.776905f, @"Place 'latitude' property should be equal to '37.776905'; is actually %f", place.latitude);
+    STAssertTrue(place.open == YES, @"Place 'open' property should be YES");
+    STAssertTrue([place.categories count] == 1, @"Place 'categories' property should contain 1 item");
+
+    SNPPlaceCategory* category = place.categories[0];
+    STAssertNotNil(category, @"Unable to create category from JSON");
+
+    STAssertTrue(category.categoryId == 429, @"Category 'categoryId' property should be equal to 429");
+    STAssertTrue([category.labels count] == 3, @"Category 'labels' property should contain 3 items");
+}
+
 - (NSDictionary*)loadJSONFromFile:(NSString*)name {
 
     NSBundle* bundle = [NSBundle bundleForClass:[self class]];
