@@ -92,6 +92,7 @@
 #import <Snapper/SNPGetUsersOperation.h>
 #import <Snapper/SNPListInteractionsOperation.h>
 #import <Snapper/SNPMuteUserOperation.h>
+#import <Snapper/SNPProcessTextOperation.h>
 #import <Snapper/SNPRepostOperation.h>
 #import <Snapper/SNPSearchPlacesOperation.h>
 #import <Snapper/SNPSearchUsersOperation.h>

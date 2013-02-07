@@ -36,6 +36,7 @@
             @"youFollow": @"you_follow",
             @"youMuted": @"you_muted",
             @"canonicalURL": @"canonical_url",
+            @"youCanSubscribe": @"you_can_subscribe",
             }];
 }
 

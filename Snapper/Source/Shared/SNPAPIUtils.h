@@ -116,4 +116,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 - (NSURL*)getPlaceEndpointURL:(NSString*)factualId;
 - (NSURL*)searchPlaceEndpointURL;
 
+// -- Text processing --
+- (NSURL*)processTextEndpointURL;
+
 @end

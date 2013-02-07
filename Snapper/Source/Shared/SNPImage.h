@@ -14,5 +14,6 @@
 @property (nonatomic, copy) NSURL* URL;
 @property (nonatomic, assign) NSInteger width;
 @property (nonatomic, assign) NSInteger height;
+@property (nonatomic, assign) BOOL defaultImage;
 
 @end

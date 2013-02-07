@@ -426,4 +426,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+
+#pragma mark - Text processing
+
+- (NSURL*)processTextEndpointURL {
+    return [NSURL URLWithString:@"/text/process"
+                  relativeToURL:_rootAPIURL];
+}
+
 @end

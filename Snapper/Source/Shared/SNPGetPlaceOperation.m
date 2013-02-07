@@ -24,6 +24,9 @@
         self.factualId = factualId;
         self.token = token;
         self.endpoint = [[SNPAPIUtils sharedAPIUtils] getPlaceEndpointURL:factualId];
+        self.headers = (@{
+                        @"Authorization" : [NSString stringWithFormat:@"Bearer %@", token],
+                        });
         self.serializationRootClass = [SNPPlace class];
     }
 

@@ -14,6 +14,7 @@
 + (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
     return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
             @"URL": @"url",
+            @"defaultImage": @"is_default",
             }];
 }
 
