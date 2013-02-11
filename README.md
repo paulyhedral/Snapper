@@ -22,13 +22,6 @@ Snapper makes use of the GitHub framework [Mantle](http://github.com/github/Mant
 
 Use of Snapper assumes familiarity with the [App.net API](https://developers.app.net).
 
-Caveats
--------
-
-This library is incomplete. The basic API operations are done, and should be working as expected.
-
-Not all operations are implemented. For example, application token-based stream operations are not done. There are probably others. Keep an eye out!
-
 Usage
 -----
 
