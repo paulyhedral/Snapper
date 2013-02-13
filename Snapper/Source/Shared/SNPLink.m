@@ -16,6 +16,7 @@
             @"URL": @"url",
             @"position": @"pos",
             @"length": @"len",
+            @"amendedLength": @"amended_len",
             }];
 }
 

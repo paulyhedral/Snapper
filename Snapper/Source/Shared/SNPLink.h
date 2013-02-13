@@ -15,5 +15,6 @@
 @property (nonatomic, copy) NSURL* URL;
 @property (nonatomic, assign) NSInteger position;
 @property (nonatomic, assign) NSInteger length;
+@property (nonatomic, assign) NSInteger amendedLength;
 
 @end
