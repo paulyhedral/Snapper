@@ -1,31 +1,31 @@
 //
-//  SNPStarPostOperation.m
+//  SNPReportPostOperation.m
 //  Snapper
 //
-//  Created by Paul Schifferer on 12/20/12.
-//  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
+//  Created by Paul Schifferer on 2/14/13.
+//  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPStarPostOperation.h"
+#import "SNPReportPostOperation.h"
 
 #import "SNPPost.h"
 
 #import "SNPAPIUtils.h"
 
 
-@implementation SNPStarPostOperation
+@implementation SNPReportPostOperation
 
-#pragma mark - Initialization
+#pragma mark - Initializer
 
 - (id)initWithPostId:(NSUInteger)postId
            accountId:(NSString*)accountId
-         finishBlock:(void (^)(SNPResponse*))finishBlock {
+         finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
         self.postId = postId;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] starPostEndpointURL:postId];
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] reportPostEndpointURL:postId];
         self.method = @"POST";
         self.serializationRootClass = [SNPPost class];
     }

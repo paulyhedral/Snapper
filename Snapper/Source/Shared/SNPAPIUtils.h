@@ -57,6 +57,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 - (NSURL*)getPersonalStreamEndpointURL;
 - (NSURL*)getUnifiedPersonalStreamEndpointURL;
 - (NSURL*)getGlobalStreamEndpointURL;
+- (NSURL*)reportPostEndpointURL:(NSInteger)postId;
 
 // -- Channel URL methods --
 - (NSURL*)getSubscribedChannelsEndpointURL;

@@ -8,6 +8,8 @@
 
 #import "SNPRepostOperation.h"
 
+#import "SNPPost.h"
+
 #import "SNPAPIUtils.h"
 
 
@@ -25,6 +27,7 @@
         self.postId = postId;
         self.endpoint = [[SNPAPIUtils sharedAPIUtils] repostEndpointURL:postId];
         self.method = @"POST";
+        self.serializationRootClass = [SNPPost class];
     }
 
     return self;

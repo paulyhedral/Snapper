@@ -207,6 +207,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+- (NSURL*)reportPostEndpointURL:(NSInteger)postId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/posts/%ld/report", (long)postId]
+                  relativeToURL:_rootAPIURL];
+}
+
 
 #pragma mark - Channel URL methods
 
