@@ -30,7 +30,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 #pragma mark - User URL methods
 
 - (NSURL*)getUserEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%d", userId]
+    return [NSURL URLWithString:[NSString stringWithFormat:@"/users/%ld", (long)userId]
                   relativeToURL:_rootAPIURL];
 }
 
@@ -376,7 +376,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 #pragma mark - Token URL methods
 
 - (NSURL*)tokenEndpointURL {
-    return [NSURL URLWithString:@"/token"
+    return [NSURL URLWithString:@"token"
                   relativeToURL:_rootAPIURL];
 }
 
