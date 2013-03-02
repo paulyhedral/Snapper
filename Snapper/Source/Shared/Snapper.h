@@ -41,7 +41,7 @@
 #import <Snapper/SNPBaseApplicationOperation.h>
 #import <Snapper/SNPBaseClientOperation.h>
 #import <Snapper/SNPBaseFileOperation.h>
-#import <Snapper/SNPBaseGetPostStreamOperation.h>
+#import <Snapper/SNPBaseStreamOperation.h>
 #import <Snapper/SNPBaseImageFetchOperation.h>
 #import <Snapper/SNPBaseImageUpdateOperation.h>
 #import <Snapper/SNPBaseUserOperation.h>

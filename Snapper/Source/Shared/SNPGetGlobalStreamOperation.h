@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseGetPostStreamOperation.h"
+#import "SNPBaseStreamOperation.h"
 
 
-@interface SNPGetGlobalStreamOperation : SNPBaseGetPostStreamOperation
+@interface SNPGetGlobalStreamOperation : SNPBaseStreamOperation
 
 @end

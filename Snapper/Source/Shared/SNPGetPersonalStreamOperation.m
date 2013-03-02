@@ -8,6 +8,8 @@
 
 #import "SNPGetPersonalStreamOperation.h"
 
+#import "SNPPost.h"
+
 #import "SNPAPIUtils.h"
 
 
@@ -21,6 +23,7 @@
     else {
         self.endpoint = [[SNPAPIUtils sharedAPIUtils] getPersonalStreamEndpointURL];
     }
+    self.serializationArrayClass = [SNPPost class];
 
     [super main];
 }

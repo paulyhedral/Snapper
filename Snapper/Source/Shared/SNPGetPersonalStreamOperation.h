@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseGetPostStreamOperation.h"
+#import "SNPBaseStreamOperation.h"
 
 
-@interface SNPGetPersonalStreamOperation : SNPBaseGetPostStreamOperation
+@interface SNPGetPersonalStreamOperation : SNPBaseStreamOperation
 
 @property (nonatomic, assign) BOOL unified;
 

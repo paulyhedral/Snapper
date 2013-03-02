@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseStreamOperation.h"
 
 
-@interface SNPGetStarredPostsOperation : SNPBaseUserOperation
+@interface SNPGetStarredPostsOperation : SNPBaseStreamOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger userId;

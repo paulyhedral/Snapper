@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseStreamOperation.h"
 
 
-@interface SNPGetPostRepliesOperation : SNPBaseUserOperation
+@interface SNPGetPostRepliesOperation : SNPBaseStreamOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger postId;

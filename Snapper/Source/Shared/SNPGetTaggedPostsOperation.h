@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseStreamOperation.h"
 
 
-@interface SNPGetTaggedPostsOperation : SNPBaseUserOperation
+@interface SNPGetTaggedPostsOperation : SNPBaseStreamOperation
 
 // -- Properties --
 @property (nonatomic, copy) NSString* hashtag;

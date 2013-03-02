@@ -8,6 +8,8 @@
 
 #import "SNPGetGlobalStreamOperation.h"
 
+#import "SNPPost.h"
+
 #import "SNPAPIUtils.h"
 
 
@@ -16,6 +18,7 @@
 - (void)main {
 
     self.endpoint = [[SNPAPIUtils sharedAPIUtils] getGlobalStreamEndpointURL];
+    self.serializationArrayClass = [SNPPost class];
     
     [super main];
 }

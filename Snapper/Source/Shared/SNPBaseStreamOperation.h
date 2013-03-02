@@ -1,5 +1,5 @@
 //
-//  SNPBaseGetPostStreamOperation.h
+//  SNPBaseStreamOperation.h
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/22/12.
@@ -9,7 +9,7 @@
 #import "SNPBaseUserOperation.h"
 
 
-@interface SNPBaseGetPostStreamOperation : SNPBaseUserOperation
+@interface SNPBaseStreamOperation : SNPBaseUserOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger beforeId;

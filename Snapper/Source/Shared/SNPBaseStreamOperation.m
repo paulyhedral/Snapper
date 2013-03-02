@@ -1,17 +1,17 @@
 //
-//  SNPBaseGetPostStreamOperation.m
+//  SNPBaseStreamOperation.m
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/22/12.
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseGetPostStreamOperation.h"
+#import "SNPBaseStreamOperation.h"
 
 #import "SNPPost.h"
 
 
-@implementation SNPBaseGetPostStreamOperation
+@implementation SNPBaseStreamOperation
 
 - (void)main {
 
@@ -63,8 +63,8 @@
 
     self.parameters = parameters;
 
-    self.serializationArrayClass = [SNPPost class];
-    
+//    self.serializationArrayClass = [SNPPost class];
+
     [super main];
 }
 

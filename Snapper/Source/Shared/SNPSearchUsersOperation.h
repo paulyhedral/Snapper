@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseStreamOperation.h"
 
 
-@interface SNPSearchUsersOperation : SNPBaseUserOperation
+@interface SNPSearchUsersOperation : SNPBaseStreamOperation
 
 // -- Properties --
 @property (nonatomic, copy) NSString* queryString;
