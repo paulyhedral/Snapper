@@ -386,7 +386,7 @@
 		5B30DC3E1688F4F30089730B /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A52816816ED7005AA40C /* ModelTests.m */; };
 		5B30DC3F1688F5040089730B /* SnapperTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE61680EE2C006C63C1 /* SnapperTests-Info.plist */; };
 		5B30DC401688F5910089730B /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EF71680EE3C006C63C1 /* Mantle.framework */; };
-		5B3ADF1216CDD38C000EEAB0 /* SNPReportPostOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3ADF1016CDD38C000EEAB0 /* SNPReportPostOperation.h */; };
+		5B3ADF1216CDD38C000EEAB0 /* SNPReportPostOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3ADF1016CDD38C000EEAB0 /* SNPReportPostOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B3ADF1316CDD38C000EEAB0 /* SNPReportPostOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ADF1116CDD38C000EEAB0 /* SNPReportPostOperation.m */; };
 		5B3ADF1416CDD38C000EEAB0 /* SNPReportPostOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ADF1116CDD38C000EEAB0 /* SNPReportPostOperation.m */; };
 		5B6B48D11687CB2B0032C586 /* SNPCreateStreamOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48CF1687CB2B0032C586 /* SNPCreateStreamOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1586,6 +1586,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3ADF1216CDD38C000EEAB0 /* SNPReportPostOperation.h in Headers */,
 				5BE02D6416C32DF200BF4C23 /* SNPProcessTextOperation.h in Headers */,
 				5BD5928D16C21C710066E306 /* SNPGetPlaceOperation.h in Headers */,
 				5BD5929216C21FF70066E306 /* SNPSearchPlacesOperation.h in Headers */,
@@ -1698,7 +1699,6 @@
 				5B6B48EF1687CDF90032C586 /* SNPBaseClientOperation.h in Headers */,
 				5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */,
 				3CDF12A01683C8CE0058CBE0 /* SNPUpdateUserOperation.h in Headers */,
-				5B3ADF1216CDD38C000EEAB0 /* SNPReportPostOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
