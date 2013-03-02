@@ -425,6 +425,8 @@
 		5B8A334616B7999C00BE5A8A /* SNPBaseFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B8A334716B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */; };
 		5B8A334816B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */; };
+		5BA49F0D16E292E7002DCBD7 /* repost.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA49F0C16E292E7002DCBD7 /* repost.json */; };
+		5BA49F0E16E292E7002DCBD7 /* repost.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA49F0C16E292E7002DCBD7 /* repost.json */; };
 		5BB17E9C16BEA75900583020 /* SNPGetChannelSubscriberIdsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB17E9A16BEA75700583020 /* SNPGetChannelSubscriberIdsOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BB17E9D16BEA75900583020 /* SNPGetChannelSubscriberIdsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB17E9B16BEA75800583020 /* SNPGetChannelSubscriberIdsOperation.m */; };
 		5BB17E9E16BEA75900583020 /* SNPGetChannelSubscriberIdsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB17E9B16BEA75800583020 /* SNPGetChannelSubscriberIdsOperation.m */; };
@@ -918,6 +920,7 @@
 		5B8A334016B7998300BE5A8A /* SNPCreateFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPCreateFileOperation.m; sourceTree = "<group>"; };
 		5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseFileOperation.h; sourceTree = "<group>"; };
 		5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseFileOperation.m; sourceTree = "<group>"; };
+		5BA49F0C16E292E7002DCBD7 /* repost.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repost.json; sourceTree = "<group>"; };
 		5BB17E9A16BEA75700583020 /* SNPGetChannelSubscriberIdsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetChannelSubscriberIdsOperation.h; sourceTree = "<group>"; };
 		5BB17E9B16BEA75800583020 /* SNPGetChannelSubscriberIdsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetChannelSubscriberIdsOperation.m; sourceTree = "<group>"; };
 		5BB17EA016BEF55A00583020 /* SNPMyPrivateMessagesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPMyPrivateMessagesOperation.h; sourceTree = "<group>"; };
@@ -1170,6 +1173,7 @@
 				5B30DC12168817040089730B /* mention.json */,
 				5B30DC13168817040089730B /* message.json */,
 				5B30DC14168817040089730B /* post.json */,
+				5BA49F0C16E292E7002DCBD7 /* repost.json */,
 				5B30DC15168817040089730B /* stream-marker.json */,
 				5B30DC16168817040089730B /* stream.json */,
 				5B30DC17168817040089730B /* token.json */,
@@ -1874,6 +1878,7 @@
 				5B30DC29168819E00089730B /* interaction-follow.json in Resources */,
 				5BBBDCE416B8A3950026A041 /* file.json in Resources */,
 				5BD5928816C20FBA0066E306 /* place.json in Resources */,
+				5BA49F0D16E292E7002DCBD7 /* repost.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1910,6 +1915,7 @@
 				5B30DC3F1688F5040089730B /* SnapperTests-Info.plist in Resources */,
 				5BBBDCE516B8A3950026A041 /* file.json in Resources */,
 				5BD5928916C20FBA0066E306 /* place.json in Resources */,
+				5BA49F0E16E292E7002DCBD7 /* repost.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

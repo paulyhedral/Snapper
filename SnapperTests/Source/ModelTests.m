@@ -44,7 +44,31 @@
     SNPPost* post = [SNPPost modelWithExternalRepresentation:postDict];
     STAssertNotNil(post, @"Unable to create post from JSON");
 
+    STAssertTrue(post.postId == 2165974, @"Post ID should be 2165974, is actually %d", post.postId);
+    STAssertTrue(post.replyTo == 2165921, @"Post 'replyTo' property should be 2165921, is actually %d", post.replyTo);
+    STAssertTrue(post.threadId == 2165921, @"Post 'threadId' property should be 2165921, is actually %d", post.threadId);
+    STAssertNotNil(post.createdAt, @"Post 'createdAt' property should not be nil");
+    STAssertNotNil(post.canonicalURL, @"Post 'canonicalURL' property should not be nil");
+    STAssertNotNil(post.user, @"Post 'user' property should not be nil");
+    STAssertTrue([post.mentions count] == 1, @"Post 'mentions' property should contain 1 item, actually has %d", [post.mentions count]);
+}
 
+- (void)testRepostFromJSON {
+
+    NSDictionary* postDict = [self loadJSONFromFile:@"repost"];
+
+    SNPPost* post = [SNPPost modelWithExternalRepresentation:postDict];
+    STAssertNotNil(post, @"Unable to create repost from JSON");
+    
+    STAssertTrue(post.postId == 2165974, @"Post ID should be 2165974, is actually %d", post.postId);
+    STAssertTrue(post.replyTo == 2165921, @"Post 'replyTo' property should be 2165921, is actually %d", post.replyTo);
+    STAssertTrue(post.threadId == 2165921, @"Post 'threadId' property should be 2165921, is actually %d", post.threadId);
+    STAssertNotNil(post.createdAt, @"Post 'createdAt' property should not be nil");
+    STAssertNotNil(post.canonicalURL, @"Post 'canonicalURL' property should not be nil");
+    STAssertNotNil(post.user, @"Post 'user' property should not be nil");
+    STAssertTrue([post.mentions count] == 1, @"Post 'mentions' property should contain 1 item, actually has %d", [post.mentions count]);
+    STAssertNotNil(post.repostOf, @"Post 'repostOf' should not be nil");
+    STAssertTrue(post.repostOf.postId == 216597499, @"Post 'repostOf' post ID should be 216597499, is actually %d", post.repostOf.postId);
 }
 
 - (void)testACLFromJSON {

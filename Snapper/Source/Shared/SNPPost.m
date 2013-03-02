@@ -43,6 +43,7 @@
             @"youReposted": @"you_reposted",
             @"youStarred": @"you_starred",
             @"starredBy": @"starred_by",
+            @"repostOf": @"repost_of",
             }];
 }
 
@@ -167,6 +168,15 @@
                                                              }
                                                              
                                                              return [hashtagsDicts copy];
+                                                         }];
+}
+
++ (NSValueTransformer*)repostOfTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSDictionary* dict) {
+        return [[SNPPost alloc] initWithExternalRepresentation:dict];
+    }
+                                                         reverseBlock:^(SNPPost* post) {
+                                                             return [post externalRepresentation];
                                                          }];
 }
 

@@ -36,5 +36,6 @@
 @property (nonatomic, assign) BOOL youStarred;
 @property (nonatomic, retain) NSArray* reposters;
 @property (nonatomic, retain) NSArray* starredBy;
+@property (nonatomic, retain) SNPPost* repostOf;
 
 @end
