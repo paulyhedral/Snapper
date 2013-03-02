@@ -2293,9 +2293,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/Snapper.dst;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -2309,9 +2310,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/Snapper.dst;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
