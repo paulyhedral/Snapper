@@ -8,6 +8,8 @@
 
 #import "SNPCurrentTokenOperation.h"
 
+#import "NSString+URLEncoding.h"
+
 #import "SNPToken.h"
 
 #import "SNPAPIUtils.h"
@@ -15,10 +17,36 @@
 
 @implementation SNPCurrentTokenOperation
 
+#pragma mark - Initializers
+
+- (id)initWithAccessToken:(NSString*)accessToken
+                tokenType:(NSString*)tokenType
+              finishBlock:(void (^)(SNPResponse*))finishBlock {
+
+    self = [super initWithFinishBlock:finishBlock];
+    if(self) {
+        self.accessToken = accessToken;
+        self.tokenType = tokenType;
+    }
+
+    return self;
+}
+
+#pragma mark - Workhorse
+
 - (void)main {
+
+    NSAssert(self.accessToken, @"No access token set for API operation!");
+    NSAssert(self.tokenType, @"No token type set for API operation!");
 
     self.endpoint = [[SNPAPIUtils sharedAPIUtils] tokenEndpointURL];
     self.serializationRootClass = [SNPToken class];
+
+    // OAuth header
+    NSString* tokenValue = [NSString stringWithFormat:@"%@ %@", self.tokenType, self.accessToken];
+    self.headers = (@{
+                    @"Authorization" : tokenValue,
+                    });
 
     [super main];
 }

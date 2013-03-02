@@ -6,9 +6,19 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseClientOperation.h"
 
 
-@interface SNPCurrentTokenOperation : SNPBaseUserOperation
+@interface SNPCurrentTokenOperation : SNPBaseClientOperation
+
+// -- Properties --
+@property (nonatomic, copy) NSString* accessToken;
+@property (nonatomic, copy) NSString* tokenType;
+
+// -- Initializers --
+
+- (id)initWithAccessToken:(NSString*)accessToken
+                tokenType:(NSString*)tokenType
+              finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end
