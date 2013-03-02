@@ -6,7 +6,7 @@ App.net SDK in Objective-C
 Version
 -------
 
-0.9.9.1
+0.9.9.2
 
 Platforms
 ---------
@@ -33,9 +33,9 @@ Almost all API calls require an access token of some sort. It is beyond the scop
 
 The first order of business when using Snapper is to store one or more access tokens. This is done like so:
 
-	SNPAccount* account = [[SNPAccountManager sharedAccountManager] createAccountWithName:@"Test Account"
-                                                                                 username:@"test"
-                                                                                   userId:999
+	SNPAccount* account = [[SNPAccountManager sharedAccountManager] createAccountWithName:@"The Pilgrim"
+                                                                                 username:@"pilgrim"
+                                                                                   userId:1199
                                                                               accessToken:@"12345"
                                                                                 tokenType:@"Bearer"];
 

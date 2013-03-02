@@ -16,6 +16,7 @@
 
 @property (nonatomic, assign) NSInteger userId;
 @property (nonatomic, copy) NSString* username;
+@property (nonatomic, copy) NSString* name;
 @property (nonatomic, retain) SNPDescription* description;
 @property (nonatomic, copy) NSString* timezone;
 @property (nonatomic, copy) NSString* locale;
