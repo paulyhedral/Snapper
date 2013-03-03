@@ -180,4 +180,54 @@
                                                          }];
 }
 
++ (NSValueTransformer*)respostersTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* userDicts) {
+        NSMutableArray* users = [NSMutableArray new];
+
+        for(NSDictionary* userDict in userDicts) {
+            SNPUser* user = [[SNPUser alloc] initWithExternalRepresentation:userDict];
+
+            [users addObject:user];
+        }
+
+        return [users copy];
+    }
+                                                         reverseBlock:^(NSArray* users) {
+                                                             NSMutableArray* userDicts = [NSMutableArray new];
+
+                                                             for(SNPUser* user in users) {
+                                                                 NSDictionary* userDict = [user externalRepresentation];
+
+                                                                 [userDicts addObject:userDict];
+                                                             }
+
+                                                             return [userDicts copy];
+                                                         }];
+}
+
++ (NSValueTransformer*)starredByTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* userDicts) {
+        NSMutableArray* users = [NSMutableArray new];
+
+        for(NSDictionary* userDict in userDicts) {
+            SNPUser* user = [[SNPUser alloc] initWithExternalRepresentation:userDict];
+
+            [users addObject:user];
+        }
+
+        return [users copy];
+    }
+                                                         reverseBlock:^(NSArray* users) {
+                                                             NSMutableArray* userDicts = [NSMutableArray new];
+
+                                                             for(SNPUser* user in users) {
+                                                                 NSDictionary* userDict = [user externalRepresentation];
+
+                                                                 [userDicts addObject:userDict];
+                                                             }
+                                                             
+                                                             return [userDicts copy];
+                                                         }];
+}
+
 @end
