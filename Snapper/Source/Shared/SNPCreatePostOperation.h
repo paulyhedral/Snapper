@@ -51,6 +51,7 @@
        annotations:(NSArray*)annotations
           entities:(NSArray*)entities
          accountId:(NSString*)accountId
+     progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
        finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end
