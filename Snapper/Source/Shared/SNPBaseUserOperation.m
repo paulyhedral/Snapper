@@ -95,7 +95,12 @@
             [queryParams appendString:@"&"];
         }
 
-        [queryParams appendFormat:@"%@=%@", [key encodedURLParameterString], [value encodedURLParameterString]];
+        if([value isKindOfClass:[NSNumber class]]) {
+            [queryParams appendFormat:@"%@=%@", [key encodedURLParameterString], value];
+        }
+        else {
+            [queryParams appendFormat:@"%@=%@", [key encodedURLParameterString], [value encodedURLParameterString]];
+        }
     }];
 
     if([queryParams length] > 0) {
