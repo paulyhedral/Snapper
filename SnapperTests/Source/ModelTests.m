@@ -27,7 +27,7 @@
     STAssertTrue(user.userId == 1199, @"User ID should be 1199");
     STAssertTrue([user.username isEqualToString:@"pilgrim"], @"Username should be 'pilgrim'");
     STAssertTrue([user.annotations count] == 9, @"User should have 9 annotations");
-    STAssertTrue([user.description.links count] == 2, @"User's description should have 2 link entities");
+    STAssertTrue([user.descriptionObject.links count] == 2, @"User's description should have 2 link entities");
     STAssertTrue([user.createdAt timeIntervalSince1970] > 0, @"User's created date should not be 0");
     STAssertTrue(user.postsCount == 4077, @"User should have 4077 posts");
     STAssertNotNil(user.avatarImage, @"User should have an avatar image");

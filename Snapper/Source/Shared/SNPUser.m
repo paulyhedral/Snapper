@@ -63,7 +63,7 @@
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
-+ (NSValueTransformer*)descriptionTransformer {
++ (NSValueTransformer*)descriptionObjectTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSDictionary* dict) {
         return [[SNPDescription alloc] initWithExternalRepresentation:dict];
     }
