@@ -273,7 +273,7 @@ didReceiveResponse:(NSURLResponse*)response {
             NSMutableArray* arrayOfData = [NSMutableArray new];
 
             for(NSDictionary* objectDict in response.data) {
-                id serializedObject = [_serializationArrayClass modelWithExternalRepresentation:response.data];
+                id serializedObject = [_serializationArrayClass modelWithExternalRepresentation:objectDict];
                 if(serializedObject == nil) {
                     NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
                                                          code:SNPSerializationErrorCode
