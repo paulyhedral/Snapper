@@ -44,6 +44,7 @@
             @"youStarred": @"you_starred",
             @"starredBy": @"starred_by",
             @"repostOf": @"repost_of",
+            @"deleted": @"is_deleted",
             }];
 }
 

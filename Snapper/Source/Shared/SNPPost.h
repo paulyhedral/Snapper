@@ -37,5 +37,6 @@
 @property (nonatomic, retain) NSArray* reposters;
 @property (nonatomic, retain) NSArray* starredBy;
 @property (nonatomic, retain) SNPPost* repostOf;
+@property (nonatomic, assign) BOOL deleted;
 
 @end
