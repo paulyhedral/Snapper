@@ -20,3 +20,7 @@ Create a post
 Upload a file
 -------------
 
+
+Update a stream marker
+----------------------
+
