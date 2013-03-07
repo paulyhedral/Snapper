@@ -49,11 +49,60 @@ Snapper's account store. In return, you get an `SNPAccount` object, which contai
 Get the personal stream
 -----------------------
 
+Now, we're tooling along, and the user wants to see their personal stream.
 
+    SNPGetPersonalStreamOperation* streamOp = [[SNPGetPersonalStreamOperation alloc] initWithAccountId:account.accountId
+    																				       finishBlock:^(SNPResponse* response) {
+
+																							   if(response.errorId) {
+																								   // TODO: handle error
+																							       return;
+																						       }
+																						       
+																						       NSArray* posts = response.data;
+																						       
+																						       // TODO: process the posts, store them, display them, etc.                                                                                 
+																					       }];
+	streamOp.unified = YES; // 1
+	streamOp.includeDirected = YES; // 2
+	streamOp.includeUser = YES; // 3
+	streamOp.includeDeleted = YES; // 4
+	streamOp.count = 50; // 5
+    [someOperationQueue addOperation:streamOp];
+
+In this case, we want (1) a "unified stream" (i.e., users the user follows, plus mentions), (2) "directed posts" (replies to users we don't follow), 
+(3) the user object populated in each post, (4) deleted posts, and (5) up to 50 posts in the response. There are quite a few other properties that you
+can set that will affect the response; look at the headers for this class, as well as `SNPBaseStreamOperation` and `SNPBaseUserOperation`.
 
 Create a post
 -------------
 
+When you decide that you want to butt into someone's conversation, you're going to use `SNPCreatePostOperation`:
+
+	NSString* myContribution = @"@anotheruser A bunch of things I want to say.";
+	SNPCreatePostOperation* createOp = [[SNPCreatePostOperation alloc] initWithText:myContribution
+																	     	replyTo:12345
+																		machineOnly:NO
+																		annotations:nil
+																		   entities:nil
+																		  accountId:account.accountId
+																	  progressBlock:nil
+																		finishBlock:^(SNPResponse* response) {
+
+																			if(response.errorId) {
+																				// TODO: handle error
+																				return;
+																			}
+																						       
+																			// TODO: tell the user the good news
+																		}];
+    [someOperationQueue addOperation:createOp];
+
+This example shows us creating a new post in reply to another post (12345).
+
+Note that if the post is "original material" (i.e., not a reply), the `replyTo` parameter should be `0`. Also, you can create a "machine-only" post by setting
+the `machineOnly` parameter to `YES`, but you will also need to supply `nil` for the text parameter. If you supply any text, even an empty string, `machineOnly`
+will get ignored.
 
 Upload a file
 -------------
