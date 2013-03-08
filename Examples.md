@@ -107,7 +107,47 @@ will get ignored.
 Upload a file
 -------------
 
+Now, suppose you're eating a delicious pastrami sandwich, and like any good Instagram user, you want to share it with the world. You take a picture, get
+the image data, and upload for all of ADN to see.
+
+    NSData* imageData = <...image data from somewhere...>;
+    SNPCreateFileOperation* fileOp = [[SNPCreateFileOperation alloc] initWithName:@"My Pastrami Sammich"
+																      contentType:@"image/png"
+																	   	     type:@"sammich.pastrami.delicious"
+																		     data:imageData
+																	    accountId:account.accountId
+																      finishBlock:^(SNPResponse* response) {
+
+																	  	  if(response.errorId) {																	  	  	
+																			  // TODO: handle error
+																			  return;
+																		  }
+																						       
+																		  // get the file ID so you can link it in a post
+																		  SNPFile* file = response.data;
+																		  NSInteger fileId = file.fileId;
+																		  
+																		  // TODO: put it in a post
+																	  }];
+    [someOperationQueue addOperation:fileOp];
 
 Update a stream marker
 ----------------------
 
+And when your app is shutting down, don't forget to update the stream marker.
+
+	SNPUpdateStreamMarkerOperation* markerOp = [[SNPUpdateStreamMarkerOperation alloc] initWithPostId:_topPostId
+																							 	 name:@"global"
+																						   percentage:0
+																						    accountId:account.accountId
+																						  finishBlock:^(SNPResponse* response) {
+
+																							  if(response.errorId) {																	  	  	
+																								  // TODO: handle error
+																								  return;
+																							  }
+																							   
+																							  // TODO: nothing?
+																						  }];
+																						  
+																						  
