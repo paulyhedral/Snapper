@@ -14,7 +14,7 @@
 // -- Properties --
 @property (nonatomic, assign) NSUInteger beforeId;
 @property (nonatomic, assign) NSUInteger sinceId;
-@property (nonatomic, assign) NSUInteger count;
+@property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) BOOL includeUser;
 @property (nonatomic, assign) BOOL includeMachine;
 @property (nonatomic, assign) BOOL includeMuted;
