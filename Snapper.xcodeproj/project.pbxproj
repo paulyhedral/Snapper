@@ -425,15 +425,19 @@
 		5B8A334616B7999C00BE5A8A /* SNPBaseFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B8A334716B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */; };
 		5B8A334816B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */; };
-		5B9BB24A16EB8A00007E833A /* SNPExploreStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB24816EB8A00007E833A /* SNPExploreStream.h */; };
+		5B9BB24A16EB8A00007E833A /* SNPExploreStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB24816EB8A00007E833A /* SNPExploreStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B9BB24B16EB8A00007E833A /* SNPExploreStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24916EB8A00007E833A /* SNPExploreStream.m */; };
 		5B9BB24C16EB8A00007E833A /* SNPExploreStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24916EB8A00007E833A /* SNPExploreStream.m */; };
-		5B9BB24F16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB24D16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h */; };
+		5B9BB24F16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB24D16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B9BB25016EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24E16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m */; };
 		5B9BB25116EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24E16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m */; };
-		5B9BB25416EB8C92007E833A /* SNPGetExploreStreamOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB25216EB8C92007E833A /* SNPGetExploreStreamOperation.h */; };
+		5B9BB25416EB8C92007E833A /* SNPGetExploreStreamOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB25216EB8C92007E833A /* SNPGetExploreStreamOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B9BB25516EB8C92007E833A /* SNPGetExploreStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB25316EB8C92007E833A /* SNPGetExploreStreamOperation.m */; };
 		5B9BB25616EB8C92007E833A /* SNPGetExploreStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB25316EB8C92007E833A /* SNPGetExploreStreamOperation.m */; };
+		5B9BB25716EB922E007E833A /* SNPExploreStream.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B9BB24816EB8A00007E833A /* SNPExploreStream.h */; };
+		5B9BB25816EB922E007E833A /* SNPReportPostOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B3ADF1016CDD38C000EEAB0 /* SNPReportPostOperation.h */; };
+		5B9BB25916EB922E007E833A /* SNPGetAllExploreStreamsOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B9BB24D16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h */; };
+		5B9BB25A16EB922E007E833A /* SNPGetExploreStreamOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B9BB25216EB8C92007E833A /* SNPGetExploreStreamOperation.h */; };
 		5BA49F0D16E292E7002DCBD7 /* repost.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA49F0C16E292E7002DCBD7 /* repost.json */; };
 		5BA49F0E16E292E7002DCBD7 /* repost.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA49F0C16E292E7002DCBD7 /* repost.json */; };
 		5BB17E9C16BEA75900583020 /* SNPGetChannelSubscriberIdsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB17E9A16BEA75700583020 /* SNPGetChannelSubscriberIdsOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -595,6 +599,10 @@
 			dstPath = include/Snapper;
 			dstSubfolderSpec = 16;
 			files = (
+				5B9BB25716EB922E007E833A /* SNPExploreStream.h in CopyFiles */,
+				5B9BB25816EB922E007E833A /* SNPReportPostOperation.h in CopyFiles */,
+				5B9BB25916EB922E007E833A /* SNPGetAllExploreStreamsOperation.h in CopyFiles */,
+				5B9BB25A16EB922E007E833A /* SNPGetExploreStreamOperation.h in CopyFiles */,
 				5BE02D6716C35EBE00BF4C23 /* SNPProcessTextOperation.h in CopyFiles */,
 				5BD5929516C225020066E306 /* SNPPlace.h in CopyFiles */,
 				5BD5929616C225020066E306 /* SNPPlaceCategory.h in CopyFiles */,
@@ -1619,6 +1627,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9BB24A16EB8A00007E833A /* SNPExploreStream.h in Headers */,
+				5B9BB24F16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h in Headers */,
+				5B9BB25416EB8C92007E833A /* SNPGetExploreStreamOperation.h in Headers */,
 				5B3ADF1216CDD38C000EEAB0 /* SNPReportPostOperation.h in Headers */,
 				5BE02D6416C32DF200BF4C23 /* SNPProcessTextOperation.h in Headers */,
 				5BD5928D16C21C710066E306 /* SNPGetPlaceOperation.h in Headers */,
@@ -1732,9 +1743,6 @@
 				5B6B48EF1687CDF90032C586 /* SNPBaseClientOperation.h in Headers */,
 				5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */,
 				3CDF12A01683C8CE0058CBE0 /* SNPUpdateUserOperation.h in Headers */,
-				5B9BB24A16EB8A00007E833A /* SNPExploreStream.h in Headers */,
-				5B9BB24F16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h in Headers */,
-				5B9BB25416EB8C92007E833A /* SNPGetExploreStreamOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

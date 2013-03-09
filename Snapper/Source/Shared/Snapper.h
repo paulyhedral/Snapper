@@ -19,6 +19,7 @@
 #import <Snapper/SNPChannel.h>
 #import <Snapper/SNPDescription.h>
 #import <Snapper/SNPEntity.h>
+#import <Snapper/SNPExploreStream.h>
 #import <Snapper/SNPFile.h>
 #import <Snapper/SNPFilter.h>
 #import <Snapper/SNPFilterClause.h>
@@ -60,10 +61,12 @@
 #import <Snapper/SNPDeleteUserFiltersOperation.h>
 #import <Snapper/SNPFollowUserOperation.h>
 #import <Snapper/SNPGetAllStreamsOperation.h>
+#import <Snapper/SNPGetAllExploreStreamsOperation.h>
 #import <Snapper/SNPGetChannelMessagesOperation.h>
 #import <Snapper/SNPGetChannelOperation.h>
 #import <Snapper/SNPGetChannelSubscribersOperation.h>
 #import <Snapper/SNPGetChannelsOperation.h>
+#import <Snapper/SNPGetExploreStreamOperation.h>
 #import <Snapper/SNPGetFilterOperation.h>
 #import <Snapper/SNPGetGlobalStreamOperation.h>
 #import <Snapper/SNPGetMessageOperation.h>
