@@ -169,6 +169,19 @@
         meta.streamMarker = streamMarker;
     }
 
+    // Explore stream data.
+    NSDictionary* exploreStreamDict = metaDict[@"explore_stream"];
+    if(exploreStreamDict) {
+        SNPExploreStream* exploreStream = [[SNPExploreStream alloc] init];
+
+        exploreStream.slug = exploreStreamDict[@"slug"];
+        exploreStream.title = exploreStreamDict[@"title"];
+        exploreStream.exploreDescription = exploreStreamDict[@"description"];
+        exploreStream.URL = [NSURL URLWithString:exploreStreamDict[@"url"]];
+
+        meta.exploreStream = exploreStream;
+    }
+
     response.metadata = meta;
 
     // Process data.

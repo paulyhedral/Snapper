@@ -65,27 +65,31 @@
 - (void)main {
 
     // Sanity checks.
-    NSAssert(_accountId, @"Account ID must be set before operation starts");
-
-    SNPAccount* account = [[SNPAccountManager sharedAccountManager] accountForId:_accountId];
-    NSAssert(account, @"No account found for ID: %@", _accountId);
-
     NSAssert(self.method, @"No method set for API operation!");
     NSAssert(self.endpoint, @"No endpoint set for API operation!");
 
     _receivedData = [NSMutableData new];
 
-    NSString* accessToken = account.accessToken;
-    if(accessToken == nil) {
-        SNPMetadata* meta = [[SNPMetadata alloc] init];
-        meta.errorMessage = [NSString stringWithFormat:NSLocalizedString(@"No access token found for account: %@", nil), account.name];
-        meta.errorSlug = @"no_token";
+    NSString* accessToken = nil;
+    NSString* tokenType = nil;
 
-        SNPResponse* response = [[SNPResponse alloc] init];
-        response.metadata = meta;
+    if(_accountId) {
+        SNPAccount* account = [[SNPAccountManager sharedAccountManager] accountForId:_accountId];
+        NSAssert(account, @"No account found for ID: %@", _accountId);
 
-        self.finishBlock(response);
-        return;
+        accessToken = account.accessToken;
+        tokenType = account.tokenType;
+        if(accessToken == nil) {
+            SNPMetadata* meta = [[SNPMetadata alloc] init];
+            meta.errorMessage = [NSString stringWithFormat:NSLocalizedString(@"No access token found for account: %@", nil), account.name];
+            meta.errorSlug = @"no_token";
+
+            SNPResponse* response = [[SNPResponse alloc] init];
+            response.metadata = meta;
+
+            self.finishBlock(response);
+            return;
+        }
     }
 
     // Query parameters
@@ -117,9 +121,11 @@
     }];
 
     // OAuth header
-    NSString* tokenValue = [NSString stringWithFormat:@"%@ %@", account.tokenType, account.accessToken];
-    [request addValue:tokenValue
-   forHTTPHeaderField:@"Authorization"];
+    if(accessToken) {
+        NSString* tokenValue = [NSString stringWithFormat:@"%@ %@", tokenType, accessToken];
+        [request addValue:tokenValue
+       forHTTPHeaderField:@"Authorization"];
+    }
 
     [request addValue:@"application/json"
    forHTTPHeaderField:@"Accept"];

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "SNPStreamMarker.h"
+#import "SNPExploreStream.h"
 
 
 @interface SNPMetadata : NSObject
@@ -27,5 +28,8 @@
 
 // -- Stream marker data --
 @property (nonatomic, retain) SNPStreamMarker* streamMarker;
+
+// -- Explore stream data --
+@property (nonatomic, retain) SNPExploreStream* exploreStream;
 
 @end

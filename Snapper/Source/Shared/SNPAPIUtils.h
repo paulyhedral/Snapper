@@ -120,4 +120,8 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 // -- Text processing --
 - (NSURL*)processTextEndpointURL;
 
+// -- Explore stream URL methods --
+- (NSURL*)getAllExploreStreamsEndpointURL;
+- (NSURL*)getExploreStreamEndpointURL:(NSString*)slug;
+
 @end

@@ -425,6 +425,15 @@
 		5B8A334616B7999C00BE5A8A /* SNPBaseFileOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B8A334716B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */; };
 		5B8A334816B7999C00BE5A8A /* SNPBaseFileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */; };
+		5B9BB24A16EB8A00007E833A /* SNPExploreStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB24816EB8A00007E833A /* SNPExploreStream.h */; };
+		5B9BB24B16EB8A00007E833A /* SNPExploreStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24916EB8A00007E833A /* SNPExploreStream.m */; };
+		5B9BB24C16EB8A00007E833A /* SNPExploreStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24916EB8A00007E833A /* SNPExploreStream.m */; };
+		5B9BB24F16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB24D16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h */; };
+		5B9BB25016EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24E16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m */; };
+		5B9BB25116EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24E16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m */; };
+		5B9BB25416EB8C92007E833A /* SNPGetExploreStreamOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB25216EB8C92007E833A /* SNPGetExploreStreamOperation.h */; };
+		5B9BB25516EB8C92007E833A /* SNPGetExploreStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB25316EB8C92007E833A /* SNPGetExploreStreamOperation.m */; };
+		5B9BB25616EB8C92007E833A /* SNPGetExploreStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB25316EB8C92007E833A /* SNPGetExploreStreamOperation.m */; };
 		5BA49F0D16E292E7002DCBD7 /* repost.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA49F0C16E292E7002DCBD7 /* repost.json */; };
 		5BA49F0E16E292E7002DCBD7 /* repost.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BA49F0C16E292E7002DCBD7 /* repost.json */; };
 		5BB17E9C16BEA75900583020 /* SNPGetChannelSubscriberIdsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB17E9A16BEA75700583020 /* SNPGetChannelSubscriberIdsOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -920,6 +929,12 @@
 		5B8A334016B7998300BE5A8A /* SNPCreateFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPCreateFileOperation.m; sourceTree = "<group>"; };
 		5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseFileOperation.h; sourceTree = "<group>"; };
 		5B8A334516B7999C00BE5A8A /* SNPBaseFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseFileOperation.m; sourceTree = "<group>"; };
+		5B9BB24816EB8A00007E833A /* SNPExploreStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPExploreStream.h; sourceTree = "<group>"; };
+		5B9BB24916EB8A00007E833A /* SNPExploreStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPExploreStream.m; sourceTree = "<group>"; };
+		5B9BB24D16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetAllExploreStreamsOperation.h; sourceTree = "<group>"; };
+		5B9BB24E16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetAllExploreStreamsOperation.m; sourceTree = "<group>"; };
+		5B9BB25216EB8C92007E833A /* SNPGetExploreStreamOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetExploreStreamOperation.h; sourceTree = "<group>"; };
+		5B9BB25316EB8C92007E833A /* SNPGetExploreStreamOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetExploreStreamOperation.m; sourceTree = "<group>"; };
 		5BA49F0C16E292E7002DCBD7 /* repost.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repost.json; sourceTree = "<group>"; };
 		5BB17E9A16BEA75700583020 /* SNPGetChannelSubscriberIdsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetChannelSubscriberIdsOperation.h; sourceTree = "<group>"; };
 		5BB17E9B16BEA75800583020 /* SNPGetChannelSubscriberIdsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetChannelSubscriberIdsOperation.m; sourceTree = "<group>"; };
@@ -1247,6 +1262,7 @@
 				5BE02D6116C32DC800BF4C23 /* Text Processing */,
 				3CDF11ED1683B6EB0058CBE0 /* Tokens */,
 				3CDF11E51683B6A80058CBE0 /* Users */,
+				5B9BB24516EB8996007E833A /* Explore */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -1282,6 +1298,8 @@
 				3C6B5F6D1680FB2B006C63C1 /* SNPMention.m */,
 				3C6B5F531680FA88006C63C1 /* SNPMessage.h */,
 				3C6B5F541680FA88006C63C1 /* SNPMessage.m */,
+				5B9BB24816EB8A00007E833A /* SNPExploreStream.h */,
+				5B9BB24916EB8A00007E833A /* SNPExploreStream.m */,
 				5BD5927B16C2095F0066E306 /* SNPPlace.h */,
 				5BD5927C16C2095F0066E306 /* SNPPlace.m */,
 				5BD5928216C209D00066E306 /* SNPPlaceCategory.h */,
@@ -1543,6 +1561,17 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
+		5B9BB24516EB8996007E833A /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				5B9BB24D16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h */,
+				5B9BB24E16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m */,
+				5B9BB25216EB8C92007E833A /* SNPGetExploreStreamOperation.h */,
+				5B9BB25316EB8C92007E833A /* SNPGetExploreStreamOperation.m */,
+			);
+			name = Explore;
+			sourceTree = "<group>";
+		};
 		5BB17E9F16BEEA8E00583020 /* Convenience Operations */ = {
 			isa = PBXGroup;
 			children = (
@@ -1703,6 +1732,9 @@
 				5B6B48EF1687CDF90032C586 /* SNPBaseClientOperation.h in Headers */,
 				5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */,
 				3CDF12A01683C8CE0058CBE0 /* SNPUpdateUserOperation.h in Headers */,
+				5B9BB24A16EB8A00007E833A /* SNPExploreStream.h in Headers */,
+				5B9BB24F16EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.h in Headers */,
+				5B9BB25416EB8C92007E833A /* SNPGetExploreStreamOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2065,6 +2097,9 @@
 				5BD5929316C21FF70066E306 /* SNPSearchPlacesOperation.m in Sources */,
 				5BE02D6516C32DF200BF4C23 /* SNPProcessTextOperation.m in Sources */,
 				5B3ADF1316CDD38C000EEAB0 /* SNPReportPostOperation.m in Sources */,
+				5B9BB24B16EB8A00007E833A /* SNPExploreStream.m in Sources */,
+				5B9BB25016EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m in Sources */,
+				5B9BB25516EB8C92007E833A /* SNPGetExploreStreamOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2192,6 +2227,9 @@
 				5BD5929416C21FF70066E306 /* SNPSearchPlacesOperation.m in Sources */,
 				5BE02D6616C32DF200BF4C23 /* SNPProcessTextOperation.m in Sources */,
 				5B3ADF1416CDD38C000EEAB0 /* SNPReportPostOperation.m in Sources */,
+				5B9BB24C16EB8A00007E833A /* SNPExploreStream.m in Sources */,
+				5B9BB25116EB8ABA007E833A /* SNPGetAllExploreStreamsOperation.m in Sources */,
+				5B9BB25616EB8C92007E833A /* SNPGetExploreStreamOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

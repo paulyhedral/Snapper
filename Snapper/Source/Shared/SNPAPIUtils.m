@@ -439,4 +439,17 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+
+#pragma mark - Explore stream URL methods
+
+- (NSURL*)getAllExploreStreamsEndpointURL {
+    return [NSURL URLWithString:@"posts/stream/explore"
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)getExploreStreamEndpointURL:(NSString*)slug {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"posts/stream/explore/%@", slug]
+                  relativeToURL:_rootAPIURL];
+}
+
 @end
