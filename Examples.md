@@ -137,9 +137,9 @@ Update a stream marker
 And when your app is shutting down, don't forget to update the stream marker.
 
     SNPUpdateStreamMarkerOperation* markerOp = [[SNPUpdateStreamMarkerOperation alloc] initWithPostId:_topPostId
-     								 	                         name:@"global"
-    											   percentage:0
-    											    accountId:account.accountId
+                                                                                                 name:@"global"
+                                                                                           percentage:0
+                                                                                            accountId:account.accountId
                                                                                           finishBlock:^(SNPResponse* response) {
     
                                                                                               if(response.errorId) {																	  	  	
