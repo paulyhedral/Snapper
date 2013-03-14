@@ -136,18 +136,18 @@ Update a stream marker
 
 And when your app is shutting down, don't forget to update the stream marker.
 
-	SNPUpdateStreamMarkerOperation* markerOp = [[SNPUpdateStreamMarkerOperation alloc] initWithPostId:_topPostId
-																							 	 name:@"global"
-																						   percentage:0
-																						    accountId:account.accountId
-																						  finishBlock:^(SNPResponse* response) {
-
-																							  if(response.errorId) {																	  	  	
-																								  // TODO: handle error
-																								  return;
-																							  }
+    SNPUpdateStreamMarkerOperation* markerOp = [[SNPUpdateStreamMarkerOperation alloc] initWithPostId:_topPostId
+                                                                                                 name:@"global"
+                                                                                           percentage:0
+                                                                                            accountId:account.accountId
+                                                                                          finishBlock:^(SNPResponse* response) {
+    
+                                                                                              if(response.errorId) {																	  	  	
+                                                                                                  // TODO: handle error
+                                                                                                  return;
+                                                                                              }
 																							   
-																							  // TODO: nothing?
-																						  }];
-																						  
+                                                                                              // TODO: nothing?
+                                                                                          }];
+    [someOperationQueue addOperation:markerOp];																						  
 																						  
