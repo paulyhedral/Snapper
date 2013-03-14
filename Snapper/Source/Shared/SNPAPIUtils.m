@@ -265,6 +265,21 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+- (NSURL*)getMutedChannelsEndpointURL {
+    return [NSURL URLWithString:@"users/me/channels/muted"
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)muteChannelEndpointURL:(NSInteger)channelId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"channels/%ld/mute", (long)channelId]
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)unmuteChannelEndpointURL:(NSInteger)channelId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"channels/%ld/mute", (long)channelId]
+                  relativeToURL:_rootAPIURL];
+}
+
 
 #pragma mark - Message URL methods
 

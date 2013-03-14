@@ -17,6 +17,8 @@
             @"appClientId": @"app.client_id",
             @"appLink": @"app.link",
             @"appName": @"app.name",
+            @"storageAvailable": @"storage.available",
+            @"storageUsed": @"storage.used",
             }];
 }
 
