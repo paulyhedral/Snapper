@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-#import <Snapper/Snapper.h>
+#import "SNPBaseUserOperation.h"
 
 
 @interface SNPBaseMessageOperation : SNPBaseUserOperation
