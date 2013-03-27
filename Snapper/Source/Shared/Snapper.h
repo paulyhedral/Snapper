@@ -45,6 +45,7 @@
 #import <Snapper/SNPBaseStreamOperation.h>
 #import <Snapper/SNPBaseImageFetchOperation.h>
 #import <Snapper/SNPBaseImageUpdateOperation.h>
+#import <Snapper/SNPBaseMessageOperation.h>
 #import <Snapper/SNPBaseUserOperation.h>
 #import <Snapper/SNPCreateChannelOperation.h>
 #import <Snapper/SNPCreateFileOperation.h>

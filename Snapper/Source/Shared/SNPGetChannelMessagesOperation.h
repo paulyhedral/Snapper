@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseMessageOperation.h"
 
 
-@interface SNPGetChannelMessagesOperation : SNPBaseUserOperation
+@interface SNPGetChannelMessagesOperation : SNPBaseMessageOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger channelId;
