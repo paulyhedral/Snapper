@@ -51,6 +51,14 @@
     STAssertNotNil(post.canonicalURL, @"Post 'canonicalURL' property should not be nil");
     STAssertNotNil(post.user, @"Post 'user' property should not be nil");
     STAssertTrue([post.mentions count] == 1, @"Post 'mentions' property should contain 1 item, actually has %d", [post.mentions count]);
+    STAssertTrue([post.annotations count] == 1, @"Post 'annotations' property should contain 1 item, actually has %d", [post.annotations count]);
+
+    SNPAnnotation* annotation = post.annotations[0];
+    STAssertNotNil(annotation, @"Annotation at index 0 should not be nil");
+    STAssertTrue([annotation.type isEqualToString:@"com.pilgrimagesoftware.snapper"], @"Annotation 'type' property should be 'com.pilgrimagesoftware.snapper', is actually %@", annotation.type);
+    NSString* value1 = annotation.value[@"key1"];
+    STAssertNotNil(value1, @"'key1' from annotation should not be nil");
+    STAssertTrue([value1 isEqualToString:@"value1"], @"'key1' value from annotation should be 'value1', is actually %@", value1);
 }
 
 - (void)testRepostFromJSON {
