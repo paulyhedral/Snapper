@@ -11,6 +11,7 @@
 #import "SNPHashtag.h"
 #import "SNPMention.h"
 #import "SNPLink.h"
+#import "SNPAnnotation.h"
 
 
 @implementation SNPPost
@@ -228,6 +229,31 @@
                                                              }
                                                              
                                                              return [userDicts copy];
+                                                         }];
+}
+
++ (NSValueTransformer*)annotationsTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* annotationDicts) {
+        NSMutableArray* annotations = [NSMutableArray new];
+
+        for(NSDictionary* annoDict in annotationDicts) {
+            SNPAnnotation* annotation = [[SNPAnnotation alloc] initWithExternalRepresentation:annoDict];
+
+            [annotations addObject:annotation];
+        }
+
+        return [annotations copy];
+    }
+                                                         reverseBlock:^(NSArray* annotations) {
+                                                             NSMutableArray* annoDicts = [NSMutableArray new];
+
+                                                             for(SNPAnnotation* annotation in annotations) {
+                                                                 NSDictionary* annoDict = [annotation externalRepresentation];
+
+                                                                 [annoDicts addObject:annoDict];
+                                                             }
+
+                                                             return [annoDicts copy];
                                                          }];
 }
 
