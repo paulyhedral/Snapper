@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPGetSubscribedChannelsOperation : SNPBaseUserOperation
+@interface SNPGetSubscribedChannelsOperation : SNPBaseUserTokenOperation
 
 // -- Initialization --
 - (id)initWithAccountId:(NSString*)accountId

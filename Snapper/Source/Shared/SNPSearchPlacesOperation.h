@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPSearchPlacesOperation : SNPBaseUserOperation
+@interface SNPSearchPlacesOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, assign) CGFloat latitude;

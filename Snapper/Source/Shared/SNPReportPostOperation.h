@@ -9,7 +9,7 @@
 #import <Snapper/Snapper.h>
 
 
-@interface SNPReportPostOperation : SNPBaseUserOperation
+@interface SNPReportPostOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger postId;

@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPBaseImageUpdateOperation : SNPBaseUserOperation
+@interface SNPBaseImageUpdateOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, retain) id image;

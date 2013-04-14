@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPUnmuteUserOperation : SNPBaseUserOperation
+@interface SNPUnmuteUserOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger userId;

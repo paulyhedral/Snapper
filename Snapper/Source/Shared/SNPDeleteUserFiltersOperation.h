@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPDeleteUserFiltersOperation : SNPBaseUserOperation
+@interface SNPDeleteUserFiltersOperation : SNPBaseUserTokenOperation
 
 // -- Initialization --
 - (id)initWithAccountId:(NSString*)accountId

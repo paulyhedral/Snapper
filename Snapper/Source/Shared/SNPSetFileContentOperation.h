@@ -9,7 +9,7 @@
 #import <Snapper/Snapper.h>
 
 
-@interface SNPSetFileContentOperation : SNPBaseUserOperation
+@interface SNPSetFileContentOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger fileId;

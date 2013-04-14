@@ -10,6 +10,9 @@
 #import "SNPResponse.h"
 
 
+/**
+ * Fundamental API client operation.
+ */
 @interface SNPBaseClientOperation : NSOperation
 <NSURLConnectionDelegate> {
 

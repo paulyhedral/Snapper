@@ -31,6 +31,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.image = image;
+        self.method = @"POST";        
     }
 
     return self;
@@ -41,12 +42,14 @@
 
 - (void)main {
 
-    self.method = @"POST";
-
     NSMutableData* bodyData = [NSMutableData new];
 
     NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
     NSString* boundaryString = [NSString stringWithFormat:@"update_image_boundary_%.0f", now];
+
+    NSString* openingBoundary = [NSString stringWithFormat:@"--%@\r\n",
+                                 boundaryString];
+    [bodyData appendData:[openingBoundary dataUsingEncoding:NSUTF8StringEncoding]];
 
     NSData* imageData = nil;
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR

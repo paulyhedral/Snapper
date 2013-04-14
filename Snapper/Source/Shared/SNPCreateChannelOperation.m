@@ -8,6 +8,7 @@
 
 #import "SNPCreateChannelOperation.h"
 
+#import "SNPChannel.h"
 #import "SNPAnnotation.h"
 #import "SNPUser.h"
 
@@ -34,6 +35,7 @@
         self.writers = writers;
         self.annotations = annotations;
         self.bodyType = @"application/json";
+        self.serializationRootClass = [SNPChannel class];
     }
 
     return self;

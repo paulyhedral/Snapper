@@ -30,29 +30,8 @@
     if(_count) {
         parameters[@"count"] = @(_count);
     }
-    if(_includeAnnotations) {
-        parameters[@"include_annotations"] = @(_includeAnnotations);
-    }
-    if(_includeUser) {
-        parameters[@"include_user"] = @(_includeUser);
-    }
-    if(_includeMachine) {
-        parameters[@"include_machine"] = @(_includeMachine);
-    }
-    if(_includeMuted) {
-        parameters[@"include_muted"] = @(_includeMuted);
-    }
-    if(_includeDeleted) {
-        parameters[@"include_deleted"] = @(_includeDeleted);
-    }
-    if(_includeDirected) {
-        parameters[@"include_directed_posts"] = @(_includeDirected);
-    }
     if(_includePostAnnotations) {
         parameters[@"include_post_annotations"] = @(_includePostAnnotations);
-    }
-    if(_includeUserAnnotations) {
-        parameters[@"include_user_annotations"] = @(_includeUserAnnotations);
     }
     if(_includeStarredBy) {
         parameters[@"include_starred_by"] = @(_includeStarredBy);

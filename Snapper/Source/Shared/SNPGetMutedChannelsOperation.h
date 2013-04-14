@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPGetMutedChannelsOperation : SNPBaseUserOperation
+@interface SNPGetMutedChannelsOperation : SNPBaseUserTokenOperation
 
 @end

@@ -39,14 +39,14 @@
 #import <Snapper/SNPUser.h>
 
 // -- Operations --
-#import <Snapper/SNPBaseApplicationOperation.h>
+#import <Snapper/SNPBaseAppTokenOperation.h>
 #import <Snapper/SNPBaseClientOperation.h>
 #import <Snapper/SNPBaseFileOperation.h>
 #import <Snapper/SNPBaseStreamOperation.h>
 #import <Snapper/SNPBaseImageFetchOperation.h>
 #import <Snapper/SNPBaseImageUpdateOperation.h>
 #import <Snapper/SNPBaseMessageOperation.h>
-#import <Snapper/SNPBaseUserOperation.h>
+#import <Snapper/SNPBaseUserTokenOperation.h>
 #import <Snapper/SNPCreateChannelOperation.h>
 #import <Snapper/SNPCreateFileOperation.h>
 #import <Snapper/SNPCreateFilterOperation.h>

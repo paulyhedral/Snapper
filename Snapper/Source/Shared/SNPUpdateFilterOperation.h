@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 #import "SNPFilter.h"
 
 
-@interface SNPUpdateFilterOperation : SNPBaseUserOperation
+@interface SNPUpdateFilterOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger filterId;

@@ -20,9 +20,9 @@
 @implementation SNPBaseFileOperation {
 
 @private
-NSURLConnection* _connection;
-NSMutableData* _receivedData;
-BOOL _done;
+    NSURLConnection* _connection;
+    NSMutableData* _receivedData;
+    BOOL _done;
 
 }
 
@@ -56,6 +56,7 @@ BOOL _done;
             parameters:(NSDictionary*)parameters
                   body:(NSData*)body
               bodyType:(NSString*)bodyType
+             fileToken:(NSString*)fileToken
              accountId:(NSString*)accountId
          progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
            finishBlock:(void (^)(SNPResponse* response))finishBlock {
@@ -69,6 +70,7 @@ BOOL _done;
         self.body = body;
         self.bodyType = bodyType;
         self.accountId = accountId;
+        self.fileToken = fileToken;
         self.progressBlock = progressBlock;
         self.finishBlock = finishBlock;
     }

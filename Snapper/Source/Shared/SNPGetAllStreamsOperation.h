@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseApplicationOperation.h"
+#import "SNPBaseAppTokenOperation.h"
 
 
-@interface SNPGetAllStreamsOperation : SNPBaseApplicationOperation
+@interface SNPGetAllStreamsOperation : SNPBaseAppTokenOperation
 
 @end

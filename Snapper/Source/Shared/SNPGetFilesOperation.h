@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPGetFilesOperation : SNPBaseUserOperation
+@interface SNPGetFilesOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* fileIds;

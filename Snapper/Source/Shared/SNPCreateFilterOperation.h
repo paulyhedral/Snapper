@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 #import "SNPFilter.h"
 
 
-@interface SNPCreateFilterOperation : SNPBaseUserOperation
+@interface SNPCreateFilterOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, copy) NSString* name;

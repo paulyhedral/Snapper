@@ -1,5 +1,5 @@
 //
-//  SNPBaseUserOperation.h
+//  SNPBaseUserTokenOperation.h
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/18/12.
@@ -10,10 +10,18 @@
 #import "SNPBaseClientOperation.h"
 
 
-@interface SNPBaseUserOperation : SNPBaseClientOperation
+@interface SNPBaseUserTokenOperation : SNPBaseClientOperation
 
 // -- Properties --
 @property (nonatomic, copy) NSString* accountId;
+
+@property (nonatomic, assign) BOOL includeMachine;
+@property (nonatomic, assign) BOOL includeMuted;
+@property (nonatomic, assign) BOOL includeDeleted;
+@property (nonatomic, assign) BOOL includeAnnotations;
+@property (nonatomic, assign) BOOL includeUserAnnotations;
+@property (nonatomic, assign) BOOL includeUser;
+@property (nonatomic, assign) BOOL includeDirected;
 
 // -- Initializers --
 - (id)initWithAccountId:(NSString*)accountId

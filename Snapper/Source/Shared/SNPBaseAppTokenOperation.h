@@ -1,5 +1,5 @@
 //
-//  SNPBaseApplicationOperation.h
+//  SNPBaseAppTokenOperation.h
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/23/12.
@@ -10,7 +10,10 @@
 #import "SNPBaseClientOperation.h"
 
 
-@interface SNPBaseApplicationOperation : SNPBaseClientOperation
+/**
+ * Base class for application token-based operations.
+ */
+@interface SNPBaseAppTokenOperation : SNPBaseClientOperation
 
 // -- Properties --
 @property (nonatomic, copy) NSString* appToken;

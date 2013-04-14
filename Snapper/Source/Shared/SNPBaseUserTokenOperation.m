@@ -1,12 +1,12 @@
 //
-//  SNPBaseUserOperation.m
+//  SNPBaseUserTokenOperation.m
 //  Snapper
 //
 //  Created by Paul Schifferer on 12/18/12.
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 #import <Mantle/Mantle.h>
 
@@ -17,14 +17,14 @@
 #import "SNPConstants.h"
 
 
-@implementation SNPBaseUserOperation
+@implementation SNPBaseUserTokenOperation
 
 #pragma mark - Initializers
 
 - (id)initWithAccountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse*))finishBlock {
 
-    self = [self init];
+    self = [super init];
     if(self) {
         self.accountId = accountId;
         self.finishBlock = finishBlock;
@@ -67,6 +67,8 @@
     // Sanity checks.
     NSAssert(self.method, @"No method set for API operation!");
     NSAssert(self.endpoint, @"No endpoint set for API operation!");
+
+    [self handleQueryParameters];
 
     _receivedData = [NSMutableData new];
 
@@ -152,6 +154,41 @@
           !self.isCancelled) {
         NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:5];
         [[NSRunLoop currentRunLoop] runUntilDate:futureDate];
+    }
+}
+
+- (void)handleQueryParameters {
+    
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+
+    if(self.parameters) {
+        [parameters addEntriesFromDictionary:self.parameters];
+    }
+
+    if(_includeAnnotations) {
+        parameters[@"include_annotations"] = @(_includeAnnotations);
+    }
+    if(_includeMachine) {
+        parameters[@"include_machine"] = @(_includeMachine);
+    }
+    if(_includeMuted) {
+        parameters[@"include_muted"] = @(_includeMuted);
+    }
+    if(_includeDeleted) {
+        parameters[@"include_deleted"] = @(_includeDeleted);
+    }
+    if(_includeUserAnnotations) {
+        parameters[@"include_user_annotations"] = @(_includeUserAnnotations);
+    }
+    if(_includeUser) {
+        parameters[@"include_user"] = @(_includeUser);
+    }
+    if(_includeDirected) {
+        parameters[@"include_directed"] = @(_includeDirected);
+    }
+
+    if([[parameters allKeys] count]) {
+        self.parameters = parameters;
     }
 }
 

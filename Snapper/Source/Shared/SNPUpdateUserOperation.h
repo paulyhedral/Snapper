@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPUpdateUserOperation : SNPBaseUserOperation
+@interface SNPUpdateUserOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, copy) NSString* name;

@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseApplicationOperation.h"
+#import "SNPBaseAppTokenOperation.h"
 
 
-@interface SNPDeleteStreamOperation : SNPBaseApplicationOperation
+@interface SNPDeleteStreamOperation : SNPBaseAppTokenOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger streamId;

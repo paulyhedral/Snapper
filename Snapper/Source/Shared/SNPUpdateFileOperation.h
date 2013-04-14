@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 #import "SNPFile.h"
 
 
-@interface SNPUpdateFileOperation : SNPBaseUserOperation
+@interface SNPUpdateFileOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger fileId;

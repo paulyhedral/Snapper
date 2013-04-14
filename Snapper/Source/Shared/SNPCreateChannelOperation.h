@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 #import "SNPACL.h"
 
 
-@interface SNPCreateChannelOperation : SNPBaseUserOperation
+@interface SNPCreateChannelOperation : SNPBaseUserTokenOperation
 
 // -- Properites --
 @property (nonatomic, copy) NSString* type;

@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseApplicationOperation.h"
+#import "SNPBaseAppTokenOperation.h"
 
 #import "SNPStream.h"
 
 
-@interface SNPCreateStreamOperation : SNPBaseApplicationOperation
+@interface SNPCreateStreamOperation : SNPBaseAppTokenOperation
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* objectTypes;

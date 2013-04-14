@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserOperation.h"
+#import "SNPBaseUserTokenOperation.h"
 
 
-@interface SNPGetSubscribersOperation : SNPBaseUserOperation
+@interface SNPGetSubscribersOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* channelIds;

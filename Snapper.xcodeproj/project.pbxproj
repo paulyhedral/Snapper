@@ -63,9 +63,9 @@
 		3C6B5F7D1681098D006C63C1 /* SNPAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C6B5F7B1681098D006C63C1 /* SNPAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C6B5F7E1681098D006C63C1 /* SNPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F7C1681098D006C63C1 /* SNPAccount.m */; };
 		3C6B5F7F1681098D006C63C1 /* SNPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F7C1681098D006C63C1 /* SNPAccount.m */; };
-		3C6B5F82168109C8006C63C1 /* SNPBaseUserOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C6B5F80168109C8006C63C1 /* SNPBaseUserOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C6B5F83168109C8006C63C1 /* SNPBaseUserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F81168109C8006C63C1 /* SNPBaseUserOperation.m */; };
-		3C6B5F84168109C8006C63C1 /* SNPBaseUserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F81168109C8006C63C1 /* SNPBaseUserOperation.m */; };
+		3C6B5F82168109C8006C63C1 /* SNPBaseUserTokenOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C6B5F80168109C8006C63C1 /* SNPBaseUserTokenOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C6B5F83168109C8006C63C1 /* SNPBaseUserTokenOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F81168109C8006C63C1 /* SNPBaseUserTokenOperation.m */; };
+		3C6B5F84168109C8006C63C1 /* SNPBaseUserTokenOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F81168109C8006C63C1 /* SNPBaseUserTokenOperation.m */; };
 		3C6B5F8816810A4D006C63C1 /* SNPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C6B5F8616810A4D006C63C1 /* SNPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C6B5F8916810A4D006C63C1 /* SNPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F8716810A4D006C63C1 /* SNPResponse.m */; };
 		3C6B5F8A16810A4D006C63C1 /* SNPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F8716810A4D006C63C1 /* SNPResponse.m */; };
@@ -274,8 +274,8 @@
 		5B30DBBD1688110B0089730B /* SNPStreamMarker.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C6B5F5D1680FAD7006C63C1 /* SNPStreamMarker.h */; };
 		5B30DBBE1688110B0089730B /* SNPToken.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C6B5F581680FAC9006C63C1 /* SNPToken.h */; };
 		5B30DBBF1688110B0089730B /* SNPUser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C6B5F441680FA52006C63C1 /* SNPUser.h */; };
-		5B30DBC01688110B0089730B /* SNPBaseApplicationOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B6B48E81687CD250032C586 /* SNPBaseApplicationOperation.h */; };
-		5B30DBC11688110B0089730B /* SNPBaseUserOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C6B5F80168109C8006C63C1 /* SNPBaseUserOperation.h */; };
+		5B30DBC01688110B0089730B /* SNPBaseAppTokenOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B6B48E81687CD250032C586 /* SNPBaseAppTokenOperation.h */; };
+		5B30DBC11688110B0089730B /* SNPBaseUserTokenOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C6B5F80168109C8006C63C1 /* SNPBaseUserTokenOperation.h */; };
 		5B30DBC21688110B0089730B /* SNPBaseClientOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B6B48ED1687CDF80032C586 /* SNPBaseClientOperation.h */; };
 		5B30DBC31688110B0089730B /* SNPBaseImageFetchOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B1A40D91686454E0030BB30 /* SNPBaseImageFetchOperation.h */; };
 		5B30DBC41688110B0089730B /* SNPGetSubscribedChannelsOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CDF12211683B89C0058CBE0 /* SNPGetSubscribedChannelsOperation.h */; };
@@ -404,9 +404,9 @@
 		5B6B48E51687CB760032C586 /* SNPDeleteAllStreamsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48E31687CB760032C586 /* SNPDeleteAllStreamsOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6B48E61687CB760032C586 /* SNPDeleteAllStreamsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48E41687CB760032C586 /* SNPDeleteAllStreamsOperation.m */; };
 		5B6B48E71687CB760032C586 /* SNPDeleteAllStreamsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48E41687CB760032C586 /* SNPDeleteAllStreamsOperation.m */; };
-		5B6B48EA1687CD260032C586 /* SNPBaseApplicationOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48E81687CD250032C586 /* SNPBaseApplicationOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B6B48EB1687CD260032C586 /* SNPBaseApplicationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48E91687CD260032C586 /* SNPBaseApplicationOperation.m */; };
-		5B6B48EC1687CD260032C586 /* SNPBaseApplicationOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48E91687CD260032C586 /* SNPBaseApplicationOperation.m */; };
+		5B6B48EA1687CD260032C586 /* SNPBaseAppTokenOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48E81687CD250032C586 /* SNPBaseAppTokenOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B6B48EB1687CD260032C586 /* SNPBaseAppTokenOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48E91687CD260032C586 /* SNPBaseAppTokenOperation.m */; };
+		5B6B48EC1687CD260032C586 /* SNPBaseAppTokenOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48E91687CD260032C586 /* SNPBaseAppTokenOperation.m */; };
 		5B6B48EF1687CDF90032C586 /* SNPBaseClientOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48ED1687CDF80032C586 /* SNPBaseClientOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6B48F01687CDF90032C586 /* SNPBaseClientOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48EE1687CDF90032C586 /* SNPBaseClientOperation.m */; };
 		5B6B48F11687CDF90032C586 /* SNPBaseClientOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48EE1687CDF90032C586 /* SNPBaseClientOperation.m */; };
@@ -663,8 +663,8 @@
 				5B30DBBD1688110B0089730B /* SNPStreamMarker.h in CopyFiles */,
 				5B30DBBE1688110B0089730B /* SNPToken.h in CopyFiles */,
 				5B30DBBF1688110B0089730B /* SNPUser.h in CopyFiles */,
-				5B30DBC01688110B0089730B /* SNPBaseApplicationOperation.h in CopyFiles */,
-				5B30DBC11688110B0089730B /* SNPBaseUserOperation.h in CopyFiles */,
+				5B30DBC01688110B0089730B /* SNPBaseAppTokenOperation.h in CopyFiles */,
+				5B30DBC11688110B0089730B /* SNPBaseUserTokenOperation.h in CopyFiles */,
 				5B30DBC21688110B0089730B /* SNPBaseClientOperation.h in CopyFiles */,
 				5B30DBC31688110B0089730B /* SNPBaseImageFetchOperation.h in CopyFiles */,
 				5B30DBC41688110B0089730B /* SNPGetSubscribedChannelsOperation.h in CopyFiles */,
@@ -787,8 +787,8 @@
 		3C6B5F771680FB42006C63C1 /* SNPAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPAnnotation.m; sourceTree = "<group>"; };
 		3C6B5F7B1681098D006C63C1 /* SNPAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPAccount.h; sourceTree = "<group>"; };
 		3C6B5F7C1681098D006C63C1 /* SNPAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPAccount.m; sourceTree = "<group>"; };
-		3C6B5F80168109C8006C63C1 /* SNPBaseUserOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseUserOperation.h; sourceTree = "<group>"; };
-		3C6B5F81168109C8006C63C1 /* SNPBaseUserOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseUserOperation.m; sourceTree = "<group>"; };
+		3C6B5F80168109C8006C63C1 /* SNPBaseUserTokenOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseUserTokenOperation.h; sourceTree = "<group>"; };
+		3C6B5F81168109C8006C63C1 /* SNPBaseUserTokenOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseUserTokenOperation.m; sourceTree = "<group>"; };
 		3C6B5F8616810A4D006C63C1 /* SNPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPResponse.h; sourceTree = "<group>"; };
 		3C6B5F8716810A4D006C63C1 /* SNPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPResponse.m; sourceTree = "<group>"; };
 		3C6B5F8B16810AEA006C63C1 /* SNPMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPMetadata.h; sourceTree = "<group>"; };
@@ -943,8 +943,8 @@
 		5B6B48DF1687CB640032C586 /* SNPGetAllStreamsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetAllStreamsOperation.m; sourceTree = "<group>"; };
 		5B6B48E31687CB760032C586 /* SNPDeleteAllStreamsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPDeleteAllStreamsOperation.h; sourceTree = "<group>"; };
 		5B6B48E41687CB760032C586 /* SNPDeleteAllStreamsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPDeleteAllStreamsOperation.m; sourceTree = "<group>"; };
-		5B6B48E81687CD250032C586 /* SNPBaseApplicationOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseApplicationOperation.h; sourceTree = "<group>"; };
-		5B6B48E91687CD260032C586 /* SNPBaseApplicationOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseApplicationOperation.m; sourceTree = "<group>"; };
+		5B6B48E81687CD250032C586 /* SNPBaseAppTokenOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseAppTokenOperation.h; sourceTree = "<group>"; };
+		5B6B48E91687CD260032C586 /* SNPBaseAppTokenOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseAppTokenOperation.m; sourceTree = "<group>"; };
 		5B6B48ED1687CDF80032C586 /* SNPBaseClientOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseClientOperation.h; sourceTree = "<group>"; };
 		5B6B48EE1687CDF90032C586 /* SNPBaseClientOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseClientOperation.m; sourceTree = "<group>"; };
 		5B6B48F21687CEFC0032C586 /* SNPACL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPACL.h; sourceTree = "<group>"; };
@@ -1272,8 +1272,8 @@
 		3C6B5F371680F0CF006C63C1 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				5B6B48E81687CD250032C586 /* SNPBaseApplicationOperation.h */,
-				5B6B48E91687CD260032C586 /* SNPBaseApplicationOperation.m */,
+				5B6B48E81687CD250032C586 /* SNPBaseAppTokenOperation.h */,
+				5B6B48E91687CD260032C586 /* SNPBaseAppTokenOperation.m */,
 				5B6B48ED1687CDF80032C586 /* SNPBaseClientOperation.h */,
 				5B6B48EE1687CDF90032C586 /* SNPBaseClientOperation.m */,
 				5B8A334416B7999C00BE5A8A /* SNPBaseFileOperation.h */,
@@ -1284,8 +1284,8 @@
 				5B1A40DA1686454F0030BB30 /* SNPBaseImageFetchOperation.m */,
 				5B2E458D16A36D88000CCDB6 /* SNPBaseImageUpdateOperation.h */,
 				5B2E458E16A36DCD000CCDB6 /* SNPBaseImageUpdateOperation.m */,
-				3C6B5F80168109C8006C63C1 /* SNPBaseUserOperation.h */,
-				3C6B5F81168109C8006C63C1 /* SNPBaseUserOperation.m */,
+				3C6B5F80168109C8006C63C1 /* SNPBaseUserTokenOperation.h */,
+				3C6B5F81168109C8006C63C1 /* SNPBaseUserTokenOperation.m */,
 				5B7B5AB917026B130018D2AB /* SNPBaseMessageOperation.h */,
 				5B7B5ABA17026B130018D2AB /* SNPBaseMessageOperation.m */,
 				3CDF11E71683B6B70058CBE0 /* Channels */,
@@ -1704,7 +1704,7 @@
 				3C6B5F731680FB35006C63C1 /* SNPLink.h in Headers */,
 				3C6B5F781680FB42006C63C1 /* SNPAnnotation.h in Headers */,
 				3C6B5F7D1681098D006C63C1 /* SNPAccount.h in Headers */,
-				3C6B5F82168109C8006C63C1 /* SNPBaseUserOperation.h in Headers */,
+				3C6B5F82168109C8006C63C1 /* SNPBaseUserTokenOperation.h in Headers */,
 				3C6B5F8816810A4D006C63C1 /* SNPResponse.h in Headers */,
 				3C6B5F8D16810AEA006C63C1 /* SNPMetadata.h in Headers */,
 				3C6B5F9116811640006C63C1 /* CWLSynthesizeSingleton.h in Headers */,
@@ -1779,7 +1779,7 @@
 				5B6B48DB1687CB4E0032C586 /* SNPDeleteStreamOperation.h in Headers */,
 				5B6B48E01687CB640032C586 /* SNPGetAllStreamsOperation.h in Headers */,
 				5B6B48E51687CB760032C586 /* SNPDeleteAllStreamsOperation.h in Headers */,
-				5B6B48EA1687CD260032C586 /* SNPBaseApplicationOperation.h in Headers */,
+				5B6B48EA1687CD260032C586 /* SNPBaseAppTokenOperation.h in Headers */,
 				5B6B48EF1687CDF90032C586 /* SNPBaseClientOperation.h in Headers */,
 				5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */,
 				3CDF12A01683C8CE0058CBE0 /* SNPUpdateUserOperation.h in Headers */,
@@ -2049,7 +2049,7 @@
 				3C6B5F741680FB35006C63C1 /* SNPLink.m in Sources */,
 				3C6B5F791680FB42006C63C1 /* SNPAnnotation.m in Sources */,
 				3C6B5F7E1681098D006C63C1 /* SNPAccount.m in Sources */,
-				3C6B5F83168109C8006C63C1 /* SNPBaseUserOperation.m in Sources */,
+				3C6B5F83168109C8006C63C1 /* SNPBaseUserTokenOperation.m in Sources */,
 				3C6B5F8916810A4D006C63C1 /* SNPResponse.m in Sources */,
 				3C6B5F8E16810AEA006C63C1 /* SNPMetadata.m in Sources */,
 				3C6B5F9516811888006C63C1 /* SNPDescription.m in Sources */,
@@ -2123,7 +2123,7 @@
 				5B6B48DC1687CB4E0032C586 /* SNPDeleteStreamOperation.m in Sources */,
 				5B6B48E11687CB640032C586 /* SNPGetAllStreamsOperation.m in Sources */,
 				5B6B48E61687CB760032C586 /* SNPDeleteAllStreamsOperation.m in Sources */,
-				5B6B48EB1687CD260032C586 /* SNPBaseApplicationOperation.m in Sources */,
+				5B6B48EB1687CD260032C586 /* SNPBaseAppTokenOperation.m in Sources */,
 				5B6B48F01687CDF90032C586 /* SNPBaseClientOperation.m in Sources */,
 				5B6B48F51687CEFC0032C586 /* SNPACL.m in Sources */,
 				5B2E459016A36E49000CCDB6 /* SNPBaseImageUpdateOperation.m in Sources */,
@@ -2183,7 +2183,7 @@
 				3C6B5F751680FB35006C63C1 /* SNPLink.m in Sources */,
 				3C6B5F7A1680FB42006C63C1 /* SNPAnnotation.m in Sources */,
 				3C6B5F7F1681098D006C63C1 /* SNPAccount.m in Sources */,
-				3C6B5F84168109C8006C63C1 /* SNPBaseUserOperation.m in Sources */,
+				3C6B5F84168109C8006C63C1 /* SNPBaseUserTokenOperation.m in Sources */,
 				3C6B5F8A16810A4D006C63C1 /* SNPResponse.m in Sources */,
 				3C6B5F8F16810AEA006C63C1 /* SNPMetadata.m in Sources */,
 				3C6B5F9616811888006C63C1 /* SNPDescription.m in Sources */,
@@ -2257,7 +2257,7 @@
 				5B6B48DD1687CB4E0032C586 /* SNPDeleteStreamOperation.m in Sources */,
 				5B6B48E21687CB640032C586 /* SNPGetAllStreamsOperation.m in Sources */,
 				5B6B48E71687CB760032C586 /* SNPDeleteAllStreamsOperation.m in Sources */,
-				5B6B48EC1687CD260032C586 /* SNPBaseApplicationOperation.m in Sources */,
+				5B6B48EC1687CD260032C586 /* SNPBaseAppTokenOperation.m in Sources */,
 				5B6B48F11687CDF90032C586 /* SNPBaseClientOperation.m in Sources */,
 				5B6B48F61687CEFC0032C586 /* SNPACL.m in Sources */,
 				5B2E459116A36E49000CCDB6 /* SNPBaseImageUpdateOperation.m in Sources */,
