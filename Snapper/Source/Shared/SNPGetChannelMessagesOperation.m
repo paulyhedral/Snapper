@@ -32,4 +32,37 @@
     return self;
 }
 
+
+#pragma mark - Workhorse
+
+- (void)main {
+
+    [self handleQueryParameters];
+
+    [super main];
+}
+
+- (void)handleQueryParameters {
+
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+
+    if(self.parameters) {
+        [parameters addEntriesFromDictionary:self.parameters];
+    }
+
+    if(_beforeId) {
+        parameters[@"before_id"] = @(_beforeId);
+    }
+    if(_sinceId) {
+        parameters[@"since_id"] = @(_sinceId);
+    }
+    if(_count) {
+        parameters[@"count"] = @(_count);
+    }
+
+    if([[parameters allKeys] count]) {
+        self.parameters = parameters;
+    }
+}
+
 @end
