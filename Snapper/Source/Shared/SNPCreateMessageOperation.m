@@ -8,9 +8,13 @@
 
 #import "SNPCreateMessageOperation.h"
 
+#import "SNPMessage.h"
 #import "SNPResponse.h"
 #import "SNPAnnotation.h"
 #import "SNPEntity.h"
+#import "SNPMention.h"
+#import "SNPLink.h"
+#import "SNPHashtag.h"
 #import "SNPPost.h"
 
 #import "SNPAPIUtils.h"
@@ -38,6 +42,7 @@
         self.machineOnly = machineOnly;
         self.annotations = annotations;
         self.entities = entities;
+        self.serializationRootClass = [SNPMessage class];
     }
 
     return self;
@@ -50,6 +55,8 @@
 
     self.endpoint = [[SNPAPIUtils sharedAPIUtils] createMessageEndpointURL:_channelId];
     self.method = @"POST";
+
+    [self handleQueryParameters];
 
     NSMutableDictionary* postDict = [NSMutableDictionary new];
     if([_text length]) {
@@ -75,12 +82,40 @@
         postDict[@"annotations"] = serializedAnnotations;
     }
     if(_entities) {
-        NSMutableArray* serializedEntities = [NSMutableArray new];
+        NSMutableArray* serializedHashtags = [NSMutableArray new];
+        NSMutableArray* serializedLinks = [NSMutableArray new];
+        NSMutableArray* serializedMentions = [NSMutableArray new];
         for(SNPEntity* entity in _entities) {
             NSDictionary* entityDict = [entity externalRepresentation];
-            [serializedEntities addObject:entityDict];
+
+            if([entity isKindOfClass:[SNPLink class]]) {
+                [serializedLinks addObject:entityDict];
+            }
+            else if([entity isKindOfClass:[SNPMention class]]) {
+                [serializedMentions addObject:entityDict];
+            }
+            else if([entity isKindOfClass:[SNPHashtag class]]) {
+                [serializedHashtags addObject:entityDict];
+            }
         }
-        postDict[@"entities"] = serializedEntities;
+
+        if([serializedHashtags count] ||
+           [serializedLinks count] ||
+           [serializedMentions count]) {
+            NSMutableDictionary* entitiesDict = [NSMutableDictionary new];
+
+            if([serializedMentions count]) {
+                entitiesDict[@"mentions"] = serializedMentions;
+            }
+            if([serializedLinks count]) {
+                entitiesDict[@"links"] = serializedLinks;
+            }
+            if([serializedHashtags count]) {
+                entitiesDict[@"hashtags"] = serializedHashtags;
+            }
+
+            postDict[@"entities"] = entitiesDict;
+        }
     }
 
     NSError* error = nil;
@@ -98,6 +133,23 @@
     self.bodyType = @"application/json";
 
     [super main];
+}
+
+- (void)handleQueryParameters {
+
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+
+    if(self.parameters) {
+        [parameters addEntriesFromDictionary:self.parameters];
+    }
+
+    if(_includeMessageAnnotations) {
+        parameters[@"include_message_annotations"] = @(_includeMessageAnnotations);
+    }
+
+    if([[parameters allKeys] count]) {
+        self.parameters = parameters;
+    }
 }
 
 @end

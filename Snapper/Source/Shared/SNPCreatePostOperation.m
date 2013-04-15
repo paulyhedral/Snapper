@@ -12,6 +12,9 @@
 #import "SNPResponse.h"
 #import "SNPAnnotation.h"
 #import "SNPEntity.h"
+#import "SNPMention.h"
+#import "SNPLink.h"
+#import "SNPHashtag.h"
 #import "SNPPost.h"
 
 #import "SNPAPIUtils.h"
@@ -39,6 +42,8 @@
         self.annotations = annotations;
         self.entities = entities;
         self.progressBlock = progressBlock;
+        self.method = @"POST";
+        self.serializationRootClass = [SNPPost class];
     }
 
     return self;
@@ -50,8 +55,6 @@
 - (void)main {
 
     self.endpoint = [[SNPAPIUtils sharedAPIUtils] createPostEndpointURL];
-    self.method = @"POST";
-    self.serializationRootClass = [SNPPost class];
 
     NSMutableDictionary* postDict = [NSMutableDictionary new];
     if([_text length]) {
@@ -77,12 +80,40 @@
         postDict[@"annotations"] = serializedAnnotations;
     }
     if(_entities) {
-        NSMutableArray* serializedEntities = [NSMutableArray new];
+        NSMutableArray* serializedHashtags = [NSMutableArray new];
+        NSMutableArray* serializedLinks = [NSMutableArray new];
+        NSMutableArray* serializedMentions = [NSMutableArray new];
         for(SNPEntity* entity in _entities) {
             NSDictionary* entityDict = [entity externalRepresentation];
-            [serializedEntities addObject:entityDict];
+
+            if([entity isKindOfClass:[SNPLink class]]) {
+                [serializedLinks addObject:entityDict];
+            }
+            else if([entity isKindOfClass:[SNPMention class]]) {
+                [serializedMentions addObject:entityDict];
+            }
+            else if([entity isKindOfClass:[SNPHashtag class]]) {
+                [serializedHashtags addObject:entityDict];
+            }
         }
-        postDict[@"entities"] = serializedEntities;
+
+        if([serializedHashtags count] ||
+           [serializedLinks count] ||
+           [serializedMentions count]) {
+            NSMutableDictionary* entitiesDict = [NSMutableDictionary new];
+
+            if([serializedMentions count]) {
+                entitiesDict[@"mentions"] = serializedMentions;
+            }
+            if([serializedLinks count]) {
+                entitiesDict[@"links"] = serializedLinks;
+            }
+            if([serializedHashtags count]) {
+                entitiesDict[@"hashtags"] = serializedHashtags;
+            }
+
+            postDict[@"entities"] = entitiesDict;
+        }
     }
 
     NSError* error = nil;

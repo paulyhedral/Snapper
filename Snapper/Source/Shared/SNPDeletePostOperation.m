@@ -8,6 +8,8 @@
 
 #import "SNPDeletePostOperation.h"
 
+#import "SNPPost.h"
+
 #import "SNPAPIUtils.h"
 
 
@@ -25,6 +27,7 @@
         self.postId = postId;
         self.endpoint = [[SNPAPIUtils sharedAPIUtils] deletePostEndpointURL:postId];
         self.method = @"DELETE";
+        self.serializationRootClass = [SNPPost class];
     }
 
     return self;

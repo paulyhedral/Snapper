@@ -46,6 +46,8 @@
  */
 @property (nonatomic, retain) NSArray* entities;
 
+@property (nonatomic, assign) BOOL includeMessageAnnotations;
+
 // -- Initializers --
 - (id)initWithChannelId:(NSUInteger)channelId
                    text:(NSString*)text

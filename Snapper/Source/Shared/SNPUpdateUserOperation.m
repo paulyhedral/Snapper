@@ -11,6 +11,9 @@
 #import "SNPUser.h"
 #import "SNPAnnotation.h"
 #import "SNPEntity.h"
+#import "SNPMention.h"
+#import "SNPLink.h"
+#import "SNPHashtag.h"
 
 #import "SNPAPIUtils.h"
 
@@ -54,14 +57,40 @@
     NSMutableDictionary* descriptionDict = [NSMutableDictionary new];
     descriptionDict[@"text"] = _description;
     if(_descriptionEntities) {
-        NSMutableArray* serializedEntities = [NSMutableArray new];
-
+        NSMutableArray* serializedHashtags = [NSMutableArray new];
+        NSMutableArray* serializedLinks = [NSMutableArray new];
+        NSMutableArray* serializedMentions = [NSMutableArray new];
         for(SNPEntity* entity in _descriptionEntities) {
             NSDictionary* entityDict = [entity externalRepresentation];
-            [serializedEntities addObject:entityDict];
+
+            if([entity isKindOfClass:[SNPLink class]]) {
+                [serializedLinks addObject:entityDict];
+            }
+            else if([entity isKindOfClass:[SNPMention class]]) {
+                [serializedMentions addObject:entityDict];
+            }
+            else if([entity isKindOfClass:[SNPHashtag class]]) {
+                [serializedHashtags addObject:entityDict];
+            }
         }
 
-        descriptionDict[@"entities"] = serializedEntities;
+        if([serializedHashtags count] ||
+           [serializedLinks count] ||
+           [serializedMentions count]) {
+            NSMutableDictionary* entitiesDict = [NSMutableDictionary new];
+
+            if([serializedMentions count]) {
+                entitiesDict[@"mentions"] = serializedMentions;
+            }
+            if([serializedLinks count]) {
+                entitiesDict[@"links"] = serializedLinks;
+            }
+            if([serializedHashtags count]) {
+                entitiesDict[@"hashtags"] = serializedHashtags;
+            }
+
+            descriptionDict[@"entities"] = entitiesDict;
+        }
     }
     userDict[@"description"] = descriptionDict;
 
