@@ -68,8 +68,6 @@
     NSAssert(self.method, @"No method set for API operation!");
     NSAssert(self.endpoint, @"No endpoint set for API operation!");
 
-    [self handleQueryParameters];
-
     _receivedData = [NSMutableData new];
 
     NSString* accessToken = nil;
@@ -95,6 +93,8 @@
     }
 
     // Query parameters
+    [self handleQueryParameters];
+
     NSMutableString* queryParams = [NSMutableString new];
     [self.parameters enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
         if([queryParams length] > 0) {
