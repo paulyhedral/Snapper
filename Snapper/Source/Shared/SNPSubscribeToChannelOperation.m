@@ -44,6 +44,9 @@
     [super main];
 }
 
+@synthesize includeAnnotations = _includeAnnotations;
+@synthesize includeUserAnnotations = _includeUserAnnotations;
+
 @synthesize channelTypes = _channelTypes;
 @synthesize includeMarker = _includeMarker;
 @synthesize includeRead = _includeRead;
@@ -72,6 +75,12 @@
     }
     if(_includeMessageAnnotations) {
         parameters[@"include_message_annotations"] = @"1";
+    }
+    if(_includeAnnotations) {
+        parameters[@"include_annotations"] = @"1";
+    }
+    if(_includeUserAnnotations) {
+        parameters[@"include_user_annotations"] = @"1";
     }
 
     if([[parameters allKeys] count]) {
