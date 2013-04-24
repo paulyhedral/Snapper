@@ -7,9 +7,12 @@
 //
 
 #import "SNPBaseStreamOperation.h"
+#import "SNPUserParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPGetUserMuteesOperation : SNPBaseStreamOperation
+<SNPUserParameters, SNPPaginationParameters>
 
 // -- Properties --
 

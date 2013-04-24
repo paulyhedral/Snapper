@@ -7,8 +7,10 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPChannelParameters.h"
 
 
 @interface SNPGetMutedChannelsOperation : SNPBaseUserTokenOperation
+<SNPChannelParameters>
 
 @end

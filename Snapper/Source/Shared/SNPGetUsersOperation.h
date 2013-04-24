@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPUserParameters.h"
 
 
 @interface SNPGetUsersOperation : SNPBaseUserTokenOperation
+<SNPUserParameters>
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* userIds;

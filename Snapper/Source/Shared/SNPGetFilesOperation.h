@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPFileParameters.h"
 
 
 @interface SNPGetFilesOperation : SNPBaseUserTokenOperation
+<SNPFileParameters>
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* fileIds;

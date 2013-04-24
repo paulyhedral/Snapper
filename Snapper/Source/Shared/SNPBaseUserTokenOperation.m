@@ -93,8 +93,6 @@
     }
 
     // Query parameters
-    [self handleQueryParameters];
-
     NSMutableString* queryParams = [NSMutableString new];
     [self.parameters enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
         if([queryParams length] > 0) {
@@ -154,41 +152,6 @@
           !self.isCancelled) {
         NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:5];
         [[NSRunLoop currentRunLoop] runUntilDate:futureDate];
-    }
-}
-
-- (void)handleQueryParameters {
-    
-    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
-
-    if(self.parameters) {
-        [parameters addEntriesFromDictionary:self.parameters];
-    }
-
-    if(_includeAnnotations) {
-        parameters[@"include_annotations"] = @(_includeAnnotations);
-    }
-    if(_includeMachine) {
-        parameters[@"include_machine"] = @(_includeMachine);
-    }
-    if(_includeMuted) {
-        parameters[@"include_muted"] = @(_includeMuted);
-    }
-    if(_includeDeleted) {
-        parameters[@"include_deleted"] = @(_includeDeleted);
-    }
-    if(_includeUserAnnotations) {
-        parameters[@"include_user_annotations"] = @(_includeUserAnnotations);
-    }
-    if(_includeUser) {
-        parameters[@"include_user"] = @(_includeUser);
-    }
-    if(_includeDirected) {
-        parameters[@"include_directed"] = @(_includeDirected);
-    }
-
-    if([[parameters allKeys] count]) {
-        self.parameters = parameters;
     }
 }
 

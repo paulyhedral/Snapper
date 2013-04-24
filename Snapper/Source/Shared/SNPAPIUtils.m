@@ -310,6 +310,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+- (NSURL*)getMyMessagesEndpointURL {
+    return [NSURL URLWithString:@"users/me/messages"
+                  relativeToURL:_rootAPIURL];
+}
+
 
 #pragma mark - Stream URL methods
 

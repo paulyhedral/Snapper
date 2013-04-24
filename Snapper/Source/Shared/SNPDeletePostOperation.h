@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPPostParameters.h"
 
 
 @interface SNPDeletePostOperation : SNPBaseUserTokenOperation
+<SNPPostParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger postId;

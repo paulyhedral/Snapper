@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPChannelParameters.h"
 
 
 @interface SNPGetChannelsOperation : SNPBaseUserTokenOperation
+<SNPChannelParameters>
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* channelIds;

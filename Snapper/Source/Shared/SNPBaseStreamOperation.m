@@ -13,6 +13,10 @@
 
 @implementation SNPBaseStreamOperation
 
+@synthesize beforeId = _beforeId;
+@synthesize sinceId = _sinceId;
+@synthesize count = _count;
+
 - (void)main {
 
     NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
@@ -29,15 +33,6 @@
     }
     if(_count) {
         parameters[@"count"] = @(_count);
-    }
-    if(_includePostAnnotations) {
-        parameters[@"include_post_annotations"] = @(_includePostAnnotations);
-    }
-    if(_includeStarredBy) {
-        parameters[@"include_starred_by"] = @(_includeStarredBy);
-    }
-    if(_includeReposters) {
-        parameters[@"include_reposters"] = @(_includeReposters);
     }
 
     if([[parameters allKeys] count]) {

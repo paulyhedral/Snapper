@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPUserParameters.h"
 
 
 @interface SNPMuteUserOperation : SNPBaseUserTokenOperation
+<SNPUserParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger userId;

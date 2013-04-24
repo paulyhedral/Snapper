@@ -7,9 +7,12 @@
 //
 
 #import "SNPBaseMessageOperation.h"
+#import "SNPMessageParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPGetChannelMessagesOperation : SNPBaseMessageOperation
+<SNPPaginationParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger channelId;

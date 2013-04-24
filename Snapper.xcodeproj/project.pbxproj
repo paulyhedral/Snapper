@@ -243,6 +243,16 @@
 		3CDF12E21683C9DF0058CBE0 /* SNPGetStarrersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12E01683C9DE0058CBE0 /* SNPGetStarrersOperation.m */; };
 		3CDF12E31683C9DF0058CBE0 /* SNPGetStarrersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12E01683C9DE0058CBE0 /* SNPGetStarrersOperation.m */; };
 		5B09411A16A378B500D0D1D0 /* SNPBaseImageUpdateOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B2E458D16A36D88000CCDB6 /* SNPBaseImageUpdateOperation.h */; };
+		5B121AC2171C6F9200C505EA /* SNPCommonParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */; };
+		5B121AC4171C6FA400C505EA /* SNPPaginationParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC3171C6FA400C505EA /* SNPPaginationParameters.h */; };
+		5B121AC6171C6FB700C505EA /* SNPUserParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC5171C6FB700C505EA /* SNPUserParameters.h */; };
+		5B121AC8171C6FC300C505EA /* SNPMessageParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC7171C6FC300C505EA /* SNPMessageParameters.h */; };
+		5B121ACA171C6FD000C505EA /* SNPFileParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC9171C6FD000C505EA /* SNPFileParameters.h */; };
+		5B121ACC171C6FDE00C505EA /* SNPPostParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACB171C6FDE00C505EA /* SNPPostParameters.h */; };
+		5B121ACE171C6FE900C505EA /* SNPChannelParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACD171C6FE900C505EA /* SNPChannelParameters.h */; };
+		5B121AD1171C780100C505EA /* SNPGetMyMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */; };
+		5B121AD2171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B121AD0171C780100C505EA /* SNPGetMyMessagesOperation.m */; };
+		5B121AD3171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B121AD0171C780100C505EA /* SNPGetMyMessagesOperation.m */; };
 		5B1A40DB168645500030BB30 /* SNPBaseImageFetchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B1A40D91686454E0030BB30 /* SNPBaseImageFetchOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B1A40DC168645500030BB30 /* SNPBaseImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A40DA1686454F0030BB30 /* SNPBaseImageFetchOperation.m */; };
 		5B1A40DD168645500030BB30 /* SNPBaseImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A40DA1686454F0030BB30 /* SNPBaseImageFetchOperation.m */; };
@@ -908,6 +918,15 @@
 		3CDF12DB1683C9CE0058CBE0 /* SNPGetRepostersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetRepostersOperation.m; sourceTree = "<group>"; };
 		3CDF12DF1683C9DD0058CBE0 /* SNPGetStarrersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetStarrersOperation.h; sourceTree = "<group>"; };
 		3CDF12E01683C9DE0058CBE0 /* SNPGetStarrersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetStarrersOperation.m; sourceTree = "<group>"; };
+		5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPCommonParameters.h; sourceTree = "<group>"; };
+		5B121AC3171C6FA400C505EA /* SNPPaginationParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPaginationParameters.h; sourceTree = "<group>"; };
+		5B121AC5171C6FB700C505EA /* SNPUserParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPUserParameters.h; sourceTree = "<group>"; };
+		5B121AC7171C6FC300C505EA /* SNPMessageParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPMessageParameters.h; sourceTree = "<group>"; };
+		5B121AC9171C6FD000C505EA /* SNPFileParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPFileParameters.h; sourceTree = "<group>"; };
+		5B121ACB171C6FDE00C505EA /* SNPPostParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPostParameters.h; sourceTree = "<group>"; };
+		5B121ACD171C6FE900C505EA /* SNPChannelParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPChannelParameters.h; sourceTree = "<group>"; };
+		5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetMyMessagesOperation.h; sourceTree = "<group>"; };
+		5B121AD0171C780100C505EA /* SNPGetMyMessagesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetMyMessagesOperation.m; sourceTree = "<group>"; };
 		5B1A40D91686454E0030BB30 /* SNPBaseImageFetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseImageFetchOperation.h; sourceTree = "<group>"; };
 		5B1A40DA1686454F0030BB30 /* SNPBaseImageFetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseImageFetchOperation.m; sourceTree = "<group>"; };
 		5B1A40E01686664E0030BB30 /* SNPBaseStreamOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseStreamOperation.h; sourceTree = "<group>"; };
@@ -1184,6 +1203,7 @@
 			children = (
 				3C6B5F2E1680EEDE006C63C1 /* Snapper.h */,
 				3C6B5F9016811640006C63C1 /* CWLSynthesizeSingleton.h */,
+				5BD0241416861E5100E24D5A /* SNPConstants.h */,
 				3C6B5F391680F184006C63C1 /* Accounts */,
 				3C6B5F381680F0D6006C63C1 /* Model */,
 				3C6B5F371680F0CF006C63C1 /* Operations */,
@@ -1191,7 +1211,7 @@
 				3CDF12071683B7E30058CBE0 /* Threads */,
 				3C6B5F8516810A2E006C63C1 /* Miscellaneous */,
 				5BE0A54E16817FE8005AA40C /* Categories */,
-				5BD0241416861E5100E24D5A /* SNPConstants.h */,
+				5B121ABE171C6F6D00C505EA /* Protocols */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -1508,6 +1528,8 @@
 				3CDF12181683B8690058CBE0 /* SNPGetChannelMessagesOperation.m */,
 				3CDF121C1683B8770058CBE0 /* SNPDeleteMessageOperation.h */,
 				3CDF121D1683B8770058CBE0 /* SNPDeleteMessageOperation.m */,
+				5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */,
+				5B121AD0171C780100C505EA /* SNPGetMyMessagesOperation.m */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -1582,6 +1604,20 @@
 				3CDF12031683B7D10058CBE0 /* SNPStreamWatcher.m */,
 			);
 			name = Threads;
+			sourceTree = "<group>";
+		};
+		5B121ABE171C6F6D00C505EA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5B121ACD171C6FE900C505EA /* SNPChannelParameters.h */,
+				5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */,
+				5B121AC9171C6FD000C505EA /* SNPFileParameters.h */,
+				5B121AC7171C6FC300C505EA /* SNPMessageParameters.h */,
+				5B121AC3171C6FA400C505EA /* SNPPaginationParameters.h */,
+				5B121ACB171C6FDE00C505EA /* SNPPostParameters.h */,
+				5B121AC5171C6FB700C505EA /* SNPUserParameters.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		5B8A333E16B7992900BE5A8A /* Files */ = {
@@ -1783,6 +1819,14 @@
 				5B6B48EF1687CDF90032C586 /* SNPBaseClientOperation.h in Headers */,
 				5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */,
 				3CDF12A01683C8CE0058CBE0 /* SNPUpdateUserOperation.h in Headers */,
+				5B121AC2171C6F9200C505EA /* SNPCommonParameters.h in Headers */,
+				5B121AC4171C6FA400C505EA /* SNPPaginationParameters.h in Headers */,
+				5B121AC6171C6FB700C505EA /* SNPUserParameters.h in Headers */,
+				5B121AC8171C6FC300C505EA /* SNPMessageParameters.h in Headers */,
+				5B121ACA171C6FD000C505EA /* SNPFileParameters.h in Headers */,
+				5B121ACC171C6FDE00C505EA /* SNPPostParameters.h in Headers */,
+				5B121ACE171C6FE900C505EA /* SNPChannelParameters.h in Headers */,
+				5B121AD1171C780100C505EA /* SNPGetMyMessagesOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2152,6 +2196,7 @@
 				5B90EC2F16F185CE00A50BCF /* SNPMuteChannelOperation.m in Sources */,
 				5B90EC3416F185DB00A50BCF /* SNPUnmuteChannelOperation.m in Sources */,
 				5B7B5ABC17026B130018D2AB /* SNPBaseMessageOperation.m in Sources */,
+				5B121AD2171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2286,6 +2331,7 @@
 				5B90EC3016F185CE00A50BCF /* SNPMuteChannelOperation.m in Sources */,
 				5B90EC3516F185DB00A50BCF /* SNPUnmuteChannelOperation.m in Sources */,
 				5B7B5ABD17026B130018D2AB /* SNPBaseMessageOperation.m in Sources */,
+				5B121AD3171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

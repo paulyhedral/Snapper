@@ -15,14 +15,6 @@
 // -- Properties --
 @property (nonatomic, copy) NSString* accountId;
 
-@property (nonatomic, assign) BOOL includeMachine;
-@property (nonatomic, assign) BOOL includeMuted;
-@property (nonatomic, assign) BOOL includeDeleted;
-@property (nonatomic, assign) BOOL includeAnnotations;
-@property (nonatomic, assign) BOOL includeUserAnnotations;
-@property (nonatomic, assign) BOOL includeUser;
-@property (nonatomic, assign) BOOL includeDirected;
-
 // -- Initializers --
 - (id)initWithAccountId:(NSString*)accountId
            finishBlock:(void (^)(SNPResponse* response))finishBlock;

@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPChannelParameters.h"
 
 
 @interface SNPUnsubscribeFromChannelOperation : SNPBaseUserTokenOperation
+<SNPChannelParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger channelId;

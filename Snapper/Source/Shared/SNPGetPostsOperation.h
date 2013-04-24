@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPPostParameters.h"
 
 
 @interface SNPGetPostsOperation : SNPBaseUserTokenOperation
+<SNPPostParameters>
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* postIds;

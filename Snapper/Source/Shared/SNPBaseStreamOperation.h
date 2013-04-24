@@ -7,16 +7,12 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPBaseStreamOperation : SNPBaseUserTokenOperation
+<SNPPaginationParameters>
 
 // -- Properties --
-@property (nonatomic, assign) NSUInteger beforeId;
-@property (nonatomic, assign) NSUInteger sinceId;
-@property (nonatomic, assign) NSInteger count;
-@property (nonatomic, assign) BOOL includePostAnnotations;
-@property (nonatomic, assign) BOOL includeStarredBy;
-@property (nonatomic, assign) BOOL includeReposters;
 
 @end

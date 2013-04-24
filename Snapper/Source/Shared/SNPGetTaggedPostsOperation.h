@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseStreamOperation.h"
+#import "SNPPostParameters.h"
 
 
 @interface SNPGetTaggedPostsOperation : SNPBaseStreamOperation
+<SNPPostParameters>
 
 // -- Properties --
 @property (nonatomic, copy) NSString* hashtag;

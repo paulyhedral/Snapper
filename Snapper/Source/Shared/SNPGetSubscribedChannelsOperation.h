@@ -7,9 +7,12 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPChannelParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPGetSubscribedChannelsOperation : SNPBaseUserTokenOperation
+<SNPChannelParameters, SNPPaginationParameters>
 
 // -- Initialization --
 - (id)initWithAccountId:(NSString*)accountId

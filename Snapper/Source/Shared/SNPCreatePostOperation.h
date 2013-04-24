@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPPostParameters.h"
 
 
 @interface SNPCreatePostOperation : SNPBaseUserTokenOperation
+<SNPPostParameters>
 
 // -- Properties --
 /**

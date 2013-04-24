@@ -7,9 +7,11 @@
 //
 
 #import "SNPBaseFileOperation.h"
+#import "SNPFileParameters.h"
 
 
 @interface SNPGetFileOperation : SNPBaseFileOperation
+<SNPFileParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger fileId;

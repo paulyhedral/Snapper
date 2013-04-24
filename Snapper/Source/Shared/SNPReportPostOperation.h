@@ -7,9 +7,11 @@
 //
 
 #import <Snapper/Snapper.h>
+#import "SNPPostParameters.h"
 
 
 @interface SNPReportPostOperation : SNPBaseUserTokenOperation
+<SNPPostParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger postId;

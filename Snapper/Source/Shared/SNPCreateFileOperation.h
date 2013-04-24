@@ -8,9 +8,11 @@
 
 #import "SNPBaseUserTokenOperation.h"
 #import "SNPResponse.h"
+#import "SNPFileParameters.h"
 
 
 @interface SNPCreateFileOperation : SNPBaseUserTokenOperation
+<SNPFileParameters>
 
 // -- Properties --
 @property (nonatomic, copy) NSString* name;

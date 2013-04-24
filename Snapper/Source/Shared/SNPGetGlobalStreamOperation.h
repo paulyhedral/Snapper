@@ -7,8 +7,11 @@
 //
 
 #import "SNPBaseStreamOperation.h"
+#import "SNPPostParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPGetGlobalStreamOperation : SNPBaseStreamOperation
+<SNPPostParameters, SNPPaginationParameters>
 
 @end

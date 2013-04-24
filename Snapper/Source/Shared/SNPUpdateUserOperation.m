@@ -25,7 +25,7 @@
 - (id)initWithName:(NSString*)name
             locale:(NSString*)locale
           timezone:(NSString*)timezone
-       description:(NSString*)description
+       description:(NSString*)descriptionText
          accountId:(NSString*)accountId
        finishBlock:(void (^)(SNPResponse*))finishBlock {
 
@@ -35,7 +35,7 @@
         self.name = name;
         self.locale = locale;
         self.timezone = timezone;
-        self.description = description;
+        self.descriptionText = descriptionText;
     }
 
     return self;
@@ -55,7 +55,7 @@
     userDict[@"timezone"] = _timezone;
 
     NSMutableDictionary* descriptionDict = [NSMutableDictionary new];
-    descriptionDict[@"text"] = _description;
+    descriptionDict[@"text"] = _descriptionText;
     if(_descriptionEntities) {
         NSMutableArray* serializedHashtags = [NSMutableArray new];
         NSMutableArray* serializedLinks = [NSMutableArray new];
@@ -122,7 +122,32 @@
     self.method = @"PUT";
     self.serializationRootClass = [SNPUser class];
 
+    [self handleCommonParameters];
+
     [super main];
+}
+
+@synthesize includeAnnotations = _includeAnnotations;
+@synthesize includeUserAnnotations = _includeUserAnnotations;
+
+- (void)handleCommonParameters {
+
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+
+    if(self.parameters) {
+        [parameters addEntriesFromDictionary:self.parameters];
+    }
+
+    if(_includeAnnotations) {
+        parameters[@"include_annotations"] = @"1";
+    }
+    if(_includeUserAnnotations) {
+        parameters[@"include_user_annotations"] = @"1";
+    }
+
+    if([[parameters allKeys] count]) {
+        self.parameters = parameters;
+    }
 }
 
 @end

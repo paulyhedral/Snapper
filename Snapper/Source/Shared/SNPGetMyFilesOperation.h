@@ -7,9 +7,12 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPFileParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPGetMyFilesOperation : SNPBaseUserTokenOperation
+<SNPFileParameters, SNPPaginationParameters>
 
 // -- Properties --
 

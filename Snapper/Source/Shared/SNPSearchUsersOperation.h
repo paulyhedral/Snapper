@@ -7,9 +7,12 @@
 //
 
 #import "SNPBaseStreamOperation.h"
+#import "SNPUserParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPSearchUsersOperation : SNPBaseStreamOperation
+<SNPUserParameters, SNPPaginationParameters>
 
 // -- Properties --
 @property (nonatomic, copy) NSString* queryString;

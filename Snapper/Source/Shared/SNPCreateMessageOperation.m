@@ -56,8 +56,6 @@
     self.endpoint = [[SNPAPIUtils sharedAPIUtils] createMessageEndpointURL:_channelId];
     self.method = @"POST";
 
-    [self handleQueryParameters];
-
     NSMutableDictionary* postDict = [NSMutableDictionary new];
     if([_text length]) {
         postDict[@"text"] = _text;
@@ -133,23 +131,6 @@
     self.bodyType = @"application/json";
 
     [super main];
-}
-
-- (void)handleQueryParameters {
-
-    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
-
-    if(self.parameters) {
-        [parameters addEntriesFromDictionary:self.parameters];
-    }
-
-    if(_includeMessageAnnotations) {
-        parameters[@"include_message_annotations"] = @(_includeMessageAnnotations);
-    }
-
-    if([[parameters allKeys] count]) {
-        self.parameters = parameters;
-    }
 }
 
 @end

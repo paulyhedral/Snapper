@@ -7,12 +7,12 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPMessageParameters.h"
 
 
 @interface SNPBaseMessageOperation : SNPBaseUserTokenOperation
+<SNPMessageParameters>
 
 // -- Properties --
-@property (nonatomic, copy) NSArray* channelTypes;
-@property (nonatomic, assign) BOOL includeMessageAnnotations;
 
 @end

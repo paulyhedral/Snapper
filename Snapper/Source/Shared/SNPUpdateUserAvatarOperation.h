@@ -7,8 +7,10 @@
 //
 
 #import "SNPBaseImageUpdateOperation.h"
+#import "SNPUserParameters.h"
 
 
 @interface SNPUpdateUserAvatarOperation : SNPBaseImageUpdateOperation
+<SNPUserParameters>
 
 @end

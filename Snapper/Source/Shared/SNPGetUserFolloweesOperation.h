@@ -7,9 +7,12 @@
 //
 
 #import "SNPBaseStreamOperation.h"
+#import "SNPUserParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPGetUserFolloweesOperation : SNPBaseStreamOperation
+<SNPUserParameters, SNPPaginationParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger userId;

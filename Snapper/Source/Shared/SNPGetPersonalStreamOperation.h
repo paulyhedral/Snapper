@@ -7,9 +7,12 @@
 //
 
 #import "SNPBaseStreamOperation.h"
+#import "SNPPostParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPGetPersonalStreamOperation : SNPBaseStreamOperation
+<SNPPostParameters, SNPPaginationParameters>
 
 @property (nonatomic, assign) BOOL unified;
 

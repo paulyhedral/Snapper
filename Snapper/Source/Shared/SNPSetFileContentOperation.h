@@ -7,9 +7,11 @@
 //
 
 #import <Snapper/Snapper.h>
+#import "SNPFileParameters.h"
 
 
 @interface SNPSetFileContentOperation : SNPBaseUserTokenOperation
+<SNPFileParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger fileId;

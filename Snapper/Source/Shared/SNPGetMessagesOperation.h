@@ -6,10 +6,12 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseUserTokenOperation.h"
+#import "SNPBaseMessageOperation.h"
+#import "SNPMessageParameters.h"
 
 
-@interface SNPGetMessagesOperation : SNPBaseUserTokenOperation
+@interface SNPGetMessagesOperation : SNPBaseMessageOperation
+<SNPMessageParameters>
 
 // -- Properties --
 @property (nonatomic, retain) NSArray* messageIds;

@@ -7,11 +7,12 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
-
 #import "SNPACL.h"
+#import "SNPChannelParameters.h"
 
 
 @interface SNPCreateChannelOperation : SNPBaseUserTokenOperation
+<SNPChannelParameters>
 
 // -- Properites --
 @property (nonatomic, copy) NSString* type;

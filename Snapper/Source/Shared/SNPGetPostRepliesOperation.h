@@ -7,9 +7,12 @@
 //
 
 #import "SNPBaseStreamOperation.h"
+#import "SNPPostParameters.h"
+#import "SNPPaginationParameters.h"
 
 
 @interface SNPGetPostRepliesOperation : SNPBaseStreamOperation
+<SNPPostParameters, SNPPaginationParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger postId;

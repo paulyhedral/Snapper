@@ -37,12 +37,12 @@
 
 - (void)main {
 
-    [self handleQueryParameters];
+    [self handlePaginationParameters];
 
     [super main];
 }
 
-- (void)handleQueryParameters {
+- (void)handlePaginationParameters {
 
     NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
 
@@ -50,14 +50,14 @@
         [parameters addEntriesFromDictionary:self.parameters];
     }
 
-    if(_beforeId) {
-        parameters[@"before_id"] = @(_beforeId);
+    if(self.beforeId) {
+        parameters[@"before_id"] = @(self.beforeId);
     }
-    if(_sinceId) {
-        parameters[@"since_id"] = @(_sinceId);
+    if(self.sinceId) {
+        parameters[@"since_id"] = @(self.sinceId);
     }
-    if(_count) {
-        parameters[@"count"] = @(_count);
+    if(self.count) {
+        parameters[@"count"] = @(self.count);
     }
 
     if([[parameters allKeys] count]) {

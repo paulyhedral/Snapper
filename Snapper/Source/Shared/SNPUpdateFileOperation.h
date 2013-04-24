@@ -7,11 +7,12 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
-
 #import "SNPFile.h"
+#import "SNPFileParameters.h"
 
 
 @interface SNPUpdateFileOperation : SNPBaseUserTokenOperation
+<SNPFileParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger fileId;

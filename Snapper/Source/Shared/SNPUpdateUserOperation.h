@@ -7,15 +7,17 @@
 //
 
 #import "SNPBaseUserTokenOperation.h"
+#import "SNPUserParameters.h"
 
 
 @interface SNPUpdateUserOperation : SNPBaseUserTokenOperation
+<SNPUserParameters>
 
 // -- Properties --
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSString* locale;
 @property (nonatomic, copy) NSString* timezone;
-@property (nonatomic, copy) NSString* description;
+@property (nonatomic, copy) NSString* descriptionText;
 @property (nonatomic, retain) NSArray* descriptionEntities;
 @property (nonatomic, retain) NSArray* annotations;
 
@@ -23,7 +25,7 @@
 - (id)initWithName:(NSString*)name
             locale:(NSString*)locale
           timezone:(NSString*)timezone
-       description:(NSString*)description
+       description:(NSString*)descriptionText
          accountId:(NSString*)accountId
        finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

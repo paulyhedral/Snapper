@@ -82,6 +82,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 - (NSURL*)getMessagesEndpointURL;
 - (NSURL*)deleteMessageEndpointURL:(NSInteger)channelId
                          messageId:(NSInteger)messageId;
+- (NSURL*)getMyMessagesEndpointURL;
 
 // -- Stream URL methods --
 - (NSURL*)createStreamEndpointURL;
