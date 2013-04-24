@@ -72,6 +72,7 @@
 #import <Snapper/SNPGetGlobalStreamOperation.h>
 #import <Snapper/SNPGetMessageOperation.h>
 #import <Snapper/SNPGetMessagesOperation.h>
+#import <Snapper/SNPGetMyMessagesOperation.h>
 #import <Snapper/SNPGetPersonalStreamOperation.h>
 #import <Snapper/SNPGetPlaceOperation.h>
 #import <Snapper/SNPGetPostOperation.h>
@@ -122,4 +123,13 @@
 // -- Categories --
 #import <Snapper/NSString+URLEncoding.h>
 #import <Snapper/NSString+URLEscape.h>
+
+// -- Protocols --
+#import <Snapper/SNPChannelParameters.h>
+#import <Snapper/SNPCommonParameters.h>
+#import <Snapper/SNPFileParameters.h>
+#import <Snapper/SNPMessageParameters.h>
+#import <Snapper/SNPPaginationParameters.h>
+#import <Snapper/SNPPostParameters.h>
+#import <Snapper/SNPUserParameters.h>
 

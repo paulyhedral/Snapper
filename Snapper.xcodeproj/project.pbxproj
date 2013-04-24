@@ -243,14 +243,14 @@
 		3CDF12E21683C9DF0058CBE0 /* SNPGetStarrersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12E01683C9DE0058CBE0 /* SNPGetStarrersOperation.m */; };
 		3CDF12E31683C9DF0058CBE0 /* SNPGetStarrersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12E01683C9DE0058CBE0 /* SNPGetStarrersOperation.m */; };
 		5B09411A16A378B500D0D1D0 /* SNPBaseImageUpdateOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B2E458D16A36D88000CCDB6 /* SNPBaseImageUpdateOperation.h */; };
-		5B121AC2171C6F9200C505EA /* SNPCommonParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */; };
-		5B121AC4171C6FA400C505EA /* SNPPaginationParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC3171C6FA400C505EA /* SNPPaginationParameters.h */; };
-		5B121AC6171C6FB700C505EA /* SNPUserParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC5171C6FB700C505EA /* SNPUserParameters.h */; };
-		5B121AC8171C6FC300C505EA /* SNPMessageParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC7171C6FC300C505EA /* SNPMessageParameters.h */; };
-		5B121ACA171C6FD000C505EA /* SNPFileParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC9171C6FD000C505EA /* SNPFileParameters.h */; };
-		5B121ACC171C6FDE00C505EA /* SNPPostParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACB171C6FDE00C505EA /* SNPPostParameters.h */; };
-		5B121ACE171C6FE900C505EA /* SNPChannelParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACD171C6FE900C505EA /* SNPChannelParameters.h */; };
-		5B121AD1171C780100C505EA /* SNPGetMyMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */; };
+		5B121AC2171C6F9200C505EA /* SNPCommonParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B121AC4171C6FA400C505EA /* SNPPaginationParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC3171C6FA400C505EA /* SNPPaginationParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B121AC6171C6FB700C505EA /* SNPUserParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC5171C6FB700C505EA /* SNPUserParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B121AC8171C6FC300C505EA /* SNPMessageParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC7171C6FC300C505EA /* SNPMessageParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B121ACA171C6FD000C505EA /* SNPFileParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121AC9171C6FD000C505EA /* SNPFileParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B121ACC171C6FDE00C505EA /* SNPPostParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACB171C6FDE00C505EA /* SNPPostParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B121ACE171C6FE900C505EA /* SNPChannelParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACD171C6FE900C505EA /* SNPChannelParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B121AD1171C780100C505EA /* SNPGetMyMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B121AD2171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B121AD0171C780100C505EA /* SNPGetMyMessagesOperation.m */; };
 		5B121AD3171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B121AD0171C780100C505EA /* SNPGetMyMessagesOperation.m */; };
 		5B1A40DB168645500030BB30 /* SNPBaseImageFetchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B1A40D91686454E0030BB30 /* SNPBaseImageFetchOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -451,6 +451,14 @@
 		5B90EC3316F185DB00A50BCF /* SNPUnmuteChannelOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B90EC3116F185DB00A50BCF /* SNPUnmuteChannelOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B90EC3416F185DB00A50BCF /* SNPUnmuteChannelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90EC3216F185DB00A50BCF /* SNPUnmuteChannelOperation.m */; };
 		5B90EC3516F185DB00A50BCF /* SNPUnmuteChannelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90EC3216F185DB00A50BCF /* SNPUnmuteChannelOperation.m */; };
+		5B92DAB017276418005614DD /* SNPGetMyMessagesOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */; };
+		5B92DAB117276418005614DD /* SNPChannelParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121ACD171C6FE900C505EA /* SNPChannelParameters.h */; };
+		5B92DAB217276418005614DD /* SNPCommonParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */; };
+		5B92DAB317276418005614DD /* SNPFileParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121AC9171C6FD000C505EA /* SNPFileParameters.h */; };
+		5B92DAB417276418005614DD /* SNPMessageParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121AC7171C6FC300C505EA /* SNPMessageParameters.h */; };
+		5B92DAB517276418005614DD /* SNPPaginationParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121AC3171C6FA400C505EA /* SNPPaginationParameters.h */; };
+		5B92DAB617276418005614DD /* SNPPostParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121ACB171C6FDE00C505EA /* SNPPostParameters.h */; };
+		5B92DAB717276418005614DD /* SNPUserParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121AC5171C6FB700C505EA /* SNPUserParameters.h */; };
 		5B9BB24A16EB8A00007E833A /* SNPExploreStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BB24816EB8A00007E833A /* SNPExploreStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B9BB24B16EB8A00007E833A /* SNPExploreStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24916EB8A00007E833A /* SNPExploreStream.m */; };
 		5B9BB24C16EB8A00007E833A /* SNPExploreStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BB24916EB8A00007E833A /* SNPExploreStream.m */; };
@@ -625,6 +633,14 @@
 			dstPath = include/Snapper;
 			dstSubfolderSpec = 16;
 			files = (
+				5B92DAB017276418005614DD /* SNPGetMyMessagesOperation.h in CopyFiles */,
+				5B92DAB117276418005614DD /* SNPChannelParameters.h in CopyFiles */,
+				5B92DAB217276418005614DD /* SNPCommonParameters.h in CopyFiles */,
+				5B92DAB317276418005614DD /* SNPFileParameters.h in CopyFiles */,
+				5B92DAB417276418005614DD /* SNPMessageParameters.h in CopyFiles */,
+				5B92DAB517276418005614DD /* SNPPaginationParameters.h in CopyFiles */,
+				5B92DAB617276418005614DD /* SNPPostParameters.h in CopyFiles */,
+				5B92DAB717276418005614DD /* SNPUserParameters.h in CopyFiles */,
 				5B7B5AC017026CB00018D2AB /* SNPBaseMessageOperation.h in CopyFiles */,
 				5B7B5AC117026CB00018D2AB /* SNPGetMutedChannelsOperation.h in CopyFiles */,
 				5B7B5AC217026CB00018D2AB /* SNPMuteChannelOperation.h in CopyFiles */,
@@ -1699,6 +1715,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B121AC2171C6F9200C505EA /* SNPCommonParameters.h in Headers */,
+				5B121AC4171C6FA400C505EA /* SNPPaginationParameters.h in Headers */,
+				5B121AC6171C6FB700C505EA /* SNPUserParameters.h in Headers */,
+				5B121AC8171C6FC300C505EA /* SNPMessageParameters.h in Headers */,
+				5B121ACA171C6FD000C505EA /* SNPFileParameters.h in Headers */,
+				5B121ACC171C6FDE00C505EA /* SNPPostParameters.h in Headers */,
+				5B121ACE171C6FE900C505EA /* SNPChannelParameters.h in Headers */,
+				5B121AD1171C780100C505EA /* SNPGetMyMessagesOperation.h in Headers */,
 				5B90EC2716F185B800A50BCF /* SNPGetMutedChannelsOperation.h in Headers */,
 				5B90EC2E16F185CE00A50BCF /* SNPMuteChannelOperation.h in Headers */,
 				5B90EC3316F185DB00A50BCF /* SNPUnmuteChannelOperation.h in Headers */,
@@ -1819,14 +1843,6 @@
 				5B6B48EF1687CDF90032C586 /* SNPBaseClientOperation.h in Headers */,
 				5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */,
 				3CDF12A01683C8CE0058CBE0 /* SNPUpdateUserOperation.h in Headers */,
-				5B121AC2171C6F9200C505EA /* SNPCommonParameters.h in Headers */,
-				5B121AC4171C6FA400C505EA /* SNPPaginationParameters.h in Headers */,
-				5B121AC6171C6FB700C505EA /* SNPUserParameters.h in Headers */,
-				5B121AC8171C6FC300C505EA /* SNPMessageParameters.h in Headers */,
-				5B121ACA171C6FD000C505EA /* SNPFileParameters.h in Headers */,
-				5B121ACC171C6FDE00C505EA /* SNPPostParameters.h in Headers */,
-				5B121ACE171C6FE900C505EA /* SNPChannelParameters.h in Headers */,
-				5B121AD1171C780100C505EA /* SNPGetMyMessagesOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
