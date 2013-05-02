@@ -39,6 +39,7 @@
             @"canonicalURL": @"canonical_url",
             @"youCanSubscribe": @"you_can_subscribe",
             @"descriptionObject": @"description",
+            @"verifiedDomain" : @"verified_domain",
             }];
 }
 
