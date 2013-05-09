@@ -9,13 +9,20 @@
 #import "SNPBaseClientOperation.h"
 
 #import <Mantle/Mantle.h>
+#import <libkern/OSAtomic.h>
 
 #import "NSString+URLEncoding.h"
 
 #import "SNPConstants.h"
 
 
-@implementation SNPBaseClientOperation 
+@implementation SNPBaseClientOperation {
+
+@private
+    NSDateFormatter* _dateFormatter;
+    dispatch_once_t _onceToken;
+
+}
 
 #pragma mark - Initializers
 
@@ -24,7 +31,15 @@
     self = [super init];
     if(self) {
         self.method = @"GET";
+
+        dispatch_once(&_onceToken, ^{
+            _dateFormatter = [[NSDateFormatter alloc] init];
+            _dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+            _dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+        });
     }
+
+    OSMemoryBarrier();
 
     return self;
 }
@@ -48,7 +63,7 @@
          progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
            finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
-    self = [super init];
+    self = [self initWithFinishBlock:finishBlock];
     if(self) {
         self.endpoint = endpoint;
         self.method = method;
@@ -57,7 +72,6 @@
         self.body = body;
         self.bodyType = bodyType;
         self.progressBlock = progressBlock;
-        self.finishBlock = finishBlock;
     }
 
     return self;
@@ -160,10 +174,7 @@
         streamMarker.version = markerDict[@"version"];
 
         if(markerDict[@"updated_at"]) {
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-            dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
-            streamMarker.updatedAt = [dateFormatter dateFromString:markerDict[@"updated_at"]];
+            streamMarker.updatedAt = [_dateFormatter dateFromString:markerDict[@"updated_at"]];
         }
 
         meta.streamMarker = streamMarker;
@@ -197,9 +208,9 @@
     SNPMetadata* meta = [[SNPMetadata alloc] init];
     meta.errorId = [NSString stringWithFormat:@"%ld", (long)error.code];
     meta.errorMessage = [error localizedDescription];
-    
+
     response.metadata = meta;
-    
+
     return response;
 }
 
@@ -307,18 +318,19 @@ didReceiveResponse:(NSURLResponse*)response {
     if(_finishBlock) {
         _finishBlock(response);
     }
-
+    
     _done = YES;
 }
 
 - (void)connection:(NSURLConnection*)connection
   didFailWithError:(NSError*)error {
-
+    
     SNPResponse* response = [self createResponseFromError:error];
     
     if(_finishBlock) {
         _finishBlock(response);
     }
+
     _done = YES;
 }
 

@@ -63,6 +63,7 @@
     [bodyData appendData:[metadataHeader dataUsingEncoding:NSUTF8StringEncoding]];
 
     NSDictionary* metadataDict = (@{
+                                  @"mime_type" : _contentType,
                                   @"type" : _type,
                                   });
     NSError* error = nil;
