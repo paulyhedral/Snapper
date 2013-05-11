@@ -12,8 +12,5 @@
 @protocol SNPPaginationParameters <NSObject>
 
 @required
-@property (nonatomic, assign) NSInteger beforeId;
-@property (nonatomic, assign) NSInteger sinceId;
-@property (nonatomic, assign) NSInteger count;
 
 @end

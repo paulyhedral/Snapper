@@ -25,7 +25,6 @@
                         finishBlock:finishBlock];
     if(self) {
         self.channelId = channelId;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelMessagesEndpointURL:channelId];
         self.serializationArrayClass = [SNPMessage class];
     }
 
@@ -37,32 +36,9 @@
 
 - (void)main {
 
-    [self handlePaginationParameters];
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelMessagesEndpointURL:_channelId];
 
     [super main];
-}
-
-- (void)handlePaginationParameters {
-
-    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
-
-    if(self.parameters) {
-        [parameters addEntriesFromDictionary:self.parameters];
-    }
-
-    if(self.beforeId) {
-        parameters[@"before_id"] = @(self.beforeId);
-    }
-    if(self.sinceId) {
-        parameters[@"since_id"] = @(self.sinceId);
-    }
-    if(self.count) {
-        parameters[@"count"] = @(self.count);
-    }
-
-    if([[parameters allKeys] count]) {
-        self.parameters = parameters;
-    }
 }
 
 @end

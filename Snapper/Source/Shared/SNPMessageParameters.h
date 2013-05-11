@@ -13,10 +13,5 @@
 @protocol SNPMessageParameters <SNPCommonParameters>
 
 @required
-@property (nonatomic, retain) NSArray* channelTypes;
-@property (nonatomic, assign) BOOL includeMessageAnnotations;
-@property (nonatomic, assign) BOOL includeMachine;
-@property (nonatomic, assign) BOOL includeMuted;
-@property (nonatomic, assign) BOOL includeDeleted;
 
 @end

@@ -25,41 +25,20 @@
                         finishBlock:finishBlock];
     if(self) {
         self.userId = userId;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getUserEndpointURL:userId];
         self.serializationRootClass = [SNPUser class];
     }
 
     return self;
 }
 
+
+#pragma mark - Workhorse 
+
 - (void)main {
 
-    [self handleCommonParameters];
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getUserEndpointURL:_userId];
 
     [super main];
-}
-
-@synthesize includeAnnotations = _includeAnnotations;
-@synthesize includeUserAnnotations = _includeUserAnnotations;
-
-- (void)handleCommonParameters {
-
-    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
-
-    if(self.parameters) {
-        [parameters addEntriesFromDictionary:self.parameters];
-    }
-
-    if(_includeAnnotations) {
-        parameters[@"include_annotations"] = @"1";
-    }
-    if(_includeUserAnnotations) {
-        parameters[@"include_user_annotations"] = @"1";
-    }
-
-    if([[parameters allKeys] count]) {
-        self.parameters = parameters;
-    }
 }
 
 @end

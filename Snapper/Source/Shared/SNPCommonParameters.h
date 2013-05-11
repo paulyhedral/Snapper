@@ -12,7 +12,5 @@
 @protocol SNPCommonParameters <NSObject>
 
 @required
-@property (nonatomic, assign) BOOL includeAnnotations;
-@property (nonatomic, assign) BOOL includeUserAnnotations;
 
 @end

@@ -13,9 +13,5 @@
 @protocol SNPFileParameters <SNPCommonParameters>
 
 @required
-@property (nonatomic, copy) NSArray* fileTypes;
-@property (nonatomic, assign) BOOL includeIncomplete;
-@property (nonatomic, assign) BOOL includePrivate;
-@property (nonatomic, assign) BOOL includeFileAnnotations;
 
 @end

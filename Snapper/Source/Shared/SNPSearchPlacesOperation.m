@@ -27,6 +27,8 @@
     if(self) {
         self.latitude = latitude;
         self.longitude = longitude;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] searchPlaceEndpointURL];        
+        self.serializationArrayClass = [SNPPlace class];
     }
 
     return self;
@@ -36,8 +38,6 @@
 #pragma mark - Workhorse
 
 - (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] searchPlaceEndpointURL];
 
     NSMutableDictionary* parameters = [(@{
                                         @"latitude" : @(_latitude),
@@ -50,8 +50,8 @@
     if(_radius > 0) {
         parameters[@"radius"] = @(_radius);
     }
-    if(_count > 0) {
-        parameters[@"count"] = @(_count);
+    if(self.count > 0) {
+        parameters[@"count"] = @(self.count);
     }
     if(_altitude > 0) {
         parameters[@"altitude"] = @(_altitude);
@@ -65,8 +65,6 @@
 
     self.parameters = parameters;
 
-    self.serializationArrayClass = [SNPPlace class];
-    
     [super main];
 }
 

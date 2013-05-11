@@ -13,12 +13,5 @@
 @protocol SNPPostParameters <SNPCommonParameters>
 
 @required
-@property (nonatomic, assign) BOOL includeMuted;
-@property (nonatomic, assign) BOOL includeDeleted;
-@property (nonatomic, assign) BOOL includeDirectedPosts;
-@property (nonatomic, assign) BOOL includeMachine;
-@property (nonatomic, assign) BOOL includeStarredBy;
-@property (nonatomic, assign) BOOL includeReposters;
-@property (nonatomic, assign) BOOL includePostAnnotations;
 
 @end

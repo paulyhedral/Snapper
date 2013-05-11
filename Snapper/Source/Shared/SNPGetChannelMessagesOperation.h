@@ -16,9 +16,6 @@
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger channelId;
-@property (nonatomic, assign) NSUInteger beforeId;
-@property (nonatomic, assign) NSUInteger sinceId;
-@property (nonatomic, assign) NSInteger count;
 
 // -- Initializers --
 - (id)initWithChannelId:(NSUInteger)channelId

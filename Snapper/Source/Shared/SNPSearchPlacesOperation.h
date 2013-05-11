@@ -16,7 +16,6 @@
 @property (nonatomic, assign) CGFloat longitude;
 @property (nonatomic, copy) NSString* q;
 @property (nonatomic, assign) CGFloat radius;
-@property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) CGFloat altitude;
 @property (nonatomic, assign) CGFloat horizontalAccuracy;
 @property (nonatomic, assign) CGFloat verticalAccuracy;

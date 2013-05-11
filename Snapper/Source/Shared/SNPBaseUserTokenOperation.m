@@ -94,6 +94,7 @@
 
     // Query parameters
     NSMutableString* queryParams = [NSMutableString new];
+    [self handleQueryParameters];
     [self.parameters enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
         if([queryParams length] > 0) {
             [queryParams appendString:@"&"];
@@ -152,6 +153,98 @@
           !self.isCancelled) {
         NSDate* futureDate = [NSDate dateWithTimeIntervalSinceNow:5];
         [[NSRunLoop currentRunLoop] runUntilDate:futureDate];
+    }
+}
+
+- (void)handleQueryParameters {
+
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+
+    if(self.parameters) {
+        [parameters addEntriesFromDictionary:self.parameters];
+    }
+
+    // Pagination
+    if(_beforeId) {
+        parameters[@"before_id"] = @(_beforeId);
+    }
+    if(_sinceId) {
+        parameters[@"since_id"] = @(_sinceId);
+    }
+    if(_count) {
+        parameters[@"count"] = @(_count);
+    }
+
+// General 
+    if(_includeMuted) {
+        parameters[@"include_muted"] = @"1";
+    }
+    if(_includeDeleted) {
+        parameters[@"include_deleted"] = @"1";
+    }
+    if(_includeDirectedPosts) {
+        parameters[@"include_directed_posts"] = @"1";
+    }
+    if(_includeMachine) {
+        parameters[@"include_machine"] = @"1";
+    }
+    if(_includeStarredBy) {
+        parameters[@"include_starred_by"] = @"1";
+    }
+    if(_includeReposters) {
+        parameters[@"include_reposters"] = @"1";
+    }
+    if(_includePostAnnotations) {
+        parameters[@"include_post_annotations"] = @"1";
+    }
+    if(_includeAnnotations) {
+        parameters[@"include_annotations"] = @"1";
+    }
+    if(_includeUserAnnotations) {
+        parameters[@"include_user_annotations"] = @"1";
+    }
+
+    // Channel/message
+    if(_channelTypes) {
+        parameters[@"channel_types"] = [_channelTypes componentsJoinedByString:@","];
+    }
+    if(_includeMarker) {
+        parameters[@"include_marker"] = @"1";
+    }
+    if(_includeRead) {
+        parameters[@"include_read"] = @"1";
+    }
+    if(_includeRecentMessage) {
+        parameters[@"include_recent_message"] = @"1";
+    }
+    if(_includeMessageAnnotations) {
+        parameters[@"include_message_annotations"] = @"1";
+    }
+
+    // File
+    if(_fileTypes) {
+        parameters[@"include_annotations"] = [_fileTypes componentsJoinedByString:@","];
+    }
+    if(_includeIncomplete) {
+        parameters[@"include_incomplete"] = @"1";
+    }
+    if(_includePrivate) {
+        parameters[@"include_private"] = @"1";
+    }
+    if(_includeFileAnnotations) {
+        parameters[@"include_file_annotations"] = @"1";
+    }
+
+    // Common
+    if(_includeAnnotations) {
+        parameters[@"include_annotations"] = @"1";
+    }
+    if(_includeUserAnnotations) {
+        parameters[@"include_user_annotations"] = @"1";
+    }
+
+    if([[parameters allKeys] count]) {
+        self.parameters = parameters;
     }
 }
 

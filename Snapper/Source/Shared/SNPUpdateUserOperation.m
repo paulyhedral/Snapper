@@ -36,6 +36,10 @@
         self.locale = locale;
         self.timezone = timezone;
         self.descriptionText = descriptionText;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserEndpointURL];
+        self.method = @"PUT";
+        self.serializationRootClass = [SNPUser class];
+        self.bodyType = @"application/json";
     }
 
     return self;
@@ -45,8 +49,6 @@
 #pragma mark - Workhorse
 
 - (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserEndpointURL];
 
     NSMutableDictionary* userDict = [NSMutableDictionary new];
 
@@ -118,36 +120,8 @@
     }
 
     self.body = bodyData;
-    self.bodyType = @"application/json";
-    self.method = @"PUT";
-    self.serializationRootClass = [SNPUser class];
-
-    [self handleCommonParameters];
 
     [super main];
-}
-
-@synthesize includeAnnotations = _includeAnnotations;
-@synthesize includeUserAnnotations = _includeUserAnnotations;
-
-- (void)handleCommonParameters {
-
-    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
-
-    if(self.parameters) {
-        [parameters addEntriesFromDictionary:self.parameters];
-    }
-
-    if(_includeAnnotations) {
-        parameters[@"include_annotations"] = @"1";
-    }
-    if(_includeUserAnnotations) {
-        parameters[@"include_user_annotations"] = @"1";
-    }
-
-    if([[parameters allKeys] count]) {
-        self.parameters = parameters;
-    }
 }
 
 @end

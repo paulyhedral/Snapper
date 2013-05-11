@@ -22,36 +22,7 @@
     self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMyMessagesEndpointURL];
     self.serializationArrayClass = [SNPMessage class];
 
-    [self handlePaginationParameters];
-    
     [super main];
-}
-
-@synthesize beforeId = _beforeId;
-@synthesize sinceId = _sinceId;
-@synthesize count = _count;
-
-- (void)handlePaginationParameters {
-
-    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
-
-    if(self.parameters) {
-        [parameters addEntriesFromDictionary:self.parameters];
-    }
-
-    if(self.beforeId) {
-        parameters[@"before_id"] = @(self.beforeId);
-    }
-    if(self.sinceId) {
-        parameters[@"since_id"] = @(self.sinceId);
-    }
-    if(self.count) {
-        parameters[@"count"] = @(self.count);
-    }
-
-    if([[parameters allKeys] count]) {
-        self.parameters = parameters;
-    }
 }
 
 @end

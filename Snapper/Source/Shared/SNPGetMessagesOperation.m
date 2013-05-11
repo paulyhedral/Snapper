@@ -25,24 +25,22 @@
                         finishBlock:finishBlock];
     if(self) {
         self.messageIds = messageIds;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMessagesEndpointURL];
+        self.serializationArrayClass = [SNPMessage class];
     }
 
     return self;
 }
 
 
-#pragma mark - Workhorse
+#pragma mark - Workhorse 
 
 - (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMessagesEndpointURL];
 
     NSString* messageIdsString = [_messageIds componentsJoinedByString:@","];
     self.parameters = (@{
                        @"ids" : messageIdsString,
                        });
-
-    self.serializationArrayClass = [SNPMessage class];
 
     [super main];
 }
