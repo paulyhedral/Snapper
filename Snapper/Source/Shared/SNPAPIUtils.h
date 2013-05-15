@@ -39,6 +39,8 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 - (NSURL*)getMutedUsersEndpointURL;
 - (NSURL*)getRepostersEndpointURL:(NSInteger)postId;
 - (NSURL*)getStarrersEndpointURL:(NSInteger)postId;
+- (NSURL*)blockUserEndpointURL:(NSInteger)userId;
+- (NSURL*)unblockUserEndpointURL:(NSInteger)userId;
 
 // -- Post URL methods --
 - (NSURL*)createPostEndpointURL;

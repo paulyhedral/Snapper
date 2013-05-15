@@ -124,6 +124,16 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+- (NSURL*)blockUserEndpointURL:(NSInteger)userId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"users/%ld/block", (long)userId]
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)unblockUserEndpointURL:(NSInteger)userId {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"users/%ld/block", (long)userId]
+                  relativeToURL:_rootAPIURL];
+}
+
 
 #pragma mark - Post URL methods
 
