@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, assign) NSUInteger percentage;
 
+@property (nonatomic, assign) BOOL resetReadId;
+
 // -- Initializers --
 - (id)initWithPostId:(NSUInteger)postId
                 name:(NSString*)name

@@ -27,14 +27,15 @@
         self.postId = postId;
         self.name = name;
         self.percentage = percentage;
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateStreamMarkerEndpointURL];
+        self.method = @"POST";
+        self.serializationRootClass = [SNPStreamMarker class];
     }
 
     return self;
 }
 
 - (void)main {
-
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateStreamMarkerEndpointURL];
 
     NSDictionary* markerDict = (@{
                                 @"name" : _name,
@@ -57,8 +58,21 @@
     self.body = bodyData;
     self.bodyType = @"application/json";
 
-    self.serializationRootClass = [SNPStreamMarker class];
-    
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+
+    if(self.parameters) {
+        [parameters addEntriesFromDictionary:self.parameters];
+    }
+
+    // Reset read ID
+    if(_resetReadId) {
+        parameters[@"reset_read_id"] = @(_resetReadId);
+    }
+
+    if([[parameters allKeys] count]) {
+        self.parameters = parameters;
+    }
+
     [super main];
 }
 
