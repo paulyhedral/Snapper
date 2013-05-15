@@ -22,11 +22,20 @@
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getExploreStreamEndpointURL:slug];
         self.serializationArrayClass = [SNPPost class];
     }
 
     return self;
+}
+
+
+#pragma mark - Workhorse
+
+- (void)main {
+
+    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getExploreStreamEndpointURL:_slug];
+
+    [super main];
 }
 
 @end

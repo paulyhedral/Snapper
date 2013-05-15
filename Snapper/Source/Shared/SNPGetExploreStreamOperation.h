@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-#import "SNPBaseClientOperation.h"
+#import "SNPBaseStreamOperation.h"
 
 
-@interface SNPGetExploreStreamOperation : SNPBaseClientOperation
+@interface SNPGetExploreStreamOperation : SNPBaseStreamOperation
 
 // -- Properties --
 @property (nonatomic, copy) NSString* slug;
