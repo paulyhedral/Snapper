@@ -34,21 +34,24 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedAccoun
 #pragma mark - Public methods
 
 - (SNPAccount*)createAccountWithName:(NSString*)name
-                           username:(NSString*)username
-                             userId:(NSInteger)userId
-                        accessToken:(NSString*)accessToken
-                          tokenType:(NSString*)tokenType {
+                            username:(NSString*)username
+                              userId:(NSInteger)userId
+                         accessToken:(NSString*)accessToken
+                           tokenType:(NSString*)tokenType {
 
-    NSAssert(username, @"Account username must not be nil!");
+    //    NSAssert(username, @"Account username must not be nil!");
     NSAssert(accessToken, @"Account access token must not be nil");
+    NSAssert(tokenType, @"Account token type must not be nil");
 
     SNPAccount* account = [[SNPAccount alloc] initWithName:name
-                                                username:username
-                                                  userId:userId
-                                             accessToken:accessToken
-                                               tokenType:tokenType];
+                                                  username:username
+                                                    userId:userId
+                                               accessToken:accessToken
+                                                 tokenType:tokenType];
 
-    _accounts[account.accountId] = account;
+    if(account) {
+        _accounts[account.accountId] = account;
+    }
 
     return account;
 }
