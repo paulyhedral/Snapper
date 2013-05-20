@@ -30,7 +30,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 #pragma mark - User URL methods
 
 - (NSURL*)getUserEndpointURL:(NSInteger)userId {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"users/%ld", (long)userId]
+    if(userId > 0) {
+        return [NSURL URLWithString:[NSString stringWithFormat:@"users/%ld", (long)userId]
+                      relativeToURL:_rootAPIURL];
+    }
+    return [NSURL URLWithString:@"users/me"
                   relativeToURL:_rootAPIURL];
 }
 
