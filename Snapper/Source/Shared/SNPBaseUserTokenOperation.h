@@ -46,10 +46,11 @@
 // -- Common query parameters --
 @property (nonatomic, assign) BOOL includeAnnotations;
 @property (nonatomic, assign) BOOL includeUserAnnotations;
+@property (nonatomic, assign) BOOL includeHTML;
 
 // -- Initializers --
 - (id)initWithAccountId:(NSString*)accountId
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+            finishBlock:(void (^)(SNPResponse* response))finishBlock;
 - (id)initWithEndpoint:(NSURL*)endpoint
                 method:(NSString*)method
                headers:(NSDictionary*)headers

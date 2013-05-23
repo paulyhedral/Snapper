@@ -175,7 +175,7 @@
         parameters[@"count"] = @(_count);
     }
 
-// General 
+    // General
     if(_includeMuted) {
         parameters[@"include_muted"] = @"1";
     }
@@ -242,7 +242,10 @@
     if(_includeUserAnnotations) {
         parameters[@"include_user_annotations"] = @"1";
     }
-
+    if(_includeHTML) {
+        parameters[@"include_html"] = @"1";
+    }
+    
     if([[parameters allKeys] count]) {
         self.parameters = parameters;
     }

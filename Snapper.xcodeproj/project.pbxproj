@@ -399,6 +399,9 @@
 		5B3ADF1216CDD38C000EEAB0 /* SNPReportPostOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3ADF1016CDD38C000EEAB0 /* SNPReportPostOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B3ADF1316CDD38C000EEAB0 /* SNPReportPostOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ADF1116CDD38C000EEAB0 /* SNPReportPostOperation.m */; };
 		5B3ADF1416CDD38C000EEAB0 /* SNPReportPostOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ADF1116CDD38C000EEAB0 /* SNPReportPostOperation.m */; };
+		5B4EFDB9174DB88A001A6862 /* SNPPartialUpdateUserOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B4EFDB7174DB88A001A6862 /* SNPPartialUpdateUserOperation.h */; };
+		5B4EFDBA174DB88A001A6862 /* SNPPartialUpdateUserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EFDB8174DB88A001A6862 /* SNPPartialUpdateUserOperation.m */; };
+		5B4EFDBB174DB88A001A6862 /* SNPPartialUpdateUserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EFDB8174DB88A001A6862 /* SNPPartialUpdateUserOperation.m */; };
 		5B6B48D11687CB2B0032C586 /* SNPCreateStreamOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48CF1687CB2B0032C586 /* SNPCreateStreamOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6B48D21687CB2B0032C586 /* SNPCreateStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48D01687CB2B0032C586 /* SNPCreateStreamOperation.m */; };
 		5B6B48D31687CB2B0032C586 /* SNPCreateStreamOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48D01687CB2B0032C586 /* SNPCreateStreamOperation.m */; };
@@ -971,6 +974,8 @@
 		5B30DC28168819E00089730B /* interaction-follow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "interaction-follow.json"; sourceTree = "<group>"; };
 		5B3ADF1016CDD38C000EEAB0 /* SNPReportPostOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPReportPostOperation.h; sourceTree = "<group>"; };
 		5B3ADF1116CDD38C000EEAB0 /* SNPReportPostOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPReportPostOperation.m; sourceTree = "<group>"; };
+		5B4EFDB7174DB88A001A6862 /* SNPPartialUpdateUserOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPartialUpdateUserOperation.h; sourceTree = "<group>"; };
+		5B4EFDB8174DB88A001A6862 /* SNPPartialUpdateUserOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPPartialUpdateUserOperation.m; sourceTree = "<group>"; };
 		5B6B48CF1687CB2B0032C586 /* SNPCreateStreamOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPCreateStreamOperation.h; sourceTree = "<group>"; };
 		5B6B48D01687CB2B0032C586 /* SNPCreateStreamOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPCreateStreamOperation.m; sourceTree = "<group>"; };
 		5B6B48D41687CB400032C586 /* SNPGetStreamOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetStreamOperation.h; sourceTree = "<group>"; };
@@ -1462,6 +1467,8 @@
 				3CDF12B81683C92A0058CBE0 /* SNPUpdateUserCoverImageOperation.m */,
 				3CDF129E1683C8CE0058CBE0 /* SNPUpdateUserOperation.h */,
 				3CDF129F1683C8CE0058CBE0 /* SNPUpdateUserOperation.m */,
+				5B4EFDB7174DB88A001A6862 /* SNPPartialUpdateUserOperation.h */,
+				5B4EFDB8174DB88A001A6862 /* SNPPartialUpdateUserOperation.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -1851,6 +1858,7 @@
 				5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */,
 				3CDF12A01683C8CE0058CBE0 /* SNPUpdateUserOperation.h in Headers */,
 				5B7DE440173FCFC900397B28 /* SNPBlockUserOperation.h in Headers */,
+				5B4EFDB9174DB88A001A6862 /* SNPPartialUpdateUserOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2222,6 +2230,7 @@
 				5B7B5ABC17026B130018D2AB /* SNPBaseMessageOperation.m in Sources */,
 				5B121AD2171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */,
 				5B7DE441173FCFC900397B28 /* SNPBlockUserOperation.m in Sources */,
+				5B4EFDBA174DB88A001A6862 /* SNPPartialUpdateUserOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2358,6 +2367,7 @@
 				5B7B5ABD17026B130018D2AB /* SNPBaseMessageOperation.m in Sources */,
 				5B121AD3171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */,
 				5B7DE442173FCFC900397B28 /* SNPBlockUserOperation.m in Sources */,
+				5B4EFDBB174DB88A001A6862 /* SNPPartialUpdateUserOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
