@@ -22,6 +22,7 @@
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {
+        self.slug = slug;
         self.serializationArrayClass = [SNPPost class];
     }
 

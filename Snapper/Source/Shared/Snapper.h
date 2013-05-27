@@ -47,6 +47,7 @@
 #import <Snapper/SNPBaseImageUpdateOperation.h>
 #import <Snapper/SNPBaseMessageOperation.h>
 #import <Snapper/SNPBaseUserTokenOperation.h>
+#import <Snapper/SNPBlockUserOperation.h>
 #import <Snapper/SNPCreateChannelOperation.h>
 #import <Snapper/SNPCreateFileOperation.h>
 #import <Snapper/SNPCreateFilterOperation.h>
