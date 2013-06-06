@@ -75,8 +75,9 @@
 
     if(_accountId) {
         SNPAccount* account = [[SNPAccountManager sharedAccountManager] accountForId:_accountId];
-        NSAssert(account, @"No account found for ID: %@", _accountId);
+//        NSAssert(account, @"No account found for ID: %@", _accountId);
 
+        if(account) {
         accessToken = account.accessToken;
         tokenType = account.tokenType;
         if(accessToken == nil) {
@@ -89,6 +90,7 @@
 
             self.finishBlock(response);
             return;
+        }
         }
     }
 
