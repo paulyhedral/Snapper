@@ -1446,6 +1446,10 @@
 				5B7DE43F173FCFC900397B28 /* SNPBlockUserOperation.m */,
 				3CDF12AD1683C8FF0058CBE0 /* SNPFollowUserOperation.h */,
 				3CDF12AE1683C8FF0058CBE0 /* SNPFollowUserOperation.m */,
+				5B79E79B17639C6600EF3615 /* SNPGetBlockedUsersOperation.h */,
+				5B79E79C17639C6600EF3615 /* SNPGetBlockedUsersOperation.m */,
+				5B79E79617639C5500EF3615 /* SNPGetMutedUsersOperation.h */,
+				5B79E79717639C5500EF3615 /* SNPGetMutedUsersOperation.m */,
 				3CDF12DA1683C9CE0058CBE0 /* SNPGetRepostersOperation.h */,
 				3CDF12DB1683C9CE0058CBE0 /* SNPGetRepostersOperation.m */,
 				3CDF12DF1683C9DD0058CBE0 /* SNPGetStarrersOperation.h */,
@@ -1478,10 +1482,6 @@
 				3CDF12B81683C92A0058CBE0 /* SNPUpdateUserCoverImageOperation.m */,
 				3CDF129E1683C8CE0058CBE0 /* SNPUpdateUserOperation.h */,
 				3CDF129F1683C8CE0058CBE0 /* SNPUpdateUserOperation.m */,
-				5B79E79617639C5500EF3615 /* SNPGetMutedUsersOperation.h */,
-				5B79E79717639C5500EF3615 /* SNPGetMutedUsersOperation.m */,
-				5B79E79B17639C6600EF3615 /* SNPGetBlockedUsersOperation.h */,
-				5B79E79C17639C6600EF3615 /* SNPGetBlockedUsersOperation.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";

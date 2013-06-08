@@ -6,10 +6,12 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-#import <Snapper/Snapper.h>
+#import "SNPBaseUserTokenOperation.h"
+#import "SNPUserParameters.h"
 
 
 @interface SNPGetMutedUsersOperation : SNPBaseUserTokenOperation
+<SNPUserParameters>
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger userId;
