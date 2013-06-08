@@ -36,7 +36,8 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 - (NSURL*)getUserFollowersEndpointURL:(NSInteger)userId;
 - (NSURL*)getUserFolloweeIdsEndpointURL:(NSInteger)userId;
 - (NSURL*)getUserFollowerIdsEndpointURL:(NSInteger)userId;
-- (NSURL*)getMutedUsersEndpointURL;
+- (NSURL*)getMutedUsersEndpointURL:(NSInteger)userId;
+- (NSURL*)getBlockedUsersEndpointURL:(NSInteger)userId;
 - (NSURL*)getRepostersEndpointURL:(NSInteger)postId;
 - (NSURL*)getStarrersEndpointURL:(NSInteger)postId;
 - (NSURL*)blockUserEndpointURL:(NSInteger)userId;

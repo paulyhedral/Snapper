@@ -113,8 +113,23 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
-- (NSURL*)getMutedUsersEndpointURL {
+- (NSURL*)getMutedUsersEndpointURL:(NSInteger)userId {
+    if(userId > 0) {
+        return [NSURL URLWithString:[NSString stringWithFormat:@"users/%ld/muted", (long)userId]
+                      relativeToURL:_rootAPIURL];
+    }
+
     return [NSURL URLWithString:@"users/me/muted"
+                  relativeToURL:_rootAPIURL];
+}
+
+- (NSURL*)getBlockedUsersEndpointURL:(NSInteger)userId {
+    if(userId > 0) {
+        return [NSURL URLWithString:[NSString stringWithFormat:@"users/%ld/blocked", (long)userId]
+                      relativeToURL:_rootAPIURL];
+    }
+
+    return [NSURL URLWithString:@"users/me/blocked"
                   relativeToURL:_rootAPIURL];
 }
 

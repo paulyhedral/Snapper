@@ -64,6 +64,7 @@
 #import <Snapper/SNPFollowUserOperation.h>
 #import <Snapper/SNPGetAllStreamsOperation.h>
 #import <Snapper/SNPGetAllExploreStreamsOperation.h>
+#import <Snapper/SNPGetBlockedUsersOperation.h>
 #import <Snapper/SNPGetChannelMessagesOperation.h>
 #import <Snapper/SNPGetChannelOperation.h>
 #import <Snapper/SNPGetChannelSubscribersOperation.h>
@@ -73,6 +74,7 @@
 #import <Snapper/SNPGetGlobalStreamOperation.h>
 #import <Snapper/SNPGetMessageOperation.h>
 #import <Snapper/SNPGetMessagesOperation.h>
+#import <Snapper/SNPGetMutedUsersOperation.h>
 #import <Snapper/SNPGetMyMessagesOperation.h>
 #import <Snapper/SNPGetPersonalStreamOperation.h>
 #import <Snapper/SNPGetPlaceOperation.h>
@@ -92,7 +94,6 @@
 #import <Snapper/SNPGetUserFolloweesOperation.h>
 #import <Snapper/SNPGetUserFollowersOperation.h>
 #import <Snapper/SNPGetUserMentionsOperation.h>
-#import <Snapper/SNPGetUserMuteesOperation.h>
 #import <Snapper/SNPGetUserOperation.h>
 #import <Snapper/SNPGetUserPostsOperation.h>
 #import <Snapper/SNPGetUsersOperation.h>

@@ -233,9 +233,6 @@
 		3CDF12D21683C98B0058CBE0 /* SNPGetUserFollowersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDF12D01683C9890058CBE0 /* SNPGetUserFollowersOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CDF12D31683C98B0058CBE0 /* SNPGetUserFollowersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12D11683C9890058CBE0 /* SNPGetUserFollowersOperation.m */; };
 		3CDF12D41683C98B0058CBE0 /* SNPGetUserFollowersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12D11683C9890058CBE0 /* SNPGetUserFollowersOperation.m */; };
-		3CDF12D71683C9B10058CBE0 /* SNPGetUserMuteesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDF12D51683C9AF0058CBE0 /* SNPGetUserMuteesOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3CDF12D81683C9B10058CBE0 /* SNPGetUserMuteesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12D61683C9B00058CBE0 /* SNPGetUserMuteesOperation.m */; };
-		3CDF12D91683C9B10058CBE0 /* SNPGetUserMuteesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12D61683C9B00058CBE0 /* SNPGetUserMuteesOperation.m */; };
 		3CDF12DC1683C9CF0058CBE0 /* SNPGetRepostersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CDF12DA1683C9CE0058CBE0 /* SNPGetRepostersOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CDF12DD1683C9CF0058CBE0 /* SNPGetRepostersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12DB1683C9CE0058CBE0 /* SNPGetRepostersOperation.m */; };
 		3CDF12DE1683C9CF0058CBE0 /* SNPGetRepostersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12DB1683C9CE0058CBE0 /* SNPGetRepostersOperation.m */; };
@@ -346,7 +343,6 @@
 		5B30DBFB1688110B0089730B /* SNPUnmuteUserOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CDF12C61683C95B0058CBE0 /* SNPUnmuteUserOperation.h */; };
 		5B30DBFC1688110B0089730B /* SNPGetUserFolloweesOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CDF12CB1683C9790058CBE0 /* SNPGetUserFolloweesOperation.h */; };
 		5B30DBFD1688110B0089730B /* SNPGetUserFollowersOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CDF12D01683C9890058CBE0 /* SNPGetUserFollowersOperation.h */; };
-		5B30DBFE1688110B0089730B /* SNPGetUserMuteesOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CDF12D51683C9AF0058CBE0 /* SNPGetUserMuteesOperation.h */; };
 		5B30DBFF1688110B0089730B /* SNPGetRepostersOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CDF12DA1683C9CE0058CBE0 /* SNPGetRepostersOperation.h */; };
 		5B30DC001688110B0089730B /* SNPGetStarrersOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CDF12DF1683C9DD0058CBE0 /* SNPGetStarrersOperation.h */; };
 		5B30DC011688110B0089730B /* SNPStreamWatcher.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CDF12021683B7D10058CBE0 /* SNPStreamWatcher.h */; };
@@ -426,6 +422,14 @@
 		5B6B48F41687CEFC0032C586 /* SNPACL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B6B48F21687CEFC0032C586 /* SNPACL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B6B48F51687CEFC0032C586 /* SNPACL.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48F31687CEFC0032C586 /* SNPACL.m */; };
 		5B6B48F61687CEFC0032C586 /* SNPACL.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B48F31687CEFC0032C586 /* SNPACL.m */; };
+		5B79E79817639C5500EF3615 /* SNPGetMutedUsersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B79E79617639C5500EF3615 /* SNPGetMutedUsersOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B79E79917639C5500EF3615 /* SNPGetMutedUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B79E79717639C5500EF3615 /* SNPGetMutedUsersOperation.m */; };
+		5B79E79A17639C5500EF3615 /* SNPGetMutedUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B79E79717639C5500EF3615 /* SNPGetMutedUsersOperation.m */; };
+		5B79E79D17639C6600EF3615 /* SNPGetBlockedUsersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B79E79B17639C6600EF3615 /* SNPGetBlockedUsersOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B79E79E17639C6600EF3615 /* SNPGetBlockedUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B79E79C17639C6600EF3615 /* SNPGetBlockedUsersOperation.m */; };
+		5B79E79F17639C6600EF3615 /* SNPGetBlockedUsersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B79E79C17639C6600EF3615 /* SNPGetBlockedUsersOperation.m */; };
+		5B79E7A017639DE400EF3615 /* SNPGetMutedUsersOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B79E79617639C5500EF3615 /* SNPGetMutedUsersOperation.h */; };
+		5B79E7A117639DE400EF3615 /* SNPGetBlockedUsersOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B79E79B17639C6600EF3615 /* SNPGetBlockedUsersOperation.h */; };
 		5B7B5ABB17026B130018D2AB /* SNPBaseMessageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B7B5AB917026B130018D2AB /* SNPBaseMessageOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B7B5ABC17026B130018D2AB /* SNPBaseMessageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7B5ABA17026B130018D2AB /* SNPBaseMessageOperation.m */; };
 		5B7B5ABD17026B130018D2AB /* SNPBaseMessageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7B5ABA17026B130018D2AB /* SNPBaseMessageOperation.m */; };
@@ -641,6 +645,8 @@
 			dstPath = include/Snapper;
 			dstSubfolderSpec = 16;
 			files = (
+				5B79E7A017639DE400EF3615 /* SNPGetMutedUsersOperation.h in CopyFiles */,
+				5B79E7A117639DE400EF3615 /* SNPGetBlockedUsersOperation.h in CopyFiles */,
 				5B85AC1917570D31004F1EE6 /* SNPBlockUserOperation.h in CopyFiles */,
 				5B85AC1A17570D31004F1EE6 /* SNPPartialUpdateUserOperation.h in CopyFiles */,
 				5B92DAB017276418005614DD /* SNPGetMyMessagesOperation.h in CopyFiles */,
@@ -761,7 +767,6 @@
 				5B30DBFB1688110B0089730B /* SNPUnmuteUserOperation.h in CopyFiles */,
 				5B30DBFC1688110B0089730B /* SNPGetUserFolloweesOperation.h in CopyFiles */,
 				5B30DBFD1688110B0089730B /* SNPGetUserFollowersOperation.h in CopyFiles */,
-				5B30DBFE1688110B0089730B /* SNPGetUserMuteesOperation.h in CopyFiles */,
 				5B30DBFF1688110B0089730B /* SNPGetRepostersOperation.h in CopyFiles */,
 				5B30DC001688110B0089730B /* SNPGetStarrersOperation.h in CopyFiles */,
 				5B30DC011688110B0089730B /* SNPStreamWatcher.h in CopyFiles */,
@@ -938,8 +943,6 @@
 		3CDF12CC1683C97A0058CBE0 /* SNPGetUserFolloweesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetUserFolloweesOperation.m; sourceTree = "<group>"; };
 		3CDF12D01683C9890058CBE0 /* SNPGetUserFollowersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetUserFollowersOperation.h; sourceTree = "<group>"; };
 		3CDF12D11683C9890058CBE0 /* SNPGetUserFollowersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetUserFollowersOperation.m; sourceTree = "<group>"; };
-		3CDF12D51683C9AF0058CBE0 /* SNPGetUserMuteesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetUserMuteesOperation.h; sourceTree = "<group>"; };
-		3CDF12D61683C9B00058CBE0 /* SNPGetUserMuteesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetUserMuteesOperation.m; sourceTree = "<group>"; };
 		3CDF12DA1683C9CE0058CBE0 /* SNPGetRepostersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetRepostersOperation.h; sourceTree = "<group>"; };
 		3CDF12DB1683C9CE0058CBE0 /* SNPGetRepostersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetRepostersOperation.m; sourceTree = "<group>"; };
 		3CDF12DF1683C9DD0058CBE0 /* SNPGetStarrersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetStarrersOperation.h; sourceTree = "<group>"; };
@@ -996,6 +999,10 @@
 		5B6B48EE1687CDF90032C586 /* SNPBaseClientOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseClientOperation.m; sourceTree = "<group>"; };
 		5B6B48F21687CEFC0032C586 /* SNPACL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPACL.h; sourceTree = "<group>"; };
 		5B6B48F31687CEFC0032C586 /* SNPACL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPACL.m; sourceTree = "<group>"; };
+		5B79E79617639C5500EF3615 /* SNPGetMutedUsersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetMutedUsersOperation.h; sourceTree = "<group>"; };
+		5B79E79717639C5500EF3615 /* SNPGetMutedUsersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetMutedUsersOperation.m; sourceTree = "<group>"; };
+		5B79E79B17639C6600EF3615 /* SNPGetBlockedUsersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetBlockedUsersOperation.h; sourceTree = "<group>"; };
+		5B79E79C17639C6600EF3615 /* SNPGetBlockedUsersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetBlockedUsersOperation.m; sourceTree = "<group>"; };
 		5B7B5AB917026B130018D2AB /* SNPBaseMessageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBaseMessageOperation.h; sourceTree = "<group>"; };
 		5B7B5ABA17026B130018D2AB /* SNPBaseMessageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBaseMessageOperation.m; sourceTree = "<group>"; };
 		5B7DE43E173FCFC900397B28 /* SNPBlockUserOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBlockUserOperation.h; sourceTree = "<group>"; };
@@ -1451,8 +1458,6 @@
 				3CDF12CC1683C97A0058CBE0 /* SNPGetUserFolloweesOperation.m */,
 				3CDF12D01683C9890058CBE0 /* SNPGetUserFollowersOperation.h */,
 				3CDF12D11683C9890058CBE0 /* SNPGetUserFollowersOperation.m */,
-				3CDF12D51683C9AF0058CBE0 /* SNPGetUserMuteesOperation.h */,
-				3CDF12D61683C9B00058CBE0 /* SNPGetUserMuteesOperation.m */,
 				3CDF11D41683B64E0058CBE0 /* SNPGetUserOperation.h */,
 				3CDF11D51683B64E0058CBE0 /* SNPGetUserOperation.m */,
 				3CDF11DB1683B6810058CBE0 /* SNPGetUsersOperation.h */,
@@ -1473,6 +1478,10 @@
 				3CDF12B81683C92A0058CBE0 /* SNPUpdateUserCoverImageOperation.m */,
 				3CDF129E1683C8CE0058CBE0 /* SNPUpdateUserOperation.h */,
 				3CDF129F1683C8CE0058CBE0 /* SNPUpdateUserOperation.m */,
+				5B79E79617639C5500EF3615 /* SNPGetMutedUsersOperation.h */,
+				5B79E79717639C5500EF3615 /* SNPGetMutedUsersOperation.m */,
+				5B79E79B17639C6600EF3615 /* SNPGetBlockedUsersOperation.h */,
+				5B79E79C17639C6600EF3615 /* SNPGetBlockedUsersOperation.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -1733,6 +1742,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B79E79817639C5500EF3615 /* SNPGetMutedUsersOperation.h in Headers */,
+				5B79E79D17639C6600EF3615 /* SNPGetBlockedUsersOperation.h in Headers */,
 				5B7DE440173FCFC900397B28 /* SNPBlockUserOperation.h in Headers */,
 				5B4EFDB9174DB88A001A6862 /* SNPPartialUpdateUserOperation.h in Headers */,
 				5B121AC2171C6F9200C505EA /* SNPCommonParameters.h in Headers */,
@@ -1842,7 +1853,6 @@
 				3CDF12C81683C95D0058CBE0 /* SNPUnmuteUserOperation.h in Headers */,
 				3CDF12CD1683C97B0058CBE0 /* SNPGetUserFolloweesOperation.h in Headers */,
 				3CDF12D21683C98B0058CBE0 /* SNPGetUserFollowersOperation.h in Headers */,
-				3CDF12D71683C9B10058CBE0 /* SNPGetUserMuteesOperation.h in Headers */,
 				3CDF12DC1683C9CF0058CBE0 /* SNPGetRepostersOperation.h in Headers */,
 				3CDF12E11683C9DF0058CBE0 /* SNPGetStarrersOperation.h in Headers */,
 				5BD0241516861E5100E24D5A /* SNPConstants.h in Headers */,
@@ -2187,7 +2197,6 @@
 				3CDF12C91683C95D0058CBE0 /* SNPUnmuteUserOperation.m in Sources */,
 				3CDF12CE1683C97B0058CBE0 /* SNPGetUserFolloweesOperation.m in Sources */,
 				3CDF12D31683C98B0058CBE0 /* SNPGetUserFollowersOperation.m in Sources */,
-				3CDF12D81683C9B10058CBE0 /* SNPGetUserMuteesOperation.m in Sources */,
 				3CDF12DD1683C9CF0058CBE0 /* SNPGetRepostersOperation.m in Sources */,
 				3CDF12E21683C9DF0058CBE0 /* SNPGetStarrersOperation.m in Sources */,
 				5B1A40DC168645500030BB30 /* SNPBaseImageFetchOperation.m in Sources */,
@@ -2235,6 +2244,8 @@
 				5B121AD2171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */,
 				5B7DE441173FCFC900397B28 /* SNPBlockUserOperation.m in Sources */,
 				5B4EFDBA174DB88A001A6862 /* SNPPartialUpdateUserOperation.m in Sources */,
+				5B79E79917639C5500EF3615 /* SNPGetMutedUsersOperation.m in Sources */,
+				5B79E79E17639C6600EF3615 /* SNPGetBlockedUsersOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2324,7 +2335,6 @@
 				3CDF12CA1683C95D0058CBE0 /* SNPUnmuteUserOperation.m in Sources */,
 				3CDF12CF1683C97B0058CBE0 /* SNPGetUserFolloweesOperation.m in Sources */,
 				3CDF12D41683C98B0058CBE0 /* SNPGetUserFollowersOperation.m in Sources */,
-				3CDF12D91683C9B10058CBE0 /* SNPGetUserMuteesOperation.m in Sources */,
 				3CDF12DE1683C9CF0058CBE0 /* SNPGetRepostersOperation.m in Sources */,
 				3CDF12E31683C9DF0058CBE0 /* SNPGetStarrersOperation.m in Sources */,
 				5B1A40DD168645500030BB30 /* SNPBaseImageFetchOperation.m in Sources */,
@@ -2372,6 +2382,8 @@
 				5B121AD3171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */,
 				5B7DE442173FCFC900397B28 /* SNPBlockUserOperation.m in Sources */,
 				5B4EFDBB174DB88A001A6862 /* SNPPartialUpdateUserOperation.m in Sources */,
+				5B79E79A17639C5500EF3615 /* SNPGetMutedUsersOperation.m in Sources */,
+				5B79E79F17639C6600EF3615 /* SNPGetBlockedUsersOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
