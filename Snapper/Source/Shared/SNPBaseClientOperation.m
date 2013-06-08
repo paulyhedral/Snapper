@@ -313,6 +313,9 @@ didReceiveResponse:(NSURLResponse*)response {
 
             response.data = arrayOfData;
         }
+        else {
+            NSAssert(YES, @"Cannot deserialize response data; no deserialization method is set for this operation!");
+        }
     }
 
     if(_finishBlock) {
