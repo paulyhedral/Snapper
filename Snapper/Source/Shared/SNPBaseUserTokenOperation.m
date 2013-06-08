@@ -225,7 +225,7 @@
 
     // File
     if(_fileTypes) {
-        parameters[@"include_annotations"] = [_fileTypes componentsJoinedByString:@","];
+        parameters[@"file_types"] = [_fileTypes componentsJoinedByString:@","];
     }
     if(_includeIncomplete) {
         parameters[@"include_incomplete"] = @"1";
