@@ -31,6 +31,7 @@
 @property (nonatomic, assign) BOOL followsYou;
 @property (nonatomic, assign) BOOL youFollow;
 @property (nonatomic, assign) BOOL youMuted;
+@property (nonatomic, assign) BOOL youBlocked;
 @property (nonatomic, assign) BOOL youCanSubscribe;
 @property (nonatomic, retain) NSArray* annotations;
 @property (nonatomic, retain) NSURL* canonicalURL;

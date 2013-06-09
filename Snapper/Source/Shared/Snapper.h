@@ -106,6 +106,7 @@
 #import <Snapper/SNPSearchUsersOperation.h>
 #import <Snapper/SNPStarPostOperation.h>
 #import <Snapper/SNPSubscribeToChannelOperation.h>
+#import <Snapper/SNPUnblockUserOperation.h>
 #import <Snapper/SNPUnfollowUserOperation.h>
 #import <Snapper/SNPUnmuteUserOperation.h>
 #import <Snapper/SNPUnrepostOperation.h>

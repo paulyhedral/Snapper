@@ -38,6 +38,7 @@
             @"followsYou": @"follows_you",
             @"youFollow": @"you_follow",
             @"youMuted": @"you_muted",
+            @"youBlocked": @"you_blocked",
             @"canonicalURL": @"canonical_url",
             @"youCanSubscribe": @"you_can_subscribe",
             @"descriptionObject": @"description",
