@@ -237,6 +237,11 @@
         parameters[@"include_file_annotations"] = @"1";
     }
 
+    // User stream
+    if(_connectionId) {
+        parameters[@"connection_id"] = _connectionId;
+    }
+
     // Common
     if(_includeAnnotations) {
         parameters[@"include_annotations"] = @"1";

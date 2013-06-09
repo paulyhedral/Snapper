@@ -32,4 +32,10 @@
 // -- Explore stream data --
 @property (nonatomic, retain) SNPExploreStream* exploreStream;
 
+// -- Subscription --
+@property (nonatomic, copy) NSString* subscriptionId;
+
+// -- Headers --
+@property (nonatomic, retain) NSDictionary* headers;
+
 @end

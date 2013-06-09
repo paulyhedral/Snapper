@@ -22,6 +22,9 @@
     NSDateFormatter* _dateFormatter;
     dispatch_once_t _onceToken;
 
+    NSHTTPURLResponse* _httpResponse;
+    NSInteger _statusCode;
+
 }
 
 #pragma mark - Initializers
@@ -193,6 +196,9 @@
         meta.exploreStream = exploreStream;
     }
 
+    // Subscription information.
+    meta.subscriptionId = metaDict[@"subscription_id"];
+
     response.metadata = meta;
 
     // Process data.
@@ -240,8 +246,8 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
 - (void)connection:(NSURLConnection*)connection
 didReceiveResponse:(NSURLResponse*)response {
 
-    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    NSInteger statusCode = httpResponse.statusCode;
+    _httpResponse = (NSHTTPURLResponse*)response;
+    _statusCode = _httpResponse.statusCode;
 
     // TODO
 }
@@ -269,6 +275,12 @@ didReceiveResponse:(NSURLResponse*)response {
 
     SNPResponse* response = [self createResponseFromJSON:jsonData];
 
+    // Extract relevant headers.
+    if(_httpResponse) {
+        response.metadata.headers = [_httpResponse allHeaderFields];
+    }
+
+    // Process data.
     if(response.data) {
         if(_serializationBlock) {
             NSError* serializationError = nil;
@@ -333,7 +345,7 @@ didReceiveResponse:(NSURLResponse*)response {
     if(_finishBlock) {
         _finishBlock(response);
     }
-
+    
     _done = YES;
 }
 

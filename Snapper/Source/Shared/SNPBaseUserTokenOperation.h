@@ -48,6 +48,9 @@
 @property (nonatomic, assign) BOOL includeUserAnnotations;
 @property (nonatomic, assign) BOOL includeHTML;
 
+// -- User stream parameters --
+@property (nonatomic, copy) NSString* connectionId;
+
 // -- Initializers --
 - (id)initWithAccountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock;
