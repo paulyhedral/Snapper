@@ -10,10 +10,10 @@
 #import "NSString+URLEscape.h"
 
 
-@implementation NSString(NSString_URLEscape)
+@implementation NSString (SNPNSString_URLEscape)
 
--(NSString*)stringByEscapingValidURLCharacters
-{
+- (NSString*)stringByEscapingValidURLCharacters {
+
 	NSString *escaped = [self stringByReplacingOccurrencesOfString:@"&" withString:@"%26"];
 	escaped = [escaped stringByReplacingOccurrencesOfString:@"!" withString:@"%21"];
 	escaped = [escaped stringByReplacingOccurrencesOfString:@"'" withString:@"%27"];
@@ -28,7 +28,6 @@
 	escaped = [escaped stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
 	
 	return escaped;
-	
 }
 
 @end

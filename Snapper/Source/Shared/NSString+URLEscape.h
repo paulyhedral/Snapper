@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSString(NSString_URLEscape)
+@interface NSString (SNPNSString_URLEscape)
 
--(NSString*)stringByEscapingValidURLCharacters;
+- (NSString*)stringByEscapingValidURLCharacters;
 
 @end
