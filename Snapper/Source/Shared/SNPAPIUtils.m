@@ -241,6 +241,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+- (NSURL*)searchEndpointURL {
+    return [NSURL URLWithString:@"posts/search"
+                  relativeToURL:_rootAPIURL];
+}
+
 
 #pragma mark - Channel URL methods
 
@@ -498,6 +503,14 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 
 - (NSURL*)getExploreStreamEndpointURL:(NSString*)slug {
     return [NSURL URLWithString:[NSString stringWithFormat:@"posts/stream/explore/%@", slug]
+                  relativeToURL:_rootAPIURL];
+}
+
+
+#pragma mark - Configuration methods
+
+- (NSURL*)configurationEndpointURL {
+    return [NSURL URLWithString:@"config"
                   relativeToURL:_rootAPIURL];
 }
 
