@@ -26,7 +26,7 @@
 #import "NSString+URLEncoding.h"
 
 
-@implementation NSString (OAURLEncodingAdditions)
+@implementation NSString (SNPURLEncodingAdditions)
 
 - (NSString *)encodedURLString {
 	NSString *result = (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
