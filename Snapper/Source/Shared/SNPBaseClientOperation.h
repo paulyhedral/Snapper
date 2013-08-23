@@ -24,6 +24,10 @@
 }
 
 // -- Properties --
+
+/**
+ *	<#Description#>
+ */
 @property (nonatomic, copy) NSURL* endpoint;
 @property (nonatomic, copy) NSString* method;
 @property (nonatomic, copy) NSDictionary* headers;
@@ -37,7 +41,25 @@
 @property (nonatomic, assign) Class serializationArrayClass;
 
 // -- Initializers --
+
+/**
+ *	<#Description#>
+ *
+ *	@return	<#return value description#>
+ */
 - (id)initWithFinishBlock:(void (^)(SNPResponse* response))finishBlock;
+/**
+ *	<#Description#>
+ *
+ *	@param	endpoint	<#endpoint description#>
+ *	@param	method	<#method description#>
+ *	@param	headers	<#headers description#>
+ *	@param	parameters	<#parameters description#>
+ *	@param	body	<#body description#>
+ *	@param	bodyType	<#bodyType description#>
+ *
+ *	@return	<#return value description#>
+ */
 - (id)initWithEndpoint:(NSURL*)endpoint
                 method:(NSString*)method
                headers:(NSDictionary*)headers
@@ -48,7 +70,22 @@
            finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 // -- Utility methods --
+
+/**
+ *	<#Description#>
+ *
+ *	@param	jsonDict	<#jsonDict description#>
+ *
+ *	@return	<#return value description#>
+ */
 - (SNPResponse*)createResponseFromJSON:(NSDictionary*)jsonDict;
+/**
+ *	<#Description#>
+ *
+ *	@param	error	<#error description#>
+ *
+ *	@return	<#return value description#>
+ */
 - (SNPResponse*)createResponseFromError:(NSError*)error;
 
 @end
