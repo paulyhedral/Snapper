@@ -20,6 +20,7 @@
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {
+        self.hashtag = hashtag;
         self.serializationArrayClass = [SNPPost class];
     }
 

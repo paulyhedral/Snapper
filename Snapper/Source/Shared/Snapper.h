@@ -16,6 +16,7 @@
 // -- Model --
 #import <Snapper/SNPACL.h>
 #import <Snapper/SNPAnnotation.h>
+#import <Snapper/SNPConfiguration.h>
 #import <Snapper/SNPChannel.h>
 #import <Snapper/SNPDescription.h>
 #import <Snapper/SNPEntity.h>
@@ -69,6 +70,7 @@
 #import <Snapper/SNPGetChannelOperation.h>
 #import <Snapper/SNPGetChannelSubscribersOperation.h>
 #import <Snapper/SNPGetChannelsOperation.h>
+#import <Snapper/SNPGetConfigurationOperation.h>
 #import <Snapper/SNPGetExploreStreamOperation.h>
 #import <Snapper/SNPGetFilterOperation.h>
 #import <Snapper/SNPGetGlobalStreamOperation.h>
@@ -101,7 +103,9 @@
 #import <Snapper/SNPMuteUserOperation.h>
 #import <Snapper/SNPPartialUpdateUserOperation.h>
 #import <Snapper/SNPProcessTextOperation.h>
+#import <Snapper/SNPReportPostOperation.h>
 #import <Snapper/SNPRepostOperation.h>
+#import <Snapper/SNPSearchOperation.h>
 #import <Snapper/SNPSearchPlacesOperation.h>
 #import <Snapper/SNPSearchUsersOperation.h>
 #import <Snapper/SNPStarPostOperation.h>
