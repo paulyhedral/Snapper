@@ -6,7 +6,7 @@ App.net SDK in Objective-C
 Version
 -------
 
-0.13
+0.14
 
 Platforms
 ---------
@@ -50,6 +50,7 @@ The following model objects are defined. Note that some of these objects are onl
 * ACL
 * Annotation
 * Channel
+* Configuration
 * Description
 * Entity
 * File
