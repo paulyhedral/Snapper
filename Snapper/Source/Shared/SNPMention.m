@@ -16,6 +16,7 @@
             @"userId": @"id",
             @"position": @"pos",
             @"length": @"len",
+            @"leading": @"is_leading",
             }];
 }
 

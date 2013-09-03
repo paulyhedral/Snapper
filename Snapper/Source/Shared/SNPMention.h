@@ -15,5 +15,6 @@
 @property (nonatomic, assign) NSInteger userId;
 @property (nonatomic, assign) NSInteger position;
 @property (nonatomic, assign) NSInteger length;
+@property (nonatomic, assign) BOOL leading;
 
 @end
