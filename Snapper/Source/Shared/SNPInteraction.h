@@ -21,5 +21,6 @@ typedef enum : NSInteger {
 @property (nonatomic, assign) SNPInteractionAction action;
 @property (nonatomic, retain) NSArray* objects;
 @property (nonatomic, retain) NSArray* users;
+@property (nonatomic, copy) NSDate* eventDate;
 
 @end
