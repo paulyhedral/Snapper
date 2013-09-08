@@ -26,7 +26,7 @@
         NSMutableArray* interactions = [NSMutableArray new];
 
         for(NSDictionary* interactionDict in responseData) {
-            SNPInteraction* interaction = [SNPInteraction modelWithDictionary:interactionDict];
+            SNPInteraction* interaction = [SNPInteraction modelWithExternalRepresentation:interactionDict];
 
             NSMutableArray* objects = [NSMutableArray new];
             for(NSDictionary* objectDict in interactionDict[@"objects"]) {
@@ -39,7 +39,10 @@
                         if(user == nil) {
                             *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
                                                          code:SNPSerializationErrorCode
-                                                     userInfo:nil];
+                                                     userInfo:(@{
+                                                                 @"property" : @"follow.objects[user]",
+                                                                 @"value" : objectDict,
+                                                                 })];
                             return nil;
                         }
                         [objects addObject:user];
@@ -50,7 +53,10 @@
                         if(post == nil) {
                             *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
                                                          code:SNPSerializationErrorCode
-                                                     userInfo:nil];
+                                                     userInfo:(@{
+                                                                 @"property" : @"reply.objects[post]",
+                                                                 @"value" : objectDict,
+                                                                 })];
                             return nil;
                         }
                         [objects addObject:post];
@@ -61,7 +67,10 @@
                         if(post == nil) {
                             *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
                                                          code:SNPSerializationErrorCode
-                                                     userInfo:nil];
+                                                     userInfo:(@{
+                                                                 @"property" : @"repost.objects[post]",
+                                                                 @"value" : objectDict,
+                                                                 })];
                             return nil;
                         }
                         [objects addObject:post];
@@ -72,7 +81,10 @@
                         if(post == nil) {
                             *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
                                                          code:SNPSerializationErrorCode
-                                                     userInfo:nil];
+                                                     userInfo:(@{
+                                                                 @"property" : @"star.objects[post]",
+                                                                 @"value" : objectDict,
+                                                                 })];
                             return nil;
                         }
                         [objects addObject:post];
@@ -82,7 +94,7 @@
                         *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
                                                      code:SNPSerializationErrorCode
                                                  userInfo:(@{
-                                                           @"property" : @"action",
+                                                           @"property" : @"action(unknown)",
                                                            @"value" : @(interaction.action)
                                                            })];
                         break;
@@ -96,6 +108,8 @@
                 [users addObject:user];
             }
             interaction.users = [users copy];
+
+            [interactions addObject:interaction];
         }
         
         return interactions;
