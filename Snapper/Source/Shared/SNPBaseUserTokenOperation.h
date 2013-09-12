@@ -43,6 +43,9 @@
 @property (nonatomic, assign) BOOL includePrivate;
 @property (nonatomic, assign) BOOL includeFileAnnotations;
 
+// -- Stream facet parameters --
+@property (nonatomic, assign) BOOL hasOembedPhoto;
+
 // -- Common query parameters --
 @property (nonatomic, assign) BOOL includeAnnotations;
 @property (nonatomic, assign) BOOL includeUserAnnotations;

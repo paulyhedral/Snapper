@@ -242,6 +242,11 @@
         parameters[@"connection_id"] = _connectionId;
     }
 
+    // Stream facet parameters
+    if(_hasOembedPhoto) {
+        parameters[@"has_oembed_photo"] = @"1";
+    }
+
     // Common
     if(_includeAnnotations) {
         parameters[@"include_annotations"] = @"1";
