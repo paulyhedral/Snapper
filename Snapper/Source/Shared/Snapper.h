@@ -102,6 +102,7 @@
 #import <Snapper/SNPListInteractionsOperation.h>
 #import <Snapper/SNPMuteUserOperation.h>
 #import <Snapper/SNPPartialUpdateUserOperation.h>
+#import <Snapper/SNPPasswordLoginOperation.h>
 #import <Snapper/SNPProcessTextOperation.h>
 #import <Snapper/SNPReportPostOperation.h>
 #import <Snapper/SNPRepostOperation.h>
