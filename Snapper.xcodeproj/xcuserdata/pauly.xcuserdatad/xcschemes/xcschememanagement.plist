@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>Snapper-static.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>40</integer>
+		</dict>
 		<key>Snapper.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -43,6 +48,16 @@
 			<true/>
 		</dict>
 		<key>3C6B5F181680EE8B006C63C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B832B661881245A004EE45A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B832B721881245A004EE45A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
