@@ -33,6 +33,11 @@
             @"recentMessageId": @"recent_message_id",
             @"youCanEdit": @"you_can_edit",
             @"youSubscribed": @"you_subscribed",
+            @"youMuted": @"you_muted",
+            @"recentMessage": @"recent_message",
+            @"subscriberCount": @"counts.subscribers",
+            @"messageCount": @"counts.messages",
+            @"isInactive": @"is_inactive",
             }];
 }
 

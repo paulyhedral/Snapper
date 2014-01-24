@@ -29,6 +29,8 @@
             @"mimeType": @"mime_type",
             @"URL": @"url",
             @"URLExpires": @"url_expires",
+            @"imageWidth": @"image_info.width",
+            @"imageHeight": @"image_info.height",
             }];
 }
 
@@ -69,6 +71,8 @@
             @"totalSize": @"total_size",
             @"URL": @"url",
             @"URLExpires": @"url_expires",
+            @"imageWidth": @"image_info.width",
+            @"imageHeight": @"image_info.height",
             }];
 }
 

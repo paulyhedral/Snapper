@@ -24,6 +24,8 @@ typedef enum : NSInteger {
 @property (nonatomic, assign) NSInteger size;
 @property (nonatomic, copy) NSURL* URL;
 @property (nonatomic, copy) NSDate* URLExpires;
+@property (nonatomic, assign) NSInteger imageWidth;
+@property (nonatomic, assign) NSInteger imageHeight;
 
 @end
 
@@ -45,5 +47,7 @@ typedef enum : NSInteger {
 @property (nonatomic, copy) NSURL* URL;
 @property (nonatomic, copy) NSDate* URLExpires;
 @property (nonatomic, retain) SNPUser* user;
+@property (nonatomic, assign) NSInteger imageWidth;
+@property (nonatomic, assign) NSInteger imageHeight;
 
 @end
