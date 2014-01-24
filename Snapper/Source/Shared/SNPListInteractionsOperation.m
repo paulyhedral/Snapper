@@ -11,6 +11,7 @@
 #import "SNPInteraction.h"
 #import "SNPUser.h"
 #import "SNPPost.h"
+#import "SNPChannel.h"
 
 #import "SNPAPIUtils.h"
 #import "SNPConstants.h"
@@ -32,6 +33,7 @@
             for(NSDictionary* objectDict in interactionDict[@"objects"]) {
                 SNPPost* post = nil;
                 SNPUser* user = nil;
+                SNPChannel* channel = nil;
 
                 switch(interaction.action) {
                     case SNPInteractionActionFollow:
@@ -88,6 +90,26 @@
                             return nil;
                         }
                         [objects addObject:post];
+                        break;
+
+                    case SNPInteractionActionBroadcastCreate:
+                    case SNPInteractionActionBroadcastSubscribe:
+                    case SNPInteractionActionBroadcastUnsubscribe:
+                        channel = [SNPChannel modelWithExternalRepresentation:objectDict];
+                        if(channel == nil) {
+                            *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                                         code:SNPSerializationErrorCode
+                                                     userInfo:(@{
+                                                                 @"property" : @"broadcast*.objects[channel]",
+                                                                 @"value" : objectDict,
+                                                                 })];
+                            return nil;
+                        }
+                        [objects addObject:channel];
+                        break;
+
+                    case SNPInteractionActionWelcome:
+                        // do nothing
                         break;
 
                     default:

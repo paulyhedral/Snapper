@@ -9,12 +9,16 @@
 #import <Mantle/Mantle.h>
 
 
-typedef enum : NSInteger {
+typedef NS_ENUM(NSInteger, SNPInteractionAction) {
     SNPInteractionActionFollow,
     SNPInteractionActionReply,
     SNPInteractionActionRepost,
     SNPInteractionActionStar,
-} SNPInteractionAction;
+    SNPInteractionActionWelcome,
+    SNPInteractionActionBroadcastCreate,
+    SNPInteractionActionBroadcastSubscribe,
+    SNPInteractionActionBroadcastUnsubscribe,
+};
 
 @interface SNPInteraction : MTLModel
 

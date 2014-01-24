@@ -36,6 +36,10 @@
                                   @"reply": @(SNPInteractionActionReply),
                                   @"repost": @(SNPInteractionActionRepost),
                                   @"star": @(SNPInteractionActionStar),
+                                  @"welcome": @(SNPInteractionActionWelcome),
+                                  @"broadcast_create": @(SNPInteractionActionBroadcastCreate),
+                                  @"broadcast_subscribe": @(SNPInteractionActionBroadcastSubscribe),
+                                  @"broadcast_unsubscribe": @(SNPInteractionActionBroadcastUnsubscribe),
                                   };
 
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
