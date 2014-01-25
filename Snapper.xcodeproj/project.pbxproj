@@ -250,6 +250,7 @@
 		5B121AD1171C780100C505EA /* SNPGetMyMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B121AD2171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B121AD0171C780100C505EA /* SNPGetMyMessagesOperation.m */; };
 		5B121AD3171C780100C505EA /* SNPGetMyMessagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B121AD0171C780100C505EA /* SNPGetMyMessagesOperation.m */; };
+		5B15D1F11894508300D41E25 /* SNPPasswordLoginOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B832CCB18812801004EE45A /* SNPPasswordLoginOperation.h */; };
 		5B1A40DB168645500030BB30 /* SNPBaseImageFetchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B1A40D91686454E0030BB30 /* SNPBaseImageFetchOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B1A40DC168645500030BB30 /* SNPBaseImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A40DA1686454F0030BB30 /* SNPBaseImageFetchOperation.m */; };
 		5B1A40DD168645500030BB30 /* SNPBaseImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1A40DA1686454F0030BB30 /* SNPBaseImageFetchOperation.m */; };
@@ -460,7 +461,6 @@
 		5B832B8B188124AD004EE45A /* SNPMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F8C16810AEA006C63C1 /* SNPMetadata.m */; };
 		5B832B8C188124AD004EE45A /* SNPAPIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF129A1683C2E30058CBE0 /* SNPAPIUtils.m */; };
 		5B832B8D188124B3004EE45A /* SNPStreamWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12031683B7D10058CBE0 /* SNPStreamWatcher.m */; };
-		5B832BCD18812587004EE45A /* libMantle-Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B832BCA18812578004EE45A /* libMantle-Static.a */; };
 		5B832BCF188125BA004EE45A /* SNPCreateChannelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12271683B8AA0058CBE0 /* SNPCreateChannelOperation.m */; };
 		5B832BD1188125BA004EE45A /* SNPGetChannelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF122C1683B8B70058CBE0 /* SNPGetChannelOperation.m */; };
 		5B832BD3188125BA004EE45A /* SNPGetChannelsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF12311683B8C90058CBE0 /* SNPGetChannelsOperation.m */; };
@@ -924,27 +924,6 @@
 			remoteGlobalIDString = D042FC3B15F72B23004E8054;
 			remoteInfo = "Mantle Mac";
 		};
-		5B832BC518812578004EE45A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 5B832B91188124EF004EE45A;
-			remoteInfo = "Mantle Static";
-		};
-		5B832BC918812578004EE45A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5B832B92188124EF004EE45A;
-			remoteInfo = "Mantle Static";
-		};
-		5B832BCB18812578004EE45A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5B832BA3188124F0004EE45A;
-			remoteInfo = "Mantle StaticTests";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -954,6 +933,7 @@
 			dstPath = include/Snapper;
 			dstSubfolderSpec = 16;
 			files = (
+				5B15D1F11894508300D41E25 /* SNPPasswordLoginOperation.h in CopyFiles */,
 				5B40711517C442B70092D310 /* SNPConfiguration.h in CopyFiles */,
 				5B40711617C442B70092D310 /* SNPSearchOperation.h in CopyFiles */,
 				5B40711717C442B70092D310 /* SNPGetConfigurationOperation.h in CopyFiles */,
@@ -1614,7 +1594,6 @@
 			files = (
 				5BE8E198188318DE00E0AD41 /* Foundation.framework in Frameworks */,
 				5BE8E197188318D900E0AD41 /* CoreGraphics.framework in Frameworks */,
-				5B832BCD18812587004EE45A /* libMantle-Static.a in Frameworks */,
 				5B832B681881245A004EE45A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1812,8 +1791,6 @@
 				3C6B5EF91680EE3C006C63C1 /* Mantle Mac Tests.octest */,
 				3C6B5EFB1680EE3C006C63C1 /* libMantle.a */,
 				3C6B5EFD1680EE3C006C63C1 /* Mantle iOS Tests.octest */,
-				5B832BCA18812578004EE45A /* libMantle-Static.a */,
-				5B832BCC18812578004EE45A /* Mantle StaticTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2492,7 +2469,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5B832BC618812578004EE45A /* PBXTargetDependency */,
 			);
 			name = "Snapper-static";
 			productName = "Snapper-static";
@@ -2563,20 +2539,6 @@
 			fileType = wrapper.cfbundle;
 			path = "Mantle iOS Tests.octest";
 			remoteRef = 3C6B5EFC1680EE3C006C63C1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B832BCA18812578004EE45A /* libMantle-Static.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libMantle-Static.a";
-			remoteRef = 5B832BC918812578004EE45A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5B832BCC18812578004EE45A /* Mantle StaticTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Mantle StaticTests.xctest";
-			remoteRef = 5B832BCB18812578004EE45A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -3136,11 +3098,6 @@
 			isa = PBXTargetDependency;
 			name = "Mantle Mac";
 			targetProxy = 3C6B5F321680EF0D006C63C1 /* PBXContainerItemProxy */;
-		};
-		5B832BC618812578004EE45A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Mantle Static";
-			targetProxy = 5B832BC518812578004EE45A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
