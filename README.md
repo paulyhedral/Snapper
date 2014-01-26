@@ -6,12 +6,12 @@ App.net SDK in Objective-C
 Version
 -------
 
-0.14
+0.20
 
 Platforms
 ---------
 
-Snapper is designed to work on iOS 5.1 or higher, or Mac OS X Lion (10.7) or higher.
+Snapper is designed to work on iOS 7.0 or higher, or Mac OS X Mountain Lion (10.8) or higher.
 
 Requirements
 ------------
@@ -115,7 +115,7 @@ License
 
 Snapper is available under the MIT license.
 
-Copyright &copy; 2013 Pilgrimage Software
+Copyright &copy; 2014 Pilgrimage Software
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
