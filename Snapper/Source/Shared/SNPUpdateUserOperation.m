@@ -52,7 +52,7 @@
 
     NSMutableDictionary* userDict = [NSMutableDictionary new];
 
-    userDict[@"name"] = _name;
+    userDict[@"name"] = self.name;
     userDict[@"locale"] = _locale;
     userDict[@"timezone"] = _timezone;
 

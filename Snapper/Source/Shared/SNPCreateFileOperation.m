@@ -53,7 +53,7 @@
 
     NSString* fileHeader = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: file; name=\"content\"; filename=\"%@\"\r\nContent-Type: %@\r\n\r\n",
                             boundaryString,
-                            _name,
+                            self.name,
                             _contentType];
     [bodyData appendData:[fileHeader dataUsingEncoding:NSUTF8StringEncoding]];
     [bodyData appendData:_data];

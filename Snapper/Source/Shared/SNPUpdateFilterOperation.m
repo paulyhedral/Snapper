@@ -43,7 +43,7 @@
     self.method = @"PUT";
 
     SNPFilter* filter = [SNPFilter new];
-    filter.name = _name;
+    filter.name = self.name;
     filter.matchPolicy = _matchPolicy;
     filter.clauses = _clauses;
 

@@ -38,7 +38,7 @@
 - (void)main {
 
     NSDictionary* markerDict = (@{
-                                @"name" : _name,
+                                @"name" : self.name,
                                 @"id" : @(_postId),
                                 @"percentage" : @(_percentage),
                                 });

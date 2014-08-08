@@ -262,4 +262,12 @@
                                                          }];
 }
 
+- (NSString *)description {
+return [NSString stringWithFormat:@"<%@: %p> { postId=%ld, createdAt=%@ }",
+        NSStringFromClass([self class]),
+        self,
+        (long)_postId,
+        _createdAt];
+}
+
 @end

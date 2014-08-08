@@ -42,7 +42,7 @@
 
     SNPFile* file = [SNPFile new];
     file.fileId = _fileId;
-    file.name = _name;
+    file.name = self.name;
     file.annotations = _annotations;
 
     NSDictionary* fileDict = [file externalRepresentation];
