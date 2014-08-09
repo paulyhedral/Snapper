@@ -10,6 +10,7 @@
 
 
 @interface SNPStreamMarker : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, assign) NSInteger postId;
 @property (nonatomic, copy) NSString* name;

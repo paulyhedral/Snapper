@@ -29,245 +29,344 @@
     return dateFormatter;
 }
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"postId": @"id",
-            @"createdAt": @"created_at",
-            @"sourceName": @"source.name",
-            @"sourceLink": @"source.link",
-            @"sourceClientId": @"source.client_id",
-            @"machineOnly": @"machine_only",
-            @"replyTo": @"reply_to",
-            @"threadId": @"thread_id",
-            @"canonicalURL": @"canonical_url",
-            @"numReplies": @"num_replies",
-            @"numReposts": @"num_reposts",
-            @"numStars": @"num_stars",
-            @"mentions": @"entities.mentions",
-            @"hashtags": @"entities.hashtags",
-            @"links": @"entities.links",
-            @"youReposted": @"you_reposted",
-            @"youStarred": @"you_starred",
-            @"starredBy": @"starred_by",
-            @"repostOf": @"repost_of",
-            @"deleted": @"is_deleted",
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"postId": @"id",
+             @"createdAt": @"created_at",
+             @"sourceName": @"source.name",
+             @"sourceLink": @"source.link",
+             @"sourceClientId": @"source.client_id",
+             @"machineOnly": @"machine_only",
+             @"replyTo": @"reply_to",
+             @"threadId": @"thread_id",
+             @"canonicalURL": @"canonical_url",
+             @"numReplies": @"num_replies",
+             @"numReposts": @"num_reposts",
+             @"numStars": @"num_stars",
+             @"mentions": @"entities.mentions",
+             @"hashtags": @"entities.hashtags",
+             @"links": @"entities.links",
+             @"youReposted": @"you_reposted",
+             @"youStarred": @"you_starred",
+             @"starredBy": @"starred_by",
+             @"repostOf": @"repost_of",
+             @"deleted": @"is_deleted",
+             };
+}
+
++ (NSValueTransformer*)postIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
             }];
 }
 
-+ (NSValueTransformer*)postIdTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
++ (NSValueTransformer*)replyToJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
+            }];
 }
 
-+ (NSValueTransformer*)replyToTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
++ (NSValueTransformer*)threadIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
+            }];
 }
 
-+ (NSValueTransformer*)threadIdTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
++ (NSValueTransformer*)createdAtJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *str) {
+                return [self.dateFormatter dateFromString:str];
+            }
+                                                         reverseBlock:
+            ^(NSDate *date) {
+                return [self.dateFormatter stringFromDate:date];
+            }];
 }
 
-+ (NSValueTransformer*)createdAtTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return [self.dateFormatter dateFromString:str];
-    }
-                                                         reverseBlock:^(NSDate *date) {
-                                                             return [self.dateFormatter stringFromDate:date];
-                                                         }];
-}
-
-+ (NSValueTransformer*)canonicalURLTransformer {
++ (NSValueTransformer*)canonicalURLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
-+ (NSValueTransformer*)userTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSDictionary* dict) {
-        return [[SNPUser alloc] initWithExternalRepresentation:dict];
-    }
-                                                         reverseBlock:^(SNPUser* user) {
-                                                             return [user externalRepresentation];
-                                                         }];
++ (NSValueTransformer*)userJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSDictionary* dict) {
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                              modelClass:[SNPUser class]
+                                                                                   error:&error];
+                return [adapter model];
+            }
+                                                         reverseBlock:
+            ^(SNPUser* user) {
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:user];
+                return [adapter JSONDictionary];
+            }];
 }
 
-+ (NSValueTransformer*)mentionsTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* mentionsDicts) {
-        NSMutableArray* mentions = [NSMutableArray new];
++ (NSValueTransformer*)mentionsJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* mentionsDicts) {
+                NSMutableArray* mentions = [NSMutableArray new];
 
-        for(NSDictionary* mentionDict in mentionsDicts) {
-            SNPMention* mention = [[SNPMention alloc] initWithExternalRepresentation:mentionDict];
+                for(NSDictionary* mentionDict in mentionsDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:mentionDict
+                                                                                  modelClass:[SNPMention class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize mention: %@", error);
+                    }
+                    else {
+                        SNPMention* mention = (SNPMention*)[adapter model];
 
-            [mentions addObject:mention];
-        }
+                        [mentions addObject:mention];
+                    }
+                }
 
-        return [mentions copy];
-    }
-                                                         reverseBlock:^(NSArray* mentions) {
-                                                             NSMutableArray* mentionsDicts = [NSMutableArray new];
+                return [mentions copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* mentions) {
+                NSMutableArray* mentionsDicts = [NSMutableArray new];
 
-                                                             for(SNPMention* mention in mentions) {
-                                                                 NSDictionary* mentionDict = [mention externalRepresentation];
+                for(SNPMention* mention in mentions) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:mention];
+                    NSDictionary* mentionDict = [adapter JSONDictionary];
 
-                                                                 [mentionsDicts addObject:mentionDict];
-                                                             }
+                    [mentionsDicts addObject:mentionDict];
+                }
 
-                                                             return [mentionsDicts copy];
-                                                         }];
+                return [mentionsDicts copy];
+            }];
 }
 
-+ (NSValueTransformer*)linksTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* linksDicts) {
-        NSMutableArray* links = [NSMutableArray new];
++ (NSValueTransformer*)linksJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* linksDicts) {
+                NSMutableArray* links = [NSMutableArray new];
 
-        for(NSDictionary* linkDict in linksDicts) {
-            SNPLink* link = [[SNPLink alloc] initWithExternalRepresentation:linkDict];
+                for(NSDictionary* linkDict in linksDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:linkDict
+                                                                                  modelClass:[SNPLink class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize mention: %@", error);
+                    }
+                    else {
+                        SNPLink* link = (SNPLink*)[adapter model];
 
-            [links addObject:link];
-        }
+                        [links addObject:link];
+                    }
+                }
 
-        return [links copy];
-    }
-                                                         reverseBlock:^(NSArray* links) {
-                                                             NSMutableArray* linksDicts = [NSMutableArray new];
+                return [links copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* links) {
+                NSMutableArray* linksDicts = [NSMutableArray new];
 
-                                                             for(SNPLink* link in links) {
-                                                                 NSDictionary* linkDict = [link externalRepresentation];
+                for(SNPLink* link in links) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:link];
+                    NSDictionary* linkDict = [adapter JSONDictionary];
 
-                                                                 [linksDicts addObject:linkDict];
-                                                             }
+                    [linksDicts addObject:linkDict];
+                }
 
-                                                             return [linksDicts copy];
-                                                         }];
+                return [linksDicts copy];
+            }];
 }
 
-+ (NSValueTransformer*)hashtagsTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* hashtagsDicts) {
-        NSMutableArray* hashtags = [NSMutableArray new];
++ (NSValueTransformer*)hashtagsJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* hashtagsDicts) {
+                NSMutableArray* hashtags = [NSMutableArray new];
 
-        for(NSDictionary* hashtagDict in hashtagsDicts) {
-            SNPHashtag* hashtag = [[SNPHashtag alloc] initWithExternalRepresentation:hashtagDict];
+                for(NSDictionary* hashtagDict in hashtagsDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:hashtagDict
+                                                                                  modelClass:[SNPHashtag class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize mention: %@", error);
+                    }
+                    else {
+                        SNPHashtag* hashtag = (SNPHashtag*)[adapter model];
 
-            [hashtags addObject:hashtag];
-        }
+                        [hashtags addObject:hashtag];
+                    }
+                }
 
-        return [hashtags copy];
-    }
-                                                         reverseBlock:^(NSArray* hashtags) {
-                                                             NSMutableArray* hashtagsDicts = [NSMutableArray new];
+                return [hashtags copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* hashtags) {
+                NSMutableArray* hashtagsDicts = [NSMutableArray new];
 
-                                                             for(SNPHashtag* hashtag in hashtags) {
-                                                                 NSDictionary* hashtagDict = [hashtag externalRepresentation];
-                                                                 
-                                                                 [hashtagsDicts addObject:hashtagDict];
-                                                             }
-                                                             
-                                                             return [hashtagsDicts copy];
-                                                         }];
+                for(SNPHashtag* hashtag in hashtags) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:hashtag];
+                    NSDictionary* hashtagDict = [adapter JSONDictionary];
+
+                    [hashtagsDicts addObject:hashtagDict];
+                }
+
+                return [hashtagsDicts copy];
+            }];
 }
 
-+ (NSValueTransformer*)repostOfTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSDictionary* dict) {
-        return [[SNPPost alloc] initWithExternalRepresentation:dict];
-    }
-                                                         reverseBlock:^(SNPPost* post) {
-                                                             return [post externalRepresentation];
-                                                         }];
++ (NSValueTransformer*)repostOfJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSDictionary* dict) {
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                              modelClass:[SNPPost class]
+                                                                                   error:&error];
+                if(adapter == nil) {
+                    NSLog(@"Unable to deserialize post: %@", error);
+                    return nil;
+                }
+
+                return [adapter model];
+            }
+                                                         reverseBlock:
+            ^id(SNPPost* post) {
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:post];
+                return [adapter JSONDictionary];
+            }];
 }
 
-+ (NSValueTransformer*)respostersTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* userDicts) {
-        NSMutableArray* users = [NSMutableArray new];
++ (NSValueTransformer*)respostersJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* userDicts) {
+                NSMutableArray* users = [NSMutableArray new];
 
-        for(NSDictionary* userDict in userDicts) {
-            SNPUser* user = [[SNPUser alloc] initWithExternalRepresentation:userDict];
+                for(NSDictionary* userDict in userDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:userDict
+                                                                                  modelClass:[SNPUser class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize user: %@", error);
+                        return nil;
+                    }
 
-            [users addObject:user];
-        }
+                    SNPUser* user = (SNPUser*)[adapter model];
 
-        return [users copy];
-    }
-                                                         reverseBlock:^(NSArray* users) {
-                                                             NSMutableArray* userDicts = [NSMutableArray new];
+                    [users addObject:user];
+                }
 
-                                                             for(SNPUser* user in users) {
-                                                                 NSDictionary* userDict = [user externalRepresentation];
+                return [users copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* users) {
+                NSMutableArray* userDicts = [NSMutableArray new];
 
-                                                                 [userDicts addObject:userDict];
-                                                             }
+                for(SNPUser* user in users) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:user];
+                    NSDictionary* userDict = [adapter JSONDictionary];
 
-                                                             return [userDicts copy];
-                                                         }];
+                    [userDicts addObject:userDict];
+                }
+
+                return [userDicts copy];
+            }];
 }
 
-+ (NSValueTransformer*)starredByTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* userDicts) {
-        NSMutableArray* users = [NSMutableArray new];
++ (NSValueTransformer*)starredByJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* userDicts) {
+                NSMutableArray* users = [NSMutableArray new];
 
-        for(NSDictionary* userDict in userDicts) {
-            SNPUser* user = [[SNPUser alloc] initWithExternalRepresentation:userDict];
+                for(NSDictionary* userDict in userDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:userDict
+                                                                                  modelClass:[SNPUser class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize user: %@", error);
+                        return nil;
+                    }
 
-            [users addObject:user];
-        }
+                    SNPUser* user = (SNPUser*)[adapter model];
 
-        return [users copy];
-    }
-                                                         reverseBlock:^(NSArray* users) {
-                                                             NSMutableArray* userDicts = [NSMutableArray new];
+                    [users addObject:user];
+                }
 
-                                                             for(SNPUser* user in users) {
-                                                                 NSDictionary* userDict = [user externalRepresentation];
+                return [users copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* users) {
+                NSMutableArray* userDicts = [NSMutableArray new];
 
-                                                                 [userDicts addObject:userDict];
-                                                             }
-                                                             
-                                                             return [userDicts copy];
-                                                         }];
+                for(SNPUser* user in users) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:user];
+                    NSDictionary* userDict = [adapter JSONDictionary];
+
+                    [userDicts addObject:userDict];
+                }
+
+                return [userDicts copy];
+            }];
 }
 
-+ (NSValueTransformer*)annotationsTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* annotationDicts) {
-        NSMutableArray* annotations = [NSMutableArray new];
++ (NSValueTransformer*)annotationsJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* annotationDicts) {
+                NSMutableArray* annotations = [NSMutableArray new];
 
-        for(NSDictionary* annoDict in annotationDicts) {
-            SNPAnnotation* annotation = [[SNPAnnotation alloc] initWithExternalRepresentation:annoDict];
+                for(NSDictionary* annoDict in annotationDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:annoDict
+                                                                                  modelClass:[SNPAnnotation class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize annotation: %@", error);
+                        return nil;
+                    }
 
-            [annotations addObject:annotation];
-        }
+                    SNPAnnotation* annotation = (SNPAnnotation*)[adapter model];
 
-        return [annotations copy];
-    }
-                                                         reverseBlock:^(NSArray* annotations) {
-                                                             NSMutableArray* annoDicts = [NSMutableArray new];
+                    [annotations addObject:annotation];
+                }
 
-                                                             for(SNPAnnotation* annotation in annotations) {
-                                                                 NSDictionary* annoDict = [annotation externalRepresentation];
-
-                                                                 [annoDicts addObject:annoDict];
-                                                             }
-
-                                                             return [annoDicts copy];
-                                                         }];
+                return [annotations copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* annotations) {
+                NSMutableArray* annoDicts = [NSMutableArray new];
+                
+                for(SNPAnnotation* annotation in annotations) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:annotation];
+                    NSDictionary* annoDict = [adapter JSONDictionary];
+                    
+                    [annoDicts addObject:annoDict];
+                }
+                
+                return [annoDicts copy];
+            }];
 }
 
 - (NSString *)description {
-return [NSString stringWithFormat:@"<%@: %p> { postId=%ld, createdAt=%@ }",
-        NSStringFromClass([self class]),
-        self,
-        (long)_postId,
-        _createdAt];
+    return [NSString stringWithFormat:@"<%@: %p> { postId=%ld, createdAt=%@ }",
+            NSStringFromClass([self class]),
+            self,
+            (long)_postId,
+            _createdAt];
 }
 
 @end

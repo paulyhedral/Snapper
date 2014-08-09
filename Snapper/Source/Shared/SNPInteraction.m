@@ -24,13 +24,13 @@
     return dateFormatter;
 }
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-                                                                                                            @"eventDate": @"event_date",
-                                                                                                            }];
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"eventDate": @"event_date",
+             };
 }
 
-+ (NSValueTransformer*)actionTransformer {
++ (NSValueTransformer*)actionJSONTransformer {
     NSDictionary* actionTypes = @{
                                   @"follow": @(SNPInteractionActionFollow),
                                   @"reply": @(SNPInteractionActionReply),
@@ -42,21 +42,25 @@
                                   @"broadcast_unsubscribe": @(SNPInteractionActionBroadcastUnsubscribe),
                                   };
 
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return actionTypes[str];
-    }
-                                                         reverseBlock:^(NSNumber* actionType) {
-                                                             return [actionTypes allKeysForObject:actionType].lastObject;
-                                                         }];
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSString *str) {
+                return actionTypes[str];
+            }
+                                                         reverseBlock:
+            ^id(NSNumber* actionType) {
+                return [actionTypes allKeysForObject:actionType].lastObject;
+            }];
 }
 
-+ (NSValueTransformer*)eventDateTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return [self.dateFormatter dateFromString:str];
-    }
-                                                         reverseBlock:^(NSDate *date) {
-                                                             return [self.dateFormatter stringFromDate:date];
-                                                         }];
++ (NSValueTransformer*)eventDateJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSString *str) {
+                return [self.dateFormatter dateFromString:str];
+            }
+                                                         reverseBlock:
+            ^id(NSDate *date) {
+                return [self.dateFormatter stringFromDate:date];
+            }];
 }
 
 @end

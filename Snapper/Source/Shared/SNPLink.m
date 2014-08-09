@@ -11,16 +11,16 @@
 
 @implementation SNPLink
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
             @"URL": @"url",
             @"position": @"pos",
             @"length": @"len",
             @"amendedLength": @"amended_len",
-            }];
+            };
 }
 
-+ (NSValueTransformer*)URLTransformer {
++ (NSValueTransformer*)URLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 

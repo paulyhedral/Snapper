@@ -12,6 +12,7 @@
 
 
 @interface SNPToken : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString* clientId;
 @property (nonatomic, copy) NSString* appClientId;

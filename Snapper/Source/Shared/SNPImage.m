@@ -11,14 +11,14 @@
 
 @implementation SNPImage
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
             @"URL": @"url",
             @"defaultImage": @"is_default",
-            }];
+            };
 }
 
-+ (NSValueTransformer*)URLTransformer {
++ (NSValueTransformer*)URLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 

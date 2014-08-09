@@ -13,6 +13,7 @@
 
 
 @interface SNPUser : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, assign) NSInteger userId;
 @property (nonatomic, copy) NSString* username;

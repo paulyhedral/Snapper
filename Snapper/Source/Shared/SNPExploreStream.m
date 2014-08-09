@@ -11,14 +11,14 @@
 
 @implementation SNPExploreStream
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
             @"URL": @"url",
             @"exploreDescription": @"description",
-            }];
+            };
 }
 
-+ (NSValueTransformer*)URLTransformer {
++ (NSValueTransformer*)URLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 

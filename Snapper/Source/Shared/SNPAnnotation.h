@@ -25,6 +25,7 @@
  * simply a dictionary.
  */
 @interface SNPAnnotation : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString* type;
 @property (nonatomic, retain) NSDictionary* value;

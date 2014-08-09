@@ -12,6 +12,7 @@
 
 
 @interface SNPMessage : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, assign) NSInteger channelId;
 @property (nonatomic, assign) NSInteger messageId;

@@ -294,32 +294,50 @@ didReceiveResponse:(NSURLResponse*)response {
             }
         }
         else if(_serializationRootClass) {
-            id serializedObject = [_serializationRootClass modelWithExternalRepresentation:response.data];
-            if(serializedObject == nil) {
-                NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                                     code:SNPSerializationErrorCode
-                                                 userInfo:nil];
+            NSError* error = nil;
+            MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:response.data
+                                                                          modelClass:_serializationRootClass
+                                                                               error:&error];
+            if(adapter == nil) {
                 response = [self createResponseFromError:error];
             }
             else {
-                response.data = serializedObject;
+                id serializedObject = [adapter model];
+                if(serializedObject == nil) {
+                    NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                                         code:SNPSerializationErrorCode
+                                                     userInfo:nil];
+                    response = [self createResponseFromError:error];
+                }
+                else {
+                    response.data = serializedObject;
+                }
             }
         }
         else if(_serializationArrayClass) {
             NSMutableArray* arrayOfData = [NSMutableArray new];
 
             for(NSDictionary* objectDict in response.data) {
-                id serializedObject = [_serializationArrayClass modelWithExternalRepresentation:objectDict];
-                if(serializedObject == nil) {
-                    NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                                         code:SNPSerializationErrorCode
-                                                     userInfo:nil];
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:objectDict
+                                                                              modelClass:_serializationArrayClass
+                                                                                   error:&error];
+                if(adapter == nil) {
                     response = [self createResponseFromError:error];
-                    arrayOfData = nil;
-                    break;
                 }
                 else {
-                    [arrayOfData addObject:serializedObject];
+                    id serializedObject = [adapter model];
+                    if(serializedObject == nil) {
+                        NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                                             code:SNPSerializationErrorCode
+                                                         userInfo:nil];
+                        response = [self createResponseFromError:error];
+                        arrayOfData = nil;
+                        break;
+                    }
+                    else {
+                        [arrayOfData addObject:serializedObject];
+                    }
                 }
             }
 
@@ -329,7 +347,7 @@ didReceiveResponse:(NSURLResponse*)response {
             NSAssert(YES, @"Cannot deserialize response data; no deserialization method is set for this operation!");
         }
     }
-
+    
     if(_finishBlock) {
         _finishBlock(response);
     }

@@ -11,14 +11,14 @@
 
 @implementation SNPFilterClause
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"objectType": @"object_type",
-            @"op": @"operator",
-            }];
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"objectType": @"object_type",
+             @"op": @"operator",
+             };
 }
 
-+ (NSValueTransformer *)objectTypeTransformer {
++ (NSValueTransformer *)objectTypeJSONTransformer {
     NSDictionary *objectTypes = @{
                                   @"post": @(SNPFilterClauseObjectTypePost),
                                   @"star": @(SNPFilterClauseObjectTypeStar),
@@ -29,15 +29,17 @@
                                   @"channel_subscription": @(SNPFilterClauseObjectTypeChannelSubscription),
                                   };
 
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return objectTypes[str];
-    }
-                                                         reverseBlock:^(NSNumber *objectType) {
-                                                             return [objectTypes allKeysForObject:objectType].lastObject;
-                                                         }];
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSString *str) {
+                return objectTypes[str];
+            }
+                                                         reverseBlock:
+            ^id(NSNumber *objectType) {
+                return [objectTypes allKeysForObject:objectType].lastObject;
+            }];
 }
 
-+ (NSValueTransformer *)opTransformer {
++ (NSValueTransformer *)opJSONTransformer {
     NSDictionary *operators = @{
                                 @"equals": @(SNPFilterClauseOperatorEquals),
                                 @"matches": @(SNPFilterClauseOperatorMatches),
@@ -48,21 +50,25 @@
                                 @"one_of": @(SNPFilterClauseOperatorOneOf),
                                 };
 
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return operators[str];
-    }
-                                                         reverseBlock:^(NSNumber *op) {
-                                                             return [operators allKeysForObject:op].lastObject;
-                                                         }];
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSString *str) {
+                return operators[str];
+            }
+                                                         reverseBlock:
+            ^id(NSNumber *op) {
+                return [operators allKeysForObject:op].lastObject;
+            }];
 }
 
-+ (NSValueTransformer *)valueTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(id value) {
-        return value;
-    }
-                                                         reverseBlock:^(id value) {
-                                                             return value;
-                                                         }];
++ (NSValueTransformer *)valueJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(id value) {
+                return value;
+            }
+                                                         reverseBlock:
+            ^id(id value) {
+                return value;
+            }];
 }
 
 @end

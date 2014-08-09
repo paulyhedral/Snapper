@@ -11,4 +11,8 @@
 
 @implementation SNPEntity
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{};
+}
+
 @end

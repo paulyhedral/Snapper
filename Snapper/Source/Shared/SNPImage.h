@@ -10,6 +10,7 @@
 
 
 @interface SNPImage : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSURL* URL;
 @property (nonatomic, assign) NSInteger width;

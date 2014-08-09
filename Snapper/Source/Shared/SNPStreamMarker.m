@@ -24,29 +24,33 @@
     return dateFormatter;
 }
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"postId": @"id",
-            @"updatedAt": @"updated_at",
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"postId": @"id",
+             @"updatedAt": @"updated_at",
+             };
+}
+
++ (NSValueTransformer*)postIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
             }];
 }
 
-+ (NSValueTransformer*)postIdTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
-}
-
-+ (NSValueTransformer*)updatedAtTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return [self.dateFormatter dateFromString:str];
-    }
-                                                         reverseBlock:^(NSDate *date) {
-                                                             return [self.dateFormatter stringFromDate:date];
-                                                         }];
++ (NSValueTransformer*)updatedAtJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *str) {
+                return [self.dateFormatter dateFromString:str];
+            }
+                                                         reverseBlock:
+            ^(NSDate *date) {
+                return [self.dateFormatter stringFromDate:date];
+            }];
 }
 
 @end

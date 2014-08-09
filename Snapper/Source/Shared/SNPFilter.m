@@ -11,36 +11,40 @@
 
 @implementation SNPFilter
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"filterId": @"id",
-            @"matchPolicy": @"match_policy",
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"filterId": @"id",
+             @"matchPolicy": @"match_policy",
+             };
+}
+
++ (NSValueTransformer *)matchPolicyJSONTransformer {
+    NSDictionary *policies = @{
+                               @"include_any": @(SNPFilterMatchPolicyIncludeAny),
+                               @"include_all": @(SNPFilterMatchPolicyIncludeAll),
+                               @"exclude_any": @(SNPFilterMatchPolicyIncludeAny),
+                               @"exclude_all": @(SNPFilterMatchPolicyExcludeAll),
+                               };
+
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSString *str) {
+                return policies[str];
+            }
+                                                         reverseBlock:
+            ^id(NSNumber *policy) {
+                return [policies allKeysForObject:policy].lastObject;
             }];
 }
 
-+ (NSValueTransformer *)matchPolicyTransformer {
-    NSDictionary *policies = @{
-                             @"include_any": @(SNPFilterMatchPolicyIncludeAny),
-                             @"include_all": @(SNPFilterMatchPolicyIncludeAll),
-                             @"exclude_any": @(SNPFilterMatchPolicyIncludeAny),
-                             @"exclude_all": @(SNPFilterMatchPolicyExcludeAll),
-                             };
-
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return policies[str];
-    }
-                                                         reverseBlock:^(NSNumber *policy) {
-        return [policies allKeysForObject:policy].lastObject;
-    }];
-}
-
-+ (NSValueTransformer*)filterIdTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
++ (NSValueTransformer*)filterIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^id(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
+            }];
 }
 
 @end

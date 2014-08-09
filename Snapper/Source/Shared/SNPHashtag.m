@@ -11,11 +11,11 @@
 
 @implementation SNPHashtag
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
             @"position": @"pos",
             @"length": @"len",
-            }];
+            };
 }
 
 @end

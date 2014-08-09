@@ -11,8 +11,15 @@
 
 @implementation SNPAnnotation
 
-+ (NSValueTransformer*)valueTransformer {
-    return [MTLValueTransformer reversibleTransformerWithBlock:^ id (id value) {
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+
+             };
+}
+
++ (NSValueTransformer*)valueJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithBlock:
+            ^(id value) {
         return value;
     }];
 }

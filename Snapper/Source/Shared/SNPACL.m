@@ -11,12 +11,12 @@
 
 @implementation SNPACL
 
-+ (NSDictionary*)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
++ (NSDictionary*)JSONKeyPathsByPropertyKey {
+    return @{
             @"anyUser": @"any_user",
             @"public_": @"public",
             @"userIds": @"user_ids",
-            }];
+            };
 }
 
 @end

@@ -11,24 +11,36 @@
 
 @implementation SNPToken
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"clientId": @"client_id",
-            @"appClientId": @"app.client_id",
-            @"appLink": @"app.link",
-            @"appName": @"app.name",
-            @"storageAvailable": @"storage.available",
-            @"storageUsed": @"storage.used",
-            }];
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"clientId": @"client_id",
+             @"appClientId": @"app.client_id",
+             @"appLink": @"app.link",
+             @"appName": @"app.name",
+             @"storageAvailable": @"storage.available",
+             @"storageUsed": @"storage.used",
+             };
 }
 
-+ (NSValueTransformer*)userTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSDictionary* dict) {
-        return [[SNPUser alloc] initWithExternalRepresentation:dict];
-    }
-                                                         reverseBlock:^(SNPUser* user) {
-                                                             return [user externalRepresentation];
-                                                         }];
++ (NSValueTransformer*)userJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSDictionary* dict) {
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                              modelClass:[SNPUser class]
+                                                                                   error:&error];
+                if(adapter == nil) {
+                    NSLog(@"Unable to deserialize user: %@", error);
+                    return nil;
+                }
+
+                return [adapter model];
+            }
+                                                         reverseBlock:
+            ^id(SNPUser* user) {
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:user];
+                return [adapter JSONDictionary];
+            }];
 }
 
 @end

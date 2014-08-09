@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, SNPInteractionAction) {
 };
 
 @interface SNPInteraction : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, assign) SNPInteractionAction action;
 @property (nonatomic, retain) NSArray* objects;

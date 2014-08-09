@@ -10,6 +10,7 @@
 
 
 @interface SNPConfiguration : MTLModel
+<MTLJSONSerializing>
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger textUriTemplateLengthPostId;

@@ -10,6 +10,7 @@
 
 
 @interface SNPACL : MTLModel
+<MTLJSONSerializing>
 
 // -- Properties --
 @property (nonatomic, assign) BOOL immutable;

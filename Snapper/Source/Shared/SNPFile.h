@@ -18,6 +18,7 @@ typedef enum : NSInteger {
 } SNPFileKind;
 
 @interface SNPDerivedFile : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString* mimeType;
 @property (nonatomic, copy) NSString* sha1;
@@ -30,6 +31,7 @@ typedef enum : NSInteger {
 @end
 
 @interface SNPFile : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, retain) NSArray* annotations;
 @property (nonatomic, assign) BOOL complete;

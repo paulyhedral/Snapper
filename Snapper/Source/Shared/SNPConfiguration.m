@@ -11,8 +11,8 @@
 
 @implementation SNPConfiguration
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
             @"textUriTemplateLengthPostId": @"text.uri_template_length.post_id",
             @"textUriTemplateLengthMessageId": @"text.uri_template_length.message_id",
             @"userAnnotationMaxBytes": @"user.annotation_max_bytes",
@@ -23,7 +23,7 @@
             @"messageAnnotationMaxBytes": @"message.annotation_max_bytes",
             @"messageTextMaxLength": @"message.text_max_length",
             @"channelAnnotationMaxBytes": @"channel.annotation_max_bytes",
-            }];
+            };
 }
 
 @end

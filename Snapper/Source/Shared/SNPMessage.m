@@ -25,91 +25,124 @@
     return dateFormatter;
 }
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"messageId": @"id",
-            @"channelId": @"channel_id",
-            @"createdAt": @"created_at",
-            @"sourceName": @"source.name",
-            @"sourceLink": @"source.link",
-            @"sourceClientId": @"source.client_id",
-            @"machineOnly": @"machine_only",
-            @"threadId": @"thread_id",
-            @"numReplies": @"num_replies",
-            @"mentions": @"entities.mentions",
-            @"hashtags": @"entities.hashtags",
-            @"links": @"entities.links",
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"messageId": @"id",
+             @"channelId": @"channel_id",
+             @"createdAt": @"created_at",
+             @"sourceName": @"source.name",
+             @"sourceLink": @"source.link",
+             @"sourceClientId": @"source.client_id",
+             @"machineOnly": @"machine_only",
+             @"threadId": @"thread_id",
+             @"numReplies": @"num_replies",
+             @"mentions": @"entities.mentions",
+             @"hashtags": @"entities.hashtags",
+             @"links": @"entities.links",
+             };
+}
+
++ (NSValueTransformer*)channelIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
             }];
 }
 
-+ (NSValueTransformer*)channelIdTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
++ (NSValueTransformer*)messageIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
+            }];
 }
 
-+ (NSValueTransformer*)messageIdTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
++ (NSValueTransformer*)threadIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
+            }];
 }
 
-+ (NSValueTransformer*)threadIdTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
++ (NSValueTransformer*)createdAtJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *str) {
+                return [self.dateFormatter dateFromString:str];
+            }
+                                                         reverseBlock:
+            ^(NSDate *date) {
+                return [self.dateFormatter stringFromDate:date];
+            }];
 }
 
-+ (NSValueTransformer*)createdAtTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return [self.dateFormatter dateFromString:str];
-    }
-                                                         reverseBlock:^(NSDate *date) {
-                                                             return [self.dateFormatter stringFromDate:date];
-                                                         }];
++ (NSValueTransformer*)userJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSDictionary* dict) {
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                              modelClass:[SNPUser class]
+                                                                                   error:&error];
+                if(adapter == nil) {
+                    NSLog(@"Unable to deserialize user: %@", error);
+                    return nil;
+                }
+                else {
+                    return [adapter model];
+                }
+            }
+                                                         reverseBlock:
+            ^id(SNPUser* user) {
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:user];
+                return [adapter JSONDictionary];
+            }];
 }
 
-+ (NSValueTransformer*)userTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSDictionary* dict) {
-        return [[SNPUser alloc] initWithExternalRepresentation:dict];
-    }
-                                                         reverseBlock:^(SNPUser* user) {
-                                                             return [user externalRepresentation];
-                                                         }];
-}
++ (NSValueTransformer*)annotationsJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* annotationDicts) {
+                NSMutableArray* annotations = [NSMutableArray new];
 
-+ (NSValueTransformer*)annotationsTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* annotationDicts) {
-        NSMutableArray* annotations = [NSMutableArray new];
+                for(NSDictionary* annoDict in annotationDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:annoDict
+                                                                                  modelClass:[SNPAnnotation class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize mention: %@", error);
+                    }
+                    else {
+                        SNPAnnotation* annotation = (SNPAnnotation*)[adapter model];
 
-        for(NSDictionary* annoDict in annotationDicts) {
-            SNPAnnotation* annotation = [[SNPAnnotation alloc] initWithExternalRepresentation:annoDict];
+                        [annotations addObject:annotation];
+                    }
+                }
 
-            [annotations addObject:annotation];
-        }
+                return [annotations copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* annotations) {
+                NSMutableArray* annoDicts = [NSMutableArray new];
 
-        return [annotations copy];
-    }
-                                                         reverseBlock:^(NSArray* annotations) {
-                                                             NSMutableArray* annoDicts = [NSMutableArray new];
+                for(SNPAnnotation* annotation in annotations) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:annotation];
+                    NSDictionary* annoDict = [adapter JSONDictionary];
 
-                                                             for(SNPAnnotation* annotation in annotations) {
-                                                                 NSDictionary* annoDict = [annotation externalRepresentation];
+                    [annoDicts addObject:annoDict];
+                }
 
-                                                                 [annoDicts addObject:annoDict];
-                                                             }
-
-                                                             return [annoDicts copy];
-                                                         }];
+                return [annoDicts copy];
+            }];
 }
 
 @end

@@ -15,87 +15,123 @@
 
 @implementation SNPDescription
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"mentions": @"entities.mentions",
-            @"hashtags": @"entities.hashtags",
-            @"links": @"entities.links",
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"mentions": @"entities.mentions",
+             @"hashtags": @"entities.hashtags",
+             @"links": @"entities.links",
+             };
+}
+
++ (NSValueTransformer*)mentionsJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSArray* mentionsDicts) {
+                NSMutableArray* mentions = [NSMutableArray new];
+
+                for(NSDictionary* mentionDict in mentionsDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:mentionDict
+                                                                                  modelClass:[SNPMention class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize mention: %@", error);
+                    }
+                    else {
+                        SNPMention* mention = (SNPMention*)[adapter model];
+
+                        [mentions addObject:mention];
+                    }
+                }
+
+                return [mentions copy];
+            }
+                                                         reverseBlock:
+            ^(NSArray* mentions) {
+                NSMutableArray* mentionsDicts = [NSMutableArray new];
+
+                for(SNPMention* mention in mentions) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:mention];
+                    NSDictionary* mentionDict = [adapter JSONDictionary];
+
+                    [mentionsDicts addObject:mentionDict];
+                }
+
+                return [mentionsDicts copy];
             }];
 }
 
-+ (NSValueTransformer*)mentionsTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* mentionsDicts) {
-        NSMutableArray* mentions = [NSMutableArray new];
++ (NSValueTransformer*)linksJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* linksDicts) {
+                NSMutableArray* links = [NSMutableArray new];
 
-        for(NSDictionary* mentionDict in mentionsDicts) {
-            SNPMention* mention = [[SNPMention alloc] initWithExternalRepresentation:mentionDict];
+                for(NSDictionary* linkDict in linksDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:linkDict
+                                                                                  modelClass:[SNPLink class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize mention: %@", error);
+                    }
+                    else {
+                        SNPLink* link = (SNPLink*)[adapter model];
 
-            [mentions addObject:mention];
-        }
+                        [links addObject:link];
+                    }
+                }
 
-        return [mentions copy];
-    }
-                                                         reverseBlock:^(NSArray* mentions) {
-                                                             NSMutableArray* mentionsDicts = [NSMutableArray new];
+                return [links copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* links) {
+                NSMutableArray* linksDicts = [NSMutableArray new];
 
-                                                             for(SNPMention* mention in mentions) {
-                                                                 NSDictionary* mentionDict = [mention externalRepresentation];
+                for(SNPLink* link in links) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:link];
+                    NSDictionary* linkDict = [adapter JSONDictionary];
 
-                                                                 [mentionsDicts addObject:mentionDict];
-                                                             }
+                    [linksDicts addObject:linkDict];
+                }
 
-                                                             return [mentionsDicts copy];
-                                                         }];
+                return [linksDicts copy];
+            }];
 }
 
-+ (NSValueTransformer*)linksTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* linksDicts) {
-        NSMutableArray* links = [NSMutableArray new];
++ (NSValueTransformer*)hashtagsJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSArray* hashtagsDicts) {
+                NSMutableArray* hashtags = [NSMutableArray new];
 
-        for(NSDictionary* linkDict in linksDicts) {
-            SNPLink* link = [[SNPLink alloc] initWithExternalRepresentation:linkDict];
+                for(NSDictionary* hashtagDict in hashtagsDicts) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:hashtagDict
+                                                                                  modelClass:[SNPHashtag class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize mention: %@", error);
+                    }
+                    else {
+                        SNPHashtag* hashtag = (SNPHashtag*)[adapter model];
 
-            [links addObject:link];
-        }
+                        [hashtags addObject:hashtag];
+                    }
+                }
 
-        return [links copy];
-    }
-                                                         reverseBlock:^(NSArray* links) {
-                                                             NSMutableArray* linksDicts = [NSMutableArray new];
+                return [hashtags copy];
+            }
+                                                         reverseBlock:
+            ^id(NSArray* hashtags) {
+                NSMutableArray* hashtagsDicts = [NSMutableArray new];
 
-                                                             for(SNPLink* link in links) {
-                                                                 NSDictionary* linkDict = [link externalRepresentation];
+                for(SNPHashtag* hashtag in hashtags) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:hashtag];
+                    NSDictionary* hashtagDict = [adapter JSONDictionary];
 
-                                                                 [linksDicts addObject:linkDict];
-                                                             }
+                    [hashtagsDicts addObject:hashtagDict];
+                }
 
-                                                             return [linksDicts copy];
-                                                         }];
-}
-
-+ (NSValueTransformer*)hashtagsTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray* hashtagsDicts) {
-        NSMutableArray* hashtags = [NSMutableArray new];
-
-        for(NSDictionary* hashtagDict in hashtagsDicts) {
-            SNPHashtag* hashtag = [[SNPHashtag alloc] initWithExternalRepresentation:hashtagDict];
-
-            [hashtags addObject:hashtag];
-        }
-
-        return [hashtags copy];
-    }
-                                                         reverseBlock:^(NSArray* hashtags) {
-                                                             NSMutableArray* hashtagsDicts = [NSMutableArray new];
-
-                                                             for(SNPHashtag* hashtag in hashtags) {
-                                                                 NSDictionary* hashtagDict = [hashtag externalRepresentation];
-                                                                 
-                                                                 [hashtagsDicts addObject:hashtagDict];
-                                                             }
-                                                             
-                                                             return [hashtagsDicts copy];
-                                                         }];
+                return [hashtagsDicts copy];
+            }];
 }
 
 @end

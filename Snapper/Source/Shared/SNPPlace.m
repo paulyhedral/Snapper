@@ -13,45 +13,52 @@
 
 @implementation SNPPlace
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"factualId": @"factual_id",
-            @"addressExtended": @"address_extended",
-            @"countryCode": @"country_code",
-            @"adminRegion": @"admin_region",
-            @"postTown": @"post_town",
-            @"POBox": @"po_box",
-            @"open": @"is_open",
-            }];
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"factualId": @"factual_id",
+             @"addressExtended": @"address_extended",
+             @"countryCode": @"country_code",
+             @"adminRegion": @"admin_region",
+             @"postTown": @"post_town",
+             @"POBox": @"po_box",
+             @"open": @"is_open",
+             };
 }
 
-+ (NSValueTransformer*)websiteTransformer {
++ (NSValueTransformer*)websiteJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
-+ (NSValueTransformer*)categoriesTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSArray *categoriesArray) {
-        NSMutableArray* categories = [NSMutableArray new];
++ (NSValueTransformer*)categoriesJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSArray *categoriesArray) {
+                NSMutableArray* categories = [NSMutableArray new];
 
-        for(NSDictionary* categoryDict in categoriesArray) {
-            SNPPlaceCategory* category = [[SNPPlaceCategory alloc] initWithExternalRepresentation:categoryDict];
+                for(NSDictionary* categoryDict in categoriesArray) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:categoryDict
+                                                                                  modelClass:[SNPPlaceCategory class]
+                                                                                       error:&error];
+                    SNPPlaceCategory* category = (SNPPlaceCategory*)[adapter model];
 
-            [categories addObject:category];
-        }
+                    [categories addObject:category];
+                }
 
-        return [categories copy];
-    }
-                                                         reverseBlock:^(NSArray* categoriesArray) {
-                                                             NSMutableArray* categories = [NSMutableArray new];
+                return [categories copy];
+            }
+                                                         reverseBlock:
+            ^(NSArray* categoriesArray) {
+                NSMutableArray* categories = [NSMutableArray new];
 
-                                                             for(SNPPlaceCategory* category in categoriesArray) {
-                                                                 NSDictionary* categoryDict = [category externalRepresentation];
+                for(SNPPlaceCategory* category in categoriesArray) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:category];
+                    NSDictionary* categoryDict = [adapter JSONDictionary];
 
-                                                                 [categories addObject:categoryDict];
-                                                             }
+                    [categories addObject:categoryDict];
+                }
 
-                                                             return [categories copy];
-                                                         }];
+                return [categories copy];
+            }];
 }
 
 @end

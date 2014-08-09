@@ -743,7 +743,7 @@
 		5B90EC3316F185DB00A50BCF /* SNPUnmuteChannelOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B90EC3116F185DB00A50BCF /* SNPUnmuteChannelOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B90EC3416F185DB00A50BCF /* SNPUnmuteChannelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90EC3216F185DB00A50BCF /* SNPUnmuteChannelOperation.m */; };
 		5B90EC3516F185DB00A50BCF /* SNPUnmuteChannelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90EC3216F185DB00A50BCF /* SNPUnmuteChannelOperation.m */; };
-		5B920E361922E5A700B6FA2E /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EFB1680EE3C006C63C1 /* libMantle.a */; };
+		5B920E361922E5A700B6FA2E /* libMantle-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EFB1680EE3C006C63C1 /* libMantle-iOS.a */; };
 		5B92DAB017276418005614DD /* SNPGetMyMessagesOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */; };
 		5B92DAB117276418005614DD /* SNPChannelParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121ACD171C6FE900C505EA /* SNPChannelParameters.h */; };
 		5B92DAB217276418005614DD /* SNPCommonParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */; };
@@ -801,6 +801,9 @@
 		5BBBDD0716B8E66A0026A041 /* SNPGetFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBDD0516B8E66A0026A041 /* SNPGetFilesOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BBBDD0816B8E66A0026A041 /* SNPGetFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */; };
 		5BBBDD0916B8E66A0026A041 /* SNPGetFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */; };
+		5BC6062E19965A30002A6A84 /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5BC6062B19965A30002A6A84 /* Base.xcconfig */; };
+		5BC6062F19965A30002A6A84 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5BC6062C19965A30002A6A84 /* Debug.xcconfig */; };
+		5BC6063019965A30002A6A84 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5BC6062D19965A30002A6A84 /* Release.xcconfig */; };
 		5BD0241516861E5100E24D5A /* SNPConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD0241416861E5100E24D5A /* SNPConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BD5927D16C2095F0066E306 /* SNPPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD5927B16C2095F0066E306 /* SNPPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BD5927E16C2095F0066E306 /* SNPPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5927C16C2095F0066E306 /* SNPPlace.m */; };
@@ -923,6 +926,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D042FC7815F72BC7004E8054;
 			remoteInfo = "Mantle iOS";
+		};
+		5BC60628199659F0002A6A84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0A56B461804B04900A84EDC;
+			remoteInfo = "Mantle-Mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1506,6 +1516,9 @@
 		5BBBDD0116B8E63D0026A041 /* SNPGetFileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetFileOperation.m; sourceTree = "<group>"; };
 		5BBBDD0516B8E66A0026A041 /* SNPGetFilesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetFilesOperation.h; sourceTree = "<group>"; };
 		5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetFilesOperation.m; sourceTree = "<group>"; };
+		5BC6062B19965A30002A6A84 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		5BC6062C19965A30002A6A84 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		5BC6062D19965A30002A6A84 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		5BD0241416861E5100E24D5A /* SNPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPConstants.h; sourceTree = "<group>"; };
 		5BD5927B16C2095F0066E306 /* SNPPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPlace.h; sourceTree = "<group>"; };
 		5BD5927C16C2095F0066E306 /* SNPPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPPlace.m; sourceTree = "<group>"; };
@@ -1548,7 +1561,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B920E361922E5A700B6FA2E /* libMantle.a in Frameworks */,
+				5B920E361922E5A700B6FA2E /* libMantle-iOS.a in Frameworks */,
 				5BE0A5621682D450005AA40C /* CoreGraphics.framework in Frameworks */,
 				5BE0A55E16818A76005AA40C /* UIKit.framework in Frameworks */,
 				3C6B5EB11680E9B0006C63C1 /* Foundation.framework in Frameworks */,
@@ -1652,6 +1665,7 @@
 		3C6B5ED91680EE23006C63C1 /* Snapper */ = {
 			isa = PBXGroup;
 			children = (
+				5BC6062A19965A30002A6A84 /* Configuration */,
 				3C6B5EDA1680EE23006C63C1 /* Resources */,
 				3C6B5EDE1680EE23006C63C1 /* Source */,
 			);
@@ -1788,9 +1802,10 @@
 			isa = PBXGroup;
 			children = (
 				3C6B5EF71680EE3C006C63C1 /* Mantle.framework */,
-				3C6B5EF91680EE3C006C63C1 /* Mantle Mac Tests.octest */,
-				3C6B5EFB1680EE3C006C63C1 /* libMantle.a */,
-				3C6B5EFD1680EE3C006C63C1 /* Mantle iOS Tests.octest */,
+				3C6B5EF91680EE3C006C63C1 /* Mantle Tests.xctest */,
+				3C6B5EFB1680EE3C006C63C1 /* libMantle-iOS.a */,
+				3C6B5EFD1680EE3C006C63C1 /* Mantle-iOS Tests.xctest */,
+				5BC60629199659F0002A6A84 /* libMantle-Mac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2201,6 +2216,16 @@
 			name = "Convenience Operations";
 			sourceTree = "<group>";
 		};
+		5BC6062A19965A30002A6A84 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				5BC6062B19965A30002A6A84 /* Base.xcconfig */,
+				5BC6062C19965A30002A6A84 /* Debug.xcconfig */,
+				5BC6062D19965A30002A6A84 /* Release.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		5BD5928A16C21ABC0066E306 /* Places */ = {
 			isa = PBXGroup;
 			children = (
@@ -2416,7 +2441,7 @@
 			name = "Snapper-iOSTests";
 			productName = SnapperTests;
 			productReference = 3C6B5EBE1680E9B0006C63C1 /* Snapper-iOSTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		3C6B5F021680EE8A006C63C1 /* Snapper */ = {
 			isa = PBXNativeTarget;
@@ -2456,7 +2481,7 @@
 			name = "Snapper-OSXTests";
 			productName = "Snapper-OSXTests";
 			productReference = 3C6B5F191680EE8B006C63C1 /* Snapper-OSXTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		5B832B661881245A004EE45A /* Snapper-static */ = {
 			isa = PBXNativeTarget;
@@ -2520,25 +2545,32 @@
 			remoteRef = 3C6B5EF61680EE3C006C63C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3C6B5EF91680EE3C006C63C1 /* Mantle Mac Tests.octest */ = {
+		3C6B5EF91680EE3C006C63C1 /* Mantle Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Mantle Mac Tests.octest";
+			path = "Mantle Tests.xctest";
 			remoteRef = 3C6B5EF81680EE3C006C63C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3C6B5EFB1680EE3C006C63C1 /* libMantle.a */ = {
+		3C6B5EFB1680EE3C006C63C1 /* libMantle-iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libMantle.a;
+			path = "libMantle-iOS.a";
 			remoteRef = 3C6B5EFA1680EE3C006C63C1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3C6B5EFD1680EE3C006C63C1 /* Mantle iOS Tests.octest */ = {
+		3C6B5EFD1680EE3C006C63C1 /* Mantle-iOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Mantle iOS Tests.octest";
+			path = "Mantle-iOS Tests.xctest";
 			remoteRef = 3C6B5EFC1680EE3C006C63C1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5BC60629199659F0002A6A84 /* libMantle-Mac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMantle-Mac.a";
+			remoteRef = 5BC60628199659F0002A6A84 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2578,7 +2610,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC6063019965A30002A6A84 /* Release.xcconfig in Resources */,
 				3C6B5F361680EF6F006C63C1 /* Snapper-OSX-Info.plist in Resources */,
+				5BC6062E19965A30002A6A84 /* Base.xcconfig in Resources */,
+				5BC6062F19965A30002A6A84 /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3176,6 +3211,7 @@
 		};
 		3C6B5ED31680E9B0006C63C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC6062C19965A30002A6A84 /* Debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/Snapper.dst;
@@ -3195,6 +3231,7 @@
 		};
 		3C6B5ED41680E9B0006C63C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC6062D19965A30002A6A84 /* Release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/Snapper.dst;
@@ -3252,6 +3289,7 @@
 		};
 		3C6B5F291680EE8B006C63C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC6062C19965A30002A6A84 /* Debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -3279,6 +3317,7 @@
 		};
 		3C6B5F2A1680EE8B006C63C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC6062D19965A30002A6A84 /* Release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -3344,6 +3383,7 @@
 		};
 		5B832B831881245B004EE45A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC6062C19965A30002A6A84 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -3372,6 +3412,7 @@
 		};
 		5B832B841881245B004EE45A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC6062D19965A30002A6A84 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;

@@ -15,6 +15,7 @@
 
 
 @interface SNPChannel : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, assign) BOOL hasUnread;
 @property (nonatomic, assign) NSInteger channelId;

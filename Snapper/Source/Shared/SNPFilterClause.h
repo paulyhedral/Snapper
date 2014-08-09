@@ -30,6 +30,7 @@ typedef enum : NSInteger {
 } SNPFilterClauseOperator;
 
 @interface SNPFilterClause : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString* field;
 @property (nonatomic, assign) SNPFilterClauseObjectType objectType;

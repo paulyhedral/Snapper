@@ -11,42 +11,58 @@
 
 @implementation SNPStream
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-            @"streamId": @"id",
-            @"objectTypes": @"object_types",
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"streamId": @"id",
+             @"objectTypes": @"object_types",
+             };
+}
+
++ (NSValueTransformer*)streamIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                return [NSNumber numberWithInteger:[strId integerValue]];
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
             }];
 }
 
-+ (NSValueTransformer*)streamIdTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *strId) {
-        return [NSNumber numberWithInteger:[strId integerValue]];
-    }
-                                                         reverseBlock:^(NSNumber* intNum) {
-                                                             return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
-                                                         }];
-}
-
-+ (NSValueTransformer *)streamTypeTransformer {
++ (NSValueTransformer *)streamTypeJSONTransformer {
     NSDictionary *streamTypes = @{
                                   @"long_poll": @(SNPStreamTypeLongPoll),
                                   };
 
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        return streamTypes[str];
-    }
-                                                         reverseBlock:^(NSNumber *streamType) {
-                                                             return [streamTypes allKeysForObject:streamType].lastObject;
-                                                         }];
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *str) {
+                return streamTypes[str];
+            }
+                                                         reverseBlock:
+            ^(NSNumber *streamType) {
+                return [streamTypes allKeysForObject:streamType].lastObject;
+            }];
 }
 
-+ (NSValueTransformer*)filterTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSDictionary* dict) {
-        return [[SNPFilter alloc] initWithExternalRepresentation:dict];
-    }
-                                                         reverseBlock:^(SNPFilter* filter) {
-                                                             return [filter externalRepresentation];
-                                                         }];
++ (NSValueTransformer*)filterJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSDictionary* dict) {
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                              modelClass:[SNPFilter class]
+                                                                                   error:&error];
+                if(adapter == nil) {
+                    NSLog(@"Unable to deserialize filter: %@", error);
+                    return nil;
+                }
+
+                return [adapter model];
+            }
+                                                         reverseBlock:
+            ^id(SNPFilter* filter) {
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:filter];
+                return [adapter JSONDictionary];
+            }];
 }
 
 @end

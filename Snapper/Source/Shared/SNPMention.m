@@ -11,13 +11,13 @@
 
 @implementation SNPMention
 
-+ (NSDictionary *)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
             @"userId": @"id",
             @"position": @"pos",
             @"length": @"len",
             @"leading": @"is_leading",
-            }];
+            };
 }
 
 @end

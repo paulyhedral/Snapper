@@ -11,6 +11,7 @@
 
 
 @interface SNPPlace : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString* factualId;
 @property (nonatomic, copy) NSString* name;

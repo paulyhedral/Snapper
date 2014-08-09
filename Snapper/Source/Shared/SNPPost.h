@@ -12,6 +12,7 @@
 
 
 @interface SNPPost : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, assign) NSInteger postId;
 @property (nonatomic, retain) SNPUser* user;

@@ -10,6 +10,7 @@
 
 
 @interface SNPDescription : MTLModel
+<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString* text;
 @property (nonatomic, copy) NSString* html;

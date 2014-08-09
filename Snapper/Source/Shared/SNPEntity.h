@@ -15,5 +15,6 @@
  * Entities that subclass this are SNPMention, SNPHashtag, and SNPLink.
  */
 @interface SNPEntity : MTLModel
+<MTLJSONSerializing>
 
 @end

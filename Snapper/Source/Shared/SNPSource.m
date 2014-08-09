@@ -11,10 +11,10 @@
 
 @implementation SNPSource
 
-+ (NSDictionary*)externalRepresentationKeyPathsByPropertyKey {
-    return [super.externalRepresentationKeyPathsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
++ (NSDictionary*)JSONKeyPathsByPropertyKey {
+    return @{
             @"clientId": @"client_id",
-            }];
+            };
 }
 
 @end
