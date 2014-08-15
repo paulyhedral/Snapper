@@ -51,14 +51,21 @@
     body[@"type"] = _type;
 
     // readers
-    body[@"readers"] = [_readers externalRepresentation];
+    {
+        MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:_readers];
+        body[@"readers"] = [adapter JSONDictionary];
+    }
 
     // writers
-    body[@"writers"] = [_writers externalRepresentation];
+    {
+        MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:_writers];
+        body[@"writers"] = [adapter JSONDictionary];
+    }
 
     NSMutableArray* serializedAnnotations = [NSMutableArray new];
     for(SNPAnnotation* annotation in _annotations) {
-        NSDictionary* annotationDict = [annotation externalRepresentation];
+        MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:annotation];
+        NSDictionary* annotationDict = [adapter JSONDictionary];
         [serializedAnnotations addObject:annotationDict];
 
     }
@@ -76,7 +83,7 @@
 
     self.method = @"POST";
     self.body = bodyData;
-
+    
     [super main];
 }
 

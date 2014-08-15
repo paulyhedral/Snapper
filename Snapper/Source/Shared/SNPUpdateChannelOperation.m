@@ -44,7 +44,8 @@
     channel.readers = _readers;
     channel.writers = _writers;
 
-    NSDictionary* channelDict = [channel externalRepresentation];
+    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:channel];
+    NSDictionary* channelDict = [adapter JSONDictionary];
     NSError* error = nil;
     NSData* bodyData = [NSJSONSerialization dataWithJSONObject:channelDict
                                                        options:0

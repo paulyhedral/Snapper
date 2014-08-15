@@ -48,7 +48,8 @@
             NSMutableArray* serializedLinks = [NSMutableArray new];
             NSMutableArray* serializedMentions = [NSMutableArray new];
             for(SNPEntity* entity in _descriptionEntities) {
-                NSDictionary* entityDict = [entity externalRepresentation];
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:entity];
+                NSDictionary* entityDict = [adapter JSONDictionary];
 
                 if([entity isKindOfClass:[SNPLink class]]) {
                     [serializedLinks addObject:entityDict];
@@ -86,7 +87,8 @@
         NSMutableArray* serializedAnnotations = [NSMutableArray new];
 
         for(SNPAnnotation* annotation in _annotations) {
-            NSDictionary* annotationDict = [annotation externalRepresentation];
+            MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:annotation];
+            NSDictionary* annotationDict = [adapter JSONDictionary];
             [serializedAnnotations addObject:annotationDict];
         }
 

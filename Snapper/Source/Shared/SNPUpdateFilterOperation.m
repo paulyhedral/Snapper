@@ -47,7 +47,8 @@
     filter.matchPolicy = _matchPolicy;
     filter.clauses = _clauses;
 
-    NSDictionary* filterDict = [filter externalRepresentation];
+    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:filter];
+    NSDictionary* filterDict = [adapter JSONDictionary];
 
     NSError* error = nil;
     NSData* bodyData = [NSJSONSerialization dataWithJSONObject:filterDict

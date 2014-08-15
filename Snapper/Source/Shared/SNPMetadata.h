@@ -20,6 +20,7 @@
 @property (nonatomic, copy) NSString* errorId;
 @property (nonatomic, copy) NSString* errorSlug;
 @property (nonatomic, copy) NSString* errorMessage;
+@property (nonatomic, copy) NSError* error;
 
 // -- Pagination data --
 @property (nonatomic, assign) NSInteger minId;

@@ -161,6 +161,18 @@
     meta.errorSlug = metaDict[@"error_slug"];
     meta.errorMessage = metaDict[@"error_message"];
 
+    if(meta.errorId ||
+       meta.errorSlug ||
+       meta.errorMessage) {)
+        meta.error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                         code:meta.code
+                                     userInfo:(@{
+                                                 @"error_id": meta.errorId ?: @"",
+                                                 @"error_message" : meta.errorMessage ?: @"",
+                                                 @"error_slug" : meta.errorSlug ?: @""
+                                                 })];
+    }
+
     // Pagination data.
     meta.minId = [metaDict[@"min_id"] integerValue];
     meta.maxId = [metaDict[@"max_id"] integerValue];
@@ -347,7 +359,7 @@ didReceiveResponse:(NSURLResponse*)response {
             NSAssert(YES, @"Cannot deserialize response data; no deserialization method is set for this operation!");
         }
     }
-    
+
     if(_finishBlock) {
         _finishBlock(response);
     }

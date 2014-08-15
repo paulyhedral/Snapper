@@ -45,7 +45,8 @@
     file.name = self.name;
     file.annotations = _annotations;
 
-    NSDictionary* fileDict = [file externalRepresentation];
+    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:file];
+    NSDictionary* fileDict = [adapter JSONDictionary];
 
     NSError* error = nil;
     NSData* bodyData = [NSJSONSerialization dataWithJSONObject:fileDict
