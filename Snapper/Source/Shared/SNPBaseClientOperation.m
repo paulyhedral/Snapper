@@ -163,7 +163,7 @@
 
     if(meta.errorId ||
        meta.errorSlug ||
-       meta.errorMessage) {)
+       meta.errorMessage) {
         meta.error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
                                          code:meta.code
                                      userInfo:(@{
