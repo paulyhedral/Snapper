@@ -27,85 +27,114 @@
         NSMutableArray* interactions = [NSMutableArray new];
 
         for(NSDictionary* interactionDict in responseData) {
-            SNPInteraction* interaction = [SNPInteraction modelWithExternalRepresentation:interactionDict];
+            MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:interactionDict
+                                                                          modelClass:[SNPInteraction class]
+                                                                               error:error];
+            SNPInteraction* interaction = (SNPInteraction*)[adapter model];
 
             NSMutableArray* objects = [NSMutableArray new];
             for(NSDictionary* objectDict in interactionDict[@"objects"]) {
+                MTLJSONAdapter* adapter = nil;
                 SNPPost* post = nil;
                 SNPUser* user = nil;
                 SNPChannel* channel = nil;
 
                 switch(interaction.action) {
                     case SNPInteractionActionFollow:
-                        user = [SNPUser modelWithExternalRepresentation:objectDict];
-                        if(user == nil) {
-                            *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                                         code:SNPSerializationErrorCode
-                                                     userInfo:(@{
-                                                                 @"property" : @"follow.objects[user]",
-                                                                 @"value" : objectDict,
-                                                                 })];
-                            return nil;
+                        adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:objectDict
+                                                                      modelClass:[SNPUser class]
+                                                                           error:error];
+                        if(adapter) {
+                            user = (SNPUser*)[adapter model];
+                            if(user == nil) {
+                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                                             code:SNPSerializationErrorCode
+                                                         userInfo:(@{
+                                                                     @"property" : @"follow.objects[user]",
+                                                                     @"value" : objectDict,
+                                                                     })];
+                                return nil;
+                            }
+                            [objects addObject:user];
                         }
-                        [objects addObject:user];
                         break;
 
                     case SNPInteractionActionReply:
-                        post = [SNPPost modelWithExternalRepresentation:objectDict];
-                        if(post == nil) {
-                            *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                                         code:SNPSerializationErrorCode
-                                                     userInfo:(@{
-                                                                 @"property" : @"reply.objects[post]",
-                                                                 @"value" : objectDict,
-                                                                 })];
-                            return nil;
+                        adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:objectDict
+                                                                      modelClass:[SNPPost class]
+                                                                           error:error];
+                        if(adapter) {
+                            post = (SNPPost*)[adapter model];
+                            if(post == nil) {
+                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                                             code:SNPSerializationErrorCode
+                                                         userInfo:(@{
+                                                                     @"property" : @"reply.objects[post]",
+                                                                     @"value" : objectDict,
+                                                                     })];
+                                return nil;
+                            }
+                            [objects addObject:post];
                         }
-                        [objects addObject:post];
                         break;
 
                     case SNPInteractionActionRepost:
-                        post = [SNPPost modelWithExternalRepresentation:objectDict];
-                        if(post == nil) {
-                            *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                                         code:SNPSerializationErrorCode
-                                                     userInfo:(@{
-                                                                 @"property" : @"repost.objects[post]",
-                                                                 @"value" : objectDict,
-                                                                 })];
-                            return nil;
+                        adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:objectDict
+                                                                      modelClass:[SNPPost class]
+                                                                           error:error];
+                        if(adapter) {
+                            post = (SNPPost*)[adapter model];
+                            if(post == nil) {
+                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                                             code:SNPSerializationErrorCode
+                                                         userInfo:(@{
+                                                                     @"property" : @"repost.objects[post]",
+                                                                     @"value" : objectDict,
+                                                                     })];
+                                return nil;
+                            }
+                            [objects addObject:post];
                         }
-                        [objects addObject:post];
                         break;
 
                     case SNPInteractionActionStar:
-                        post = [SNPPost modelWithExternalRepresentation:objectDict];
-                        if(post == nil) {
-                            *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                                         code:SNPSerializationErrorCode
-                                                     userInfo:(@{
-                                                                 @"property" : @"star.objects[post]",
-                                                                 @"value" : objectDict,
-                                                                 })];
-                            return nil;
+                        adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:objectDict
+                                                                      modelClass:[SNPPost class]
+                                                                           error:error];
+                        if(adapter) {
+                            post = (SNPPost*)[adapter model];
+                            if(post == nil) {
+                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                                             code:SNPSerializationErrorCode
+                                                         userInfo:(@{
+                                                                     @"property" : @"star.objects[post]",
+                                                                     @"value" : objectDict,
+                                                                     })];
+                                return nil;
+                            }
+                            [objects addObject:post];
                         }
-                        [objects addObject:post];
                         break;
 
                     case SNPInteractionActionBroadcastCreate:
                     case SNPInteractionActionBroadcastSubscribe:
                     case SNPInteractionActionBroadcastUnsubscribe:
-                        channel = [SNPChannel modelWithExternalRepresentation:objectDict];
-                        if(channel == nil) {
-                            *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
-                                                         code:SNPSerializationErrorCode
-                                                     userInfo:(@{
-                                                                 @"property" : @"broadcast*.objects[channel]",
-                                                                 @"value" : objectDict,
-                                                                 })];
-                            return nil;
+                        adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:objectDict
+                                                                      modelClass:[SNPChannel class]
+                                                                           error:error];
+                        if(adapter) {
+                            channel = (SNPChannel*)[adapter model];
+                            if(channel == nil) {
+                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                                             code:SNPSerializationErrorCode
+                                                         userInfo:(@{
+                                                                     @"property" : @"broadcast*.objects[channel]",
+                                                                     @"value" : objectDict,
+                                                                     })];
+                                return nil;
+                            }
+                            [objects addObject:channel];
                         }
-                        [objects addObject:channel];
                         break;
 
                     case SNPInteractionActionWelcome:
@@ -116,9 +145,9 @@
                         *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
                                                      code:SNPSerializationErrorCode
                                                  userInfo:(@{
-                                                           @"property" : @"action(unknown)",
-                                                           @"value" : @(interaction.action)
-                                                           })];
+                                                             @"property" : @"action(unknown)",
+                                                             @"value" : @(interaction.action)
+                                                             })];
                         break;
                 }
             }
@@ -126,11 +155,17 @@
 
             NSMutableArray* users = [NSMutableArray new];
             for(NSDictionary* userDict in interactionDict[@"users"]) {
-                SNPUser* user = [SNPUser modelWithExternalRepresentation:userDict];
-                [users addObject:user];
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:userDict
+                                                                              modelClass:[SNPUser class]
+                                                                                   error:&error];
+                if(adapter) {
+                    SNPUser* user = (SNPUser*)[adapter model];
+                    [users addObject:user];
+                }
             }
             interaction.users = [users copy];
-
+            
             [interactions addObject:interaction];
         }
         

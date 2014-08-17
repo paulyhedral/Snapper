@@ -75,21 +75,29 @@
 + (NSValueTransformer*)descriptionObjectJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^id(NSDictionary* dict) {
-                NSError* error = nil;
-                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
-                                                                              modelClass:[SNPDescription class]
-                                                                                   error:&error];
-                if(adapter == nil) {
-                    NSLog(@"Unable to deserialize description: %@", error);
-                    return nil;
+                if(dict) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                                  modelClass:[SNPDescription class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize description: %@", error);
+                        return nil;
+                    }
+
+                    return [adapter model];
                 }
 
-                return [adapter model];
+                return nil;
             }
                                                          reverseBlock:
             ^id(SNPDescription* desc) {
-                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:desc];
-                return [adapter JSONDictionary];
+                if(desc) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:desc];
+                    return [adapter JSONDictionary];
+                }
+
+                return nil;
             }];
 }
 
@@ -159,10 +167,10 @@
                 for(SNPAnnotation* annotation in annotations) {
                     MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:annotation];
                     NSDictionary* annoDict = [adapter JSONDictionary];
-
+                    
                     [annoDicts addObject:annoDict];
                 }
-
+                
                 return [annoDicts copy];
             }];
 }

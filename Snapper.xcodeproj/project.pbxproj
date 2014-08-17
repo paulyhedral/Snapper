@@ -1969,6 +1969,8 @@
 				5B4EFDB8174DB88A001A6862 /* SNPPartialUpdateUserOperation.m */,
 				3CDF11E01683B6900058CBE0 /* SNPSearchUsersOperation.h */,
 				3CDF11E11683B6900058CBE0 /* SNPSearchUsersOperation.m */,
+				5BACA45C1764E03B00DBAA7E /* SNPUnblockUserOperation.h */,
+				5BACA45D1764E03B00DBAA7E /* SNPUnblockUserOperation.m */,
 				3CDF12BC1683C93D0058CBE0 /* SNPUnfollowUserOperation.h */,
 				3CDF12BD1683C93E0058CBE0 /* SNPUnfollowUserOperation.m */,
 				3CDF12C61683C95B0058CBE0 /* SNPUnmuteUserOperation.h */,
@@ -1979,8 +1981,6 @@
 				3CDF12B81683C92A0058CBE0 /* SNPUpdateUserCoverImageOperation.m */,
 				3CDF129E1683C8CE0058CBE0 /* SNPUpdateUserOperation.h */,
 				3CDF129F1683C8CE0058CBE0 /* SNPUpdateUserOperation.m */,
-				5BACA45C1764E03B00DBAA7E /* SNPUnblockUserOperation.h */,
-				5BACA45D1764E03B00DBAA7E /* SNPUnblockUserOperation.m */,
 			);
 			name = Users;
 			sourceTree = "<group>";

@@ -245,8 +245,12 @@
             }
                                                          reverseBlock:
             ^id(SNPPost* post) {
-                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:post];
-                return [adapter JSONDictionary];
+                if(post) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:post];
+                    return [adapter JSONDictionary];
+                }
+
+                return nil;
             }];
 }
 
