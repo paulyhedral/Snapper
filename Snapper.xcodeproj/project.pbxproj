@@ -9,15 +9,12 @@
 /* Begin PBXBuildFile section */
 		3C6B5EB11680E9B0006C63C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EB01680E9B0006C63C1 /* Foundation.framework */; };
 		3C6B5EC01680E9B0006C63C1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EBF1680E9B0006C63C1 /* SenTestingKit.framework */; };
-		3C6B5EC21680E9B0006C63C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EC11680E9B0006C63C1 /* UIKit.framework */; };
 		3C6B5EC31680E9B0006C63C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EB01680E9B0006C63C1 /* Foundation.framework */; };
 		3C6B5EC61680E9B0006C63C1 /* libSnapper-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EAD1680E9B0006C63C1 /* libSnapper-iOS.a */; };
 		3C6B5EEA1680EE2C006C63C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE41680EE2C006C63C1 /* InfoPlist.strings */; };
 		3C6B5EEB1680EE2C006C63C1 /* SnapperTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE61680EE2C006C63C1 /* SnapperTests-Info.plist */; };
 		3C6B5EEC1680EE2C006C63C1 /* AccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE91680EE2C006C63C1 /* AccountTests.m */; };
-		3C6B5F051680EE8A006C63C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5F041680EE8A006C63C1 /* Cocoa.framework */; };
 		3C6B5F1A1680EE8B006C63C1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EBF1680E9B0006C63C1 /* SenTestingKit.framework */; };
-		3C6B5F1B1680EE8B006C63C1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5F041680EE8A006C63C1 /* Cocoa.framework */; };
 		3C6B5F1E1680EE8B006C63C1 /* Snapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5F031680EE8A006C63C1 /* Snapper.framework */; };
 		3C6B5F2F1680EEDE006C63C1 /* Snapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C6B5F2E1680EEDE006C63C1 /* Snapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C6B5F361680EF6F006C63C1 /* Snapper-OSX-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5F351680EF6F006C63C1 /* Snapper-OSX-Info.plist */; };
@@ -392,7 +389,6 @@
 		5B30DC3D1688F4F30089730B /* MiscellaneousTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF11D016837FC00058CBE0 /* MiscellaneousTests.m */; };
 		5B30DC3E1688F4F30089730B /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A52816816ED7005AA40C /* ModelTests.m */; };
 		5B30DC3F1688F5040089730B /* SnapperTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE61680EE2C006C63C1 /* SnapperTests-Info.plist */; };
-		5B30DC401688F5910089730B /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EF71680EE3C006C63C1 /* Mantle.framework */; };
 		5B36686E17BAF5E10010C5DB /* SNPConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B36686C17BAF5E10010C5DB /* SNPConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B36686F17BAF5E10010C5DB /* SNPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B36686D17BAF5E10010C5DB /* SNPConfiguration.m */; };
 		5B36687017BAF5E10010C5DB /* SNPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B36686D17BAF5E10010C5DB /* SNPConfiguration.m */; };
@@ -453,8 +449,6 @@
 		5B7DE440173FCFC900397B28 /* SNPBlockUserOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B7DE43E173FCFC900397B28 /* SNPBlockUserOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B7DE441173FCFC900397B28 /* SNPBlockUserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DE43F173FCFC900397B28 /* SNPBlockUserOperation.m */; };
 		5B7DE442173FCFC900397B28 /* SNPBlockUserOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DE43F173FCFC900397B28 /* SNPBlockUserOperation.m */; };
-		5B832B511881014F004EE45A /* Mantle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EF71680EE3C006C63C1 /* Mantle.framework */; };
-		5B832B681881245A004EE45A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5F041680EE8A006C63C1 /* Cocoa.framework */; };
 		5B832B88188124A6004EE45A /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A55016818048005AA40C /* NSString+URLEncoding.m */; };
 		5B832B89188124A6004EE45A /* NSString+URLEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A55216818048005AA40C /* NSString+URLEscape.m */; };
 		5B832B8A188124AD004EE45A /* SNPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F8716810A4D006C63C1 /* SNPResponse.m */; };
@@ -743,7 +737,6 @@
 		5B90EC3316F185DB00A50BCF /* SNPUnmuteChannelOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B90EC3116F185DB00A50BCF /* SNPUnmuteChannelOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B90EC3416F185DB00A50BCF /* SNPUnmuteChannelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90EC3216F185DB00A50BCF /* SNPUnmuteChannelOperation.m */; };
 		5B90EC3516F185DB00A50BCF /* SNPUnmuteChannelOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B90EC3216F185DB00A50BCF /* SNPUnmuteChannelOperation.m */; };
-		5B920E361922E5A700B6FA2E /* libMantle-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EFB1680EE3C006C63C1 /* libMantle-iOS.a */; };
 		5B92DAB017276418005614DD /* SNPGetMyMessagesOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121ACF171C780000C505EA /* SNPGetMyMessagesOperation.h */; };
 		5B92DAB117276418005614DD /* SNPChannelParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121ACD171C6FE900C505EA /* SNPChannelParameters.h */; };
 		5B92DAB217276418005614DD /* SNPCommonParameters.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */; };
@@ -801,9 +794,6 @@
 		5BBBDD0716B8E66A0026A041 /* SNPGetFilesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBDD0516B8E66A0026A041 /* SNPGetFilesOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BBBDD0816B8E66A0026A041 /* SNPGetFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */; };
 		5BBBDD0916B8E66A0026A041 /* SNPGetFilesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBBDD0616B8E66A0026A041 /* SNPGetFilesOperation.m */; };
-		5BC6062E19965A30002A6A84 /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5BC6062B19965A30002A6A84 /* Base.xcconfig */; };
-		5BC6062F19965A30002A6A84 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5BC6062C19965A30002A6A84 /* Debug.xcconfig */; };
-		5BC6063019965A30002A6A84 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5BC6062D19965A30002A6A84 /* Release.xcconfig */; };
 		5BD0241516861E5100E24D5A /* SNPConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD0241416861E5100E24D5A /* SNPConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BD5927D16C2095F0066E306 /* SNPPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD5927B16C2095F0066E306 /* SNPPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BD5927E16C2095F0066E306 /* SNPPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5927C16C2095F0066E306 /* SNPPlace.m */; };
@@ -878,61 +868,12 @@
 			remoteGlobalIDString = 3C6B5EAC1680E9B0006C63C1;
 			remoteInfo = Snapper;
 		};
-		3C6B5EF61680EE3C006C63C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D042FC3C15F72B23004E8054;
-			remoteInfo = "Mantle Mac";
-		};
-		3C6B5EF81680EE3C006C63C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D042FC5415F72B23004E8054;
-			remoteInfo = "Mantle Mac Tests";
-		};
-		3C6B5EFA1680EE3C006C63C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D042FC7915F72BC7004E8054;
-			remoteInfo = "Mantle iOS";
-		};
-		3C6B5EFC1680EE3C006C63C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D042FC8715F72BC7004E8054;
-			remoteInfo = "Mantle iOS Tests";
-		};
 		3C6B5F1C1680EE8B006C63C1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C6B5EA51680E9B0006C63C1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3C6B5F021680EE8A006C63C1;
 			remoteInfo = "Snapper-OSX";
-		};
-		3C6B5F321680EF0D006C63C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D042FC3B15F72B23004E8054;
-			remoteInfo = "Mantle Mac";
-		};
-		5B920E371922E5B100B6FA2E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D042FC7815F72BC7004E8054;
-			remoteInfo = "Mantle iOS";
-		};
-		5BC60628199659F0002A6A84 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0A56B461804B04900A84EDC;
-			remoteInfo = "Mantle-Mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1088,7 +1029,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B832B511881014F004EE45A /* Mantle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1241,18 +1181,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02FF5FBB9FA542889490BDE9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6B5EAD1680E9B0006C63C1 /* libSnapper-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSnapper-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6B5EB01680E9B0006C63C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C6B5EBE1680E9B0006C63C1 /* Snapper-iOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snapper-iOSTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6B5EBF1680E9B0006C63C1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3C6B5EC11680E9B0006C63C1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3C6B5EE51680EE2C006C63C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C6B5EE61680EE2C006C63C1 /* SnapperTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SnapperTests-Info.plist"; sourceTree = "<group>"; };
 		3C6B5EE81680EE2C006C63C1 /* AccountTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTests.h; sourceTree = "<group>"; };
 		3C6B5EE91680EE2C006C63C1 /* AccountTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTests.m; sourceTree = "<group>"; };
-		3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = Libraries/Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
 		3C6B5F031680EE8A006C63C1 /* Snapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Snapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C6B5F041680EE8A006C63C1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3C6B5F071680EE8A006C63C1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		3C6B5F081680EE8A006C63C1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3C6B5F091680EE8A006C63C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1406,6 +1344,7 @@
 		3CDF12DB1683C9CE0058CBE0 /* SNPGetRepostersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetRepostersOperation.m; sourceTree = "<group>"; };
 		3CDF12DF1683C9DD0058CBE0 /* SNPGetStarrersOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetStarrersOperation.h; sourceTree = "<group>"; };
 		3CDF12E01683C9DE0058CBE0 /* SNPGetStarrersOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPGetStarrersOperation.m; sourceTree = "<group>"; };
+		544FF2B45A15428E8FE21296 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		5B121AC1171C6F9200C505EA /* SNPCommonParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPCommonParameters.h; sourceTree = "<group>"; };
 		5B121AC3171C6FA400C505EA /* SNPPaginationParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPaginationParameters.h; sourceTree = "<group>"; };
 		5B121AC5171C6FB700C505EA /* SNPUserParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPUserParameters.h; sourceTree = "<group>"; };
@@ -1473,7 +1412,6 @@
 		5B7DE43E173FCFC900397B28 /* SNPBlockUserOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPBlockUserOperation.h; sourceTree = "<group>"; };
 		5B7DE43F173FCFC900397B28 /* SNPBlockUserOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPBlockUserOperation.m; sourceTree = "<group>"; };
 		5B832B671881245A004EE45A /* libSnapper-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSnapper-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B832B741881245A004EE45A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5B832CCB18812801004EE45A /* SNPPasswordLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPasswordLoginOperation.h; sourceTree = "<group>"; };
 		5B832CCC18812801004EE45A /* SNPPasswordLoginOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPPasswordLoginOperation.m; sourceTree = "<group>"; };
 		5B8A333216B791B800BE5A8A /* SNPFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPFile.h; sourceTree = "<group>"; };
@@ -1519,6 +1457,8 @@
 		5BC6062B19965A30002A6A84 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		5BC6062C19965A30002A6A84 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		5BC6062D19965A30002A6A84 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		5BCF1E0E19A8D41A005FF020 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		5BCF1E0F19A8D425005FF020 /* Snapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snapper.podspec; sourceTree = "<group>"; };
 		5BD0241416861E5100E24D5A /* SNPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPConstants.h; sourceTree = "<group>"; };
 		5BD5927B16C2095F0066E306 /* SNPPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPlace.h; sourceTree = "<group>"; };
 		5BD5927C16C2095F0066E306 /* SNPPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPPlace.m; sourceTree = "<group>"; };
@@ -1561,7 +1501,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B920E361922E5A700B6FA2E /* libMantle-iOS.a in Frameworks */,
 				5BE0A5621682D450005AA40C /* CoreGraphics.framework in Frameworks */,
 				5BE0A55E16818A76005AA40C /* UIKit.framework in Frameworks */,
 				3C6B5EB11680E9B0006C63C1 /* Foundation.framework in Frameworks */,
@@ -1574,7 +1513,6 @@
 			files = (
 				5BE0A5631682D607005AA40C /* CoreGraphics.framework in Frameworks */,
 				3C6B5EC01680E9B0006C63C1 /* SenTestingKit.framework in Frameworks */,
-				3C6B5EC21680E9B0006C63C1 /* UIKit.framework in Frameworks */,
 				3C6B5EC31680E9B0006C63C1 /* Foundation.framework in Frameworks */,
 				3C6B5EC61680E9B0006C63C1 /* libSnapper-iOS.a in Frameworks */,
 			);
@@ -1586,8 +1524,6 @@
 			files = (
 				5BE8E196188318D100E0AD41 /* Foundation.framework in Frameworks */,
 				5BE8E191188318C200E0AD41 /* CoreGraphics.framework in Frameworks */,
-				5B30DC401688F5910089730B /* Mantle.framework in Frameworks */,
-				3C6B5F051680EE8A006C63C1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1596,7 +1532,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6B5F1A1680EE8B006C63C1 /* SenTestingKit.framework in Frameworks */,
-				3C6B5F1B1680EE8B006C63C1 /* Cocoa.framework in Frameworks */,
 				3C6B5F1E1680EE8B006C63C1 /* Snapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1607,7 +1542,6 @@
 			files = (
 				5BE8E198188318DE00E0AD41 /* Foundation.framework in Frameworks */,
 				5BE8E197188318D900E0AD41 /* CoreGraphics.framework in Frameworks */,
-				5B832B681881245A004EE45A /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1622,6 +1556,9 @@
 				3C6B5ED81680EE11006C63C1 /* Libraries */,
 				3C6B5EAF1680E9B0006C63C1 /* Frameworks */,
 				3C6B5EAE1680E9B0006C63C1 /* Products */,
+				544FF2B45A15428E8FE21296 /* Pods.xcconfig */,
+				5BCF1E0F19A8D425005FF020 /* Snapper.podspec */,
+				5BCF1E0E19A8D41A005FF020 /* Podfile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1646,10 +1583,8 @@
 				5BE0A55D16818A76005AA40C /* UIKit.framework */,
 				3C6B5EB01680E9B0006C63C1 /* Foundation.framework */,
 				3C6B5EBF1680E9B0006C63C1 /* SenTestingKit.framework */,
-				3C6B5EC11680E9B0006C63C1 /* UIKit.framework */,
-				3C6B5F041680EE8A006C63C1 /* Cocoa.framework */,
-				5B832B741881245A004EE45A /* XCTest.framework */,
 				3C6B5F061680EE8A006C63C1 /* Other Frameworks */,
+				02FF5FBB9FA542889490BDE9 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1657,7 +1592,6 @@
 		3C6B5ED81680EE11006C63C1 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1796,18 +1730,6 @@
 				5BE0A52816816ED7005AA40C /* ModelTests.m */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		3C6B5EEE1680EE3B006C63C1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3C6B5EF71680EE3C006C63C1 /* Mantle.framework */,
-				3C6B5EF91680EE3C006C63C1 /* Mantle Tests.xctest */,
-				3C6B5EFB1680EE3C006C63C1 /* libMantle-iOS.a */,
-				3C6B5EFD1680EE3C006C63C1 /* Mantle-iOS Tests.xctest */,
-				5BC60629199659F0002A6A84 /* libMantle-Mac.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		3C6B5F061680EE8A006C63C1 /* Other Frameworks */ = {
@@ -2410,14 +2332,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C6B5ED21680E9B0006C63C1 /* Build configuration list for PBXNativeTarget "Snapper-iOS" */;
 			buildPhases = (
+				B3FCA195754B4DD391FE1646 /* Check Pods Manifest.lock */,
 				3C6B5EA91680E9B0006C63C1 /* Sources */,
 				3C6B5EAA1680E9B0006C63C1 /* Frameworks */,
 				3C6B5EAB1680E9B0006C63C1 /* CopyFiles */,
+				6EE12AA372B44FA7B1835859 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5B920E381922E5B100B6FA2E /* PBXTargetDependency */,
 			);
 			name = "Snapper-iOS";
 			productName = Snapper;
@@ -2457,7 +2380,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				3C6B5F331680EF0D006C63C1 /* PBXTargetDependency */,
 			);
 			name = Snapper;
 			productName = "Snapper-OSX";
@@ -2520,12 +2442,6 @@
 			mainGroup = 3C6B5EA41680E9B0006C63C1;
 			productRefGroup = 3C6B5EAE1680E9B0006C63C1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 3C6B5EEE1680EE3B006C63C1 /* Products */;
-					ProjectRef = 3C6B5EED1680EE3B006C63C1 /* Mantle.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				3C6B5EAC1680E9B0006C63C1 /* Snapper-iOS */,
@@ -2536,44 +2452,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		3C6B5EF71680EE3C006C63C1 /* Mantle.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Mantle.framework;
-			remoteRef = 3C6B5EF61680EE3C006C63C1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3C6B5EF91680EE3C006C63C1 /* Mantle Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Mantle Tests.xctest";
-			remoteRef = 3C6B5EF81680EE3C006C63C1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3C6B5EFB1680EE3C006C63C1 /* libMantle-iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libMantle-iOS.a";
-			remoteRef = 3C6B5EFA1680EE3C006C63C1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3C6B5EFD1680EE3C006C63C1 /* Mantle-iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Mantle-iOS Tests.xctest";
-			remoteRef = 3C6B5EFC1680EE3C006C63C1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5BC60629199659F0002A6A84 /* libMantle-Mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libMantle-Mac.a";
-			remoteRef = 5BC60628199659F0002A6A84 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3C6B5EBB1680E9B0006C63C1 /* Resources */ = {
@@ -2610,10 +2488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC6063019965A30002A6A84 /* Release.xcconfig in Resources */,
 				3C6B5F361680EF6F006C63C1 /* Snapper-OSX-Info.plist in Resources */,
-				5BC6062E19965A30002A6A84 /* Base.xcconfig in Resources */,
-				5BC6062F19965A30002A6A84 /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2688,6 +2563,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"3rd Party Mac Developer Application: Paul Schifferer\"\ncodesign --verbose --force --sign \"${IDENTITY}\" \"${LOCATION}/Mantle.framework/Versions/A\"\n";
+		};
+		6EE12AA372B44FA7B1835859 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3FCA195754B4DD391FE1646 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -3124,16 +3029,6 @@
 			target = 3C6B5F021680EE8A006C63C1 /* Snapper */;
 			targetProxy = 3C6B5F1C1680EE8B006C63C1 /* PBXContainerItemProxy */;
 		};
-		3C6B5F331680EF0D006C63C1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Mantle Mac";
-			targetProxy = 3C6B5F321680EF0D006C63C1 /* PBXContainerItemProxy */;
-		};
-		5B920E381922E5B100B6FA2E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Mantle iOS";
-			targetProxy = 5B920E371922E5B100B6FA2E /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -3173,6 +3068,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -3200,6 +3096,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",

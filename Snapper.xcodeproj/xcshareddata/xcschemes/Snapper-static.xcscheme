@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C6B5EAC1680E9B0006C63C1"
-               BuildableName = "libSnapper-iOS.a"
-               BlueprintName = "Snapper-iOS"
+               BlueprintIdentifier = "5B832B661881245A004EE45A"
+               BuildableName = "libSnapper-static.a"
+               BlueprintName = "Snapper-static"
                ReferencedContainer = "container:Snapper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,6 +28,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5B832B721881245A004EE45A"
+               BuildableName = "Snapper-staticTests.xctest"
+               BlueprintName = "Snapper-staticTests"
+               ReferencedContainer = "container:Snapper.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -39,6 +49,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5B832B661881245A004EE45A"
+            BuildableName = "libSnapper-static.a"
+            BlueprintName = "Snapper-static"
+            ReferencedContainer = "container:Snapper.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

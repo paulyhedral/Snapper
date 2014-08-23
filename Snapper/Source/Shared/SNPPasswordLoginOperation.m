@@ -149,9 +149,18 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
     }
 
     NSString* accessToken = responseDict[@"access_token"];
-    SNPToken* token = [[SNPToken alloc] initWithExternalRepresentation:responseDict[@"token"]];
+    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:responseDict[@"token"]
+                                                                  modelClass:[SNPToken class]
+                                                                       error:&error];
+    SNPToken* token = nil;
+    if(adapter) {
+        token = (SNPToken*)[adapter model];
+    }
+    else {
+        NSLog(@"Error while trying to deserialize token: %@", error);
+    }
     
-    _finishBlock(accessToken, token, nil);
+    _finishBlock(accessToken, token, error);
     
     _done = YES;
 }
