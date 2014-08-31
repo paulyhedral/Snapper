@@ -2,4 +2,4 @@
 
 //HEADER_SEARCH_PATHS = "$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include" $(inherited)
 
-OTHER_LDFLAGS = $(inherited) -ObjC -all_load
+//OTHER_LDFLAGS = $(inherited) -ObjC -all_load
