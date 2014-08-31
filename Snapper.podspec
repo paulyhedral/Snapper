@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name         = "Snapper"
-  s.version      = "0.26"
+  s.version      = "0.27"
   s.summary      = "An App.net client library for iOS and Mac."
 
   s.homepage     = "https://github.com/exsortis/Snapper"
   s.license      = 'MIT'
   s.author       = { "Paul Schifferer" => "paul@schifferers.net" }
 
-  s.source       = { :git => "https://github.com/exsortis/Snapper.git", :tag => "0.26" }
+  s.source       = { :git => "https://github.com/exsortis/Snapper.git", :tag => "0.27" }
   s.source_files = 'Snapper', 'Snapper/**/*.{h,m}'
   s.framework  = 'Foundation'
 

@@ -129,7 +129,7 @@
                         NSLog(@"Unable to deserialize annotation: %@", error);
                         return nil;
                     }
-                    
+
                     SNPAnnotation* annotation = (SNPAnnotation*)[adapter model];
 
                     [annotations addObject:annotation];
@@ -149,6 +149,27 @@
                 }
 
                 return [annoDicts copy];
+            }];
+}
+
++ (NSValueTransformer*)recentMessageJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSDictionary* messageDict) {
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:messageDict
+                                                                              modelClass:[SNPMessage class]
+                                                                                   error:&error];
+                if(adapter == nil) {
+                    NSLog(@"Error while deserializing recent message: %@", error);
+                    return nil;
+                }
+
+                return [adapter model];
+            }
+                                                         reverseBlock:
+            ^id(SNPMessage* message) {
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:message];
+                return [adapter JSONDictionary];
             }];
 }
 
