@@ -30,5 +30,6 @@
 @property (nonatomic, retain) NSArray* links;
 @property (nonatomic, assign) NSInteger threadId;
 @property (nonatomic, assign) NSInteger numReplies;
+@property (nonatomic, assign) BOOL deleted;
 
 @end

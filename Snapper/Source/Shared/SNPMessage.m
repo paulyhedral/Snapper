@@ -39,6 +39,7 @@
              @"mentions": @"entities.mentions",
              @"hashtags": @"entities.hashtags",
              @"links": @"entities.links",
+             @"deleted": @"is_deleted",
              };
 }
 
