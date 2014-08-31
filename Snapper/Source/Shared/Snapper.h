@@ -77,6 +77,7 @@
 #import <Snapper/SNPGetMessageOperation.h>
 #import <Snapper/SNPGetMessagesOperation.h>
 #import <Snapper/SNPGetMutedUsersOperation.h>
+#import <Snapper/SNPGetMyChannelsOperation.h>
 #import <Snapper/SNPGetMyMessagesOperation.h>
 #import <Snapper/SNPGetPersonalStreamOperation.h>
 #import <Snapper/SNPGetPlaceOperation.h>
