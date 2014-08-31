@@ -21,9 +21,8 @@
 
     self = [super init];
     if(self) {
-        // TODO: NSUUID (iOS 6 or higher)
-        CFUUIDRef uuid = CFUUIDCreate(NULL);
-        _accountId = CFBridgingRelease(CFUUIDCreateString(NULL, uuid));
+        NSUUID* uuid = [NSUUID UUID];
+        _accountId = [uuid UUIDString];
         _name = name;
         _username = username;
         _userId = userId;
