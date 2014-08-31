@@ -33,7 +33,6 @@
         self.data = data;
         self.endpoint = [[SNPAPIUtils sharedAPIUtils] createFileEndpointURL];
         self.method = @"POST";
-        
     }
 
     return self;
