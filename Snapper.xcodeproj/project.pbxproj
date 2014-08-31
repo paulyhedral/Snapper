@@ -1464,7 +1464,7 @@
 		5BC6062B19965A30002A6A84 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		5BC6062C19965A30002A6A84 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		5BC6062D19965A30002A6A84 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		5BCF1E0E19A8D41A005FF020 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		5BCF1E0E19A8D41A005FF020 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5BCF1E0F19A8D425005FF020 /* Snapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snapper.podspec; sourceTree = "<group>"; };
 		5BD0241416861E5100E24D5A /* SNPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPConstants.h; sourceTree = "<group>"; };
 		5BD5927B16C2095F0066E306 /* SNPPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPlace.h; sourceTree = "<group>"; };
