@@ -770,7 +770,7 @@
 		5BB17EA216BEF55A00583020 /* SNPMyPrivateMessagesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB17EA016BEF55A00583020 /* SNPMyPrivateMessagesOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BB17EA316BEF55A00583020 /* SNPMyPrivateMessagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB17EA116BEF55A00583020 /* SNPMyPrivateMessagesOperation.m */; };
 		5BB17EA416BEF55A00583020 /* SNPMyPrivateMessagesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB17EA116BEF55A00583020 /* SNPMyPrivateMessagesOperation.m */; };
-		5BB6C05119B2E07100E278D5 /* SNPGetMyChannelsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB6C04F19B2E07100E278D5 /* SNPGetMyChannelsOperation.h */; };
+		5BB6C05119B2E07100E278D5 /* SNPGetMyChannelsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB6C04F19B2E07100E278D5 /* SNPGetMyChannelsOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BB6C05219B2E07100E278D5 /* SNPGetMyChannelsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6C05019B2E07100E278D5 /* SNPGetMyChannelsOperation.m */; };
 		5BB6C05319B2E07100E278D5 /* SNPGetMyChannelsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6C05019B2E07100E278D5 /* SNPGetMyChannelsOperation.m */; };
 		5BB6C05419B2E07100E278D5 /* SNPGetMyChannelsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6C05019B2E07100E278D5 /* SNPGetMyChannelsOperation.m */; };
