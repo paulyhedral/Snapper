@@ -68,6 +68,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 - (NSURL*)createChannelEndpointURL;
 - (NSURL*)getChannelEndpointURL:(NSInteger)channelId;
 - (NSURL*)getChannelsEndpointURL;
+- (NSURL*)getMyChannelsEndpointURL;
 - (NSURL*)updateChannelEndpointURL:(NSInteger)channelId;
 - (NSURL*)subscribeToChannelEndpointURL:(NSInteger)channelId;
 - (NSURL*)unsubscribeFromChannelEndpointURL:(NSInteger)channelId;

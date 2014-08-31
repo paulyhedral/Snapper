@@ -269,6 +269,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+- (NSURL*)getMyChannelsEndpointURL {
+    return [NSURL URLWithString:@"users/me/channels"
+                  relativeToURL:_rootAPIURL];
+}
+
 - (NSURL*)updateChannelEndpointURL:(NSInteger)channelId {
     return [NSURL URLWithString:[NSString stringWithFormat:@"channels/%ld", (long)channelId]
                   relativeToURL:_rootAPIURL];
