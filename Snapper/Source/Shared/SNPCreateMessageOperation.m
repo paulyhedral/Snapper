@@ -48,17 +48,45 @@
     return self;
 }
 
+- (id)initWithDestinations:(NSArray*)userIds
+                      text:(NSString*)text
+               annotations:(NSArray*)annotations
+                  entities:(NSArray*)entities
+                 accountId:(NSString*)accountId
+               finishBlock:(void (^)(SNPResponse* response))finishBlock {
+
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
+    if(self) {
+        self.destinations = userIds;
+        self.text = text;
+        self.annotations = annotations;
+        self.entities = entities;
+        self.serializationRootClass = [SNPMessage class];
+    }
+
+    return self;
+}
+
 
 #pragma mark - The workhorse
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] createMessageEndpointURL:_channelId];
+    if(_channelId == 0) {
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] createPMMessageEndpointURL];
+    }
+    else {
+        self.endpoint = [[SNPAPIUtils sharedAPIUtils] createMessageEndpointURL:_channelId];
+    }
     self.method = @"POST";
 
     NSMutableDictionary* postDict = [NSMutableDictionary new];
     if([_text length]) {
         postDict[@"text"] = _text;
+    }
+    if([_destinations count] > 0) {
+        postDict[@"destinations"] = [_destinations copy];
     }
     if(_replyTo > 0) {
         postDict[@"reply_to"] = @(_replyTo);
@@ -131,7 +159,7 @@
 
     self.body = postBody;
     self.bodyType = @"application/json";
-
+    
     [super main];
 }
 

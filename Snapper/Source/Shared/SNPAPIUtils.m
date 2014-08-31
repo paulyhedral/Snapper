@@ -332,6 +332,11 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
                   relativeToURL:_rootAPIURL];
 }
 
+- (NSURL*)createPMMessageEndpointURL {
+    return [NSURL URLWithString:@"channels/pm/messages"
+                  relativeToURL:_rootAPIURL];
+}
+
 - (NSURL*)getMessageEndpointURL:(NSInteger)channelId
                       messageId:(NSInteger)messageId {
     return [NSURL URLWithString:[NSString stringWithFormat:@"channels/%ld/messages/%ld", (long)channelId, (long)messageId]

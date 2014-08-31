@@ -22,6 +22,9 @@
  */
 @property (nonatomic, assign) NSUInteger channelId;
 /**
+ */
+@property (nonatomic, copy) NSArray* destinations;
+/**
  * The body text of the message. Optional.
  *
  * Note that this property and #machineOnly are "mutually-exclusive", with the presence of a
@@ -59,5 +62,11 @@
                entities:(NSArray*)entities
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (id)initWithDestinations:(NSArray*)userIds
+                      text:(NSString*)text
+               annotations:(NSArray*)annotations
+                  entities:(NSArray*)entities
+                 accountId:(NSString*)accountId
+               finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

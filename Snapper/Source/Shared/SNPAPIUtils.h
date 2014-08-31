@@ -82,6 +82,7 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 // -- Message URL methods --
 - (NSURL*)getChannelMessagesEndpointURL:(NSInteger)channelId;
 - (NSURL*)createMessageEndpointURL:(NSInteger)channelId;
+- (NSURL*)createPMMessageEndpointURL;
 - (NSURL*)getMessageEndpointURL:(NSInteger)channelId
                       messageId:(NSInteger)messageId;
 - (NSURL*)getMessagesEndpointURL;
