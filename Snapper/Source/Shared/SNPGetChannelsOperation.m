@@ -36,10 +36,12 @@
 
 - (void)main {
 
-    NSString* channelIdsString = [_channelIds componentsJoinedByString:@","];
-    self.parameters = (@{
-                       @"ids" : channelIdsString,
-                       });
+    if([_channelIds count] > 0) {
+        NSString* channelIdsString = [_channelIds componentsJoinedByString:@","];
+        self.parameters = (@{
+                             @"ids" : channelIdsString,
+                             });
+    }
 
     [super main];
 }

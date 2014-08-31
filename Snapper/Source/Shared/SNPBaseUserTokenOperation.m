@@ -168,13 +168,13 @@
 
     // Pagination
     if(_beforeId) {
-        parameters[@"before_id"] = @(_beforeId);
+        parameters[@"before_id"] = [NSString stringWithFormat:@"%ld", (long)_beforeId];
     }
     if(_sinceId) {
-        parameters[@"since_id"] = @(_sinceId);
+        parameters[@"since_id"] = [NSString stringWithFormat:@"%ld", (long)_sinceId];
     }
     if(_count) {
-        parameters[@"count"] = @(_count);
+        parameters[@"count"] = [NSString stringWithFormat:@"%ld", (long)_count];
     }
 
     // General
@@ -259,7 +259,7 @@
     }
     
     if([[parameters allKeys] count]) {
-        self.parameters = parameters;
+        self.parameters = [parameters copy];
     }
 }
 
