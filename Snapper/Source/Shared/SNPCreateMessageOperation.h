@@ -54,19 +54,19 @@
 @property (nonatomic, assign) BOOL includeMessageAnnotations;
 
 // -- Initializers --
-- (id)initWithChannelId:(NSUInteger)channelId
-                   text:(NSString*)text
-                replyTo:(NSUInteger)replyTo
-            machineOnly:(BOOL)machineOnly
-            annotations:(NSArray*)annotations
-               entities:(NSArray*)entities
-              accountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse* response))finishBlock;
-- (id)initWithDestinations:(NSArray*)userIds
-                      text:(NSString*)text
-               annotations:(NSArray*)annotations
-                  entities:(NSArray*)entities
-                 accountId:(NSString*)accountId
-               finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithChannelId:(NSUInteger)channelId
+                             text:(NSString*)text
+                          replyTo:(NSUInteger)replyTo
+                      machineOnly:(BOOL)machineOnly
+                      annotations:(NSArray*)annotations
+                         entities:(NSArray*)entities
+                        accountId:(NSString*)accountId
+                      finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithDestinations:(NSArray*)userIds
+                                text:(NSString*)text
+                         annotations:(NSArray*)annotations
+                            entities:(NSArray*)entities
+                           accountId:(NSString*)accountId
+                         finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

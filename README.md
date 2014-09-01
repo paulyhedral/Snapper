@@ -6,17 +6,17 @@ App.net SDK in Objective-C
 Version
 -------
 
-0.20
+0.30
 
 Platforms
 ---------
 
-Snapper is designed to work on iOS 7.0 or higher, or Mac OS X Mountain Lion (10.8) or higher.
+Snapper is designed to work on iOS 7.0 or higher, or Mac OS X Mavericks (10.9) or higher.
 
 Requirements
 ------------
 
-Snapper requires ARC, and should compile and test in Xcode 4.5 or higher.
+Snapper requires ARC, and should compile and test in Xcode 5.1 or higher.
 
 Snapper makes use of the GitHub framework [Mantle](http://github.com/github/Mantle) for its model objects. You will need to perform `git submodule update --init --recursive` to pull down Mantle and its dependencies.
 
