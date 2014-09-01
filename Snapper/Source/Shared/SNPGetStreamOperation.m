@@ -15,7 +15,7 @@
 
 @implementation SNPGetStreamOperation
 
-- (id)initWithStreamId:(NSInteger)streamId
+- (instancetype)initWithStreamId:(NSUInteger)streamId
               appToken:(NSString*)appToken
            finishBlock:(void (^)(SNPResponse* response))finishBlock {
 

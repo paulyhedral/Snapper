@@ -15,15 +15,15 @@
 @property (nonatomic, readonly) NSString* accountId;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSString* username;
-@property (nonatomic, assign) NSInteger userId;
+@property (nonatomic, assign) NSUInteger userId;
 @property (nonatomic, copy) NSString* accessToken;
 @property (nonatomic, copy) NSString* tokenType;
 
 // -- Initializers --
-- (id)initWithName:(NSString*)name
-          username:(NSString*)username
-            userId:(NSInteger)userId
-       accessToken:(NSString*)accessToken
-         tokenType:(NSString*)tokenType;
+- (instancetype)initWithName:(NSString*)name
+                    username:(NSString*)username
+                      userId:(NSUInteger)userId
+                 accessToken:(NSString*)accessToken
+                   tokenType:(NSString*)tokenType;
 
 @end

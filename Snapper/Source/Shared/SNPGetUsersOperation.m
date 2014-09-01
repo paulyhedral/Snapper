@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithUserIds:(NSArray*)userIds
+- (instancetype)initWithUserIds:(NSArray*)userIds
             accountId:(NSString*)accountId
           finishBlock:(void (^)(SNPResponse *))finishBlock {
 

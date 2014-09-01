@@ -15,7 +15,7 @@
 
 @implementation SNPGetPlaceOperation
 
-- (id)initWithFactualId:(NSString*)factualId
+- (instancetype)initWithFactualId:(NSString*)factualId
                   token:(NSString*)token
             finishBlock:(void (^)(SNPResponse* response))finishBlock {
 

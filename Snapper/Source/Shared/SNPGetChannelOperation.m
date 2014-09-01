@@ -15,7 +15,7 @@
 
 @implementation SNPGetChannelOperation
 
-- (id)initWithChannelId:(NSUInteger)channelId
+- (instancetype)initWithChannelId:(NSUInteger)channelId
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse*))finishBlock {
 

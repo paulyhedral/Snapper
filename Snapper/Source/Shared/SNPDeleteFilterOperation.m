@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithFilterId:(NSUInteger)filterId
+- (instancetype)initWithFilterId:(NSUInteger)filterId
              accountId:(NSString*)accountId
            finishBlock:(void (^)(SNPResponse*))finishBlock {
 

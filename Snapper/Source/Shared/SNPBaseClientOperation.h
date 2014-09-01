@@ -34,7 +34,7 @@
 @property (nonatomic, copy) NSDictionary* parameters;
 @property (nonatomic, copy) NSData* body;
 @property (nonatomic, copy) NSString* bodyType;
-@property (nonatomic, copy) void (^progressBlock)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes);
+@property (nonatomic, copy) void (^progressBlock)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes);
 @property (nonatomic, copy) void (^finishBlock)(SNPResponse* response);
 @property (nonatomic, copy) id (^serializationBlock)(id data, NSError** error);
 @property (nonatomic, assign) Class serializationRootClass;
@@ -47,7 +47,7 @@
  *
  *	@return	<#return value description#>
  */
-- (id)initWithFinishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithFinishBlock:(void (^)(SNPResponse* response))finishBlock;
 /**
  *	<#Description#>
  *
@@ -60,13 +60,13 @@
  *
  *	@return	<#return value description#>
  */
-- (id)initWithEndpoint:(NSURL*)endpoint
+- (instancetype)initWithEndpoint:(NSURL*)endpoint
                 method:(NSString*)method
                headers:(NSDictionary*)headers
             parameters:(NSDictionary*)parameters
                   body:(NSData*)body
               bodyType:(NSString*)bodyType
-         progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
+         progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
            finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 // -- Utility methods --

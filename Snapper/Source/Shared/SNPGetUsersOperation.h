@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSArray* userIds;
 
 // -- Initialization --
-- (id)initWithUserIds:(NSArray*)userIds
+- (instancetype)initWithUserIds:(NSArray*)userIds
             accountId:(NSString*)accountId
           finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

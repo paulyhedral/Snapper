@@ -23,8 +23,8 @@
 @property (nonatomic, copy) NSError* error;
 
 // -- Pagination data --
-@property (nonatomic, assign) NSInteger minId;
-@property (nonatomic, assign) NSInteger maxId;
+@property (nonatomic, assign) NSUInteger minId;
+@property (nonatomic, assign) NSUInteger maxId;
 @property (nonatomic, assign) BOOL more;
 
 // -- Stream marker data --

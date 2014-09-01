@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSString* token;
 
 // -- Initializers --
-- (id)initWithText:(NSString*)text
+- (instancetype)initWithText:(NSString*)text
              token:(NSString*)token
        finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

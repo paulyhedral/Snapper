@@ -13,15 +13,15 @@
 <MTLJSONSerializing>
 
 // -- Properties --
-@property (nonatomic, assign) NSInteger textUriTemplateLengthPostId;
-@property (nonatomic, assign) NSInteger textUriTemplateLengthMessageId;
-@property (nonatomic, assign) NSInteger userAnnotationMaxBytes;
-@property (nonatomic, assign) NSInteger userTextMaxLength;
-@property (nonatomic, assign) NSInteger fileAnnotationMaxBytes;
-@property (nonatomic, assign) NSInteger postAnnotationMaxBytes;
-@property (nonatomic, assign) NSInteger postTextMaxLength;
-@property (nonatomic, assign) NSInteger messageAnnotationMaxBytes;
-@property (nonatomic, assign) NSInteger messageTextMaxLength;
-@property (nonatomic, assign) NSInteger channelAnnotationMaxBytes;
+@property (nonatomic, assign) NSUInteger textUriTemplateLengthPostId;
+@property (nonatomic, assign) NSUInteger textUriTemplateLengthMessageId;
+@property (nonatomic, assign) NSUInteger userAnnotationMaxBytes;
+@property (nonatomic, assign) NSUInteger userTextMaxLength;
+@property (nonatomic, assign) NSUInteger fileAnnotationMaxBytes;
+@property (nonatomic, assign) NSUInteger postAnnotationMaxBytes;
+@property (nonatomic, assign) NSUInteger postTextMaxLength;
+@property (nonatomic, assign) NSUInteger messageAnnotationMaxBytes;
+@property (nonatomic, assign) NSUInteger messageTextMaxLength;
+@property (nonatomic, assign) NSUInteger channelAnnotationMaxBytes;
 
 @end

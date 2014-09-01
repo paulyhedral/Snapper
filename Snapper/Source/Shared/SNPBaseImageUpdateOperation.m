@@ -23,15 +23,15 @@
 
 #pragma mark - Initializers
 
-- (id)initWithImage:(id)image
-          accountId:(NSString*)accountId
-        finishBlock:(void (^)(SNPResponse*))finishBlock {
+- (instancetype)initWithImage:(id)image
+                    accountId:(NSString*)accountId
+                  finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
         self.image = image;
-        self.method = @"POST";        
+        self.method = @"POST";
     }
 
     return self;

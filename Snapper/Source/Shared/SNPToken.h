@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString* appName;
 @property (nonatomic, retain) NSArray* scopes;
 @property (nonatomic, retain) SNPUser* user;
-@property (nonatomic, assign) NSInteger storageAvailable;
-@property (nonatomic, assign) NSInteger storageUsed;
+@property (nonatomic, assign) NSUInteger storageAvailable;
+@property (nonatomic, assign) NSUInteger storageUsed;
 
 @end

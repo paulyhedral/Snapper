@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NSArray* annotations;
 
 // -- Initialization --
-- (id)initWithType:(NSString*)type
+- (instancetype)initWithType:(NSString*)type
            readers:(SNPACL*)readers
            writers:(SNPACL*)writers
        annotations:(NSArray*)annotations

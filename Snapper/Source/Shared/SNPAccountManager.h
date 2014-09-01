@@ -19,11 +19,12 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedAccountMa
 
 - (SNPAccount*)createAccountWithName:(NSString*)name
                            username:(NSString*)username
-                             userId:(NSInteger)userId
+                             userId:(NSUInteger)userId
                         accessToken:(NSString*)accessToken
                           tokenType:(NSString*)tokenType;
 - (void)removeAccountForId:(NSString*)accountId;
 - (SNPAccount*)accountForId:(NSString*)accountId;
+- (SNPAccount*)accountForUserId:(NSUInteger)userId;
 - (NSArray*)allAccounts;
 
 @end

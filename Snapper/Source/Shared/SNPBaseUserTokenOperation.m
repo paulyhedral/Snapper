@@ -21,8 +21,8 @@
 
 #pragma mark - Initializers
 
-- (id)initWithAccountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse*))finishBlock {
+- (instancetype)initWithAccountId:(NSString*)accountId
+                      finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super init];
     if(self) {
@@ -33,15 +33,15 @@
     return self;
 }
 
-- (id)initWithEndpoint:(NSURL*)endpoint
-                method:(NSString*)method
-               headers:(NSDictionary*)headers
-            parameters:(NSDictionary*)parameters
-                  body:(NSData*)body
-              bodyType:(NSString*)bodyType
-             accountId:(NSString*)accountId
-         progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
-           finishBlock:(void (^)(SNPResponse* response))finishBlock {
+- (instancetype)initWithEndpoint:(NSURL*)endpoint
+                          method:(NSString*)method
+                         headers:(NSDictionary*)headers
+                      parameters:(NSDictionary*)parameters
+                            body:(NSData*)body
+                        bodyType:(NSString*)bodyType
+                       accountId:(NSString*)accountId
+                   progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
+                     finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [super init];
     if(self) {
@@ -75,22 +75,22 @@
 
     if(_accountId) {
         SNPAccount* account = [[SNPAccountManager sharedAccountManager] accountForId:_accountId];
-//        NSAssert(account, @"No account found for ID: %@", _accountId);
+        //        NSAssert(account, @"No account found for ID: %@", _accountId);
 
         if(account) {
-        accessToken = account.accessToken;
-        tokenType = account.tokenType;
-        if(accessToken == nil) {
-            SNPMetadata* meta = [[SNPMetadata alloc] init];
-            meta.errorMessage = [NSString stringWithFormat:NSLocalizedString(@"No access token found for account: %@", nil), account.name];
-            meta.errorSlug = @"no_token";
+            accessToken = account.accessToken;
+            tokenType = account.tokenType;
+            if(accessToken == nil) {
+                SNPMetadata* meta = [[SNPMetadata alloc] init];
+                meta.errorMessage = [NSString stringWithFormat:NSLocalizedString(@"No access token found for account: %@", nil), account.name];
+                meta.errorSlug = @"no_token";
 
-            SNPResponse* response = [[SNPResponse alloc] init];
-            response.metadata = meta;
+                SNPResponse* response = [[SNPResponse alloc] init];
+                response.metadata = meta;
 
-            self.finishBlock(response);
-            return;
-        }
+                self.finishBlock(response);
+                return;
+            }
         }
     }
 

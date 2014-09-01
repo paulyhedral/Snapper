@@ -14,8 +14,8 @@
 @interface SNPMessage : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, assign) NSInteger channelId;
-@property (nonatomic, assign) NSInteger messageId;
+@property (nonatomic, assign) NSUInteger channelId;
+@property (nonatomic, assign) NSUInteger messageId;
 @property (nonatomic, retain) SNPUser* user;
 @property (nonatomic, copy) NSDate* createdAt;
 @property (nonatomic, copy) NSString* text;
@@ -28,8 +28,8 @@
 @property (nonatomic, retain) NSArray* mentions;
 @property (nonatomic, retain) NSArray* hashtags;
 @property (nonatomic, retain) NSArray* links;
-@property (nonatomic, assign) NSInteger threadId;
-@property (nonatomic, assign) NSInteger numReplies;
+@property (nonatomic, assign) NSUInteger threadId;
+@property (nonatomic, assign) NSUInteger numReplies;
 @property (nonatomic, assign) BOOL deleted;
 
 @end

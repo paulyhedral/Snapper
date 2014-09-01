@@ -18,7 +18,7 @@
 @property (nonatomic, assign) NSUInteger channelId;
 
 // -- Initializers --
-- (id)initWithMessageId:(NSUInteger)messageId
+- (instancetype)initWithMessageId:(NSUInteger)messageId
               channelId:(NSUInteger)channelId
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock;

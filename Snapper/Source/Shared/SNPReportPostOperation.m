@@ -17,7 +17,7 @@
 
 #pragma mark - Initializer
 
-- (id)initWithPostId:(NSUInteger)postId
+- (instancetype)initWithPostId:(NSUInteger)postId
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse* response))finishBlock {
 

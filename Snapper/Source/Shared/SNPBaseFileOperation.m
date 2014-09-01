@@ -28,7 +28,7 @@
 
 #pragma mark - Initializers
 
-- (id)init {
+- (instancetype)init {
 
     self = [super init];
     if(self) {
@@ -38,8 +38,8 @@
     return self;
 }
 
-- (id)initWithAccountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse*))finishBlock {
+- (instancetype)initWithAccountId:(NSString*)accountId
+                      finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [self init];
     if(self) {
@@ -50,16 +50,16 @@
     return self;
 }
 
-- (id)initWithEndpoint:(NSURL*)endpoint
-                method:(NSString*)method
-               headers:(NSDictionary*)headers
-            parameters:(NSDictionary*)parameters
-                  body:(NSData*)body
-              bodyType:(NSString*)bodyType
-             fileToken:(NSString*)fileToken
-             accountId:(NSString*)accountId
-         progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
-           finishBlock:(void (^)(SNPResponse* response))finishBlock {
+- (instancetype)initWithEndpoint:(NSURL*)endpoint
+                          method:(NSString*)method
+                         headers:(NSDictionary*)headers
+                      parameters:(NSDictionary*)parameters
+                            body:(NSData*)body
+                        bodyType:(NSString*)bodyType
+                       fileToken:(NSString*)fileToken
+                       accountId:(NSString*)accountId
+                   progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
+                     finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [super init];
     if(self) {
@@ -248,9 +248,9 @@ willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge*)challen
 }
 
 - (void)connection:(NSURLConnection*)connection
-   didSendBodyData:(NSInteger)bytesWritten
- totalBytesWritten:(NSInteger)totalBytesWritten
-totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+   didSendBodyData:(NSUInteger)bytesWritten
+ totalBytesWritten:(NSUInteger)totalBytesWritten
+totalBytesExpectedToWrite:(NSUInteger)totalBytesExpectedToWrite {
 
     if(_progressBlock) {
         _progressBlock(bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
@@ -304,7 +304,7 @@ didReceiveResponse:(NSURLResponse*)response {
         else if(_serializationRootClass) {
             id serializedObject = [_serializationRootClass modelWithExternalRepresentation:response.data];
             if(serializedObject == nil) {
-                NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                NSError* error = [NSError errorWithDomain:SNPErrorDomain
                                                      code:SNPSerializationErrorCode
                                                  userInfo:nil];
                 response = [self createResponseFromError:error];
@@ -319,7 +319,7 @@ didReceiveResponse:(NSURLResponse*)response {
             for(NSDictionary* objectDict in response.data) {
                 id serializedObject = [_serializationArrayClass modelWithExternalRepresentation:response.data];
                 if(serializedObject == nil) {
-                    NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                    NSError* error = [NSError errorWithDomain:SNPErrorDomain
                                                          code:SNPSerializationErrorCode
                                                      userInfo:nil];
                     response = [self createResponseFromError:error];
@@ -334,7 +334,7 @@ didReceiveResponse:(NSURLResponse*)response {
             response.data = arrayOfData;
         }
     }
-
+    
     if(_finishBlock) {
         _finishBlock(response);
     }

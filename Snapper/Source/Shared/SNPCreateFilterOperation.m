@@ -15,7 +15,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithName:(NSString*)name
+- (instancetype)initWithName:(NSString*)name
        matchPolicy:(SNPFilterMatchPolicy)matchPolicy
            clauses:(NSArray*)clauses
          accountId:(NSString*)accountId

@@ -12,7 +12,7 @@
 @interface SNPPlaceCategory : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, assign) NSInteger categoryId;
+@property (nonatomic, assign) NSUInteger categoryId;
 @property (nonatomic, retain) NSArray* labels;
 
 @end

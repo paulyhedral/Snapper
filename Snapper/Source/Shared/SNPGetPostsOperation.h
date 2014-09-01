@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSArray* postIds;
 
 // -- Initializers --
-- (id)initWithPostIds:(NSArray*)postIds
+- (instancetype)initWithPostIds:(NSArray*)postIds
             accountId:(NSString*)accountId
           finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

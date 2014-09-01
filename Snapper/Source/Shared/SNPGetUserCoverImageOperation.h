@@ -15,7 +15,7 @@
 @property (nonatomic, assign) NSUInteger userId;
 
 // -- Initializers --
-- (id)initWithUserId:(NSInteger)userId
+- (instancetype)initWithUserId:(NSUInteger)userId
          finishBlock:(void (^)(id image, NSError* error))finishBlock;
 
 @end

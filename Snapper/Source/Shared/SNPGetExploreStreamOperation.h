@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString* slug;
 
 // -- Initializers --
-- (id)initWithSlug:(NSString*)slug
+- (instancetype)initWithSlug:(NSString*)slug
        finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

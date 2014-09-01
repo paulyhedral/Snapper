@@ -21,7 +21,7 @@
 @property (nonatomic, retain) SNPACL* writers;
 
 // -- Initialization --
-- (id)initWithChannelId:(NSUInteger)channelId
+- (instancetype)initWithChannelId:(NSUInteger)channelId
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithQueryString:(NSString*)queryString
+- (instancetype)initWithQueryString:(NSString*)queryString
                 accountId:(NSString*)accountId
               finishBlock:(void (^)(SNPResponse* response))finishBlock {
 

@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSArray* annotations;
 
 // -- Initializers --
-- (id)initWithName:(NSString*)name
+- (instancetype)initWithName:(NSString*)name
             locale:(NSString*)locale
           timezone:(NSString*)timezone
        description:(NSString*)descriptionText

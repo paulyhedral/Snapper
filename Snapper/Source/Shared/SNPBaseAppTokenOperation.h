@@ -20,7 +20,7 @@
 @property (nonatomic, copy) void (^finishBlock)(SNPResponse* response);
 
 // -- Initialization --
-- (id)initWithAppToken:(NSString*)appToken
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithAppToken:(NSString*)appToken
+                     finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

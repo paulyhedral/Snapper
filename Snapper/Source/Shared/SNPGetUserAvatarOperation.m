@@ -13,7 +13,7 @@
 
 @implementation SNPGetUserAvatarOperation
 
-- (id)initWithUserId:(NSInteger)userId
+- (instancetype)initWithUserId:(NSUInteger)userId
          finishBlock:(void (^)(id, NSError*))finishBlock {
 
     self = [super init];

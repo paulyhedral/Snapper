@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSArray* channelIds;
 
 // -- Initializers --
-- (id)initWithChannelIds:(NSArray*)channelIds
+- (instancetype)initWithChannelIds:(NSArray*)channelIds
                accountId:(NSString*)accountId
              finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

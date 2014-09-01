@@ -17,7 +17,7 @@
 
 #pragma mark - Initializers
 
-- (id)initWithSlug:(NSString*)slug
+- (instancetype)initWithSlug:(NSString*)slug
        finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithFinishBlock:finishBlock];

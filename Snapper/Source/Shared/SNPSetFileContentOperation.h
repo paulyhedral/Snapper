@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSData* data;
 
 // -- Initializers --
-- (id)initWithFileId:(NSInteger)fileId
+- (instancetype)initWithFileId:(NSUInteger)fileId
                 data:(NSData*)data
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse* response))finishBlock;

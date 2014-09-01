@@ -15,7 +15,7 @@
 <SNPChannelParameters, SNPPaginationParameters>
 
 // -- Initialization --
-- (id)initWithAccountId:(NSString*)accountId
+- (instancetype)initWithAccountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

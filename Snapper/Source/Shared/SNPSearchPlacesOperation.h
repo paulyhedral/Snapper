@@ -22,7 +22,7 @@
 @property (nonatomic, assign) CGFloat verticalAccuracy;
 
 // -- Initializers --
-- (id)initWithLatitude:(CGFloat)latitude
+- (instancetype)initWithLatitude:(CGFloat)latitude
              longitude:(CGFloat)longitude
              accountId:(NSString*)accountId
            finishBlock:(void (^)(SNPResponse* response))finishBlock;

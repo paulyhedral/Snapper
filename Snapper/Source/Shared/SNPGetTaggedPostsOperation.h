@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString* hashtag;
 
 // -- Initializers --
-- (id)initWithHashtag:(NSString*)hashtag
+- (instancetype)initWithHashtag:(NSString*)hashtag
           finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

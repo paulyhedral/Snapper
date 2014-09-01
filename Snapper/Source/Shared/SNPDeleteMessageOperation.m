@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithMessageId:(NSUInteger)messageId
+- (instancetype)initWithMessageId:(NSUInteger)messageId
               channelId:(NSUInteger)channelId
               accountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse*))finishBlock {

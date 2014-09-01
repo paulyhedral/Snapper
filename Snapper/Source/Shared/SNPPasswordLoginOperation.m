@@ -141,7 +141,7 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
             infoDict[@"error_title"] = errorTitle;
         }
 
-        NSError* authError = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+        NSError* authError = [NSError errorWithDomain:SNPErrorDomain
                                                  code:_statusCode
                                              userInfo:infoDict];
         _finishBlock(nil, nil, authError);

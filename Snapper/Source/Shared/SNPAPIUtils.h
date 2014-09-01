@@ -20,88 +20,88 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 @property (nonatomic, copy) NSURL* rootAPIURL;
 
 // -- User URL methods --
-- (NSURL*)getUserEndpointURL:(NSInteger)userId;
+- (NSURL*)getUserEndpointURL:(NSUInteger)userId;
 - (NSURL*)updateUserEndpointURL;
-- (NSURL*)getUserAvatarEndpointURL:(NSInteger)userId;
+- (NSURL*)getUserAvatarEndpointURL:(NSUInteger)userId;
 - (NSURL*)updateUserAvatarEndpointURL;
-- (NSURL*)getUserCoverImageEndpointURL:(NSInteger)userId;
+- (NSURL*)getUserCoverImageEndpointURL:(NSUInteger)userId;
 - (NSURL*)updateUserCoverImageEndpointURL;
-- (NSURL*)followUserEndpointURL:(NSInteger)userId;
-- (NSURL*)unfollowUserEndpointURL:(NSInteger)userId;
-- (NSURL*)muteUserEndpointURL:(NSInteger)userId;
-- (NSURL*)unmuteUserEndpointURL:(NSInteger)userId;
+- (NSURL*)followUserEndpointURL:(NSUInteger)userId;
+- (NSURL*)unfollowUserEndpointURL:(NSUInteger)userId;
+- (NSURL*)muteUserEndpointURL:(NSUInteger)userId;
+- (NSURL*)unmuteUserEndpointURL:(NSUInteger)userId;
 - (NSURL*)getUsersEndpointURL;
 - (NSURL*)searchUsersEndpointURL;
-- (NSURL*)getUserFolloweesEndpointURL:(NSInteger)userId;
-- (NSURL*)getUserFollowersEndpointURL:(NSInteger)userId;
-- (NSURL*)getUserFolloweeIdsEndpointURL:(NSInteger)userId;
-- (NSURL*)getUserFollowerIdsEndpointURL:(NSInteger)userId;
-- (NSURL*)getMutedUsersEndpointURL:(NSInteger)userId;
-- (NSURL*)getBlockedUsersEndpointURL:(NSInteger)userId;
-- (NSURL*)getRepostersEndpointURL:(NSInteger)postId;
-- (NSURL*)getStarrersEndpointURL:(NSInteger)postId;
-- (NSURL*)blockUserEndpointURL:(NSInteger)userId;
-- (NSURL*)unblockUserEndpointURL:(NSInteger)userId;
+- (NSURL*)getUserFolloweesEndpointURL:(NSUInteger)userId;
+- (NSURL*)getUserFollowersEndpointURL:(NSUInteger)userId;
+- (NSURL*)getUserFolloweeIdsEndpointURL:(NSUInteger)userId;
+- (NSURL*)getUserFollowerIdsEndpointURL:(NSUInteger)userId;
+- (NSURL*)getMutedUsersEndpointURL:(NSUInteger)userId;
+- (NSURL*)getBlockedUsersEndpointURL:(NSUInteger)userId;
+- (NSURL*)getRepostersEndpointURL:(NSUInteger)postId;
+- (NSURL*)getStarrersEndpointURL:(NSUInteger)postId;
+- (NSURL*)blockUserEndpointURL:(NSUInteger)userId;
+- (NSURL*)unblockUserEndpointURL:(NSUInteger)userId;
 
 // -- Post URL methods --
 - (NSURL*)createPostEndpointURL;
-- (NSURL*)getPostEndpointURL:(NSInteger)postId;
-- (NSURL*)deletePostEndpointURL:(NSInteger)postId;
-- (NSURL*)repostEndpointURL:(NSInteger)postId;
-- (NSURL*)unrepostEndpointURL:(NSInteger)postId;
-- (NSURL*)starPostEndpointURL:(NSInteger)postId;
-- (NSURL*)unstarPostEndpointURL:(NSInteger)postId;
+- (NSURL*)getPostEndpointURL:(NSUInteger)postId;
+- (NSURL*)deletePostEndpointURL:(NSUInteger)postId;
+- (NSURL*)repostEndpointURL:(NSUInteger)postId;
+- (NSURL*)unrepostEndpointURL:(NSUInteger)postId;
+- (NSURL*)starPostEndpointURL:(NSUInteger)postId;
+- (NSURL*)unstarPostEndpointURL:(NSUInteger)postId;
 - (NSURL*)getPostsEndpointURL;
-- (NSURL*)getUserPostsEndpointURL:(NSInteger)userId;
-- (NSURL*)getStarredPostsEndpointURL:(NSInteger)userId;
-- (NSURL*)getMentionsEndpointURL:(NSInteger)userId;
+- (NSURL*)getUserPostsEndpointURL:(NSUInteger)userId;
+- (NSURL*)getStarredPostsEndpointURL:(NSUInteger)userId;
+- (NSURL*)getMentionsEndpointURL:(NSUInteger)userId;
 - (NSURL*)getTaggedPostsEndpointURL:(NSString*)hashtag;
-- (NSURL*)getRepliesEndpointURL:(NSInteger)postId;
+- (NSURL*)getRepliesEndpointURL:(NSUInteger)postId;
 - (NSURL*)getPersonalStreamEndpointURL;
 - (NSURL*)getUnifiedPersonalStreamEndpointURL;
 - (NSURL*)getGlobalStreamEndpointURL;
-- (NSURL*)reportPostEndpointURL:(NSInteger)postId;
+- (NSURL*)reportPostEndpointURL:(NSUInteger)postId;
 - (NSURL*)searchEndpointURL;
 
 // -- Channel URL methods --
 - (NSURL*)getSubscribedChannelsEndpointURL;
 - (NSURL*)createChannelEndpointURL;
-- (NSURL*)getChannelEndpointURL:(NSInteger)channelId;
+- (NSURL*)getChannelEndpointURL:(NSUInteger)channelId;
 - (NSURL*)getChannelsEndpointURL;
 - (NSURL*)getMyChannelsEndpointURL;
-- (NSURL*)updateChannelEndpointURL:(NSInteger)channelId;
-- (NSURL*)subscribeToChannelEndpointURL:(NSInteger)channelId;
-- (NSURL*)unsubscribeFromChannelEndpointURL:(NSInteger)channelId;
-- (NSURL*)getChannelSubscribersEndpointURL:(NSInteger)channelId;
-- (NSURL*)getChannelSubscriberIdsEndpointURL:(NSInteger)channelId;
+- (NSURL*)updateChannelEndpointURL:(NSUInteger)channelId;
+- (NSURL*)subscribeToChannelEndpointURL:(NSUInteger)channelId;
+- (NSURL*)unsubscribeFromChannelEndpointURL:(NSUInteger)channelId;
+- (NSURL*)getChannelSubscribersEndpointURL:(NSUInteger)channelId;
+- (NSURL*)getChannelSubscriberIdsEndpointURL:(NSUInteger)channelId;
 - (NSURL*)getSubscribersEndpointURL;
 - (NSURL*)getMutedChannelsEndpointURL;
-- (NSURL*)muteChannelEndpointURL:(NSInteger)channelId;
-- (NSURL*)unmuteChannelEndpointURL:(NSInteger)channelId;
+- (NSURL*)muteChannelEndpointURL:(NSUInteger)channelId;
+- (NSURL*)unmuteChannelEndpointURL:(NSUInteger)channelId;
 
 // -- Message URL methods --
-- (NSURL*)getChannelMessagesEndpointURL:(NSInteger)channelId;
-- (NSURL*)createMessageEndpointURL:(NSInteger)channelId;
+- (NSURL*)getChannelMessagesEndpointURL:(NSUInteger)channelId;
+- (NSURL*)createMessageEndpointURL:(NSUInteger)channelId;
 - (NSURL*)createPMMessageEndpointURL;
-- (NSURL*)getMessageEndpointURL:(NSInteger)channelId
-                      messageId:(NSInteger)messageId;
+- (NSURL*)getMessageEndpointURL:(NSUInteger)channelId
+                      messageId:(NSUInteger)messageId;
 - (NSURL*)getMessagesEndpointURL;
-- (NSURL*)deleteMessageEndpointURL:(NSInteger)channelId
-                         messageId:(NSInteger)messageId;
+- (NSURL*)deleteMessageEndpointURL:(NSUInteger)channelId
+                         messageId:(NSUInteger)messageId;
 - (NSURL*)getMyMessagesEndpointURL;
 
 // -- Stream URL methods --
 - (NSURL*)createStreamEndpointURL;
-- (NSURL*)getStreamEndpointURL:(NSInteger)streamId;
-- (NSURL*)deleteStreamEndpointURL:(NSInteger)streamId;
+- (NSURL*)getStreamEndpointURL:(NSUInteger)streamId;
+- (NSURL*)deleteStreamEndpointURL:(NSUInteger)streamId;
 - (NSURL*)getAllStreamsEndpointURL;
 - (NSURL*)deleteAllStreamsEndpointURL;
 
 // -- Filter URL methods --
 - (NSURL*)createFilterEndpointURL;
-- (NSURL*)getFilterEndpointURL:(NSInteger)filterId;
-- (NSURL*)updateFilterEndpointURL:(NSInteger)filterId;
-- (NSURL*)deleteFilterEndpointURL:(NSInteger)filterId;
+- (NSURL*)getFilterEndpointURL:(NSUInteger)filterId;
+- (NSURL*)updateFilterEndpointURL:(NSUInteger)filterId;
+- (NSURL*)deleteFilterEndpointURL:(NSUInteger)filterId;
 - (NSURL*)getFiltersEndpointURL;
 - (NSURL*)deleteFiltersEndpointURL;
 
@@ -116,12 +116,12 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
 
 // -- File URL methods --
 - (NSURL*)createFileEndpointURL;
-- (NSURL*)getFileEndpointURL:(NSInteger)fileId;
+- (NSURL*)getFileEndpointURL:(NSUInteger)fileId;
 - (NSURL*)getFilesEndpointURL;
-- (NSURL*)deleteFileEndpointURL:(NSInteger)fileId;
+- (NSURL*)deleteFileEndpointURL:(NSUInteger)fileId;
 - (NSURL*)getMyFilesEndpointURL;
-- (NSURL*)updateFileEndpointURL:(NSInteger)fileId;
-- (NSURL*)updateFileContentEndpointURL:(NSInteger)fileId;
+- (NSURL*)updateFileEndpointURL:(NSUInteger)fileId;
+- (NSURL*)updateFileContentEndpointURL:(NSUInteger)fileId;
 
 // -- Place URL methods --
 - (NSURL*)getPlaceEndpointURL:(NSString*)factualId;

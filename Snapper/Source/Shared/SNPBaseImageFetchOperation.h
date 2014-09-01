@@ -17,7 +17,7 @@
 @property (nonatomic, copy) void (^finishBlock)(id image, NSError* error);
 
 // -- Initializers --
-- (id)initWithImageURL:(NSURL*)imageURL
-           finishBlock:(void (^)(id image, NSError* error))finishBlock;
+- (instancetype)initWithImageURL:(NSURL*)imageURL
+                     finishBlock:(void (^)(id image, NSError* error))finishBlock;
 
 @end

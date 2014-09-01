@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString* queryString;
 
 // -- Initialization --
-- (id)initWithQueryString:(NSString*)queryString
+- (instancetype)initWithQueryString:(NSString*)queryString
                 accountId:(NSString*)accountId
               finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

@@ -6,10 +6,15 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#define SNP_ERROR_DOMAIN (@"SnapperError")
+#import <Foundation/Foundation.h>
 
-enum {
+
+extern NSString* const SNPErrorDomain;
+
+typedef NS_ENUM(NSInteger, SNPSerializationError) {
     SNPSerializationErrorCode,
 };
 
-#define SNP_CHANNEL_TYPE_PM (@"net.app.core.pm")
+extern NSString* const SNPChannelTypePM;
+
+extern NSString* const SNPUnimplementedException;

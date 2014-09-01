@@ -17,7 +17,7 @@
 
 #pragma mark - Initializers
 
-- (id)initWithAccountId:(NSString*)accountId
+- (instancetype)initWithAccountId:(NSString*)accountId
             finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [super initWithAccountId:accountId

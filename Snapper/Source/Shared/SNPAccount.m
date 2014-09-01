@@ -13,9 +13,9 @@
 
 #pragma mark - Initializers
 
-- (id)initWithName:(NSString*)name
+- (instancetype)initWithName:(NSString*)name
           username:(NSString*)username
-            userId:(NSInteger)userId
+            userId:(NSUInteger)userId
        accessToken:(NSString*)accessToken
          tokenType:(NSString*)tokenType {
 

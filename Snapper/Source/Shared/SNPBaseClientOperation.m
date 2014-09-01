@@ -29,7 +29,7 @@
 
 #pragma mark - Initializers
 
-- (id)init {
+- (instancetype)init {
 
     self = [super init];
     if(self) {
@@ -47,7 +47,7 @@
     return self;
 }
 
-- (id)initWithFinishBlock:(void (^)(SNPResponse* response))finishBlock {
+- (instancetype)initWithFinishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [self init];
     if(self) {
@@ -57,13 +57,13 @@
     return self;
 }
 
-- (id)initWithEndpoint:(NSURL*)endpoint
+- (instancetype)initWithEndpoint:(NSURL*)endpoint
                 method:(NSString*)method
                headers:(NSDictionary*)headers
             parameters:(NSDictionary*)parameters
                   body:(NSData*)body
               bodyType:(NSString*)bodyType
-         progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
+         progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
            finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [self initWithFinishBlock:finishBlock];
@@ -164,7 +164,7 @@
     if(meta.errorId ||
        meta.errorSlug ||
        meta.errorMessage) {
-        meta.error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+        meta.error = [NSError errorWithDomain:SNPErrorDomain
                                          code:meta.code
                                      userInfo:(@{
                                                  @"error_id": meta.errorId ?: @"",
@@ -246,9 +246,9 @@ willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge*)challen
 }
 
 - (void)connection:(NSURLConnection*)connection
-   didSendBodyData:(NSInteger)bytesWritten
- totalBytesWritten:(NSInteger)totalBytesWritten
-totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+   didSendBodyData:(NSUInteger)bytesWritten
+ totalBytesWritten:(NSUInteger)totalBytesWritten
+totalBytesExpectedToWrite:(NSUInteger)totalBytesExpectedToWrite {
 
     if(_progressBlock) {
         _progressBlock(bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
@@ -316,7 +316,7 @@ didReceiveResponse:(NSURLResponse*)response {
             else {
                 id serializedObject = [adapter model];
                 if(serializedObject == nil) {
-                    NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                    NSError* error = [NSError errorWithDomain:SNPErrorDomain
                                                          code:SNPSerializationErrorCode
                                                      userInfo:nil];
                     response = [self createResponseFromError:error];
@@ -340,7 +340,7 @@ didReceiveResponse:(NSURLResponse*)response {
                 else {
                     id serializedObject = [adapter model];
                     if(serializedObject == nil) {
-                        NSError* error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                        NSError* error = [NSError errorWithDomain:SNPErrorDomain
                                                              code:SNPSerializationErrorCode
                                                          userInfo:nil];
                         response = [self createResponseFromError:error];

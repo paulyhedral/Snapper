@@ -17,7 +17,7 @@
 @property (nonatomic, assign) NSInteger userId;
 
 // -- Initialization --
-- (id)initWithUserId:(NSUInteger)UserId
+- (instancetype)initWithUserId:(NSUInteger)UserId
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

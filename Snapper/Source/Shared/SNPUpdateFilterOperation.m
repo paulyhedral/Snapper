@@ -15,7 +15,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithFilterId:(NSUInteger)filterId
+- (instancetype)initWithFilterId:(NSUInteger)filterId
                   name:(NSString*)name
            matchPolicy:(SNPFilterMatchPolicy)matchPolicy
                clauses:(NSArray*)clauses

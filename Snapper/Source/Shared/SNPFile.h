@@ -22,11 +22,11 @@ typedef enum : NSInteger {
 
 @property (nonatomic, copy) NSString* mimeType;
 @property (nonatomic, copy) NSString* sha1;
-@property (nonatomic, assign) NSInteger size;
+@property (nonatomic, assign) NSUInteger size;
 @property (nonatomic, copy) NSURL* URL;
 @property (nonatomic, copy) NSDate* URLExpires;
-@property (nonatomic, assign) NSInteger imageWidth;
-@property (nonatomic, assign) NSInteger imageHeight;
+@property (nonatomic, assign) NSUInteger imageWidth;
+@property (nonatomic, assign) NSUInteger imageHeight;
 
 @end
 
@@ -37,19 +37,19 @@ typedef enum : NSInteger {
 @property (nonatomic, assign) BOOL complete;
 @property (nonatomic, retain) NSDictionary* derivedFiles;
 @property (nonatomic, copy) NSString* fileToken;
-@property (nonatomic, assign) NSInteger fileId;
+@property (nonatomic, assign) NSUInteger fileId;
 @property (nonatomic, assign) SNPFileKind kind;
 @property (nonatomic, copy) NSString* mimeType;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSString* sha1;
-@property (nonatomic, assign) NSInteger size;
+@property (nonatomic, assign) NSUInteger size;
 @property (nonatomic, retain) SNPSource* source;
-@property (nonatomic, assign) NSInteger totalSize;
+@property (nonatomic, assign) NSUInteger totalSize;
 @property (nonatomic, copy) NSString* type;
 @property (nonatomic, copy) NSURL* URL;
 @property (nonatomic, copy) NSDate* URLExpires;
 @property (nonatomic, retain) SNPUser* user;
-@property (nonatomic, assign) NSInteger imageWidth;
-@property (nonatomic, assign) NSInteger imageHeight;
+@property (nonatomic, assign) NSUInteger imageWidth;
+@property (nonatomic, assign) NSUInteger imageHeight;
 
 @end

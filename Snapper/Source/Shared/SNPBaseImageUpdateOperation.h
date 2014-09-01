@@ -16,8 +16,8 @@
 @property (nonatomic, retain) id image;
 
 // -- Initializers --
-- (id)initWithImage:(id)image
-          accountId:(NSString*)accountId
-        finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithImage:(id)image
+                    accountId:(NSString*)accountId
+                  finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

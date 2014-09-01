@@ -19,7 +19,7 @@ typedef enum : NSInteger {
 @interface SNPFilter : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, assign) NSInteger filterId;
+@property (nonatomic, assign) NSUInteger filterId;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, assign) SNPFilterMatchPolicy matchPolicy;
 @property (nonatomic, retain) NSArray* clauses;

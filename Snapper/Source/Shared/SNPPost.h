@@ -14,7 +14,7 @@
 @interface SNPPost : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, assign) NSInteger postId;
+@property (nonatomic, assign) NSUInteger postId;
 @property (nonatomic, retain) SNPUser* user;
 @property (nonatomic, copy) NSDate* createdAt;
 @property (nonatomic, copy) NSString* text;
@@ -23,12 +23,12 @@
 @property (nonatomic, copy) NSString* sourceLink;
 @property (nonatomic, copy) NSString* sourceClientId;
 @property (nonatomic, assign) BOOL machineOnly;
-@property (nonatomic, assign) NSInteger replyTo;
-@property (nonatomic, assign) NSInteger threadId;
+@property (nonatomic, assign) NSUInteger replyTo;
+@property (nonatomic, assign) NSUInteger threadId;
 @property (nonatomic, copy) NSURL* canonicalURL;
-@property (nonatomic, assign) NSInteger numReplies;
-@property (nonatomic, assign) NSInteger numReposts;
-@property (nonatomic, assign) NSInteger numStars;
+@property (nonatomic, assign) NSUInteger numReplies;
+@property (nonatomic, assign) NSUInteger numReposts;
+@property (nonatomic, assign) NSUInteger numStars;
 @property (nonatomic, retain) NSArray* annotations;
 @property (nonatomic, retain) NSArray* mentions;
 @property (nonatomic, retain) NSArray* hashtags;

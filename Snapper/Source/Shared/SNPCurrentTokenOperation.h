@@ -17,7 +17,7 @@
 
 // -- Initializers --
 
-- (id)initWithAccessToken:(NSString*)accessToken
+- (instancetype)initWithAccessToken:(NSString*)accessToken
                 tokenType:(NSString*)tokenType
               finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

@@ -12,9 +12,9 @@
 @interface SNPMention : SNPEntity
 
 @property (nonatomic, copy) NSString* name;
-@property (nonatomic, assign) NSInteger userId;
-@property (nonatomic, assign) NSInteger position;
-@property (nonatomic, assign) NSInteger length;
+@property (nonatomic, assign) NSUInteger userId;
+@property (nonatomic, assign) NSUInteger position;
+@property (nonatomic, assign) NSUInteger length;
 @property (nonatomic, assign) BOOL leading;
 
 @end

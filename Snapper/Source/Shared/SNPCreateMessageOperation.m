@@ -24,7 +24,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithChannelId:(NSUInteger)channelId
+- (instancetype)initWithChannelId:(NSUInteger)channelId
                    text:(NSString*)text
                 replyTo:(NSUInteger)replyTo
             machineOnly:(BOOL)machineOnly
@@ -48,7 +48,7 @@
     return self;
 }
 
-- (id)initWithDestinations:(NSArray*)userIds
+- (instancetype)initWithDestinations:(NSArray*)userIds
                       text:(NSString*)text
                annotations:(NSArray*)annotations
                   entities:(NSArray*)entities

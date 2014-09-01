@@ -17,7 +17,7 @@
 
 #pragma mark - Initializers
 
-- (id)initWithFileId:(NSInteger)fileId
+- (instancetype)initWithFileId:(NSUInteger)fileId
            fileToken:(NSString*)fileToken
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse*))finishBlock {

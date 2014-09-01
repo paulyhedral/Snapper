@@ -47,7 +47,7 @@
                         if(adapter) {
                             user = (SNPUser*)[adapter model];
                             if(user == nil) {
-                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                *error = [NSError errorWithDomain:SNPErrorDomain
                                                              code:SNPSerializationErrorCode
                                                          userInfo:(@{
                                                                      @"property" : @"follow.objects[user]",
@@ -66,7 +66,7 @@
                         if(adapter) {
                             post = (SNPPost*)[adapter model];
                             if(post == nil) {
-                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                *error = [NSError errorWithDomain:SNPErrorDomain
                                                              code:SNPSerializationErrorCode
                                                          userInfo:(@{
                                                                      @"property" : @"reply.objects[post]",
@@ -85,7 +85,7 @@
                         if(adapter) {
                             post = (SNPPost*)[adapter model];
                             if(post == nil) {
-                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                *error = [NSError errorWithDomain:SNPErrorDomain
                                                              code:SNPSerializationErrorCode
                                                          userInfo:(@{
                                                                      @"property" : @"repost.objects[post]",
@@ -104,7 +104,7 @@
                         if(adapter) {
                             post = (SNPPost*)[adapter model];
                             if(post == nil) {
-                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                *error = [NSError errorWithDomain:SNPErrorDomain
                                                              code:SNPSerializationErrorCode
                                                          userInfo:(@{
                                                                      @"property" : @"star.objects[post]",
@@ -125,7 +125,7 @@
                         if(adapter) {
                             channel = (SNPChannel*)[adapter model];
                             if(channel == nil) {
-                                *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                                *error = [NSError errorWithDomain:SNPErrorDomain
                                                              code:SNPSerializationErrorCode
                                                          userInfo:(@{
                                                                      @"property" : @"broadcast*.objects[channel]",
@@ -142,7 +142,7 @@
                         break;
 
                     default:
-                        *error = [NSError errorWithDomain:SNP_ERROR_DOMAIN
+                        *error = [NSError errorWithDomain:SNPErrorDomain
                                                      code:SNPSerializationErrorCode
                                                  userInfo:(@{
                                                              @"property" : @"action(unknown)",

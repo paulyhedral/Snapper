@@ -12,7 +12,8 @@
 @implementation SNPAccountManager {
 
 @private
-    NSMutableDictionary* _accounts;
+    NSMutableDictionary* _accountIdMap;
+    NSMutableDictionary* _accountUserIdMap;
 
 }
 
@@ -20,11 +21,12 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedAccoun
 
 #pragma mark - Initialization
 
-- (id)init {
+- (instancetype)init {
 
     self = [super init];
     if(self) {
-        _accounts = [NSMutableDictionary new];
+        _accountIdMap = [NSMutableDictionary new];
+        _accountUserIdMap = [NSMutableDictionary new];
     }
 
     return self;
@@ -35,7 +37,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedAccoun
 
 - (SNPAccount*)createAccountWithName:(NSString*)name
                             username:(NSString*)username
-                              userId:(NSInteger)userId
+                              userId:(NSUInteger)userId
                          accessToken:(NSString*)accessToken
                            tokenType:(NSString*)tokenType {
 
@@ -43,29 +45,42 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedAccoun
     NSAssert(accessToken, @"Account access token must not be nil");
     NSAssert(tokenType, @"Account token type must not be nil");
 
-    SNPAccount* account = [[SNPAccount alloc] initWithName:name
-                                                  username:username
-                                                    userId:userId
-                                               accessToken:accessToken
-                                                 tokenType:tokenType];
+    SNPAccount* account = _accountUserIdMap[@(userId)];
+    if(account)
+        return account;
+
+    account = [[SNPAccount alloc] initWithName:name
+                                      username:username
+                                        userId:userId
+                                   accessToken:accessToken
+                                     tokenType:tokenType];
 
     if(account) {
-        _accounts[account.accountId] = account;
+        _accountIdMap[account.accountId] = account;
+        _accountUserIdMap[@(userId)] = account;
     }
 
     return account;
 }
 
 - (void)removeAccountForId:(NSString*)accountId {
-    [_accounts removeObjectForKey:accountId];
+    SNPAccount* account = _accountIdMap[accountId];
+    if(account) {
+        [_accountUserIdMap removeObjectForKey:@(account.userId)];
+    }
+    [_accountIdMap removeObjectForKey:accountId];
 }
 
 - (SNPAccount*)accountForId:(NSString*)accountId {
-    return _accounts[accountId];
+    return _accountIdMap[accountId];
+}
+
+- (SNPAccount *)accountForUserId:(NSUInteger)userId {
+    return _accountUserIdMap[@(userId)];
 }
 
 - (NSArray*)allAccounts {
-    return [_accounts allValues];
+    return [_accountIdMap allValues];
 }
 
 @end

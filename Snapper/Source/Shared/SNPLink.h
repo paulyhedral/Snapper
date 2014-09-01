@@ -13,8 +13,8 @@
 
 @property (nonatomic, copy) NSString* text;
 @property (nonatomic, copy) NSURL* URL;
-@property (nonatomic, assign) NSInteger position;
-@property (nonatomic, assign) NSInteger length;
-@property (nonatomic, assign) NSInteger amendedLength;
+@property (nonatomic, assign) NSUInteger position;
+@property (nonatomic, assign) NSUInteger length;
+@property (nonatomic, assign) NSUInteger amendedLength;
 
 @end

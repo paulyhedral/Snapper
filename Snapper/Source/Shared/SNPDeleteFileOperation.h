@@ -17,7 +17,7 @@
 @property (nonatomic, assign) NSInteger fileId;
 
 // -- Initializers --
-- (id)initWithFileId:(NSInteger)fileId
+- (instancetype)initWithFileId:(NSUInteger)fileId
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

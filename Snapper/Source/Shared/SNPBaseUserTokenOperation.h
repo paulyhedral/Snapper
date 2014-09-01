@@ -55,16 +55,16 @@
 @property (nonatomic, copy) NSString* connectionId;
 
 // -- Initializers --
-- (id)initWithAccountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse* response))finishBlock;
-- (id)initWithEndpoint:(NSURL*)endpoint
-                method:(NSString*)method
-               headers:(NSDictionary*)headers
-            parameters:(NSDictionary*)parameters
-                  body:(NSData*)body
-              bodyType:(NSString*)bodyType
-             accountId:(NSString*)accountId
-         progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithAccountId:(NSString*)accountId
+                      finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithEndpoint:(NSURL*)endpoint
+                          method:(NSString*)method
+                         headers:(NSDictionary*)headers
+                      parameters:(NSDictionary*)parameters
+                            body:(NSData*)body
+                        bodyType:(NSString*)bodyType
+                       accountId:(NSString*)accountId
+                   progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
+                     finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

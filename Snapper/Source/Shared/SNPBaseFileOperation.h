@@ -31,18 +31,18 @@
 @property (nonatomic, assign) Class serializationArrayClass;
 
 // -- Initializers --
-- (id)initWithAccountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse* response))finishBlock;
-- (id)initWithEndpoint:(NSURL*)endpoint
-                method:(NSString*)method
-               headers:(NSDictionary*)headers
-            parameters:(NSDictionary*)parameters
-                  body:(NSData*)body
-              bodyType:(NSString*)bodyType
-             fileToken:(NSString*)fileToken
-             accountId:(NSString*)accountId
-         progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithAccountId:(NSString*)accountId
+                      finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithEndpoint:(NSURL*)endpoint
+                          method:(NSString*)method
+                         headers:(NSDictionary*)headers
+                      parameters:(NSDictionary*)parameters
+                            body:(NSData*)body
+                        bodyType:(NSString*)bodyType
+                       fileToken:(NSString*)fileToken
+                       accountId:(NSString*)accountId
+                   progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
+                     finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 // -- Utility methods --
 - (SNPResponse*)createResponseFromJSON:(NSDictionary*)jsonDict;

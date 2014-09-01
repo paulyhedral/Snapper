@@ -8,11 +8,14 @@
 
 #import "SNPStreamWatcher.h"
 
+#import "SNPConstants.h"
+
 
 @implementation SNPStreamWatcher
 
 - (void)main {
-
+    [NSException raise:SNPUnimplementedException
+                format:@"This class's features have not been implemented yet."];
 }
 
 @end

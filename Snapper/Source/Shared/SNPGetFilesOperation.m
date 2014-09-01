@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithFileIds:(NSArray*)fileIds
+- (instancetype)initWithFileIds:(NSArray*)fileIds
             accountId:(NSString*)accountId
           finishBlock:(void (^)(SNPResponse* response))finishBlock {
 

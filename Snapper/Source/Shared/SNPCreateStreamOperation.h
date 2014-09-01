@@ -20,9 +20,9 @@
 @property (nonatomic, copy) NSString* key;
 
 // -- Initializers --
-- (id)initWithObjectTypes:(NSArray*)objectTypes
+- (instancetype)initWithObjectTypes:(NSArray*)objectTypes
                      type:(SNPStreamType)type
-                 filterId:(NSInteger)filterId
+                 filterId:(NSUInteger)filterId
                       key:(NSString*)key
                  appToken:(NSString*)appToken
               finishBlock:(void (^)(SNPResponse* response))finishBlock;

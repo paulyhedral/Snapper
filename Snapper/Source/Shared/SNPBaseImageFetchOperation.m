@@ -26,8 +26,8 @@
 
 #pragma mark - Initializers
 
-- (id)initWithImageURL:(NSURL*)imageURL
-           finishBlock:(void (^)(id, NSError*))finishBlock {
+- (instancetype)initWithImageURL:(NSURL*)imageURL
+                     finishBlock:(void (^)(id, NSError*))finishBlock {
 
     self = [super init];
     if(self) {

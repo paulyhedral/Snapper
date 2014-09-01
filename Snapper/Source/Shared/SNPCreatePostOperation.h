@@ -47,13 +47,13 @@
  *
  * See documentation on each property for details and restrictions.
  */
-- (id)initWithText:(NSString*)text
+- (instancetype)initWithText:(NSString*)text
            replyTo:(NSUInteger)replyTo
        machineOnly:(BOOL)machineOnly
        annotations:(NSArray*)annotations
           entities:(NSArray*)entities
          accountId:(NSString*)accountId
-     progressBlock:(void (^)(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytes))progressBlock
+     progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
        finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end

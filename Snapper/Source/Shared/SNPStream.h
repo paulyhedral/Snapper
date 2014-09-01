@@ -26,7 +26,7 @@ typedef enum : NSInteger {
 @interface SNPStream : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, assign) NSInteger streamId;
+@property (nonatomic, assign) NSUInteger streamId;
 @property (nonatomic, retain) NSURL* endpoint;
 @property (nonatomic, retain) SNPFilter* filter;
 @property (nonatomic, retain) NSArray* objectTypes;

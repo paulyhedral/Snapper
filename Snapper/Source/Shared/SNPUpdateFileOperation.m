@@ -15,7 +15,7 @@
 
 #pragma mark - Initializers
 
-- (id)initWithFileId:(NSInteger)fileId
+- (instancetype)initWithFileId:(NSUInteger)fileId
                 name:(NSString*)name
          annotations:(NSArray*)annotations
          accountId:(NSString*)accountId

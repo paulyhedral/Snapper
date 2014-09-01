@@ -15,7 +15,7 @@
 @interface SNPUser : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, assign) NSInteger userId;
+@property (nonatomic, assign) NSUInteger userId;
 @property (nonatomic, copy) NSString* username;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, retain) SNPDescription* descriptionObject;
@@ -25,10 +25,10 @@
 @property (nonatomic, retain) SNPImage* coverImage;
 @property (nonatomic, copy) NSString* type;
 @property (nonatomic, copy) NSDate* createdAt;
-@property (nonatomic, assign) NSInteger followingCount;
-@property (nonatomic, assign) NSInteger followersCount;
-@property (nonatomic, assign) NSInteger postsCount;
-@property (nonatomic, assign) NSInteger starsCount;
+@property (nonatomic, assign) NSUInteger followingCount;
+@property (nonatomic, assign) NSUInteger followersCount;
+@property (nonatomic, assign) NSUInteger postsCount;
+@property (nonatomic, assign) NSUInteger starsCount;
 @property (nonatomic, assign) BOOL followsYou;
 @property (nonatomic, assign) BOOL youFollow;
 @property (nonatomic, assign) BOOL youMuted;

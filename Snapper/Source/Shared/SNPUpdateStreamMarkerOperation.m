@@ -15,7 +15,7 @@
 
 @implementation SNPUpdateStreamMarkerOperation
 
-- (id)initWithPostId:(NSUInteger)postId
+- (instancetype)initWithPostId:(NSUInteger)postId
                 name:(NSString*)name
           percentage:(NSUInteger)percentage
            accountId:(NSString*)accountId

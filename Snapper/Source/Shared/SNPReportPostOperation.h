@@ -17,7 +17,7 @@
 @property (nonatomic, assign) NSInteger postId;
 
 // -- Initializers --
-- (id)initWithPostId:(NSUInteger)postId
+- (instancetype)initWithPostId:(NSUInteger)postId
            accountId:(NSString*)accountId
          finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

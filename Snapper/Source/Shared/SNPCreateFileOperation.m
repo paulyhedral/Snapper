@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithName:(NSString*)name
+- (instancetype)initWithName:(NSString*)name
        contentType:(NSString*)contentType
               type:(NSString*)type
               data:(NSData*)data
