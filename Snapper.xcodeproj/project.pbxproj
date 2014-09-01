@@ -257,6 +257,8 @@
 		5B25B17D19B4C939002BD23B /* SNPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B25B17C19B4C939002BD23B /* SNPConstants.m */; };
 		5B25B17E19B4C939002BD23B /* SNPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B25B17C19B4C939002BD23B /* SNPConstants.m */; };
 		5B25B17F19B4C939002BD23B /* SNPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B25B17C19B4C939002BD23B /* SNPConstants.m */; };
+		5B25B18019B4CC0D002BD23B /* SNPGetMyChannelsOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BB6C04F19B2E07100E278D5 /* SNPGetMyChannelsOperation.h */; };
+		5B25B18119B4CC25002BD23B /* SNPGetMyChannelsOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5BB6C04F19B2E07100E278D5 /* SNPGetMyChannelsOperation.h */; };
 		5B2E458F16A36E49000CCDB6 /* SNPBaseImageUpdateOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2E458D16A36D88000CCDB6 /* SNPBaseImageUpdateOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B2E459016A36E49000CCDB6 /* SNPBaseImageUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E458E16A36DCD000CCDB6 /* SNPBaseImageUpdateOperation.m */; };
 		5B2E459116A36E49000CCDB6 /* SNPBaseImageUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B2E458E16A36DCD000CCDB6 /* SNPBaseImageUpdateOperation.m */; };
@@ -892,6 +894,7 @@
 			dstPath = include/Snapper;
 			dstSubfolderSpec = 16;
 			files = (
+				5B25B18019B4CC0D002BD23B /* SNPGetMyChannelsOperation.h in CopyFiles */,
 				5B15D1F11894508300D41E25 /* SNPPasswordLoginOperation.h in CopyFiles */,
 				5B40711517C442B70092D310 /* SNPConfiguration.h in CopyFiles */,
 				5B40711617C442B70092D310 /* SNPSearchOperation.h in CopyFiles */,
@@ -1047,6 +1050,7 @@
 			dstPath = include/Snapper;
 			dstSubfolderSpec = 16;
 			files = (
+				5B25B18119B4CC25002BD23B /* SNPGetMyChannelsOperation.h in CopyFiles */,
 				5B832D6218812BE3004EE45A /* CWLSynthesizeSingleton.h in CopyFiles */,
 				5B832CDB18812BA8004EE45A /* Snapper.h in CopyFiles */,
 				5B832CDC18812BA8004EE45A /* SNPConstants.h in CopyFiles */,
