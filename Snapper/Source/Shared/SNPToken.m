@@ -43,4 +43,28 @@
             }];
 }
 
++ (NSValueTransformer*)storageAvailableJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
++ (NSValueTransformer*)storageUsedJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
 @end
