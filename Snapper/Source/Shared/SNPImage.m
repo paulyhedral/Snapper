@@ -22,4 +22,28 @@
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
++ (NSValueTransformer*)widthJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
++ (NSValueTransformer*)heightJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
 @end

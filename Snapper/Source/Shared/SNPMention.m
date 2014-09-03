@@ -20,4 +20,40 @@
             };
 }
 
++ (NSValueTransformer*)userIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
++ (NSValueTransformer*)positionJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
++ (NSValueTransformer*)lengthJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
 @end

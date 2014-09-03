@@ -44,11 +44,48 @@
 + (NSValueTransformer*)channelIdJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^(NSString *strId) {
-                return [NSNumber numberWithInteger:[strId integerValue]];
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
             }
                                                          reverseBlock:
             ^(NSNumber* intNum) {
-                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
++ (NSValueTransformer*)recentMessageIdJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
++ (NSValueTransformer*)messageCountJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
+            }];
+}
+
++ (NSValueTransformer*)subscriberCountJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^(NSString *strId) {
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
+            }
+                                                         reverseBlock:
+            ^(NSNumber* intNum) {
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
             }];
 }
 

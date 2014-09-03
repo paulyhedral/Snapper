@@ -34,11 +34,12 @@
 + (NSValueTransformer*)postIdJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^(NSString *strId) {
-                return [NSNumber numberWithInteger:[strId integerValue]];
+                NSNumberFormatter* formatter = [NSNumberFormatter new];
+                return @([[formatter numberFromString:strId] longLongValue]);
             }
                                                          reverseBlock:
             ^(NSNumber* intNum) {
-                return [NSString stringWithFormat:@"%ld", (long)[intNum integerValue]];
+                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
             }];
 }
 
