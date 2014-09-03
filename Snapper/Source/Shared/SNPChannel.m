@@ -65,30 +65,6 @@
             }];
 }
 
-+ (NSValueTransformer*)messageCountJSONTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
-            ^(NSString *strId) {
-                NSNumberFormatter* formatter = [NSNumberFormatter new];
-                return @([[formatter numberFromString:strId] longLongValue]);
-            }
-                                                         reverseBlock:
-            ^(NSNumber* intNum) {
-                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
-            }];
-}
-
-+ (NSValueTransformer*)subscriberCountJSONTransformer {
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
-            ^(NSString *strId) {
-                NSNumberFormatter* formatter = [NSNumberFormatter new];
-                return @([[formatter numberFromString:strId] longLongValue]);
-            }
-                                                         reverseBlock:
-            ^(NSNumber* intNum) {
-                return [NSString stringWithFormat:@"%lld", [intNum longLongValue]];
-            }];
-}
-
 + (NSValueTransformer*)ownerJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^id(NSDictionary* dict) {
