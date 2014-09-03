@@ -20,7 +20,7 @@ CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
 - (instancetype)init {
     self = [super init];
     if(self) {
-        _rootAPIURL = [NSURL URLWithString:@"https://alpha-api.app.net/stream/0/"];
+        _rootAPIURL = [NSURL URLWithString:@"https://api.app.net/"];
     }
 
     return self;
