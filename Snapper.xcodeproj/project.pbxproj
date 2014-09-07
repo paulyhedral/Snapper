@@ -843,8 +843,6 @@
 		5BE0A55716818048005AA40C /* NSString+URLEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A55216818048005AA40C /* NSString+URLEscape.m */; };
 		5BE0A55816818048005AA40C /* NSString+URLEscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A55216818048005AA40C /* NSString+URLEscape.m */; };
 		5BE0A55E16818A76005AA40C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE0A55D16818A76005AA40C /* UIKit.framework */; };
-		5BE0A5621682D450005AA40C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE0A55F16818ACA005AA40C /* CoreGraphics.framework */; };
-		5BE0A5631682D607005AA40C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE0A55F16818ACA005AA40C /* CoreGraphics.framework */; };
 		5BE8E191188318C200E0AD41 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE8E190188318C200E0AD41 /* CoreGraphics.framework */; };
 		5BE8E196188318D100E0AD41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE8E195188318D100E0AD41 /* Foundation.framework */; };
 		5BE8E197188318D900E0AD41 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE8E190188318C200E0AD41 /* CoreGraphics.framework */; };
@@ -867,7 +865,6 @@
 		5BF6C6A61686AFEC00FED6D9 /* SNPDeleteUserFiltersOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BF6C6A41686AFEB00FED6D9 /* SNPDeleteUserFiltersOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5BF6C6A71686AFEC00FED6D9 /* SNPDeleteUserFiltersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6A51686AFEB00FED6D9 /* SNPDeleteUserFiltersOperation.m */; };
 		5BF6C6A81686AFEC00FED6D9 /* SNPDeleteUserFiltersOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6C6A51686AFEB00FED6D9 /* SNPDeleteUserFiltersOperation.m */; };
-		F0C812C24C56434E9A17077C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FF5FBB9FA542889490BDE9 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1193,7 +1190,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		02FF5FBB9FA542889490BDE9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6B5EAD1680E9B0006C63C1 /* libSnapper-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSnapper-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6B5EB01680E9B0006C63C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C6B5EBE1680E9B0006C63C1 /* Snapper-iOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snapper-iOSTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1472,7 +1468,6 @@
 		5BC6062B19965A30002A6A84 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		5BC6062C19965A30002A6A84 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		5BC6062D19965A30002A6A84 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		5BCF1E0E19A8D41A005FF020 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5BCF1E0F19A8D425005FF020 /* Snapper.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Snapper.podspec; sourceTree = "<group>"; };
 		5BD0241416861E5100E24D5A /* SNPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPConstants.h; sourceTree = "<group>"; };
 		5BD5927B16C2095F0066E306 /* SNPPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPlace.h; sourceTree = "<group>"; };
@@ -1494,7 +1489,6 @@
 		5BE0A55116818048005AA40C /* NSString+URLEscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEscape.h"; sourceTree = "<group>"; };
 		5BE0A55216818048005AA40C /* NSString+URLEscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEscape.m"; sourceTree = "<group>"; };
 		5BE0A55D16818A76005AA40C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5BE0A55F16818ACA005AA40C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5BE8E190188318C200E0AD41 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		5BE8E195188318D100E0AD41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5BF6C6891686AEF400FED6D9 /* SNPCreateFilterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPCreateFilterOperation.h; sourceTree = "<group>"; };
@@ -1516,10 +1510,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE0A5621682D450005AA40C /* CoreGraphics.framework in Frameworks */,
 				5BE0A55E16818A76005AA40C /* UIKit.framework in Frameworks */,
 				3C6B5EB11680E9B0006C63C1 /* Foundation.framework in Frameworks */,
-				F0C812C24C56434E9A17077C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1527,7 +1519,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BE0A5631682D607005AA40C /* CoreGraphics.framework in Frameworks */,
 				3C6B5EC01680E9B0006C63C1 /* SenTestingKit.framework in Frameworks */,
 				3C6B5EC31680E9B0006C63C1 /* Foundation.framework in Frameworks */,
 				3C6B5EC61680E9B0006C63C1 /* libSnapper-iOS.a in Frameworks */,
@@ -1574,7 +1565,6 @@
 				3C6B5EAE1680E9B0006C63C1 /* Products */,
 				544FF2B45A15428E8FE21296 /* Pods.xcconfig */,
 				5BCF1E0F19A8D425005FF020 /* Snapper.podspec */,
-				5BCF1E0E19A8D41A005FF020 /* Podfile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1595,12 +1585,10 @@
 			children = (
 				5BE8E195188318D100E0AD41 /* Foundation.framework */,
 				5BE8E190188318C200E0AD41 /* CoreGraphics.framework */,
-				5BE0A55F16818ACA005AA40C /* CoreGraphics.framework */,
 				5BE0A55D16818A76005AA40C /* UIKit.framework */,
 				3C6B5EB01680E9B0006C63C1 /* Foundation.framework */,
 				3C6B5EBF1680E9B0006C63C1 /* SenTestingKit.framework */,
 				3C6B5F061680EE8A006C63C1 /* Other Frameworks */,
-				02FF5FBB9FA542889490BDE9 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
