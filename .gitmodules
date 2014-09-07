@@ -1,0 +1,3 @@
+[submodule "Libraries/Mantle"]
+	path = Libraries/Mantle
+	url = https://github.com/Mantle/Mantle.git
