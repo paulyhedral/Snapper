@@ -1,5 +1,4 @@
-#include "Pods/Pods.xcconfig"
 
-//HEADER_SEARCH_PATHS = "$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include" $(inherited)
+HEADER_SEARCH_PATHS = $(inherited) "$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include"
 
-//OTHER_LDFLAGS = $(inherited) -ObjC -all_load
+OTHER_LDFLAGS = $(inherited) -ObjC -all_load

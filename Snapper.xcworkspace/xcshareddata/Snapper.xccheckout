@@ -10,15 +10,31 @@
 	<string>Snapper</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>2FD0F96481B39E576130E173BF6923CF52C91FF7</key>
+		<string>https://github.com/specta/specta.git</string>
 		<key>765E55A8884EC386227AAFA621343F9D64EC1BE5</key>
 		<string>https://github.com/exsortis/Snapper.git</string>
+		<key>8884BD3B878631A1500EC9895E6A3CF4CB0AB3DB</key>
+		<string>https://github.com/specta/expecta.git</string>
+		<key>E084C86B03F81D63323C9E7510697EA528A758C7</key>
+		<string>https://github.com/jspahrsummers/xcconfigs.git</string>
+		<key>E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D</key>
+		<string>https://github.com/Mantle/Mantle.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Snapper.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>2FD0F96481B39E576130E173BF6923CF52C91FF7</key>
+		<string>../Libraries/Mantle/MantleTests/specta/</string>
 		<key>765E55A8884EC386227AAFA621343F9D64EC1BE5</key>
 		<string>..</string>
+		<key>8884BD3B878631A1500EC9895E6A3CF4CB0AB3DB</key>
+		<string>../Libraries/Mantle/MantleTests/expecta/</string>
+		<key>E084C86B03F81D63323C9E7510697EA528A758C7</key>
+		<string>../Libraries/Mantle/Configuration/</string>
+		<key>E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D</key>
+		<string>../Libraries/Mantle/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/exsortis/Snapper.git</string>
@@ -32,9 +48,41 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E084C86B03F81D63323C9E7510697EA528A758C7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Configuration</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8884BD3B878631A1500EC9895E6A3CF4CB0AB3DB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>expecta</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Mantle</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>765E55A8884EC386227AAFA621343F9D64EC1BE5</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Snapper</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2FD0F96481B39E576130E173BF6923CF52C91FF7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>specta</string>
 		</dict>
 	</array>
 </dict>
