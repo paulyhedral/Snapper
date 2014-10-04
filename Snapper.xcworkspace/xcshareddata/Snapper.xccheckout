@@ -26,15 +26,15 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2FD0F96481B39E576130E173BF6923CF52C91FF7</key>
-		<string>../Libraries/Mantle/MantleTests/specta/</string>
+		<string>../Libraries/Mantle/MantleTests/specta</string>
 		<key>765E55A8884EC386227AAFA621343F9D64EC1BE5</key>
 		<string>..</string>
 		<key>8884BD3B878631A1500EC9895E6A3CF4CB0AB3DB</key>
-		<string>../Libraries/Mantle/MantleTests/expecta/</string>
+		<string>../Libraries/Mantle/MantleTests/expecta</string>
 		<key>E084C86B03F81D63323C9E7510697EA528A758C7</key>
-		<string>../Libraries/Mantle/Configuration/</string>
+		<string>../Libraries/Mantle/Configuration</string>
 		<key>E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D</key>
-		<string>../Libraries/Mantle/</string>
+		<string>../Libraries/Mantle</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/exsortis/Snapper.git</string>

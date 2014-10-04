@@ -1032,6 +1032,7 @@
 		5B3ADF1116CDD38C000EEAB0 /* SNPReportPostOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPReportPostOperation.m; sourceTree = "<group>"; };
 		5B4EFDB7174DB88A001A6862 /* SNPPartialUpdateUserOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPPartialUpdateUserOperation.h; sourceTree = "<group>"; };
 		5B4EFDB8174DB88A001A6862 /* SNPPartialUpdateUserOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPPartialUpdateUserOperation.m; sourceTree = "<group>"; };
+		5B66993C19DFA7470033B81F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5B6B48CF1687CB2B0032C586 /* SNPCreateStreamOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPCreateStreamOperation.h; sourceTree = "<group>"; };
 		5B6B48D01687CB2B0032C586 /* SNPCreateStreamOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNPCreateStreamOperation.m; sourceTree = "<group>"; };
 		5B6B48D41687CB400032C586 /* SNPGetStreamOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNPGetStreamOperation.h; sourceTree = "<group>"; };
@@ -1190,6 +1191,7 @@
 				3C6B5EAF1680E9B0006C63C1 /* Frameworks */,
 				3C6B5EAE1680E9B0006C63C1 /* Products */,
 				5BCF1E0F19A8D425005FF020 /* Snapper.podspec */,
+				5B66993C19DFA7470033B81F /* README.md */,
 			);
 			sourceTree = "<group>";
 		};

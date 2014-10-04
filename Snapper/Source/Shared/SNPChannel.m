@@ -128,6 +128,27 @@
             }];
 }
 
++ (NSValueTransformer*)editorsJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSDictionary* dict) {
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                              modelClass:[SNPACL class]
+                                                                                   error:&error];
+                if(adapter == nil) {
+                    NSLog(@"Unable to deserialize editors ACL: %@", error);
+                    return nil;
+                }
+
+                return [adapter model];
+            }
+                                                         reverseBlock:
+            ^id(SNPACL* acl) {
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:acl];
+                return [adapter JSONDictionary];
+            }];
+}
+
 + (NSValueTransformer*)annotationsJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^id(NSArray* annotationDicts) {
@@ -182,6 +203,27 @@
                                                          reverseBlock:
             ^id(SNPMessage* message) {
                 MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:message];
+                return [adapter JSONDictionary];
+            }];
+}
+
++ (NSValueTransformer*)markerJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:
+            ^id(NSDictionary* dict) {
+                NSError* error = nil;
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                              modelClass:[SNPStreamMarker class]
+                                                                                   error:&error];
+                if(adapter == nil) {
+                    NSLog(@"Unable to deserialize marker: %@", error);
+                    return nil;
+                }
+
+                return [adapter model];
+            }
+                                                         reverseBlock:
+            ^id(SNPStreamMarker* marker) {
+                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:marker];
                 return [adapter JSONDictionary];
             }];
 }
