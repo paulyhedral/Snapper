@@ -25,13 +25,13 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithText:(NSString*)text
-           replyTo:(NSUInteger)replyTo
-       machineOnly:(BOOL)machineOnly
-       annotations:(NSArray*)annotations
-          entities:(NSArray*)entities
-         accountId:(NSString*)accountId
-     progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
-       finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                     replyTo:(NSUInteger)replyTo
+                 machineOnly:(BOOL)machineOnly
+                 annotations:(NSArray*)annotations
+                    entities:(NSArray*)entities
+                   accountId:(NSString*)accountId
+               progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
+                 finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
@@ -41,6 +41,35 @@
         self.machineOnly = machineOnly;
         self.annotations = annotations;
         self.entities = entities;
+        self.progressBlock = progressBlock;
+        self.method = @"POST";
+        self.serializationRootClass = [SNPPost class];
+    }
+
+    return self;
+}
+
+- (instancetype)initWithText:(NSString*)text
+                     replyTo:(NSUInteger)replyTo
+                 machineOnly:(BOOL)machineOnly
+                 annotations:(NSArray*)annotations
+                    entities:(NSArray*)entities
+                  parseLinks:(BOOL)parseLinks
+               parseMarkdown:(BOOL)parseMarkdown
+                   accountId:(NSString*)accountId
+               progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
+                 finishBlock:(void (^)(SNPResponse* response))finishBlock {
+
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
+    if(self) {
+        self.text = text;
+        self.replyTo = replyTo;
+        self.machineOnly = machineOnly;
+        self.annotations = annotations;
+        self.entities = entities;
+        self.parseLinks = parseLinks;
+        self.parseMarkdown = parseMarkdown;
         self.progressBlock = progressBlock;
         self.method = @"POST";
         self.serializationRootClass = [SNPPost class];
@@ -114,6 +143,13 @@
                 entitiesDict[@"hashtags"] = serializedHashtags;
             }
 
+            if(_parseLinks) {
+                entitiesDict[@"parse_links"] = @YES;
+            }
+            if(_parseMarkdown) {
+                entitiesDict[@"parse_markdown"] = @YES;
+            }
+
             postDict[@"entities"] = entitiesDict;
         }
     }
@@ -128,10 +164,10 @@
         self.finishBlock(response);
         return;
     }
-
+    
     self.body = postBody;
     self.bodyType = @"application/json";
-
+    
     [super main];
 }
 
