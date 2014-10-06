@@ -33,9 +33,9 @@ typedef enum : NSInteger {
 @interface SNPFile : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, retain) NSArray* annotations;
-@property (nonatomic, assign) BOOL complete;
-@property (nonatomic, retain) NSDictionary* derivedFiles;
+@property (nonatomic, copy) NSArray* annotations;
+@property (nonatomic, assign, getter=isComplete) BOOL complete;
+@property (nonatomic, copy) NSDictionary* derivedFiles;
 @property (nonatomic, copy) NSString* fileToken;
 @property (nonatomic, assign) NSUInteger fileId;
 @property (nonatomic, assign) SNPFileKind kind;

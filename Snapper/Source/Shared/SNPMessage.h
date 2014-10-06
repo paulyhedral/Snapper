@@ -23,13 +23,13 @@
 @property (nonatomic, copy) NSString* sourceName;
 @property (nonatomic, copy) NSString* sourceLink;
 @property (nonatomic, copy) NSString* sourceClientId;
-@property (nonatomic, assign) BOOL machineOnly;
-@property (nonatomic, retain) NSArray* annotations;
-@property (nonatomic, retain) NSArray* mentions;
-@property (nonatomic, retain) NSArray* hashtags;
-@property (nonatomic, retain) NSArray* links;
+@property (nonatomic, assign, getter=isMachineOnly) BOOL machineOnly;
+@property (nonatomic, copy) NSArray* annotations;
+@property (nonatomic, copy) NSArray* mentions;
+@property (nonatomic, copy) NSArray* hashtags;
+@property (nonatomic, copy) NSArray* links;
 @property (nonatomic, assign) NSUInteger threadId;
 @property (nonatomic, assign) NSUInteger numReplies;
-@property (nonatomic, assign) BOOL deleted;
+@property (nonatomic, assign, getter=isDeleted) BOOL deleted;
 
 @end

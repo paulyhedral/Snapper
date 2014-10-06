@@ -14,8 +14,8 @@
 
 @property (nonatomic, copy) NSString* text;
 @property (nonatomic, copy) NSString* html;
-@property (nonatomic, retain) NSArray* mentions;
-@property (nonatomic, retain) NSArray* hashtags;
-@property (nonatomic, retain) NSArray* links;
+@property (nonatomic, copy) NSArray* mentions;
+@property (nonatomic, copy) NSArray* hashtags;
+@property (nonatomic, copy) NSArray* links;
 
 @end

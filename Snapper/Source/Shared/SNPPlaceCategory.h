@@ -13,6 +13,6 @@
 <MTLJSONSerializing>
 
 @property (nonatomic, assign) NSUInteger categoryId;
-@property (nonatomic, retain) NSArray* labels;
+@property (nonatomic, copy) NSArray* labels;
 
 @end

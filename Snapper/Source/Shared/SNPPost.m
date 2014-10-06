@@ -236,16 +236,21 @@
 + (NSValueTransformer*)repostOfJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^id(NSDictionary* dict) {
-                NSError* error = nil;
-                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
-                                                                              modelClass:[SNPPost class]
-                                                                                   error:&error];
-                if(adapter == nil) {
-                    NSLog(@"Unable to deserialize post: %@", error);
+                if(dict) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                                  modelClass:[SNPPost class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize post: %@", error);
+                        return nil;
+                    }
+
+                    return [adapter model];
+                }
+                else {
                     return nil;
                 }
-
-                return [adapter model];
             }
                                                          reverseBlock:
             ^id(SNPPost* post) {

@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString* appClientId;
 @property (nonatomic, copy) NSString* appLink;
 @property (nonatomic, copy) NSString* appName;
-@property (nonatomic, retain) NSArray* scopes;
+@property (nonatomic, copy) NSArray* scopes;
 @property (nonatomic, retain) SNPUser* user;
 @property (nonatomic, assign) NSUInteger storageAvailable;
 @property (nonatomic, assign) NSUInteger storageUsed;

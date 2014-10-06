@@ -15,6 +15,6 @@
 @property (nonatomic, assign) NSUInteger userId;
 @property (nonatomic, assign) NSUInteger position;
 @property (nonatomic, assign) NSUInteger length;
-@property (nonatomic, assign) BOOL leading;
+@property (nonatomic, assign, getter=isLeading) BOOL leading;
 
 @end

@@ -13,10 +13,10 @@
 <MTLJSONSerializing>
 
 // -- Properties --
-@property (nonatomic, assign) BOOL immutable;
+@property (nonatomic, assign, getter=isImmutable) BOOL immutable;
 @property (nonatomic, assign) BOOL anyUser;
-@property (nonatomic, assign) BOOL public_;
-@property (nonatomic, retain) NSArray* userIds;
-@property (nonatomic, assign) BOOL you;
+@property (nonatomic, assign, getter=isPublic) BOOL public_;
+@property (nonatomic, copy) NSArray* userIds;
+@property (nonatomic, assign, getter=isYou) BOOL you;
 
 @end

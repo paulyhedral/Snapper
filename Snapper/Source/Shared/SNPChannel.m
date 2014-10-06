@@ -37,7 +37,7 @@
              @"recentMessage": @"recent_message",
              @"subscriberCount": @"counts.subscribers",
              @"messageCount": @"counts.messages",
-             @"isInactive": @"is_inactive",
+             @"inactive": @"is_inactive",
              };
 }
 
@@ -189,16 +189,21 @@
 + (NSValueTransformer*)recentMessageJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^id(NSDictionary* messageDict) {
-                NSError* error = nil;
-                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:messageDict
-                                                                              modelClass:[SNPMessage class]
-                                                                                   error:&error];
-                if(adapter == nil) {
-                    NSLog(@"Error while deserializing recent message: %@", error);
+                if(messageDict) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:messageDict
+                                                                                  modelClass:[SNPMessage class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Error while deserializing recent message: %@", error);
+                        return nil;
+                    }
+
+                    return [adapter model];
+                }
+                else {
                     return nil;
                 }
-
-                return [adapter model];
             }
                                                          reverseBlock:
             ^id(SNPMessage* message) {
@@ -210,16 +215,21 @@
 + (NSValueTransformer*)markerJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^id(NSDictionary* dict) {
-                NSError* error = nil;
-                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
-                                                                              modelClass:[SNPStreamMarker class]
-                                                                                   error:&error];
-                if(adapter == nil) {
-                    NSLog(@"Unable to deserialize marker: %@", error);
+                if(dict) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                                  modelClass:[SNPStreamMarker class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize marker: %@", error);
+                        return nil;
+                    }
+
+                    return [adapter model];
+                }
+                else {
                     return nil;
                 }
-
-                return [adapter model];
             }
                                                          reverseBlock:
             ^id(SNPStreamMarker* marker) {

@@ -34,8 +34,8 @@
 @property (nonatomic, assign) BOOL youMuted;
 @property (nonatomic, assign) BOOL youBlocked;
 @property (nonatomic, assign) BOOL youCanSubscribe;
-@property (nonatomic, retain) NSArray* annotations;
-@property (nonatomic, retain) NSURL* canonicalURL;
-@property (nonatomic, retain) NSString* verifiedDomain;
+@property (nonatomic, copy) NSArray* annotations;
+@property (nonatomic, copy) NSURL* canonicalURL;
+@property (nonatomic, copy) NSString* verifiedDomain;
 
 @end

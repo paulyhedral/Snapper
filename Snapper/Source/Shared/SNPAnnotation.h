@@ -28,6 +28,6 @@
 <MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString* type;
-@property (nonatomic, retain) NSDictionary* value;
+@property (nonatomic, copy) NSDictionary* value;
 
 @end

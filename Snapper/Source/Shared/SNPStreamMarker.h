@@ -15,7 +15,7 @@
 @property (nonatomic, assign) NSUInteger postId;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, assign) NSInteger percentage;
-@property (nonatomic, retain) NSDate* updatedAt;
+@property (nonatomic, copy) NSDate* updatedAt;
 @property (nonatomic, copy) NSString* version;
 
 @end

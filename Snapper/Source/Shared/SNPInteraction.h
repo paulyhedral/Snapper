@@ -24,8 +24,8 @@ typedef NS_ENUM(NSInteger, SNPInteractionAction) {
 <MTLJSONSerializing>
 
 @property (nonatomic, assign) SNPInteractionAction action;
-@property (nonatomic, retain) NSArray* objects;
-@property (nonatomic, retain) NSArray* users;
+@property (nonatomic, copy) NSArray* objects;
+@property (nonatomic, copy) NSArray* users;
 @property (nonatomic, copy) NSDate* eventDate;
 
 @end

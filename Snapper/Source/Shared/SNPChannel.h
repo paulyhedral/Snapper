@@ -28,8 +28,8 @@
 @property (nonatomic, assign) BOOL youCanEdit;
 @property (nonatomic, assign) BOOL youSubscribed;
 @property (nonatomic, assign) BOOL youMuted;
-@property (nonatomic, retain) NSArray* annotations;
-@property (nonatomic, assign) BOOL isInactive;
+@property (nonatomic, copy) NSArray* annotations;
+@property (nonatomic, assign, getter=isInactive) BOOL inactive;
 @property (nonatomic, assign) NSUInteger messageCount;
 @property (nonatomic, assign) NSUInteger subscriberCount;
 @property (nonatomic, retain) SNPMessage* recentMessage;

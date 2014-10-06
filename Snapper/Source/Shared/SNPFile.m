@@ -40,11 +40,16 @@
 
 + (NSValueTransformer*)URLExpiresJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
-            ^(NSString *str) {
-                return [self.dateFormatter dateFromString:str];
+            ^id(NSString *str) {
+                if(str) {
+                    return [self.dateFormatter dateFromString:str];
+                }
+                else {
+                    return nil;
+                }
             }
                                                          reverseBlock:
-            ^(NSDate *date) {
+            ^id(NSDate *date) {
                 return [self.dateFormatter stringFromDate:date];
             }];
 }
@@ -188,22 +193,32 @@
 + (NSValueTransformer*)userJSONTransformer {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:
             ^id(NSDictionary* dict) {
-                NSError* error = nil;
-                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
-                                                                              modelClass:[SNPUser class]
-                                                                                   error:&error];
-                if(adapter == nil) {
-                    NSLog(@"Unable to deserialize mention: %@", error);
-                    return nil;
+                if(dict) {
+                    NSError* error = nil;
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithJSONDictionary:dict
+                                                                                  modelClass:[SNPUser class]
+                                                                                       error:&error];
+                    if(adapter == nil) {
+                        NSLog(@"Unable to deserialize mention: %@", error);
+                        return nil;
+                    }
+                    else {
+                        return [adapter model];
+                    }
                 }
                 else {
-                    return [adapter model];
+                    return nil;
                 }
             }
                                                          reverseBlock:
             ^id(SNPUser* user) {
-                MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:user];
-                return [adapter model];
+                if(user) {
+                    MTLJSONAdapter* adapter = [[MTLJSONAdapter alloc] initWithModel:user];
+                    return [adapter model];
+                }
+                else {
+                    return nil;
+                }
             }];
 }
 

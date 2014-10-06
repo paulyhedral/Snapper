@@ -26,10 +26,10 @@
 @property (nonatomic, copy) NSString* POBox;
 @property (nonatomic, copy) NSString* postcode;
 @property (nonatomic, copy) NSString* countryCode;
-@property (nonatomic, assign) BOOL open;
+@property (nonatomic, assign, getter=isOpen) BOOL open;
 @property (nonatomic, copy) NSURL* website;
 @property (nonatomic, copy) NSString* telephone;
 @property (nonatomic, copy) NSString* fax;
-@property (nonatomic, retain) NSArray* categories;
+@property (nonatomic, copy) NSArray* categories;
 
 @end

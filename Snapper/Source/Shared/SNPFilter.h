@@ -22,6 +22,6 @@ typedef enum : NSInteger {
 @property (nonatomic, assign) NSUInteger filterId;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, assign) SNPFilterMatchPolicy matchPolicy;
-@property (nonatomic, retain) NSArray* clauses;
+@property (nonatomic, copy) NSArray* clauses;
 
 @end
