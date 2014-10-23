@@ -147,7 +147,7 @@
                 entitiesDict[@"parse_links"] = @YES;
             }
             if(_parseMarkdown) {
-                entitiesDict[@"parse_markdown"] = @YES;
+                entitiesDict[@"parse_markdown_links"] = @YES;
             }
 
             postDict[@"entities"] = entitiesDict;

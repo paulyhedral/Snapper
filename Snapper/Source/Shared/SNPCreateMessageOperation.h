@@ -50,6 +50,16 @@
  * An array of SNPEntity-subclassed objects, e.g., SNPMention, SNPHashtag, or SNPLink to include in the message.
  */
 @property (nonatomic, retain) NSArray* entities;
+/**
+ * Indicates whether links should be parsed from the post text by the server in addition to any
+ * custom link entities that are provided.
+ */
+@property (nonatomic, assign) BOOL parseLinks;
+/**
+ * Indicates whether links should be parsed using Markdown syntax from the post text by the server
+ * in addition to any custom link entities that are provided.
+ */
+@property (nonatomic, assign) BOOL parseMarkdown;
 
 @property (nonatomic, assign) BOOL includeMessageAnnotations;
 
@@ -66,6 +76,24 @@
                                 text:(NSString*)text
                          annotations:(NSArray*)annotations
                             entities:(NSArray*)entities
+                           accountId:(NSString*)accountId
+                         finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithChannelId:(NSUInteger)channelId
+                             text:(NSString*)text
+                          replyTo:(NSUInteger)replyTo
+                      machineOnly:(BOOL)machineOnly
+                      annotations:(NSArray*)annotations
+                         entities:(NSArray*)entities
+                       parseLinks:(BOOL)parseLinks
+                    parseMarkdown:(BOOL)parseMarkdown
+                        accountId:(NSString*)accountId
+                      finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (instancetype)initWithDestinations:(NSArray*)userIds
+                                text:(NSString*)text
+                         annotations:(NSArray*)annotations
+                            entities:(NSArray*)entities
+                          parseLinks:(BOOL)parseLinks
+                       parseMarkdown:(BOOL)parseMarkdown
                            accountId:(NSString*)accountId
                          finishBlock:(void (^)(SNPResponse* response))finishBlock;
 

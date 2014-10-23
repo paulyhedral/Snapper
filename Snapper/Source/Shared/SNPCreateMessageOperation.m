@@ -68,6 +68,58 @@
     return self;
 }
 
+- (instancetype)initWithChannelId:(NSUInteger)channelId
+                             text:(NSString*)text
+                          replyTo:(NSUInteger)replyTo
+                      machineOnly:(BOOL)machineOnly
+                      annotations:(NSArray*)annotations
+                         entities:(NSArray*)entities
+                       parseLinks:(BOOL)parseLinks
+                    parseMarkdown:(BOOL)parseMarkdown
+                        accountId:(NSString*)accountId
+                      finishBlock:(void (^)(SNPResponse* response))finishBlock {
+
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
+    if(self) {
+        self.channelId = channelId;
+        self.text = text;
+        self.replyTo = replyTo;
+        self.machineOnly = machineOnly;
+        self.annotations = annotations;
+        self.entities = entities;
+        self.parseLinks = parseLinks;
+        self.parseMarkdown = parseMarkdown;
+        self.serializationRootClass = [SNPMessage class];
+    }
+
+    return self;
+}
+
+- (instancetype)initWithDestinations:(NSArray*)userIds
+                                text:(NSString*)text
+                         annotations:(NSArray*)annotations
+                            entities:(NSArray*)entities
+                          parseLinks:(BOOL)parseLinks
+                       parseMarkdown:(BOOL)parseMarkdown
+                           accountId:(NSString*)accountId
+                         finishBlock:(void (^)(SNPResponse* response))finishBlock {
+
+    self = [super initWithAccountId:accountId
+                        finishBlock:finishBlock];
+    if(self) {
+        self.destinations = userIds;
+        self.text = text;
+        self.annotations = annotations;
+        self.entities = entities;
+        self.parseLinks = parseLinks;
+        self.parseMarkdown = parseMarkdown;
+        self.serializationRootClass = [SNPMessage class];
+    }
+
+    return self;
+}
+
 
 #pragma mark - The workhorse
 
@@ -140,6 +192,13 @@
             }
             if([serializedHashtags count]) {
                 entitiesDict[@"hashtags"] = serializedHashtags;
+            }
+
+            if(_parseLinks) {
+                entitiesDict[@"parse_links"] = @YES;
+            }
+            if(_parseMarkdown) {
+                entitiesDict[@"parse_markdown_links"] = @YES;
             }
 
             postDict[@"entities"] = entitiesDict;
