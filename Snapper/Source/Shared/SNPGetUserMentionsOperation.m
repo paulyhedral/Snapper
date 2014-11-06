@@ -18,8 +18,8 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithUserId:(NSUInteger)userId
-           accountId:(NSString*)accountId
-         finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                     accountId:(NSString*)accountId
+                   finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
@@ -37,7 +37,7 @@
 - (void)main {
 
     self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMentionsEndpointURL:_userId];
-
+    
     [super main];
 }
 

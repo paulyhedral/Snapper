@@ -18,7 +18,7 @@
 
 // -- Initialization --
 - (instancetype)initWithUserId:(NSUInteger)userId
-           accountId:(NSString*)accountId
-         finishBlock:(void (^)(SNPResponse* response))finishBlock;
+                     accountId:(NSString*)accountId
+                   finishBlock:(void (^)(SNPResponse* response))finishBlock;
 
 @end
