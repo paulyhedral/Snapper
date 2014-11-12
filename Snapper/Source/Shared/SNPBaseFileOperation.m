@@ -128,7 +128,9 @@
         _endpoint = [NSURL URLWithString:urlString];
     }
 
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:_endpoint];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:_endpoint
+                                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                            timeoutInterval:_timeout ?: 10];
 
     // Provided headers
     [_headers enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
@@ -334,7 +336,7 @@ didReceiveResponse:(NSURLResponse*)response {
             response.data = arrayOfData;
         }
     }
-    
+
     if(_finishBlock) {
         _finishBlock(response);
     }

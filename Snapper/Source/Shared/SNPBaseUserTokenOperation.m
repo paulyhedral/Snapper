@@ -115,7 +115,9 @@
         self.endpoint = [NSURL URLWithString:urlString];
     }
 
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:self.endpoint];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:self.endpoint
+                                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                            timeoutInterval:self.timeout ?: 10];
 
     // Provided headers
     [self.headers enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {

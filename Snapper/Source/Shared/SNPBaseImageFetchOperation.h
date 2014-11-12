@@ -15,6 +15,7 @@
 // -- Properties --
 @property (nonatomic, retain) NSURL* imageURL;
 @property (nonatomic, copy) void (^finishBlock)(id image, NSError* error);
+@property (nonatomic, assign) NSTimeInterval timeout;
 
 // -- Initializers --
 - (instancetype)initWithImageURL:(NSURL*)imageURL

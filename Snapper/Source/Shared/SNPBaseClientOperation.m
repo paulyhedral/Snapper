@@ -58,13 +58,13 @@
 }
 
 - (instancetype)initWithEndpoint:(NSURL*)endpoint
-                method:(NSString*)method
-               headers:(NSDictionary*)headers
-            parameters:(NSDictionary*)parameters
-                  body:(NSData*)body
-              bodyType:(NSString*)bodyType
-         progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
-           finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                          method:(NSString*)method
+                         headers:(NSDictionary*)headers
+                      parameters:(NSDictionary*)parameters
+                            body:(NSData*)body
+                        bodyType:(NSString*)bodyType
+                   progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
+                     finishBlock:(void (^)(SNPResponse* response))finishBlock {
 
     self = [self initWithFinishBlock:finishBlock];
     if(self) {
@@ -106,7 +106,9 @@
         _endpoint = [NSURL URLWithString:urlString];
     }
 
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:_endpoint];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:_endpoint
+                                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                            timeoutInterval:_timeout ?: 10];
 
     // Provided headers
     [_headers enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL* stop) {
@@ -359,7 +361,7 @@ didReceiveResponse:(NSURLResponse*)response {
             NSAssert(YES, @"Cannot deserialize response data; no deserialization method is set for this operation!");
         }
     }
-
+    
     if(_finishBlock) {
         _finishBlock(response);
     }

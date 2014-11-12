@@ -45,7 +45,9 @@
 
     _receivedData = [NSMutableData new];
 
-    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:_imageURL];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:_imageURL
+                                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                                            timeoutInterval:_timeout ?: 10];
 
     [request addValue:@"image/*"
    forHTTPHeaderField:@"Accept"];
