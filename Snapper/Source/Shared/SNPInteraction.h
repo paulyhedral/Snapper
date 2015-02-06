@@ -27,5 +27,6 @@ typedef NS_ENUM(NSInteger, SNPInteractionAction) {
 @property (nonatomic, copy) NSArray* objects;
 @property (nonatomic, copy) NSArray* users;
 @property (nonatomic, copy) NSDate* eventDate;
+@property (nonatomic, assign) NSInteger paginationId;
 
 @end

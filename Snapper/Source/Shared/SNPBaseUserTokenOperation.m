@@ -105,6 +105,10 @@
         if([value isKindOfClass:[NSNumber class]]) {
             [queryParams appendFormat:@"%@=%@", [key encodedURLParameterString], value];
         }
+        else if([value isKindOfClass:[NSArray class]]) {
+            NSString* paramValue = [value componentsJoinedByString:@","];
+            [queryParams appendFormat:@"%@=%@", [key encodedURLParameterString], [paramValue encodedURLParameterString]];
+        }
         else {
             [queryParams appendFormat:@"%@=%@", [key encodedURLParameterString], [value encodedURLParameterString]];
         }

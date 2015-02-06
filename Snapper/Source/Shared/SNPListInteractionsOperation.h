@@ -11,4 +11,7 @@
 
 @interface SNPListInteractionsOperation : SNPBaseUserTokenOperation
 
+// -- Properties --
+@property (nonatomic, copy) NSArray* actions;
+
 @end

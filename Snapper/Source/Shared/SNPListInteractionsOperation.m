@@ -22,6 +22,12 @@
 - (void)main {
 
     self.endpoint = [[SNPAPIUtils sharedAPIUtils] getInteractionsEndpointURL];
+    if([_actions count] > 0) {
+        NSMutableDictionary* params = [self.parameters mutableCopy];
+        params[@"interaction_actions"] = _actions;
+
+        self.parameters = [params copy];
+    }
     self.serializationBlock = ^id(NSArray* responseData, NSError** error) {
 
         NSMutableArray* interactions = [NSMutableArray new];
