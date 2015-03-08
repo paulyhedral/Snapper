@@ -1,6 +1,8 @@
 Snapper
 =======
 
+[![Build Status](https://travis-ci.org/exsortis/Snapper.svg?branch=master)](https://travis-ci.org/exsortis/Snapper)
+
 App.net SDK in Objective-C
 
 Version
