@@ -2,6 +2,8 @@ Snapper
 =======
 
 [![Build Status](https://travis-ci.org/exsortis/Snapper.svg?branch=master)](https://travis-ci.org/exsortis/Snapper)
+[![Version](https://cocoapod-badges.herokuapp.com/v/Snapper/badge.png)](http://cocoadocs.org/docsets/Snapper)
+[![Platform](https://cocoapod-badges.herokuapp.com/p/Snapper/badge.png)](http://cocoadocs.org/docsets/Snapper)
 
 App.net SDK in Objective-C
 

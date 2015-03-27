@@ -1,5 +1,5 @@
 language: objective-c
-xcode_workspace: Snapper.xcworkspace
-xcode_scheme: 
-  - Snapper-iOS
-  - Snapper
+script:
+ - git submodule update --init --recursive
+ - xcodebuild -workspace Snapper.xcworkspace -scheme Snapper-iOS clean build
+ - xcodebuild -workspace Snapper.xcworkspace -scheme Snapper clean build
