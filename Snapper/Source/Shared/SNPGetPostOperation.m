@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getPostEndpointURL:_postId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getPostEndpointURL:_postId];
 
     [super main];
 }

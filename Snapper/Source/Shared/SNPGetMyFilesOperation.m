@@ -23,7 +23,7 @@
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMyFilesEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getMyFilesEndpointURL];
         self.method = @"GET";
         self.serializationArrayClass = [SNPFile class];
     }

@@ -83,7 +83,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] createPostEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] createPostEndpointURL];
 
     NSMutableDictionary* postDict = [NSMutableDictionary new];
     if([_text length]) {

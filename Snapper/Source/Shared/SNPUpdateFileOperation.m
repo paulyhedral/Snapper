@@ -38,7 +38,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateFileEndpointURL:_fileId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] updateFileEndpointURL:_fileId];
 
     SNPFile* file = [SNPFile new];
     file.fileId = _fileId;

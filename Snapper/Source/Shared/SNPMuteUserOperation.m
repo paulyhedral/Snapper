@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] muteUserEndpointURL:_userId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] muteUserEndpointURL:_userId];
 
     [super main];
 }

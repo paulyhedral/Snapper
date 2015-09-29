@@ -17,7 +17,7 @@
 
 }
 
-CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedAccountManager);
+CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedInstance);
 
 #pragma mark - Initialization
 

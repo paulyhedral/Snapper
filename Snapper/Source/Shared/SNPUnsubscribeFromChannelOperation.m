@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] unsubscribeFromChannelEndpointURL:_channelId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] unsubscribeFromChannelEndpointURL:_channelId];
 
     [super main];
 }

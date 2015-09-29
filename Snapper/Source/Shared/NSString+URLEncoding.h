@@ -23,7 +23,7 @@
 //  THE SOFTWARE.
 
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 
 @interface NSString (SNPURLEncodingAdditions)
@@ -32,4 +32,5 @@
 - (NSString *)encodedURLParameterString;
 - (NSString *)decodedURLString;
 - (NSString *)removeQuotes;
+
 @end

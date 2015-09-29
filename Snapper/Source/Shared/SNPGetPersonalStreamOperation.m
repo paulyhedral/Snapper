@@ -18,10 +18,10 @@
 - (void)main {
 
     if(_unified) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getUnifiedPersonalStreamEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getUnifiedPersonalStreamEndpointURL];
     }
     else {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getPersonalStreamEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getPersonalStreamEndpointURL];
     }
     self.serializationArrayClass = [SNPPost class];
 

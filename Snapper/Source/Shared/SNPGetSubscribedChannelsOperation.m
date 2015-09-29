@@ -23,7 +23,7 @@
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getSubscribedChannelsEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getSubscribedChannelsEndpointURL];
         self.serializationArrayClass = [SNPChannel class];
     }
 

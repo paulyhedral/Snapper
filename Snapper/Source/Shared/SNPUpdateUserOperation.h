@@ -14,19 +14,19 @@
 <SNPUserParameters>
 
 // -- Properties --
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, copy) NSString* locale;
-@property (nonatomic, copy) NSString* timezone;
-@property (nonatomic, copy) NSString* descriptionText;
-@property (nonatomic, retain) NSArray* descriptionEntities;
-@property (nonatomic, retain) NSArray* annotations;
+@property (nonatomic, nonnull, copy) NSString* fullName;
+@property (nonatomic, nonnull, copy) NSString* locale;
+@property (nonatomic, nonnull, copy) NSString* timezone;
+@property (nonatomic, nonnull, copy) NSString* descriptionText;
+@property (nonatomic, nullable, retain) NSArray* descriptionEntities;
+@property (nonatomic, nullable, retain) NSArray* annotations;
 
 // -- Initializers --
-- (instancetype)initWithName:(NSString*)name
-            locale:(NSString*)locale
-          timezone:(NSString*)timezone
-       description:(NSString*)descriptionText
-         accountId:(NSString*)accountId
-       finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithName:(nonnull NSString*)fullName
+                              locale:(nonnull NSString*)locale
+                            timezone:(nonnull NSString*)timezone
+                         description:(nonnull NSString*)descriptionText
+                           accountId:(nonnull NSString*)accountId
+                         finishBlock:(nonnull void (^)(nonnull SNPResponse* response))finishBlock;
 
 @end

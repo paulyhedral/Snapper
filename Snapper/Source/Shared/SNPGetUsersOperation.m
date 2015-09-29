@@ -25,7 +25,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.userIds = userIds;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getUsersEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getUsersEndpointURL];
         self.serializationArrayClass = [SNPUser class];
     }
 

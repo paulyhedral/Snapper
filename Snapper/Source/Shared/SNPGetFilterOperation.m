@@ -25,7 +25,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.filterId = filterId;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getFilterEndpointURL:filterId];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getFilterEndpointURL:filterId];
         self.serializationRootClass = [SNPFilter class];
     }
 

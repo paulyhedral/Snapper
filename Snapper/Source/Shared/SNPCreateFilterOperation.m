@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] createFilterEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] createFilterEndpointURL];
     self.method = @"POST";
 
     SNPFilter* filter = [SNPFilter new];

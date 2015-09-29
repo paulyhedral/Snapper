@@ -48,7 +48,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] searchEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] searchEndpointURL];
     self.serializationArrayClass = [SNPPost class];
 
     NSMutableDictionary* params = [NSMutableDictionary new];

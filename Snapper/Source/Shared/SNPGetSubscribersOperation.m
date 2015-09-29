@@ -24,7 +24,7 @@
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getSubscribersEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getSubscribersEndpointURL];
         self.serializationBlock = ^id(NSArray* responseData, NSError** error) {
 
             NSMutableArray* subscriberIds = [NSMutableArray new];

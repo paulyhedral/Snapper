@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] deletePostEndpointURL:_postId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] deletePostEndpointURL:_postId];
 
     [super main];
 }

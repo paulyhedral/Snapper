@@ -23,7 +23,7 @@
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getFiltersEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getFiltersEndpointURL];
         self.serializationArrayClass = [SNPFilter class];
     }
 

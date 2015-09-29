@@ -19,7 +19,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMyChannelsEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getMyChannelsEndpointURL];
     self.serializationArrayClass = [SNPChannel class];
 
     [super main];

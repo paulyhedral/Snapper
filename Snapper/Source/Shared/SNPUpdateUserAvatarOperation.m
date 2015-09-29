@@ -15,7 +15,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserAvatarEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] updateUserAvatarEndpointURL];
 
     [super main];
 }

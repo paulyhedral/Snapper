@@ -39,7 +39,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getFileEndpointURL:_fileId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getFileEndpointURL:_fileId];
 
     [super main];
 }

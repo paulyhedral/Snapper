@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "SNPResponse.h"
 
 
@@ -28,15 +28,15 @@
 /**
  *	<#Description#>
  */
-@property (nonatomic, copy) NSURL* endpoint;
-@property (nonatomic, copy) NSString* method;
-@property (nonatomic, copy) NSDictionary* headers;
-@property (nonatomic, copy) NSDictionary* parameters;
-@property (nonatomic, copy) NSData* body;
-@property (nonatomic, copy) NSString* bodyType;
-@property (nonatomic, copy) void (^progressBlock)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes);
-@property (nonatomic, copy) void (^finishBlock)(SNPResponse* response);
-@property (nonatomic, copy) id (^serializationBlock)(id data, NSError** error);
+@property (nonatomic, nonnull, copy) NSURL* endpoint;
+@property (nonatomic, nonnull, copy) NSString* method;
+@property (nonatomic, nullable, copy) NSDictionary* headers;
+@property (nonatomic, nullable, copy) NSDictionary* parameters;
+@property (nonatomic, nullable, copy) NSData* body;
+@property (nonatomic, nullable, copy) NSString* bodyType;
+@property (nonatomic, nullable, copy) void (^progressBlock)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes);
+@property (nonatomic, nonnull, copy) void (^finishBlock)(SNPResponse* response);
+@property (nonatomic, nullable, copy) id (^serializationBlock)(id data, NSError** error);
 @property (nonatomic, assign) Class serializationRootClass;
 @property (nonatomic, assign) Class serializationArrayClass;
 @property (nonatomic, assign) NSTimeInterval timeout;
@@ -61,11 +61,11 @@
  *
  *	@return	<#return value description#>
  */
-- (instancetype)initWithEndpoint:(NSURL*)endpoint
-                method:(NSString*)method
-               headers:(NSDictionary*)headers
-            parameters:(NSDictionary*)parameters
-                  body:(NSData*)body
+- (nonnull instancetype)initWithEndpoint:(nonnull NSURL*)endpoint
+                method:(nonnull NSString*)method
+               headers:(nullable NSDictionary*)headers
+            parameters:(nullable NSDictionary*)parameters
+                  body:(nullable NSData*)body
               bodyType:(NSString*)bodyType
          progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
            finishBlock:(void (^)(SNPResponse* response))finishBlock;

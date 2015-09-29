@@ -34,7 +34,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelEndpointURL:_channelId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getChannelEndpointURL:_channelId];
 
     [super main];
 }

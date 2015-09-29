@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Pilgrimage Software. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 #import "SNPToken.h"
 
@@ -14,17 +14,17 @@
 @interface SNPPasswordLoginOperation : NSOperation
 <NSURLConnectionDataDelegate>
 
-@property (nonatomic, copy) NSString* clientId;
-@property (nonatomic, copy) NSString* grantSecret;
-@property (nonatomic, copy) NSString* username;
-@property (nonatomic, copy) NSString* password;
-@property (nonatomic, copy) NSString* scope;
+@property (nonatomic, nonnull, copy) NSString* clientId;
+@property (nonatomic, nonnull, copy) NSString* grantSecret;
+@property (nonatomic, nonnull, copy) NSString* username;
+@property (nonatomic, nonnull, copy) NSString* password;
+@property (nonatomic, nonnull, copy) NSString* scope;
 
-- (instancetype)initWithClientId:(NSString*)clientId
-                     grantSecret:(NSString*)grantSecret
-                        username:(NSString*)username
-                        password:(NSString*)password
-                           scope:(NSString*)scope
-                     finishBlock:(void (^)(NSString*, SNPToken*, NSError*))finishBlock;
+- (instancetype)initWithClientId:(nonnull NSString*)clientId
+                     grantSecret:(nonnull NSString*)grantSecret
+                        username:(nonnull NSString*)username
+                        password:(nonnull NSString*)password
+                           scope:(nonnull NSString*)scope
+                     finishBlock:(void (^)(nullable NSString*, nullable SNPToken*, nullable NSError*))finishBlock;
 
 @end

@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] subscribeToChannelEndpointURL:_channelId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] subscribeToChannelEndpointURL:_channelId];
 
     [super main];
 }

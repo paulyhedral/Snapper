@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateFileContentEndpointURL:_fileId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] updateFileContentEndpointURL:_fileId];
     self.method = @"PUT";
 
     NSMutableData* bodyData = [NSMutableData new];

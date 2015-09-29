@@ -39,7 +39,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateFilterEndpointURL:_filterId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] updateFilterEndpointURL:_filterId];
     self.method = @"PUT";
 
     SNPFilter* filter = [SNPFilter new];

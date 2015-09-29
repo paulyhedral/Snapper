@@ -6,7 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 
 @interface NSString (SNPNSString_URLEscape)

@@ -21,7 +21,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getInteractionsEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getInteractionsEndpointURL];
     if([_actions count] > 0) {
         NSMutableDictionary* params = [self.parameters mutableCopy];
         params[@"interaction_actions"] = _actions;

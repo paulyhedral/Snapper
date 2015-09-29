@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "SNPBaseClientOperation.h"
 
 
@@ -16,11 +16,11 @@
 @interface SNPBaseAppTokenOperation : SNPBaseClientOperation
 
 // -- Properties --
-@property (nonatomic, copy) NSString* appToken;
-@property (nonatomic, copy) void (^finishBlock)(SNPResponse* response);
+@property (nonatomic, nonnull, copy) NSString* appToken;
+@property (nonatomic, nonnull, copy) void (^finishBlock)(nonnull SNPResponse* response);
 
 // -- Initialization --
-- (instancetype)initWithAppToken:(NSString*)appToken
-                     finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithAppToken:(nonnull NSString*)appToken
+                             finishBlock:(void (^ _Nonnull)(nonnull SNPResponse* response))finishBlock;
 
 @end

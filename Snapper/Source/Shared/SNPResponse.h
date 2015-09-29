@@ -6,14 +6,13 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
+@import Foundation;
 #import "SNPMetadata.h"
 
 
 @interface SNPResponse : NSObject
 
-@property (nonatomic, retain) id data;
-@property (nonatomic, retain) SNPMetadata* metadata;
+@property (nonatomic, nonnull, retain) id data;
+@property (nonatomic, nonnull, retain) SNPMetadata* metadata;
 
 @end

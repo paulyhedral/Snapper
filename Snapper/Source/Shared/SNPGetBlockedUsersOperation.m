@@ -36,7 +36,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getBlockedUsersEndpointURL:_userId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getBlockedUsersEndpointURL:_userId];
 
     [super main];
 }

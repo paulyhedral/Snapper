@@ -22,21 +22,21 @@
 
 #pragma mark - Initializers
 
-- (instancetype)initWithName:(NSString*)name
-            locale:(NSString*)locale
-          timezone:(NSString*)timezone
-       description:(NSString*)descriptionText
-         accountId:(NSString*)accountId
-       finishBlock:(void (^)(SNPResponse*))finishBlock {
+- (nonnull instancetype)initWithName:(nonnull NSString*)fullName
+                      locale:(nonnull NSString*)locale
+                    timezone:(nonnull NSString*)timezone
+                 description:(nonnull NSString*)descriptionText
+                   accountId:(nonnull NSString*)accountId
+                 finishBlock:(nonnull void (^)(nonnull SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.name = name;
+        self.fullName = fullName;
         self.locale = locale;
         self.timezone = timezone;
         self.descriptionText = descriptionText;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] updateUserEndpointURL];
         self.method = @"PUT";
         self.serializationRootClass = [SNPUser class];
         self.bodyType = @"application/json";
@@ -52,7 +52,7 @@
 
     NSMutableDictionary* userDict = [NSMutableDictionary new];
 
-    userDict[@"name"] = self.name;
+    userDict[@"name"] = self.fullName;
     userDict[@"locale"] = _locale;
     userDict[@"timezone"] = _timezone;
 
@@ -120,9 +120,9 @@
             return;
         }
     }
-
+    
     self.body = bodyData;
-
+    
     [super main];
 }
 

@@ -17,7 +17,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] configurationEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] configurationEndpointURL];
     self.serializationRootClass = [SNPConfiguration class];
 
     [super main];

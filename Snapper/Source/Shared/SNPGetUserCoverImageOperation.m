@@ -19,7 +19,7 @@
     self = [super init];
     if(self) {
         self.userId = userId;
-        self.imageURL = [[SNPAPIUtils sharedAPIUtils] getUserCoverImageEndpointURL:userId];
+        self.imageURL = [[SNPAPIUtils sharedInstance] getUserCoverImageEndpointURL:userId];
         self.finishBlock = finishBlock;
     }
 

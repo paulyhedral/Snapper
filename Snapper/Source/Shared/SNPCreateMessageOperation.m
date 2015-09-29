@@ -126,10 +126,10 @@
 - (void)main {
 
     if(_channelId == 0) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] createPMMessageEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] createPMMessageEndpointURL];
     }
     else {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] createMessageEndpointURL:_channelId];
+        self.endpoint = [[SNPAPIUtils sharedInstance] createMessageEndpointURL:_channelId];
     }
     self.method = @"POST";
 

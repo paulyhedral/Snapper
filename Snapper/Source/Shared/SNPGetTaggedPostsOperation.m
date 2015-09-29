@@ -32,7 +32,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getTaggedPostsEndpointURL:_hashtag];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getTaggedPostsEndpointURL:_hashtag];
 
     [super main];
 }

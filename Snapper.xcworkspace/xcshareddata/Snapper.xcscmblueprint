@@ -1,0 +1,51 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "765E55A8884EC386227AAFA621343F9D64EC1BE5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D" : 0,
+    "765E55A8884EC386227AAFA621343F9D64EC1BE5" : 0,
+    "2FD0F96481B39E576130E173BF6923CF52C91FF7" : 0,
+    "E084C86B03F81D63323C9E7510697EA528A758C7" : 0,
+    "8884BD3B878631A1500EC9895E6A3CF4CB0AB3DB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3F22F717-36C9-46DC-A7AD-5E36608E30FC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D" : "Snapper\/Libraries\/Mantle",
+    "765E55A8884EC386227AAFA621343F9D64EC1BE5" : "Snapper",
+    "2FD0F96481B39E576130E173BF6923CF52C91FF7" : "Snapper\/Libraries\/Mantle\/MantleTests\/specta",
+    "E084C86B03F81D63323C9E7510697EA528A758C7" : "Snapper\/Libraries\/Mantle\/Configuration",
+    "8884BD3B878631A1500EC9895E6A3CF4CB0AB3DB" : "Snapper\/Libraries\/Mantle\/MantleTests\/expecta"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Snapper",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Snapper.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/specta\/specta.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2FD0F96481B39E576130E173BF6923CF52C91FF7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/exsortis\/Snapper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "765E55A8884EC386227AAFA621343F9D64EC1BE5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/specta\/expecta.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8884BD3B878631A1500EC9895E6A3CF4CB0AB3DB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jspahrsummers\/xcconfigs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E084C86B03F81D63323C9E7510697EA528A758C7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Mantle\/Mantle.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E3F1CFC7B66794122E6D31906D72E79A4B1AAB6D"
+    }
+  ]
+}

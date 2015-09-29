@@ -15,7 +15,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserCoverImageEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] updateUserCoverImageEndpointURL];
 
     [super main];
 }

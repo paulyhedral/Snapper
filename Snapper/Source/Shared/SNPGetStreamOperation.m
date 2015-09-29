@@ -23,7 +23,7 @@
                        finishBlock:finishBlock];
     if(self) {
         self.streamId = streamId;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getStreamEndpointURL:streamId];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getStreamEndpointURL:streamId];
         self.serializationRootClass = [SNPStream class];
     }
 

@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] blockUserEndpointURL:_userId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] blockUserEndpointURL:_userId];
 
     [super main];
 }

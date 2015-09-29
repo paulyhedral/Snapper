@@ -6,15 +6,14 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
+@import Foundation;
 #import "CWLSynthesizeSingleton.h"
 
 
 @interface SNPAPIUtils : NSObject
 
 // -- Singleton --
-CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils)
+CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedInstance)
 
 // -- Properties --
 @property (nonatomic, copy) NSURL* rootAPIURL;

@@ -27,7 +27,7 @@
         self.postId = postId;
         self.name = name;
         self.percentage = percentage;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateStreamMarkerEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] updateStreamMarkerEndpointURL];
         self.method = @"POST";
         self.serializationRootClass = [SNPStreamMarker class];
     }

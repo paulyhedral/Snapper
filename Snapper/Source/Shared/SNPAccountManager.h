@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 #import "CWLSynthesizeSingleton.h"
 
@@ -15,7 +15,7 @@
 
 @interface SNPAccountManager : NSObject
 
-CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedAccountManager)
+CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedInstance)
 
 - (SNPAccount*)createAccountWithName:(NSString*)name
                            username:(NSString*)username

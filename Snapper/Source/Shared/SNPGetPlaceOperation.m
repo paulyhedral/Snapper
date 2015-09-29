@@ -23,7 +23,7 @@
     if(self) {
         self.factualId = factualId;
         self.token = token;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getPlaceEndpointURL:factualId];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getPlaceEndpointURL:factualId];
         self.headers = (@{
                         @"Authorization" : [NSString stringWithFormat:@"Bearer %@", token],
                         });

@@ -23,7 +23,7 @@
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteFiltersEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] deleteFiltersEndpointURL];
         self.method = @"DELETE";
         self.serializationArrayClass = [SNPFilter class];
     }

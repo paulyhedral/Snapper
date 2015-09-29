@@ -25,7 +25,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.postIds = postIds;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getPostsEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getPostsEndpointURL];
         self.serializationArrayClass = [SNPPost class];
 }
 

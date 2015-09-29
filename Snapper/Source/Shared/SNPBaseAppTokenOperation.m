@@ -12,7 +12,7 @@
 @implementation SNPBaseAppTokenOperation
 
 - (instancetype)initWithAppToken:(NSString*)appToken
-                     finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                     finishBlock:(void (^ _Nonnull)(nonnull SNPResponse* response))finishBlock {
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {

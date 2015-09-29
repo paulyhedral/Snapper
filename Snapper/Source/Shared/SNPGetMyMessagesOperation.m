@@ -19,7 +19,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMyMessagesEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getMyMessagesEndpointURL];
     self.serializationArrayClass = [SNPMessage class];
 
     [super main];

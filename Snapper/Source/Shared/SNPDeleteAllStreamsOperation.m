@@ -17,7 +17,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteAllStreamsEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] deleteAllStreamsEndpointURL];
     self.method = @"DELETE";
     self.serializationArrayClass = [SNPStream class];
 

@@ -27,7 +27,7 @@
     if(self) {
         self.latitude = latitude;
         self.longitude = longitude;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] searchPlaceEndpointURL];        
+        self.endpoint = [[SNPAPIUtils sharedInstance] searchPlaceEndpointURL];        
         self.serializationArrayClass = [SNPPlace class];
     }
 

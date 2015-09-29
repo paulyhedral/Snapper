@@ -17,7 +17,7 @@
 
 #pragma mark - Initialization
 
-- (instancetype)initWithName:(NSString*)name
+- (instancetype)initWithName:(NSString*)filename
        contentType:(NSString*)contentType
               type:(NSString*)type
               data:(NSData*)data
@@ -27,11 +27,11 @@
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.name = name;
+        self.filename = filename;
         self.contentType = contentType;
         self.type = type;
         self.data = data;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] createFileEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] createFileEndpointURL];
         self.method = @"POST";
     }
 
@@ -52,7 +52,7 @@
 
     NSString* fileHeader = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: file; name=\"content\"; filename=\"%@\"\r\nContent-Type: %@\r\n\r\n",
                             boundaryString,
-                            self.name,
+                            self.filename,
                             _contentType];
     [bodyData appendData:[fileHeader dataUsingEncoding:NSUTF8StringEncoding]];
     [bodyData appendData:_data];

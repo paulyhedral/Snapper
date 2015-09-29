@@ -25,7 +25,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.fileIds = fileIds;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getFilesEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getFilesEndpointURL];
         self.serializationArrayClass = [SNPFile class];
     }
 

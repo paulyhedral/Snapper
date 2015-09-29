@@ -17,7 +17,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getAllStreamsEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getAllStreamsEndpointURL];
     self.serializationArrayClass = [SNPStream class];
 
     [super main];

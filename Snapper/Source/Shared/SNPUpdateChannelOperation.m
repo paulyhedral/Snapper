@@ -36,7 +36,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateChannelEndpointURL:_channelId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] updateChannelEndpointURL:_channelId];
 
     SNPChannel* channel = [SNPChannel new];
 

@@ -39,7 +39,7 @@
     NSAssert(self.accessToken, @"No access token set for API operation!");
     NSAssert(self.tokenType, @"No token type set for API operation!");
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] tokenEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] tokenEndpointURL];
     self.serializationRootClass = [SNPToken class];
 
     // OAuth header

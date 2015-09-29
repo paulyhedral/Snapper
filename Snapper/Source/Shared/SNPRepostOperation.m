@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] repostEndpointURL:_postId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] repostEndpointURL:_postId];
 
     [super main];
 }

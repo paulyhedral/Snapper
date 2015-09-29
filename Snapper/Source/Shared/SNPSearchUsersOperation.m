@@ -25,7 +25,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.queryString = queryString;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] searchUsersEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] searchUsersEndpointURL];
         self.serializationArrayClass = [SNPUser class];
     }
 

@@ -12,10 +12,10 @@
 @interface SNPGetExploreStreamOperation : SNPBaseStreamOperation
 
 // -- Properties --
-@property (nonatomic, copy) NSString* slug;
+@property (nonatomic, nonnull, copy) NSString* slug;
 
 // -- Initializers --
-- (instancetype)initWithSlug:(NSString*)slug
-       finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithSlug:(nonnull NSString*)slug
+                         finishBlock:(void (nonnull ^)(nonnull SNPResponse* response))finishBlock;
 
 @end

@@ -32,7 +32,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] unmuteChannelEndpointURL:_channelId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] unmuteChannelEndpointURL:_channelId];
 
     [super main];
 }

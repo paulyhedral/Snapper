@@ -23,7 +23,7 @@
     if(self) {
         self.text = text;
         self.token = token;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] processTextEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] processTextEndpointURL];
         self.method = @"POST";
         self.headers = (@{
                         @"Authorization" : [NSString stringWithFormat:@"Bearer %@", token],

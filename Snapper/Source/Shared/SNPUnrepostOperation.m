@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] unrepostEndpointURL:_postId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] unrepostEndpointURL:_postId];
 
     [super main];
 }

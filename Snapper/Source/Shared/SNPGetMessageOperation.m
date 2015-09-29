@@ -27,7 +27,7 @@
     if(self) {
         self.messageId = messageId;
         self.channelId = channelId;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMessageEndpointURL:channelId
+        self.endpoint = [[SNPAPIUtils sharedInstance] getMessageEndpointURL:channelId
                                                                   messageId:messageId];
         self.serializationRootClass = [SNPMessage class];
     }

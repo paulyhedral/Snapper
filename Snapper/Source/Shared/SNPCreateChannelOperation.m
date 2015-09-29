@@ -29,7 +29,7 @@
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] createChannelEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] createChannelEndpointURL];
         self.type = type;
         self.readers = readers;
         self.writers = writers;

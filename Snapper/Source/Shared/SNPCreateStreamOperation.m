@@ -39,7 +39,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] createStreamEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] createStreamEndpointURL];
     self.method = @"POST";
 
     NSString* type = nil;

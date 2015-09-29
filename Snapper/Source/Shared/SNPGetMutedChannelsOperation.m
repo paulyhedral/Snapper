@@ -17,7 +17,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMutedChannelsEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getMutedChannelsEndpointURL];
     self.serializationArrayClass = [SNPChannel class];
 
     [super main];

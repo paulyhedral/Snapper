@@ -23,7 +23,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] updateUserEndpointURL];
+    self.endpoint = [[SNPAPIUtils sharedInstance] updateUserEndpointURL];
     self.method = @"PATCH";
     self.serializationRootClass = [SNPUser class];
     self.bodyType = @"application/json";

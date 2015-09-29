@@ -17,8 +17,8 @@
 
 #pragma mark - Initializers
 
-- (instancetype)initWithSlug:(NSString*)slug
-       finishBlock:(void (^)(SNPResponse*))finishBlock {
+- (nonnull instancetype)initWithSlug:(nonnull NSString*)slug
+                 finishBlock:(void (nonnull ^)(nonnull SNPResponse*))finishBlock {
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {
@@ -34,7 +34,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getExploreStreamEndpointURL:_slug];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getExploreStreamEndpointURL:_slug];
 
     [super main];
 }

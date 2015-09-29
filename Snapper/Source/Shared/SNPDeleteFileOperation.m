@@ -37,7 +37,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteFileEndpointURL:_fileId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] deleteFileEndpointURL:_fileId];
 
     [super main];
 }

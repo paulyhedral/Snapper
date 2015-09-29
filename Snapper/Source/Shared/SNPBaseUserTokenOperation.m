@@ -74,7 +74,7 @@
     NSString* tokenType = nil;
 
     if(_accountId) {
-        SNPAccount* account = [[SNPAccountManager sharedAccountManager] accountForId:_accountId];
+        SNPAccount* account = [[SNPAccountManager sharedInstance] accountForId:_accountId];
         //        NSAssert(account, @"No account found for ID: %@", _accountId);
 
         if(account) {

@@ -25,7 +25,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.messageIds = messageIds;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] getMessagesEndpointURL];
+        self.endpoint = [[SNPAPIUtils sharedInstance] getMessagesEndpointURL];
         self.serializationArrayClass = [SNPMessage class];
     }
 

@@ -36,7 +36,7 @@
 
 - (void)main {
 
-    self.endpoint = [[SNPAPIUtils sharedAPIUtils] getChannelMessagesEndpointURL:_channelId];
+    self.endpoint = [[SNPAPIUtils sharedInstance] getChannelMessagesEndpointURL:_channelId];
 
     [super main];
 }

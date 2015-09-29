@@ -13,7 +13,7 @@
 
 @implementation SNPAPIUtils
 
-CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedAPIUtils);
+CWL_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAPIUtils, sharedInstance);
 
 #pragma mark - Initialization
 

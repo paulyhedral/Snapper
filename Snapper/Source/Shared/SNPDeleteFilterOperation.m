@@ -25,7 +25,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.filterId = filterId;
-        self.endpoint = [[SNPAPIUtils sharedAPIUtils] deleteFilterEndpointURL:filterId];
+        self.endpoint = [[SNPAPIUtils sharedInstance] deleteFilterEndpointURL:filterId];
         self.method = @"DELETE";
         self.serializationRootClass = [SNPFilter class];
     }
