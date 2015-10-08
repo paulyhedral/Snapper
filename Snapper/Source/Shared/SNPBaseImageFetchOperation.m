@@ -79,8 +79,8 @@ willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge*)challen
 - (void)connection:(NSURLConnection*)connection
 didReceiveResponse:(NSURLResponse*)response {
 
-    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    NSInteger statusCode = httpResponse.statusCode;
+//    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+//    NSInteger statusCode = httpResponse.statusCode;
 
     // TODO
 }

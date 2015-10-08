@@ -58,7 +58,7 @@
     NSArray* representations = [(NSImage*)_image representations];
     imageData = [NSBitmapImageRep representationOfImageRepsInArray:representations
                                                          usingType:NSPNGFileType
-                                                        properties:nil];
+                                                        properties:@{}];
 #endif
     [bodyData appendData:imageData];
 
