@@ -18,8 +18,8 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithChannelIds:(NSArray*)channelIds
-               accountId:(NSString*)accountId
-             finishBlock:(void (^)(SNPResponse*))finishBlock {
+                         accountId:(NSString*)accountId
+                       finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
@@ -32,7 +32,7 @@
 }
 
 
-#pragma mark - Workhorse 
+#pragma mark - Workhorse
 
 - (void)main {
 
@@ -42,7 +42,7 @@
                              @"ids" : channelIdsString,
                              });
     }
-
+    
     [super main];
 }
 

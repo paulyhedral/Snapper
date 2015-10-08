@@ -14,10 +14,10 @@
 <SNPChannelParameters>
 
 // -- Properties --
-@property (nonatomic, nonnull, retain) NSArray* channelIds;
+@property (nonatomic, nullable, retain) NSArray* channelIds;
 
 // -- Initializers --
-- (nonnull instancetype)initWithChannelIds:(nonnull NSArray*)channelIds
+- (nonnull instancetype)initWithChannelIds:(nullable NSArray*)channelIds
                                  accountId:(nonnull NSString*)accountId
                                finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
