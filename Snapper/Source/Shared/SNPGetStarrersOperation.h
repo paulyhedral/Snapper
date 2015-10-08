@@ -19,7 +19,7 @@
 
 // -- Initialization --
 - (instancetype)initWithPostId:(NSUInteger)postId
-           accountId:(NSString*)accountId
-         finishBlock:(void (^)(SNPResponse* response))finishBlock;
+           accountId:(nonnull NSString*)accountId
+         finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

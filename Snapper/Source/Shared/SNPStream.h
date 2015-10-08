@@ -19,18 +19,18 @@
 #define SNP_STREAM_OBJECT_TYPE_CHANNEL (@"channel")
 #define SNP_STREAM_OBJECT_TYPE_CHANNEL_SUBSCRIPTION (@"channel_subscription")
 
-typedef enum : NSInteger {
+typedef NS_ENUM(NSInteger, SNPStreamType) {
     SNPStreamTypeLongPoll,
-} SNPStreamType;
+};
 
 @interface SNPStream : MTLModel
 <MTLJSONSerializing>
 
 @property (nonatomic, assign) NSUInteger streamId;
-@property (nonatomic, copy) NSURL* endpoint;
-@property (nonatomic, retain) SNPFilter* filter;
-@property (nonatomic, copy) NSArray* objectTypes;
+@property (nonatomic, nonnull, copy) NSURL* endpoint;
+@property (nonatomic, nullable, retain) SNPFilter* filter;
+@property (nonatomic, nonnull, copy) NSArray* objectTypes;
 @property (nonatomic, assign) SNPStreamType type;
-@property (nonatomic, copy) NSString* key;
+@property (nonatomic, nonnull, copy) NSString* key;
 
 @end

@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 #import "SNPBaseUserTokenOperation.h"
 
 
 @interface SNPBaseImageUpdateOperation : SNPBaseUserTokenOperation
 
 // -- Properties --
-@property (nonatomic, retain) id image;
+@property (nonatomic, nonnull, retain) id image;
 
 // -- Initializers --
-- (instancetype)initWithImage:(id)image
-                    accountId:(NSString*)accountId
-                  finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithImage:(nonnull id)image
+                            accountId:(nonnull NSString*)accountId
+                          finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

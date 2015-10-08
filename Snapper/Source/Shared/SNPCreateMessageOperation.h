@@ -23,14 +23,14 @@
 @property (nonatomic, assign) NSUInteger channelId;
 /**
  */
-@property (nonatomic, copy) NSArray* destinations;
+@property (nonatomic, nonnull, copy) NSArray* destinations;
 /**
  * The body text of the message. Optional.
  *
  * Note that this property and #machineOnly are "mutually-exclusive", with the presence of a
  * non-nil, non-zero length #text property value superceding the #machineOnly property.
  */
-@property (nonatomic, copy) NSString* text;
+@property (nonatomic, nullable, copy) NSString* text;
 /**
  * The message ID to which this message is a reply.
  */
@@ -45,11 +45,11 @@
 /**
  * An array of SNPAnnotation objects to include in the message.
  */
-@property (nonatomic, retain) NSArray* annotations;
+@property (nonatomic, nullable, retain) NSArray* annotations;
 /**
  * An array of SNPEntity-subclassed objects, e.g., SNPMention, SNPHashtag, or SNPLink to include in the message.
  */
-@property (nonatomic, retain) NSArray* entities;
+@property (nonatomic, nullable, retain) NSArray* entities;
 /**
  * Indicates whether links should be parsed from the post text by the server in addition to any
  * custom link entities that are provided.
@@ -61,40 +61,38 @@
  */
 @property (nonatomic, assign) BOOL parseMarkdown;
 
-@property (nonatomic, assign) BOOL includeMessageAnnotations;
-
 // -- Initializers --
-- (instancetype)initWithChannelId:(NSUInteger)channelId
-                             text:(NSString*)text
-                          replyTo:(NSUInteger)replyTo
-                      machineOnly:(BOOL)machineOnly
-                      annotations:(NSArray*)annotations
-                         entities:(NSArray*)entities
-                        accountId:(NSString*)accountId
-                      finishBlock:(void (^)(SNPResponse* response))finishBlock;
-- (instancetype)initWithDestinations:(NSArray*)userIds
-                                text:(NSString*)text
-                         annotations:(NSArray*)annotations
-                            entities:(NSArray*)entities
-                           accountId:(NSString*)accountId
-                         finishBlock:(void (^)(SNPResponse* response))finishBlock;
-- (instancetype)initWithChannelId:(NSUInteger)channelId
-                             text:(NSString*)text
-                          replyTo:(NSUInteger)replyTo
-                      machineOnly:(BOOL)machineOnly
-                      annotations:(NSArray*)annotations
-                         entities:(NSArray*)entities
-                       parseLinks:(BOOL)parseLinks
-                    parseMarkdown:(BOOL)parseMarkdown
-                        accountId:(NSString*)accountId
-                      finishBlock:(void (^)(SNPResponse* response))finishBlock;
-- (instancetype)initWithDestinations:(NSArray*)userIds
-                                text:(NSString*)text
-                         annotations:(NSArray*)annotations
-                            entities:(NSArray*)entities
-                          parseLinks:(BOOL)parseLinks
-                       parseMarkdown:(BOOL)parseMarkdown
-                           accountId:(NSString*)accountId
-                         finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithChannelId:(NSUInteger)channelId
+                                     text:(nullable NSString*)text
+                                  replyTo:(NSUInteger)replyTo
+                              machineOnly:(BOOL)machineOnly
+                              annotations:(nullable NSArray*)annotations
+                                 entities:(nullable NSArray*)entities
+                                accountId:(nonnull NSString*)accountId
+                              finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
+- (nonnull instancetype)initWithDestinations:(nonnull NSArray*)userIds
+                                        text:(nullable NSString*)text
+                                 annotations:(nullable NSArray*)annotations
+                                    entities:(nullable NSArray*)entities
+                                   accountId:(nonnull NSString*)accountId
+                                 finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
+- (nonnull instancetype)initWithChannelId:(NSUInteger)channelId
+                                     text:(nullable NSString*)text
+                                  replyTo:(NSUInteger)replyTo
+                              machineOnly:(BOOL)machineOnly
+                              annotations:(nullable NSArray*)annotations
+                                 entities:(nullable NSArray*)entities
+                               parseLinks:(BOOL)parseLinks
+                            parseMarkdown:(BOOL)parseMarkdown
+                                accountId:(nonnull NSString*)accountId
+                              finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
+- (nonnull instancetype)initWithDestinations:(nonnull NSArray*)userIds
+                                        text:(nullable NSString*)text
+                                 annotations:(nullable NSArray*)annotations
+                                    entities:(nullable NSArray*)entities
+                                  parseLinks:(BOOL)parseLinks
+                               parseMarkdown:(BOOL)parseMarkdown
+                                   accountId:(nonnull NSString*)accountId
+                                 finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface SNPHashtag : SNPEntity
 
-@property (nonatomic, copy) NSString* name;
+@property (nonatomic, nonnull, copy) NSString* name;
 @property (nonatomic, assign) NSUInteger position;
 @property (nonatomic, assign) NSUInteger length;
 

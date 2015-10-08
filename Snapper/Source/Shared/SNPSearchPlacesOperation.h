@@ -15,16 +15,16 @@
 // -- Properties --
 @property (nonatomic, assign) CGFloat latitude;
 @property (nonatomic, assign) CGFloat longitude;
-@property (nonatomic, copy) NSString* q;
+@property (nonatomic, nonnull, copy) NSString* q;
 @property (nonatomic, assign) CGFloat radius;
 @property (nonatomic, assign) CGFloat altitude;
 @property (nonatomic, assign) CGFloat horizontalAccuracy;
 @property (nonatomic, assign) CGFloat verticalAccuracy;
 
 // -- Initializers --
-- (instancetype)initWithLatitude:(CGFloat)latitude
-             longitude:(CGFloat)longitude
-             accountId:(NSString*)accountId
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithLatitude:(CGFloat)latitude
+                               longitude:(CGFloat)longitude
+                               accountId:(nullable NSString*)accountId
+                             finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

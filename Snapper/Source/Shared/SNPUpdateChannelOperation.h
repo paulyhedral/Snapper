@@ -16,13 +16,13 @@
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger channelId;
-@property (nonatomic, retain) NSArray* annotations;
-@property (nonatomic, retain) SNPACL* readers;
-@property (nonatomic, retain) SNPACL* writers;
+@property (nonatomic, nullable, retain) NSArray* annotations;
+@property (nonatomic, nullable, retain) SNPACL* readers;
+@property (nonatomic, nullable, retain) SNPACL* writers;
 
 // -- Initialization --
-- (instancetype)initWithChannelId:(NSUInteger)channelId
-              accountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithChannelId:(NSUInteger)channelId
+                                accountId:(nonnull NSString*)accountId
+                              finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

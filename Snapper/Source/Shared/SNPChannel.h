@@ -19,20 +19,20 @@
 
 @property (nonatomic, assign) BOOL hasUnread;
 @property (nonatomic, assign) NSUInteger channelId;
-@property (nonatomic, retain) SNPUser* owner;
-@property (nonatomic, retain) SNPACL* readers;
-@property (nonatomic, retain) SNPACL* editors;
+@property (nonatomic, nonnull, retain) SNPUser* owner;
+@property (nonatomic, nonnull, retain) SNPACL* readers;
+@property (nonatomic, nullable, retain) SNPACL* editors;
 @property (nonatomic, assign) NSUInteger recentMessageId;
-@property (nonatomic, copy) NSString* type;
-@property (nonatomic, retain) SNPACL* writers;
+@property (nonatomic, nonnull, copy) NSString* type;
+@property (nonatomic, nonnull, retain) SNPACL* writers;
 @property (nonatomic, assign) BOOL youCanEdit;
 @property (nonatomic, assign) BOOL youSubscribed;
 @property (nonatomic, assign) BOOL youMuted;
-@property (nonatomic, copy) NSArray* annotations;
+@property (nonatomic, nullable, copy) NSArray* annotations;
 @property (nonatomic, assign, getter=isInactive) BOOL inactive;
 @property (nonatomic, assign) NSUInteger messageCount;
 @property (nonatomic, assign) NSUInteger subscriberCount;
-@property (nonatomic, retain) SNPMessage* recentMessage;
-@property (nonatomic, retain) SNPStreamMarker* marker;
+@property (nonatomic, nullable, retain) SNPMessage* recentMessage;
+@property (nonatomic, nullable, retain) SNPStreamMarker* marker;
 
 @end

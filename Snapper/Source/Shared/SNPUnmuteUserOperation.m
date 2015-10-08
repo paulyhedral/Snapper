@@ -17,9 +17,9 @@
 
 #pragma mark - Initialization
 
-- (nonnull instancetype)initWithUserId:(NSUInteger)userId
-                             accountId:(nonnull NSString*)accountId
-                           finishBlock:(nonnull void (^)(nonnull SNPResponse*))finishBlock {
+- (instancetype)initWithUserId:(NSUInteger)userId
+                     accountId:(NSString*)accountId
+                   finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];

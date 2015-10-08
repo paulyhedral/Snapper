@@ -41,7 +41,7 @@
                         bodyType:(NSString*)bodyType
                        accountId:(NSString*)accountId
                    progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
-                     finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                     finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super init];
     if(self) {

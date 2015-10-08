@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 #import "CWLSynthesizeSingleton.h"
 
@@ -17,14 +17,14 @@
 
 CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedInstance)
 
-- (SNPAccount*)createAccountWithName:(NSString*)name
-                           username:(NSString*)username
-                             userId:(NSUInteger)userId
-                        accessToken:(NSString*)accessToken
-                          tokenType:(NSString*)tokenType;
-- (void)removeAccountForId:(NSString*)accountId;
-- (SNPAccount*)accountForId:(NSString*)accountId;
-- (SNPAccount*)accountForUserId:(NSUInteger)userId;
-- (NSArray*)allAccounts;
+- (nullable SNPAccount*)createAccountWithName:(nonnull NSString*)name
+                            username:(nonnull NSString*)username
+                              userId:(NSUInteger)userId
+                         accessToken:(nonnull NSString*)accessToken
+                           tokenType:(nonnull NSString*)tokenType;
+- (void)removeAccountForId:(nonnull NSString*)accountId;
+- (nullable SNPAccount*)accountForId:(nonnull NSString*)accountId;
+- (nullable SNPAccount*)accountForUserId:(NSUInteger)userId;
+- (nonnull NSArray*)allAccounts;
 
 @end

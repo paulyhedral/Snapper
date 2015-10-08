@@ -15,12 +15,12 @@
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger fileId;
-@property (nonatomic, retain) NSData* data;
+@property (nonatomic, nonnull, retain) NSData* data;
 
 // -- Initializers --
-- (instancetype)initWithFileId:(NSUInteger)fileId
-                data:(NSData*)data
-           accountId:(NSString*)accountId
-         finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithFileId:(NSUInteger)fileId
+                                  data:(nonnull NSData*)data
+                             accountId:(nonnull NSString*)accountId
+                           finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

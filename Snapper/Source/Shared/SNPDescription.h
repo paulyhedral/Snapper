@@ -12,10 +12,10 @@
 @interface SNPDescription : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString* text;
-@property (nonatomic, copy) NSString* html;
-@property (nonatomic, copy) NSArray* mentions;
-@property (nonatomic, copy) NSArray* hashtags;
-@property (nonatomic, copy) NSArray* links;
+@property (nonatomic, nonnull, copy) NSString* text;
+@property (nonatomic, nonnull, copy) NSString* html;
+@property (nonatomic, nonnull, copy) NSArray* mentions;
+@property (nonatomic, nonnull, copy) NSArray* hashtags;
+@property (nonatomic, nonnull, copy) NSArray* links;
 
 @end

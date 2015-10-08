@@ -20,8 +20,8 @@
 #pragma mark - Initializers
 
 - (instancetype)initWithAccessToken:(NSString*)accessToken
-                tokenType:(NSString*)tokenType
-              finishBlock:(void (^)(SNPResponse*))finishBlock {
+                          tokenType:(NSString*)tokenType
+                        finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {
@@ -45,9 +45,9 @@
     // OAuth header
     NSString* tokenValue = [NSString stringWithFormat:@"%@ %@", self.tokenType, self.accessToken];
     self.headers = (@{
-                    @"Authorization" : tokenValue,
-                    });
-
+                      @"Authorization" : tokenValue,
+                      });
+    
     [super main];
 }
 

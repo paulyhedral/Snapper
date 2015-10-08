@@ -16,11 +16,11 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithObjectTypes:(NSArray*)objectTypes
-                     type:(SNPStreamType)type
-                 filterId:(NSUInteger)filterId
-                      key:(NSString*)key
-                 appToken:(NSString*)appToken
-              finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                               type:(SNPStreamType)type
+                           filterId:(NSUInteger)filterId
+                                key:(NSString*)key
+                           appToken:(NSString*)appToken
+                        finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAppToken:appToken
                        finishBlock:finishBlock];
@@ -50,9 +50,9 @@
     }
 
     NSMutableDictionary* streamDict = [(@{
-                                        @"object_type" : _objectTypes,
-                                        @"type" : type,
-                                        }) mutableCopy];
+                                          @"object_type" : _objectTypes,
+                                          @"type" : type,
+                                          }) mutableCopy];
 
     if(_filterId > 0) {
         streamDict[@"filter_id"] = @(_filterId);
@@ -73,7 +73,7 @@
 
     self.body = body;
     self.bodyType = @"application/json";
-
+    
     self.serializationRootClass = [SNPStream class];
     
     [super main];

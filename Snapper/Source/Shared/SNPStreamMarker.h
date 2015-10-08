@@ -13,9 +13,9 @@
 <MTLJSONSerializing>
 
 @property (nonatomic, assign) NSUInteger postId;
-@property (nonatomic, copy) NSString* name;
+@property (nonatomic, nonnull, copy) NSString* name;
 @property (nonatomic, assign) NSInteger percentage;
-@property (nonatomic, copy) NSDate* updatedAt;
-@property (nonatomic, copy) NSString* version;
+@property (nonatomic, nonnull, copy) NSDate* updatedAt;
+@property (nonatomic, nonnull, copy) NSString* version;
 
 @end

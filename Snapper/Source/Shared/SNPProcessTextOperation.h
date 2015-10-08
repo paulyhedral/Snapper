@@ -12,12 +12,12 @@
 @interface SNPProcessTextOperation : SNPBaseClientOperation
 
 // -- Properties --
-@property (nonatomic, copy) NSString* text;
-@property (nonatomic, copy) NSString* token;
+@property (nonatomic, nonnull, copy) NSString* text;
+@property (nonatomic, nonnull, copy) NSString* token;
 
 // -- Initializers --
-- (instancetype)initWithText:(NSString*)text
-             token:(NSString*)token
-       finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithText:(nonnull NSString*)text
+                               token:(nonnull NSString*)token
+                         finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

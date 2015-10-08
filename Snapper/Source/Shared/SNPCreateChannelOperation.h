@@ -15,17 +15,17 @@
 <SNPChannelParameters>
 
 // -- Properites --
-@property (nonatomic, copy) NSString* type;
-@property (nonatomic, retain) SNPACL* readers;
-@property (nonatomic, retain) SNPACL* writers;
-@property (nonatomic, retain) NSArray* annotations;
+@property (nonatomic, nonnull, copy) NSString* type;
+@property (nonatomic, nonnull, retain) SNPACL* readers;
+@property (nonatomic, nullable, retain) SNPACL* writers;
+@property (nonatomic, nullable, retain) NSArray* annotations;
 
 // -- Initialization --
-- (instancetype)initWithType:(NSString*)type
-           readers:(SNPACL*)readers
-           writers:(SNPACL*)writers
-       annotations:(NSArray*)annotations
-         accountId:(NSString*)accountId
-       finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithType:(nonnull NSString*)type
+                             readers:(nonnull SNPACL*)readers
+                             writers:(nullable SNPACL*)writers
+                         annotations:(nullable NSArray*)annotations
+                           accountId:(nonnull NSString*)accountId
+                         finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

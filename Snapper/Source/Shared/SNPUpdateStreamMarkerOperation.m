@@ -16,16 +16,16 @@
 @implementation SNPUpdateStreamMarkerOperation
 
 - (instancetype)initWithPostId:(NSUInteger)postId
-                name:(NSString*)name
-          percentage:(NSUInteger)percentage
-           accountId:(NSString*)accountId
-         finishBlock:(void (^)(SNPResponse*))finishBlock {
+                          name:(NSString*)name
+                    percentage:(NSUInteger)percentage
+                     accountId:(NSString*)accountId
+                   finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
         self.postId = postId;
-        self.name = name;
+        self.fullname = name;
         self.percentage = percentage;
         self.endpoint = [[SNPAPIUtils sharedInstance] updateStreamMarkerEndpointURL];
         self.method = @"POST";
@@ -38,10 +38,10 @@
 - (void)main {
 
     NSDictionary* markerDict = (@{
-                                @"name" : self.name,
-                                @"id" : @(_postId),
-                                @"percentage" : @(_percentage),
-                                });
+                                  @"name" : self.name,
+                                  @"id" : @(_postId),
+                                  @"percentage" : @(_percentage),
+                                  });
 
     NSError* error = nil;
     NSData* bodyData = [NSJSONSerialization dataWithJSONObject:markerDict
@@ -72,7 +72,7 @@
     if([[parameters allKeys] count]) {
         self.parameters = parameters;
     }
-
+    
     [super main];
 }
 

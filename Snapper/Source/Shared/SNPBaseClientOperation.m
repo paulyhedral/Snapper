@@ -47,7 +47,7 @@
     return self;
 }
 
-- (instancetype)initWithFinishBlock:(void (^)(SNPResponse* response))finishBlock {
+- (instancetype)initWithFinishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock {
 
     self = [self init];
     if(self) {
@@ -64,7 +64,7 @@
                             body:(NSData*)body
                         bodyType:(NSString*)bodyType
                    progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
-                     finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                     finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [self initWithFinishBlock:finishBlock];
     if(self) {

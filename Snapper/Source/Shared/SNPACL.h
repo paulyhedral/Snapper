@@ -16,7 +16,7 @@
 @property (nonatomic, assign, getter=isImmutable) BOOL immutable;
 @property (nonatomic, assign) BOOL anyUser;
 @property (nonatomic, assign, getter=isPublic) BOOL public_;
-@property (nonatomic, copy) NSArray* userIds;
+@property (nonatomic, nonnull, copy) NSArray* userIds;
 @property (nonatomic, assign, getter=isYou) BOOL you;
 
 @end

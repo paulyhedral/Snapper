@@ -16,15 +16,15 @@
 <MTLJSONSerializing>
 
 @property (nonatomic, assign) NSUInteger userId;
-@property (nonatomic, copy) NSString* username;
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, retain) SNPDescription* descriptionObject;
-@property (nonatomic, copy) NSString* timezone;
-@property (nonatomic, copy) NSString* locale;
-@property (nonatomic, retain) SNPImage* avatarImage;
-@property (nonatomic, retain) SNPImage* coverImage;
-@property (nonatomic, copy) NSString* type;
-@property (nonatomic, copy) NSDate* createdAt;
+@property (nonatomic, nonnull, copy) NSString* username;
+@property (nonatomic, nullable, copy) NSString* name;
+@property (nonatomic, nonnull, retain) SNPDescription* descriptionObject;
+@property (nonatomic, nonnull, copy) NSString* timezone;
+@property (nonatomic, nonnull, copy) NSString* locale;
+@property (nonatomic, nonnull, retain) SNPImage* avatarImage;
+@property (nonatomic, nonnull, retain) SNPImage* coverImage;
+@property (nonatomic, nonnull, copy) NSString* type;
+@property (nonatomic, nonnull, copy) NSDate* createdAt;
 @property (nonatomic, assign) NSUInteger followingCount;
 @property (nonatomic, assign) NSUInteger followersCount;
 @property (nonatomic, assign) NSUInteger postsCount;
@@ -34,8 +34,8 @@
 @property (nonatomic, assign) BOOL youMuted;
 @property (nonatomic, assign) BOOL youBlocked;
 @property (nonatomic, assign) BOOL youCanSubscribe;
-@property (nonatomic, copy) NSArray* annotations;
-@property (nonatomic, copy) NSURL* canonicalURL;
-@property (nonatomic, copy) NSString* verifiedDomain;
+@property (nonatomic, nullable, copy) NSArray* annotations;
+@property (nonatomic, nonnull, copy) NSURL* canonicalURL;
+@property (nonatomic, nullable, copy) NSString* verifiedDomain;
 
 @end

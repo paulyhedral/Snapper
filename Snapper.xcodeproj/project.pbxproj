@@ -12,12 +12,10 @@
 		3C6B5EC31680E9B0006C63C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EB01680E9B0006C63C1 /* Foundation.framework */; };
 		3C6B5EC61680E9B0006C63C1 /* libSnapper-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EAD1680E9B0006C63C1 /* libSnapper-iOS.a */; };
 		3C6B5EEA1680EE2C006C63C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE41680EE2C006C63C1 /* InfoPlist.strings */; };
-		3C6B5EEB1680EE2C006C63C1 /* SnapperTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE61680EE2C006C63C1 /* SnapperTests-Info.plist */; };
 		3C6B5EEC1680EE2C006C63C1 /* AccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE91680EE2C006C63C1 /* AccountTests.m */; };
 		3C6B5F1A1680EE8B006C63C1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5EBF1680E9B0006C63C1 /* SenTestingKit.framework */; };
 		3C6B5F1E1680EE8B006C63C1 /* Snapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6B5F031680EE8A006C63C1 /* Snapper.framework */; };
 		3C6B5F2F1680EEDE006C63C1 /* Snapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C6B5F2E1680EEDE006C63C1 /* Snapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3C6B5F361680EF6F006C63C1 /* Snapper-OSX-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5F351680EF6F006C63C1 /* Snapper-OSX-Info.plist */; };
 		3C6B5F3C1680F1A4006C63C1 /* SNPAccountManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C6B5F3A1680F1A4006C63C1 /* SNPAccountManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C6B5F3D1680F1A4006C63C1 /* SNPAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F3B1680F1A4006C63C1 /* SNPAccountManager.m */; };
 		3C6B5F3E1680F1A4006C63C1 /* SNPAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5F3B1680F1A4006C63C1 /* SNPAccountManager.m */; };
@@ -391,7 +389,6 @@
 		5B30DC3C1688F4F30089730B /* AccountTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE91680EE2C006C63C1 /* AccountTests.m */; };
 		5B30DC3D1688F4F30089730B /* MiscellaneousTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF11D016837FC00058CBE0 /* MiscellaneousTests.m */; };
 		5B30DC3E1688F4F30089730B /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE0A52816816ED7005AA40C /* ModelTests.m */; };
-		5B30DC3F1688F5040089730B /* SnapperTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C6B5EE61680EE2C006C63C1 /* SnapperTests-Info.plist */; };
 		5B36686E17BAF5E10010C5DB /* SNPConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B36686C17BAF5E10010C5DB /* SNPConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B36686F17BAF5E10010C5DB /* SNPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B36686D17BAF5E10010C5DB /* SNPConfiguration.m */; };
 		5B36687017BAF5E10010C5DB /* SNPConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B36686D17BAF5E10010C5DB /* SNPConfiguration.m */; };
@@ -2059,7 +2056,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SNP;
-				LastUpgradeCheck = 0460;
+				LastTestingUpgradeCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Pilgrimage Software";
 			};
 			buildConfigurationList = 3C6B5EA81680E9B0006C63C1 /* Build configuration list for PBXProject "Snapper" */;
@@ -2132,7 +2130,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C6B5EEA1680EE2C006C63C1 /* InfoPlist.strings in Resources */,
-				3C6B5EEB1680EE2C006C63C1 /* SnapperTests-Info.plist in Resources */,
 				5BE0A52B168170CA005AA40C /* user.json in Resources */,
 				5B30DC18168817040089730B /* acl.json in Resources */,
 				5B30DC19168817040089730B /* annotation.json in Resources */,
@@ -2161,7 +2158,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C6B5F361680EF6F006C63C1 /* Snapper-OSX-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2187,7 +2183,6 @@
 				5B30DC391688F4DE0089730B /* stream.json in Resources */,
 				5B30DC3A1688F4DE0089730B /* token.json in Resources */,
 				5B30DC3B1688F4DE0089730B /* user.json in Resources */,
-				5B30DC3F1688F5040089730B /* SnapperTests-Info.plist in Resources */,
 				5BBBDCE516B8A3950026A041 /* file.json in Resources */,
 				5BD5928916C20FBA0066E306 /* place.json in Resources */,
 				5BA49F0E16E292E7002DCBD7 /* repost.json in Resources */,
@@ -2580,6 +2575,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2634,7 +2630,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BC6062C19965A30002A6A84 /* Debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/Snapper.dst;
 				FRAMEWORK_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -2654,7 +2649,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BC6062D19965A30002A6A84 /* Release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/Snapper.dst;
 				FRAMEWORK_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -2684,6 +2678,7 @@
 					"-all_load",
 					"-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pilgrimagesoftware.lib.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2703,6 +2698,7 @@
 					"-all_load",
 					"-ObjC",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pilgrimagesoftware.lib.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2712,7 +2708,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BC6062C19965A30002A6A84 /* Debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2729,6 +2724,7 @@
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pilgrimagesoftware.lib.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -2740,7 +2736,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BC6062D19965A30002A6A84 /* Release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2758,6 +2753,7 @@
 				INSTALL_PATH = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pilgrimagesoftware.lib.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -2768,7 +2764,6 @@
 		3C6B5F2C1680EE8B006C63C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -2777,6 +2772,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "SnapperTests/Resources/SnapperTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pilgrimagesoftware.lib.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
@@ -2786,7 +2782,6 @@
 		3C6B5F2D1680EE8B006C63C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
@@ -2796,6 +2791,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "SnapperTests/Resources/SnapperTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pilgrimagesoftware.lib.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;

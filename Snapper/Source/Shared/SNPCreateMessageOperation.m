@@ -31,7 +31,7 @@
             annotations:(NSArray*)annotations
                entities:(NSArray*)entities
               accountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse* response))finishBlock {
+            finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
@@ -53,7 +53,7 @@
                annotations:(NSArray*)annotations
                   entities:(NSArray*)entities
                  accountId:(NSString*)accountId
-               finishBlock:(void (^)(SNPResponse* response))finishBlock {
+               finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
@@ -77,7 +77,7 @@
                        parseLinks:(BOOL)parseLinks
                     parseMarkdown:(BOOL)parseMarkdown
                         accountId:(NSString*)accountId
-                      finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                      finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
@@ -103,7 +103,7 @@
                           parseLinks:(BOOL)parseLinks
                        parseMarkdown:(BOOL)parseMarkdown
                            accountId:(NSString*)accountId
-                         finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                         finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];

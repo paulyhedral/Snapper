@@ -9,19 +9,19 @@
 #import <Mantle/Mantle.h>
 
 
-typedef enum : NSInteger {
+typedef NS_ENUM(NSInteger, SNPFilterMatchPolicy) {
     SNPFilterMatchPolicyIncludeAny,
     SNPFilterMatchPolicyIncludeAll,
     SNPFilterMatchPolicyExcludeAny,
     SNPFilterMatchPolicyExcludeAll
-} SNPFilterMatchPolicy;
+};
 
 @interface SNPFilter : MTLModel
 <MTLJSONSerializing>
 
 @property (nonatomic, assign) NSUInteger filterId;
-@property (nonatomic, copy) NSString* name;
+@property (nonatomic, nonnull, copy) NSString* name;
 @property (nonatomic, assign) SNPFilterMatchPolicy matchPolicy;
-@property (nonatomic, copy) NSArray* clauses;
+@property (nonatomic, nonnull, copy) NSArray* clauses;
 
 @end

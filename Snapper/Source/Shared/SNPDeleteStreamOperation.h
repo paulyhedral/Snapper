@@ -17,6 +17,6 @@
 // -- Initializers --
 - (instancetype)initWithStreamId:(NSUInteger)streamId
               appToken:(NSString*)appToken
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+           finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

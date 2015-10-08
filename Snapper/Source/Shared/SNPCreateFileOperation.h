@@ -15,17 +15,17 @@
 <SNPFileParameters>
 
 // -- Properties --
-@property (nonatomic, copy) NSString* filename;
-@property (nonatomic, copy) NSString* contentType;
-@property (nonatomic, copy) NSString* type;
-@property (nonatomic, retain) NSData* data;
+@property (nonatomic, nonnull, copy) NSString* filename;
+@property (nonatomic, nonnull, copy) NSString* contentType;
+@property (nonatomic, nonnull, copy) NSString* type;
+@property (nonatomic, nonnull, retain) NSData* data;
 
 // -- Initializers --
-- (instancetype)initWithName:(NSString*)filename
-                 contentType:(NSString*)contentType
-                        type:(NSString*)type
-                        data:(NSData*)data
-                   accountId:(NSString*)accountId
-                 finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithName:(nonnull NSString*)filename
+                         contentType:(nonnull NSString*)contentType
+                                type:(nonnull NSString*)type
+                                data:(nonnull NSData*)data
+                           accountId:(nonnull NSString*)accountId
+                         finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

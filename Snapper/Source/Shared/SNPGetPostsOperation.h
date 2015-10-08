@@ -14,11 +14,11 @@
 <SNPPostParameters>
 
 // -- Properties --
-@property (nonatomic, retain) NSArray* postIds;
+@property (nonatomic, nonnull, retain) NSArray* postIds;
 
 // -- Initializers --
-- (instancetype)initWithPostIds:(NSArray*)postIds
-            accountId:(NSString*)accountId
-          finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithPostIds:(nonnull NSArray*)postIds
+                              accountId:(nonnull NSString*)accountId
+                            finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

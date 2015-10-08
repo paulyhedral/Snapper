@@ -14,12 +14,12 @@
 @interface SNPToken : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString* clientId;
-@property (nonatomic, copy) NSString* appClientId;
-@property (nonatomic, copy) NSString* appLink;
-@property (nonatomic, copy) NSString* appName;
-@property (nonatomic, copy) NSArray* scopes;
-@property (nonatomic, retain) SNPUser* user;
+@property (nonatomic, nonnull, copy) NSString* clientId;
+@property (nonatomic, nonnull, copy) NSString* appClientId;
+@property (nonatomic, nonnull, copy) NSString* appLink;
+@property (nonatomic, nonnull, copy) NSString* appName;
+@property (nonatomic, nonnull, copy) NSArray* scopes;
+@property (nonatomic, nonnull, retain) SNPUser* user;
 @property (nonatomic, assign) NSUInteger storageAvailable;
 @property (nonatomic, assign) NSUInteger storageUsed;
 

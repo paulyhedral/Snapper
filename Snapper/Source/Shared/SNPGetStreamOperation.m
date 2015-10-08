@@ -17,7 +17,7 @@
 
 - (instancetype)initWithStreamId:(NSUInteger)streamId
               appToken:(NSString*)appToken
-           finishBlock:(void (^)(SNPResponse* response))finishBlock {
+           finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAppToken:appToken
                        finishBlock:finishBlock];

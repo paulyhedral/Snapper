@@ -12,7 +12,7 @@
 @interface SNPDeleteUserFiltersOperation : SNPBaseUserTokenOperation
 
 // -- Initialization --
-- (instancetype)initWithAccountId:(NSString*)accountId
-            finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithAccountId:(nonnull NSString*)accountId
+                              finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

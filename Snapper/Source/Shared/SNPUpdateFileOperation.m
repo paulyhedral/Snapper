@@ -16,16 +16,16 @@
 #pragma mark - Initializers
 
 - (instancetype)initWithFileId:(NSUInteger)fileId
-                name:(NSString*)name
-         annotations:(NSArray*)annotations
-         accountId:(NSString*)accountId
-       finishBlock:(void (^)(SNPResponse*))finishBlock {
+                          name:(NSString*)name
+                   annotations:(NSArray*)annotations
+                     accountId:(NSString*)accountId
+                   finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
         self.fileId = fileId;
-        self.name = name;
+        self.fullname = name;
         self.annotations = annotations;
         self.method = @"PUT";
     }
@@ -64,7 +64,7 @@
     self.bodyType = @"application/json";
 
     self.serializationRootClass = [SNPFile class];
-
+    
     [super main];
 }
 

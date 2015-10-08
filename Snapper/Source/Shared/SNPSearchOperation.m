@@ -19,7 +19,7 @@
 
 - (instancetype)initWithQuery:(NSString*)query
                     accountId:(NSString*)accountId
-                  finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                  finishBlock:(void (^)(SNPResponse*))finishBlock {
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
@@ -32,7 +32,7 @@
 
 - (instancetype)initWithText:(NSString*)text
                    accountId:(NSString*)accountId
-                 finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                 finishBlock:(void (^)(SNPResponse*))finishBlock {
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {

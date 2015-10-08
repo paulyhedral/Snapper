@@ -26,7 +26,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.filterId = filterId;
-        self.name = name;
+        self.fullname = name;
         self.matchPolicy = matchPolicy;
         self.clauses = clauses;
     }

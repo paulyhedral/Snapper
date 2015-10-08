@@ -12,12 +12,12 @@
 @interface SNPGetPlaceOperation : SNPBaseClientOperation
 
 // -- Properties --
-@property (nonatomic, copy) NSString* factualId;
-@property (nonatomic, copy) NSString* token;
+@property (nonatomic, nonnull, copy) NSString* factualId;
+@property (nonatomic, nonnull, copy) NSString* token;
 
 // -- Initializers --
-- (instancetype)initWithFactualId:(NSString*)factualId
-                  token:(NSString*)token
-            finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithFactualId:(nonnull NSString*)factualId
+                                    token:(nonnull NSString*)token
+                              finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

@@ -16,14 +16,14 @@
 
 // -- Properties --
 @property (nonatomic, assign) NSInteger fileId;
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, retain) NSArray* annotations;
+@property (nonatomic, nonnull, copy) NSString* fullname;
+@property (nonatomic, nullable, retain) NSArray* annotations;
 
 // -- Initializers --
-- (instancetype)initWithFileId:(NSUInteger)fileId
-                name:(NSString*)name
-         annotations:(NSArray*)annotations
-         accountId:(NSString*)accountId
-       finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithFileId:(NSUInteger)fileId
+                                  name:(nonnull NSString*)name
+                           annotations:(nullable NSArray*)annotations
+                             accountId:(nonnull NSString*)accountId
+                           finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

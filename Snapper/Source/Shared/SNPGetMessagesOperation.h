@@ -14,11 +14,11 @@
 <SNPMessageParameters>
 
 // -- Properties --
-@property (nonatomic, retain) NSArray* messageIds;
+@property (nonatomic, nonnull, retain) NSArray* messageIds;
 
 // -- Initializers --
-- (instancetype)initWithMessageIds:(NSArray*)messageIds
-               accountId:(NSString*)accountId
-             finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithMessageIds:(nonnull NSArray*)messageIds
+                                 accountId:(nonnull NSString*)accountId
+                               finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

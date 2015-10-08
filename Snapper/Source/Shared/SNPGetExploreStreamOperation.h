@@ -16,6 +16,6 @@
 
 // -- Initializers --
 - (nonnull instancetype)initWithSlug:(nonnull NSString*)slug
-                         finishBlock:(void (nonnull ^)(nonnull SNPResponse* response))finishBlock;
+                         finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

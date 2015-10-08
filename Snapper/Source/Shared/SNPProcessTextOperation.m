@@ -16,8 +16,8 @@
 @implementation SNPProcessTextOperation
 
 - (instancetype)initWithText:(NSString*)text
-             token:(NSString*)token
-       finishBlock:(void (^)(SNPResponse*))finishBlock {
+                       token:(NSString*)token
+                 finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {
@@ -26,13 +26,13 @@
         self.endpoint = [[SNPAPIUtils sharedInstance] processTextEndpointURL];
         self.method = @"POST";
         self.headers = (@{
-                        @"Authorization" : [NSString stringWithFormat:@"Bearer %@", token],
-                        });
+                          @"Authorization" : [NSString stringWithFormat:@"Bearer %@", token],
+                          });
         self.bodyType = @"text/plain";
         self.body = [text dataUsingEncoding:NSUTF8StringEncoding];
         self.serializationRootClass = [SNPDescription class];
     }
-
+    
     return self;
 }
 

@@ -15,16 +15,16 @@
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger filterId;
-@property (nonatomic, copy) NSString* name;
+@property (nonatomic, nonnull, copy) NSString* fullname;
 @property (nonatomic, assign) SNPFilterMatchPolicy matchPolicy;
-@property (nonatomic, retain) NSArray* clauses;
+@property (nonatomic, nullable, retain) NSArray* clauses;
 
 // -- Initialization --
-- (instancetype)initWithFilterId:(NSUInteger)filterId
-                  name:(NSString*)name
-           matchPolicy:(SNPFilterMatchPolicy)matchPolicy
-               clauses:(NSArray*)clauses
-             accountId:(NSString*)accountId
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithFilterId:(NSUInteger)filterId
+                                    name:(nonnull NSString*)name
+                             matchPolicy:(SNPFilterMatchPolicy)matchPolicy
+                                 clauses:(nullable NSArray*)clauses
+                               accountId:(nonnull NSString*)accountId
+                             finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

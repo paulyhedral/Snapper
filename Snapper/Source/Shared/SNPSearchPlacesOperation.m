@@ -18,16 +18,16 @@
 #pragma mark - Initialization
 
 - (instancetype)initWithLatitude:(CGFloat)latitude
-             longitude:(CGFloat)longitude
-             accountId:(NSString*)accountId
-           finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                       longitude:(CGFloat)longitude
+                       accountId:(NSString*)accountId
+                     finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
         self.latitude = latitude;
         self.longitude = longitude;
-        self.endpoint = [[SNPAPIUtils sharedInstance] searchPlaceEndpointURL];        
+        self.endpoint = [[SNPAPIUtils sharedInstance] searchPlaceEndpointURL];
         self.serializationArrayClass = [SNPPlace class];
     }
 
@@ -40,9 +40,9 @@
 - (void)main {
 
     NSMutableDictionary* parameters = [(@{
-                                        @"latitude" : @(_latitude),
-                                        @"longitude" : @(_longitude),
-                                        }) mutableCopy];
+                                          @"latitude" : @(_latitude),
+                                          @"longitude" : @(_longitude),
+                                          }) mutableCopy];
 
     if(_q) {
         parameters[@"q"] = _q;
@@ -64,7 +64,7 @@
     }
 
     self.parameters = parameters;
-
+    
     [super main];
 }
 

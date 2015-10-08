@@ -14,10 +14,10 @@
 <SNPPostParameters>
 
 // -- Properties --
-@property (nonatomic, copy) NSString* hashtag;
+@property (nonatomic, nonnull, copy) NSString* hashtag;
 
 // -- Initializers --
-- (instancetype)initWithHashtag:(NSString*)hashtag
-          finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithHashtag:(nonnull NSString*)hashtag
+                            finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

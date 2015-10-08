@@ -19,6 +19,6 @@
 // -- Initialization --
 - (nonnull instancetype)initWithUserId:(NSUInteger)userId
                              accountId:(nonnull NSString*)accountId
-                           finishBlock:(nonnull void (^)(nonnull SNPResponse* response))finishBlock;
+                           finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

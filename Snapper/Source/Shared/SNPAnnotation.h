@@ -27,7 +27,7 @@
 @interface SNPAnnotation : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString* type;
-@property (nonatomic, copy) NSDictionary* value;
+@property (nonatomic, nonnull, copy) NSString* type;
+@property (nonatomic, nonnull, copy) NSDictionary* value;
 
 @end

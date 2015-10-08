@@ -11,8 +11,8 @@
 
 @interface SNPLink : SNPEntity
 
-@property (nonatomic, copy) NSString* text;
-@property (nonatomic, copy) NSURL* URL;
+@property (nonatomic, nonnull, copy) NSString* text;
+@property (nonatomic, nonnull, copy) NSURL* URL;
 @property (nonatomic, assign) NSUInteger position;
 @property (nonatomic, assign) NSUInteger length;
 @property (nonatomic, assign) NSUInteger amendedLength;

@@ -12,13 +12,13 @@
 @interface SNPCurrentTokenOperation : SNPBaseClientOperation
 
 // -- Properties --
-@property (nonatomic, copy) NSString* accessToken;
-@property (nonatomic, copy) NSString* tokenType;
+@property (nonatomic, nonnull, copy) NSString* accessToken;
+@property (nonatomic, nonnull, copy) NSString* tokenType;
 
 // -- Initializers --
 
-- (instancetype)initWithAccessToken:(NSString*)accessToken
-                tokenType:(NSString*)tokenType
-              finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithAccessToken:(nonnull NSString*)accessToken
+                                  tokenType:(nonnull NSString*)tokenType
+                                finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 #import "SNPResponse.h"
 
 
@@ -20,7 +20,7 @@
     NSURLConnection* _connection;
     NSMutableData* _receivedData;
     BOOL _done;
-    
+
 }
 
 // -- Properties --
@@ -35,10 +35,10 @@
 @property (nonatomic, nullable, copy) NSData* body;
 @property (nonatomic, nullable, copy) NSString* bodyType;
 @property (nonatomic, nullable, copy) void (^progressBlock)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes);
-@property (nonatomic, nonnull, copy) void (^finishBlock)(SNPResponse* response);
-@property (nonatomic, nullable, copy) id (^serializationBlock)(id data, NSError** error);
-@property (nonatomic, assign) Class serializationRootClass;
-@property (nonatomic, assign) Class serializationArrayClass;
+@property (nonatomic, nonnull, copy) void (^finishBlock)(SNPResponse* _Nonnull response);
+@property (nonatomic, nullable, copy) id (^serializationBlock)(id _Nullable data, NSError* _Nullable * error);
+@property (nonatomic, nullable, assign) Class serializationRootClass;
+@property (nonatomic, nullable, assign) Class serializationArrayClass;
 @property (nonatomic, assign) NSTimeInterval timeout;
 
 // -- Initializers --
@@ -48,7 +48,7 @@
  *
  *	@return	<#return value description#>
  */
-- (instancetype)initWithFinishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithFinishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 /**
  *	<#Description#>
  *
@@ -62,13 +62,13 @@
  *	@return	<#return value description#>
  */
 - (nonnull instancetype)initWithEndpoint:(nonnull NSURL*)endpoint
-                method:(nonnull NSString*)method
-               headers:(nullable NSDictionary*)headers
-            parameters:(nullable NSDictionary*)parameters
-                  body:(nullable NSData*)body
-              bodyType:(NSString*)bodyType
-         progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+                                  method:(nonnull NSString*)method
+                                 headers:(nullable NSDictionary*)headers
+                              parameters:(nullable NSDictionary*)parameters
+                                    body:(nullable NSData*)body
+                                bodyType:(nonnull NSString*)bodyType
+                           progressBlock:(nullable void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
+                             finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 // -- Utility methods --
 
@@ -79,7 +79,7 @@
  *
  *	@return	<#return value description#>
  */
-- (SNPResponse*)createResponseFromJSON:(NSDictionary*)jsonDict;
+- (nullable SNPResponse*)createResponseFromJSON:(nonnull NSDictionary*)jsonDict;
 /**
  *	<#Description#>
  *
@@ -87,6 +87,6 @@
  *
  *	@return	<#return value description#>
  */
-- (SNPResponse*)createResponseFromError:(NSError*)error;
+- (nullable SNPResponse*)createResponseFromError:(nonnull NSError*)error;
 
 @end

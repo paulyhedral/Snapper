@@ -19,12 +19,12 @@
        matchPolicy:(SNPFilterMatchPolicy)matchPolicy
            clauses:(NSArray*)clauses
          accountId:(NSString*)accountId
-       finishBlock:(void (^)(SNPResponse* response))finishBlock {
+       finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
     if(self) {
-        self.name = name;
+        self.fullname = name;
         self.matchPolicy = matchPolicy;
         self.clauses = clauses;
     }

@@ -14,11 +14,11 @@
 <SNPUserParameters>
 
 // -- Properties --
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, copy) NSString* locale;
-@property (nonatomic, copy) NSString* timezone;
-@property (nonatomic, copy) NSString* descriptionText;
-@property (nonatomic, retain) NSArray* descriptionEntities;
-@property (nonatomic, retain) NSArray* annotations;
+@property (nonatomic, nullable, copy) NSString* fullname;
+@property (nonatomic, nullable, copy) NSString* locale;
+@property (nonatomic, nullable, copy) NSString* timezone;
+@property (nonatomic, nullable, copy) NSString* descriptionText;
+@property (nonatomic, nullable, retain) NSArray* descriptionEntities;
+@property (nonatomic, nullable, retain) NSArray* annotations;
 
 @end

@@ -6,19 +6,19 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 
 @interface SNPBaseImageFetchOperation : NSOperation
 <NSURLConnectionDelegate>
 
 // -- Properties --
-@property (nonatomic, retain) NSURL* imageURL;
-@property (nonatomic, copy) void (^finishBlock)(id image, NSError* error);
+@property (nonatomic, nonnull, retain) NSURL* imageURL;
+@property (nonatomic, nonnull, copy) void (^finishBlock)(id _Nullable image, NSError* _Nullable error);
 @property (nonatomic, assign) NSTimeInterval timeout;
 
 // -- Initializers --
-- (instancetype)initWithImageURL:(NSURL*)imageURL
-                     finishBlock:(void (^)(id image, NSError* error))finishBlock;
+- (nonnull instancetype)initWithImageURL:(nonnull NSURL*)imageURL
+                             finishBlock:(nonnull void (^)(id _Nullable image, NSError* _Nullable error))finishBlock;
 
 @end

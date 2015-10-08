@@ -13,16 +13,16 @@
 
 // -- Properties --
 @property (nonatomic, assign) NSUInteger postId;
-@property (nonatomic, copy) NSString* name;
+@property (nonatomic, nonnull, copy) NSString* fullname;
 @property (nonatomic, assign) NSUInteger percentage;
 
 @property (nonatomic, assign) BOOL resetReadId;
 
 // -- Initializers --
-- (instancetype)initWithPostId:(NSUInteger)postId
-                name:(NSString*)name
-          percentage:(NSUInteger)percentage
-           accountId:(NSString*)accountId
-         finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithPostId:(NSUInteger)postId
+                                  name:(nonnull NSString*)name
+                            percentage:(NSUInteger)percentage
+                             accountId:(nonnull NSString*)accountId
+                           finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

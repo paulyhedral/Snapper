@@ -14,17 +14,17 @@
 @interface SNPCreateStreamOperation : SNPBaseAppTokenOperation
 
 // -- Properties --
-@property (nonatomic, retain) NSArray* objectTypes;
+@property (nonatomic, nonnull, retain) NSArray* objectTypes;
 @property (nonatomic, assign) SNPStreamType type;
 @property (nonatomic, assign) NSInteger filterId;
-@property (nonatomic, copy) NSString* key;
+@property (nonatomic, nonnull, copy) NSString* key;
 
 // -- Initializers --
-- (instancetype)initWithObjectTypes:(NSArray*)objectTypes
-                     type:(SNPStreamType)type
-                 filterId:(NSUInteger)filterId
-                      key:(NSString*)key
-                 appToken:(NSString*)appToken
-              finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithObjectTypes:(nonnull NSArray*)objectTypes
+                                       type:(SNPStreamType)type
+                                   filterId:(NSUInteger)filterId
+                                        key:(nonnull NSString*)key
+                                   appToken:(nonnull NSString*)appToken
+                                finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

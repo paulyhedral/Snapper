@@ -16,7 +16,7 @@
 @implementation SNPGetTaggedPostsOperation
 
 - (instancetype)initWithHashtag:(NSString*)hashtag
-          finishBlock:(void (^)(SNPResponse* response))finishBlock {
+          finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {

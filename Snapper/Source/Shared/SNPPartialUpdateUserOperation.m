@@ -31,7 +31,7 @@
     NSMutableDictionary* userDict = [NSMutableDictionary new];
 
     if(self.name) {
-        userDict[@"name"] = self.name;
+        userDict[@"name"] = self.fullname;
     }
     if(_locale) {
         userDict[@"locale"] = _locale;

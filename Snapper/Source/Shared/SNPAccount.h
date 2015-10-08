@@ -6,24 +6,24 @@
 //  Copyright (c) 2012 Pilgrimage Software. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 
 @interface SNPAccount : NSObject
 
 // -- Properties --
-@property (nonatomic, readonly) NSString* accountId;
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, copy) NSString* username;
+@property (nonatomic, nonnull, readonly) NSString* accountId;
+@property (nonatomic, nonnull, copy) NSString* name;
+@property (nonatomic, nonnull, copy) NSString* username;
 @property (nonatomic, assign) NSUInteger userId;
-@property (nonatomic, copy) NSString* accessToken;
-@property (nonatomic, copy) NSString* tokenType;
+@property (nonatomic, nonnull, copy) NSString* accessToken;
+@property (nonatomic, nonnull, copy) NSString* tokenType;
 
 // -- Initializers --
-- (instancetype)initWithName:(NSString*)name
-                    username:(NSString*)username
-                      userId:(NSUInteger)userId
-                 accessToken:(NSString*)accessToken
-                   tokenType:(NSString*)tokenType;
+- (nonnull instancetype)initWithName:(nonnull NSString*)name
+                            username:(nonnull NSString*)username
+                              userId:(NSUInteger)userId
+                         accessToken:(nonnull NSString*)accessToken
+                           tokenType:(nonnull NSString*)tokenType;
 
 @end

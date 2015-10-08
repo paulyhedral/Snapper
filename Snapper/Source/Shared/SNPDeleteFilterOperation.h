@@ -15,8 +15,8 @@
 @property (nonatomic, assign) NSUInteger filterId;
 
 // -- Initialization --
-- (instancetype)initWithFilterId:(NSUInteger)filterId
-             accountId:(NSString*)accountId
-           finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithFilterId:(NSUInteger)filterId
+                               accountId:(nonnull NSString*)accountId
+                             finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

@@ -12,8 +12,8 @@
 @interface SNPSource : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, copy) NSURL* link;
-@property (nonatomic, copy) NSString* clientId;
+@property (nonatomic, nonnull, copy) NSString* name;
+@property (nonatomic, nonnull, copy) NSURL* link;
+@property (nonatomic, nonnull, copy) NSString* clientId;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Pilgrimage Software. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 
 @protocol SNPCommonParameters <NSObject>

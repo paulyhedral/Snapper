@@ -20,11 +20,11 @@ typedef enum : NSInteger {
 @interface SNPDerivedFile : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString* mimeType;
-@property (nonatomic, copy) NSString* sha1;
+@property (nonatomic, nonnull, copy) NSString* mimeType;
+@property (nonatomic, nonnull, copy) NSString* sha1;
 @property (nonatomic, assign) NSUInteger size;
-@property (nonatomic, copy) NSURL* URL;
-@property (nonatomic, copy) NSDate* URLExpires;
+@property (nonatomic, nonnull, copy) NSURL* URL;
+@property (nonatomic, nonnull, copy) NSDate* URLExpires;
 @property (nonatomic, assign) NSUInteger imageWidth;
 @property (nonatomic, assign) NSUInteger imageHeight;
 
@@ -33,22 +33,22 @@ typedef enum : NSInteger {
 @interface SNPFile : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSArray* annotations;
+@property (nonatomic, nullable, copy) NSArray* annotations;
 @property (nonatomic, assign, getter=isComplete) BOOL complete;
-@property (nonatomic, copy) NSDictionary* derivedFiles;
-@property (nonatomic, copy) NSString* fileToken;
+@property (nonatomic, nullable, copy) NSDictionary* derivedFiles;
+@property (nonatomic, nonnull, copy) NSString* fileToken;
 @property (nonatomic, assign) NSUInteger fileId;
 @property (nonatomic, assign) SNPFileKind kind;
-@property (nonatomic, copy) NSString* mimeType;
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, copy) NSString* sha1;
+@property (nonatomic, nonnull, copy) NSString* mimeType;
+@property (nonatomic, nonnull, copy) NSString* name;
+@property (nonatomic, nonnull, copy) NSString* sha1;
 @property (nonatomic, assign) NSUInteger size;
-@property (nonatomic, retain) SNPSource* source;
+@property (nonatomic, nonnull, retain) SNPSource* source;
 @property (nonatomic, assign) NSUInteger totalSize;
-@property (nonatomic, copy) NSString* type;
-@property (nonatomic, copy) NSURL* URL;
-@property (nonatomic, copy) NSDate* URLExpires;
-@property (nonatomic, retain) SNPUser* user;
+@property (nonatomic, nonnull, copy) NSString* type;
+@property (nonatomic, nonnull, copy) NSURL* URL;
+@property (nonatomic, nonnull, copy) NSDate* URLExpires;
+@property (nonatomic, nonnull, retain) SNPUser* user;
 @property (nonatomic, assign) NSUInteger imageWidth;
 @property (nonatomic, assign) NSUInteger imageHeight;
 

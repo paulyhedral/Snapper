@@ -16,8 +16,8 @@
 @implementation SNPGetPlaceOperation
 
 - (instancetype)initWithFactualId:(NSString*)factualId
-                  token:(NSString*)token
-            finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                            token:(NSString*)token
+                      finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithFinishBlock:finishBlock];
     if(self) {
@@ -25,11 +25,11 @@
         self.token = token;
         self.endpoint = [[SNPAPIUtils sharedInstance] getPlaceEndpointURL:factualId];
         self.headers = (@{
-                        @"Authorization" : [NSString stringWithFormat:@"Bearer %@", token],
-                        });
+                          @"Authorization" : [NSString stringWithFormat:@"Bearer %@", token],
+                          });
         self.serializationRootClass = [SNPPlace class];
     }
-
+    
     return self;
 }
 

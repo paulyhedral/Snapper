@@ -19,7 +19,7 @@
 
 - (instancetype)initWithMessageIds:(NSArray*)messageIds
                accountId:(NSString*)accountId
-             finishBlock:(void (^)(SNPResponse* response))finishBlock {
+             finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];

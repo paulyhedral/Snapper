@@ -14,11 +14,11 @@
 <SNPFileParameters>
 
 // -- Properties --
-@property (nonatomic, retain) NSArray* fileIds;
+@property (nonatomic, nonnull, retain) NSArray* fileIds;
 
 // -- Initializers --
-- (instancetype)initWithFileIds:(NSArray*)fileIds
-            accountId:(NSString*)accountId
-          finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithFileIds:(nonnull NSArray*)fileIds
+                              accountId:(nonnull NSString*)accountId
+                            finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

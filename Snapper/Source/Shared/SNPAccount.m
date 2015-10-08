@@ -14,10 +14,10 @@
 #pragma mark - Initializers
 
 - (instancetype)initWithName:(NSString*)name
-          username:(NSString*)username
-            userId:(NSUInteger)userId
-       accessToken:(NSString*)accessToken
-         tokenType:(NSString*)tokenType {
+                    username:(NSString*)username
+                      userId:(NSUInteger)userId
+                 accessToken:(NSString*)accessToken
+                   tokenType:(NSString*)tokenType {
 
     self = [super init];
     if(self) {
@@ -29,7 +29,7 @@
         _accessToken = accessToken;
         _tokenType = tokenType;
     }
-
+    
     return self;
 }
 

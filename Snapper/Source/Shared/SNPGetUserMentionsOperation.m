@@ -19,7 +19,7 @@
 
 - (instancetype)initWithUserId:(NSUInteger)userId
                      accountId:(NSString*)accountId
-                   finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                   finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];

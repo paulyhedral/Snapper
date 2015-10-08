@@ -22,12 +22,12 @@
 
 #pragma mark - Initializers
 
-- (nonnull instancetype)initWithName:(nonnull NSString*)fullName
-                      locale:(nonnull NSString*)locale
-                    timezone:(nonnull NSString*)timezone
-                 description:(nonnull NSString*)descriptionText
-                   accountId:(nonnull NSString*)accountId
-                 finishBlock:(nonnull void (^)(nonnull SNPResponse*))finishBlock {
+- (instancetype)initWithName:(NSString*)fullName
+                      locale:(NSString*)locale
+                    timezone:(NSString*)timezone
+                 description:(NSString*)descriptionText
+                   accountId:(NSString*)accountId
+                 finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];

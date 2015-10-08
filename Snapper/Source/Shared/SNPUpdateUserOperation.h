@@ -27,6 +27,6 @@
                             timezone:(nonnull NSString*)timezone
                          description:(nonnull NSString*)descriptionText
                            accountId:(nonnull NSString*)accountId
-                         finishBlock:(nonnull void (^)(nonnull SNPResponse* response))finishBlock;
+                         finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

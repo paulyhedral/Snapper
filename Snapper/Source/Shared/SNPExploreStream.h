@@ -12,9 +12,9 @@
 @interface SNPExploreStream : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString* slug;
-@property (nonatomic, copy) NSString* title;
-@property (nonatomic, copy) NSString* exploreDescription;
-@property (nonatomic, copy) NSURL* URL;
+@property (nonatomic, nonnull, copy) NSString* slug;
+@property (nonatomic, nonnull, copy) NSString* title;
+@property (nonatomic, nonnull, copy) NSString* exploreDescription;
+@property (nonatomic, nonnull, copy) NSURL* URL;
 
 @end

@@ -9,7 +9,7 @@
 #import <Mantle/Mantle.h>
 
 
-typedef enum : NSInteger {
+typedef NS_ENUM(NSInteger, SNPFilterClauseObjectType) {
     SNPFilterClauseObjectTypePost,
     SNPFilterClauseObjectTypeStar,
     SNPFilterClauseObjectTypeUserFollow,
@@ -17,9 +17,9 @@ typedef enum : NSInteger {
     SNPFilterClauseObjectTypeMessage,
     SNPFilterClauseObjectTypeChannel,
     SNPFilterClauseObjectTypeChannelSubscription,
-} SNPFilterClauseObjectType;
+};
 
-typedef enum : NSInteger {
+typedef NS_ENUM(NSInteger, SNPFilterClauseOperator) {
     SNPFilterClauseOperatorEquals,
     SNPFilterClauseOperatorMatches,
     SNPFilterClauseOperatorLessThan,
@@ -27,14 +27,14 @@ typedef enum : NSInteger {
     SNPFilterClauseOperatorGreaterThan,
     SNPFilterClauseOperatorGreaterThanOrEqual,
     SNPFilterClauseOperatorOneOf,
-} SNPFilterClauseOperator;
+};
 
 @interface SNPFilterClause : MTLModel
 <MTLJSONSerializing>
 
-@property (nonatomic, copy) NSString* field;
+@property (nonatomic, nonnull, copy) NSString* field;
 @property (nonatomic, assign) SNPFilterClauseObjectType objectType;
 @property (nonatomic, assign) SNPFilterClauseOperator op;
-@property (nonatomic, retain) id value;
+@property (nonatomic, nonnull, retain) id value;
 
 @end

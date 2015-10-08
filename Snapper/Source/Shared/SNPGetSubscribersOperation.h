@@ -15,11 +15,11 @@
 <SNPChannelParameters, SNPPaginationParameters>
 
 // -- Properties --
-@property (nonatomic, retain) NSArray* channelIds;
+@property (nonatomic, nonnull, retain) NSArray* channelIds;
 
 // -- Initialization --
-- (instancetype)initWithChannelIds:(NSArray*)channelIds
-               accountId:(NSString*)accountId
-             finishBlock:(void (^)(SNPResponse* response))finishBlock;
+- (nonnull instancetype)initWithChannelIds:(nonnull NSArray*)channelIds
+                                 accountId:(nonnull NSString*)accountId
+                               finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

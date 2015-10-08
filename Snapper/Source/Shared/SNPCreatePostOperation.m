@@ -31,7 +31,7 @@
                     entities:(NSArray*)entities
                    accountId:(NSString*)accountId
                progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
-                 finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                 finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
@@ -58,7 +58,7 @@
                parseMarkdown:(BOOL)parseMarkdown
                    accountId:(NSString*)accountId
                progressBlock:(void (^)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes))progressBlock
-                 finishBlock:(void (^)(SNPResponse* response))finishBlock {
+                 finishBlock:(void (^)(SNPResponse*))finishBlock {
 
     self = [super initWithAccountId:accountId
                         finishBlock:finishBlock];
