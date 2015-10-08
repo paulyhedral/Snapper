@@ -39,7 +39,6 @@
 @property (nonatomic, assign) BOOL hasCheckin;
 @property (nonatomic, assign) BOOL crosspost;
 @property (nonatomic, assign) BOOL hasAttachment;
-@property (nonatomic, assign) BOOL hasOembedPhoto;
 @property (nonatomic, assign) BOOL hasOembedVideo;
 @property (nonatomic, assign) BOOL hasOembedHtml5Video;
 @property (nonatomic, assign) BOOL hasOembedRich;

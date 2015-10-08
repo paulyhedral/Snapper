@@ -14,11 +14,11 @@
 <SNPUserParameters>
 
 // -- Properties --
-@property (nonatomic, retain) NSArray* userIds;
+@property (nonatomic, nonnull, retain) NSArray* userIds;
 
 // -- Initialization --
-- (instancetype)initWithUserIds:(NSArray*)userIds
-            accountId:(nonnull NSString*)accountId
-          finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
+- (nonnull instancetype)initWithUserIds:(nonnull NSArray*)userIds
+                              accountId:(nonnull NSString*)accountId
+                            finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

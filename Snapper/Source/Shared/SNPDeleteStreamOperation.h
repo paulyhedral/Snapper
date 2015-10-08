@@ -15,8 +15,8 @@
 @property (nonatomic, assign) NSInteger streamId;
 
 // -- Initializers --
-- (instancetype)initWithStreamId:(NSUInteger)streamId
-              appToken:(NSString*)appToken
-           finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
+- (nonnull instancetype)initWithStreamId:(NSUInteger)streamId
+                                appToken:(nonnull NSString*)appToken
+                             finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

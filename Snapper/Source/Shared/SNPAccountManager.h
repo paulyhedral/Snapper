@@ -13,6 +13,8 @@
 #import "SNPAccount.h"
 
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface SNPAccountManager : NSObject
 
 CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedInstance)
@@ -28,3 +30,5 @@ CWL_DECLARE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(SNPAccountManager, sharedInstance)
 - (nonnull NSArray*)allAccounts;
 
 @end
+
+NS_ASSUME_NONNULL_END

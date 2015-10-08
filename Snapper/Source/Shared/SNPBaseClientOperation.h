@@ -36,7 +36,7 @@
 @property (nonatomic, nullable, copy) NSString* bodyType;
 @property (nonatomic, nullable, copy) void (^progressBlock)(NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytes);
 @property (nonatomic, nonnull, copy) void (^finishBlock)(SNPResponse* _Nonnull response);
-@property (nonatomic, nullable, copy) id (^serializationBlock)(id _Nullable data, NSError* _Nullable * error);
+@property (nonatomic, nullable, copy) id _Nullable (^serializationBlock)(id _Nullable data, NSError* _Nonnull * _Nullable error);
 @property (nonatomic, nullable, assign) Class serializationRootClass;
 @property (nonatomic, nullable, assign) Class serializationArrayClass;
 @property (nonatomic, assign) NSTimeInterval timeout;

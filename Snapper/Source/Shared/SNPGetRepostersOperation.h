@@ -18,8 +18,8 @@
 @property (nonatomic, assign) NSUInteger postId;
 
 // -- Initialization --
-- (instancetype)initWithPostId:(NSUInteger)postId
-           accountId:(nonnull NSString*)accountId
-         finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
+- (nonnull instancetype)initWithPostId:(NSUInteger)postId
+                             accountId:(nonnull NSString*)accountId
+                           finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end

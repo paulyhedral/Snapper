@@ -15,11 +15,11 @@
 <SNPUserParameters, SNPPaginationParameters>
 
 // -- Properties --
-@property (nonatomic, copy) NSString* queryString;
+@property (nonatomic, nonnull, copy) NSString* queryString;
 
 // -- Initialization --
-- (instancetype)initWithQueryString:(NSString*)queryString
-                accountId:(nonnull NSString*)accountId
-              finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
+- (nonnull instancetype)initWithQueryString:(nonnull NSString*)queryString
+                                  accountId:(nonnull NSString*)accountId
+                                finishBlock:(nonnull void (^)(SNPResponse* _Nonnull response))finishBlock;
 
 @end
