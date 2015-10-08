@@ -10,7 +10,7 @@ App.net SDK in Objective-C
 Version
 -------
 
-0.63.1
+0.64
 
 Platforms
 ---------
