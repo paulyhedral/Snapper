@@ -16,7 +16,7 @@
 @implementation SNPUpdateStreamMarkerOperation
 
 - (instancetype)initWithPostId:(NSUInteger)postId
-                          name:(NSString*)name
+                          name:(NSString*)markerName
                     percentage:(NSUInteger)percentage
                      accountId:(NSString*)accountId
                    finishBlock:(void (^)(SNPResponse*))finishBlock {
@@ -25,7 +25,7 @@
                         finishBlock:finishBlock];
     if(self) {
         self.postId = postId;
-        self.fullname = name;
+        self.markerName = markerName;
         self.percentage = percentage;
         self.endpoint = [[SNPAPIUtils sharedInstance] updateStreamMarkerEndpointURL];
         self.method = @"POST";
@@ -38,7 +38,7 @@
 - (void)main {
 
     NSDictionary* markerDict = (@{
-                                  @"name" : self.name,
+                                  @"name" : self.markerName,
                                   @"id" : @(_postId),
                                   @"percentage" : @(_percentage),
                                   });
